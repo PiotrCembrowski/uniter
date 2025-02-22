@@ -1,4 +1,9 @@
-import React from "react";
+import { Button } from "@/components/ui/button";
+import NavItem from "./NavItem";
+import FolderItem from "./FolderItem";
+import Image from "next/image";
+import FileCard from "./FileCard";
+import { Bell, Grid, LayoutGrid, Plus, Search } from "lucide-react";
 
 const Dashboard = () => {
   return (
