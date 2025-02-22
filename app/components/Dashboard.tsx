@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NavItem from "./NavItem";
 import FolderItem from "./FolderItem";
 import Image from "next/image";
