@@ -11,47 +11,66 @@ export default function FileCard({
   metadata: string;
   unitType: string;
 }) {
-  const baseUnit: number = 1;
-  let unit2: number = 0;
-  let unit3: number = 0;
-  let unit4: number = 0;
-  let unit5: number = 0;
+  const [baseUnit, setBaseUnit] = useState();
+  const [unit1, setUnit1] = useState<number>();
+  const [unit2, setUnit2] = useState<number>();
+  const [unit3, setUnit3] = useState<number>();
+  const [unit4, setUnit4] = useState<number>();
+  const [unit5, setUnit5] = useState<number>();
 
-  if (unitType == "length") {
-    const millimeter = baseUnit;
-    unit2 = millimeter * 0.1;
-    unit3 = millimeter * 0.01;
-    unit4 = millimeter * 0.001;
-    unit5 = millimeter * 0.0001;
-  }
+  useEffect(() => {
+    console.log("baseUnit", baseUnit);
+    if (unitType == "length") {
+      setBaseUnit(1);
+      console.log("length");
+    }
+  }, [baseUnit, unitType]);
+
+  const Multiplier = (e) => {
+    console.log(e.target.value);
+    setUnit1(baseUnit);
+    setUnit2(baseUnit * 0.1);
+    setUnit3(baseUnit * 0.01);
+    setUnit4(baseUnit * 0.001);
+    setUnit5(baseUnit * 0.0001);
+  };
+
+  const RenderMetrics = (e) => {
+    console.log(e.target.value);
+    setUnit1(e.target.value);
+  };
 
   return (
     <div className="group relative overflow-hidden rounded-lg border bg-white">
       <div className="aspect-[4/3] overflow-hidden p-3">
         <div>
-          <label htmlFor="">millimeter [mm]</label>
+          <label>millimeter [mm]</label>
           <br />
-          <input className="border-2" type="text" value={baseUnit} />
+          <input
+            className="border-2"
+            type="text"
+            onChange={(e) => RenderMetrics(e)}
+          />
         </div>
         <div>
           <label htmlFor="">centimiter [cm]</label>
           <br />
-          <input className="border-2" type="text" value={unit2} />
+          <input className="border-2" type="text" />
         </div>
         <div>
           <label htmlFor="">decimiter [dm]</label>
           <br />
-          <input className="border-2" type="text" value={unit3} />
+          <input className="border-2" type="text" />
         </div>
         <div>
           <label htmlFor="">miter [m]</label>
           <br />
-          <input className="border-2" type="text" value={unit4} />
+          <input className="border-2" type="text" />
         </div>
         <div>
           <label htmlFor="">kilomiter [km]</label>
           <br />
-          <input className="border-2" type="text" value={unit5} />
+          <input className="border-2" type="text" />
         </div>
       </div>
       <div className="p-4">
