@@ -174,18 +174,12 @@ const Dashboard = () => {
             <FileCard
               title="Q4 Sales Deck"
               metadata="Shared folder • 8 presentations"
-              thumbnail="/placeholder.svg"
             />
             <FileCard
               title="Product Videos"
               metadata="Shared folder • 5 videos"
-              thumbnail="/placeholder.svg"
             />
-            <FileCard
-              title="ROI Calculator"
-              metadata="Shared file • 1 Excel"
-              thumbnail="/placeholder.svg"
-            />
+            <FileCard title="ROI Calculator" metadata="Shared file • 1 Excel" />
           </div>
         </div>
       </div>
