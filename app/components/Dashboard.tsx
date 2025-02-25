@@ -8,6 +8,8 @@ import FileCard from "./FileCard";
 import { Bell, Grid, LayoutGrid, Plus, Search } from "lucide-react";
 
 const Dashboard = () => {
+  let digitUnit: number = 1;
+
   return (
     <div className="flex h-screen bg-white">
       {/* Sidebar */}
@@ -174,12 +176,18 @@ const Dashboard = () => {
             <FileCard
               title="Q4 Sales Deck"
               metadata="Shared folder • 8 presentations"
+              placeholder={digitUnit}
             />
             <FileCard
               title="Product Videos"
               metadata="Shared folder • 5 videos"
+              placeholder={digitUnit}
             />
-            <FileCard title="ROI Calculator" metadata="Shared file • 1 Excel" />
+            <FileCard
+              title="ROI Calculator"
+              metadata="Shared file • 1 Excel"
+              placeholder={digitUnit}
+            />
           </div>
         </div>
       </div>
