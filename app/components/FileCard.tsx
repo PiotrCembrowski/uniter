@@ -3,6 +3,15 @@
 import { useState, useEffect } from "react";
 import LengthTypes from "@/lib/LengthTypes";
 
+type System = {
+  name: string;
+  unit1: number;
+  unit2: number;
+  unit3: number;
+  unit4: number;
+  unit5: number;
+};
+
 export default function FileCard({
   title,
   unitType,
@@ -11,6 +20,7 @@ export default function FileCard({
   unitType: string;
 }) {
   const [baseUnit, setBaseUnit] = useState<number>();
+  const [system, setSystem] = useState<System>();
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
@@ -20,12 +30,10 @@ export default function FileCard({
   useEffect(() => {
     console.log("baseUnit", baseUnit);
     if (title == "Metric System" && unitType == "length") {
-      setBaseUnit(1);
-      console.log("Metric System");
+      LengthTypes("Metric System");
     }
     if (title == "Imperial System" && unitType == "length") {
-      setBaseUnit(1);
-      console.log("Imperial System");
+      LengthTypes("Imperial System");
     }
   }, [baseUnit, title, unitType]);
 
