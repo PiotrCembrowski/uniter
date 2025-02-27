@@ -4,11 +4,9 @@ import { useState, useEffect } from "react";
 
 export default function FileCard({
   title,
-  metadata,
   unitType,
 }: {
   title: string;
-  metadata: string;
   unitType: string;
 }) {
   const [baseUnit, setBaseUnit] = useState<number>();
@@ -70,7 +68,6 @@ export default function FileCard({
       <div className="aspect-[4/3] p-3">
         <div className="mb-8">
           <h3 className="font-medium text-gray-900">{title}</h3>
-          <p className="text-sm text-gray-500">{metadata}</p>
         </div>
         <div>
           <label>millimeter [mm]</label>

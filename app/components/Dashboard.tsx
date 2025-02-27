@@ -171,21 +171,9 @@ const Dashboard = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <FileCard
-              title="Metric System"
-              metadata="Shared folder • 8 presentations"
-              unitType="length"
-            />
-            <FileCard
-              title="Product Videos"
-              metadata="Shared folder • 5 videos"
-              unitType="weight"
-            />
-            <FileCard
-              title="ROI Calculator"
-              metadata="Shared file • 1 Excel"
-              unitType="energy"
-            />
+            <FileCard title="Metric System" unitType="length" />
+            <FileCard title="Imperial System" unitType="length" />
+            <FileCard title="ROI Calculator" unitType="energy" />
           </div>
         </div>
       </div>
