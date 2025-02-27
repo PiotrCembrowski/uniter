@@ -23,6 +23,10 @@ export default function FileCard({
       setBaseUnit(1);
       console.log("Metric System");
     }
+    if (title == "Imperial System" && unitType == "length") {
+      setBaseUnit(1);
+      console.log("Imperial System");
+    }
   }, [baseUnit, title, unitType]);
 
   const Multiplier = (unit: number) => {
