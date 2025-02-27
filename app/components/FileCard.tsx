@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import LengthTypes from "@/lib/LengthTypes";
 
 export default function FileCard({
   title,
