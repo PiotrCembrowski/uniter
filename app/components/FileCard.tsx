@@ -67,7 +67,11 @@ export default function FileCard({
 
   return (
     <div className="group relative overflow-hidden rounded-lg border bg-white">
-      <div className="aspect-[4/3] overflow-hidden p-3">
+      <div className="aspect-[4/3] p-3">
+        <div className="mb-8">
+          <h3 className="font-medium text-gray-900">{title}</h3>
+          <p className="text-sm text-gray-500">{metadata}</p>
+        </div>
         <div>
           <label>millimeter [mm]</label>
           <br />
@@ -123,10 +127,6 @@ export default function FileCard({
             value={unit5}
           />
         </div>
-      </div>
-      <div className="p-4">
-        <h3 className="font-medium text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-500">{metadata}</p>
       </div>
     </div>
   );
