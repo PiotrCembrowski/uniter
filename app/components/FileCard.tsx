@@ -19,11 +19,11 @@ export default function FileCard({
 
   useEffect(() => {
     console.log("baseUnit", baseUnit);
-    if (unitType == "length") {
+    if (title == "Metric System" && unitType == "length") {
       setBaseUnit(1);
-      console.log("length");
+      console.log("Metric System");
     }
-  }, [baseUnit, unitType]);
+  }, [baseUnit, title, unitType]);
 
   const Multiplier = (unit: number) => {
     setUnit1(unit);

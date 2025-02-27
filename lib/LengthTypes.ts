@@ -1,3 +1,3 @@
-export default function LengthTypes(system) {
+export default function LengthTypes(system: string) {
   return console.log(system);
 }
