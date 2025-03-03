@@ -171,9 +171,9 @@ const Dashboard = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <FileCard title="Metric System" unitType="length" />
-            <FileCard title="Imperial System" unitType="length" />
-            <FileCard title="ROI Calculator" unitType="energy" />
+            <FileCard title="Metric System" />
+            <FileCard title="Imperial System" />
+            <FileCard title="ROI Calculator" />
           </div>
         </div>
       </div>
