@@ -1,16 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import LengthTypes from "@/lib/LengthTypes";
-
-type System = {
-  name: string;
-  unit1: number;
-  unit2: number;
-  unit3: number;
-  unit4: number;
-  unit5: number;
-};
 
 export default function FileCard({
   title,
@@ -20,36 +10,32 @@ export default function FileCard({
   unitType: string;
 }) {
   const [baseUnit, setBaseUnit] = useState<number>();
-  const [system, setSystem] = useState<System>();
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
   const [unit4, setUnit4] = useState<number>(0);
   const [unit5, setUnit5] = useState<number>(0);
 
-  useEffect(() => {
-    console.log("baseUnit", baseUnit);
-    if (title == "Metric System" && unitType == "length") {
-      LengthTypes("Metric System");
-    }
-    if (title == "Imperial System" && unitType == "length") {
-      LengthTypes("Imperial System");
-    }
-  }, [baseUnit, title, unitType]);
-
   const Multiplier = (unit: number) => {
-    setUnit1(unit);
-    setUnit2(unit * 0.1);
-    setUnit3(unit * 0.01);
-    setUnit4(unit * 0.001);
-    setUnit5(unit * 0.000001);
+    if (title === "Metric System") {
+      setUnit1(unit);
+      setUnit2(unit * 0.1);
+      setUnit3(unit * 0.01);
+      setUnit4(unit * 0.001);
+      setUnit5(unit * 0.000001);
+    }
+    if (title === "Imperial System") {
+      setUnit1(unit);
+      setUnit2(unit * 0.0833333);
+      setUnit3(unit * 0.0277778);
+      setUnit4(unit * 0.000568182);
+      setUnit5(unit * 0.000015783);
+    }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
-    console.log(event.target.value);
-    console.log(event.target.name);
 
     let baseValue: number;
     switch (inputName) {
