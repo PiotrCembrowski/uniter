@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function FileCard({
+export default function UnitCard({
   title,
   unitType,
 }: {
