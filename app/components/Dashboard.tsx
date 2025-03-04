@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import FileCard from "./FileCard";
 import { Plus } from "lucide-react";
 import Header from "./header/Header";
+import UnitDash from "./units/UnitDash";
 
 const Dashboard = () => {
   return (
@@ -63,7 +63,6 @@ const Dashboard = () => {
             Record
           </Button>
         </div>
-
         <div className="mb-6">
           <Tabs defaultValue="recent">
             <TabsList>
@@ -73,13 +72,7 @@ const Dashboard = () => {
             </TabsList>
           </Tabs>
         </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <FileCard title="Metric System" unitType="length" />
-          <FileCard title="Imperial System" unitType="length" />
-          <FileCard title="Sea Metric" unitType="length" />
-          <FileCard title="Astronomic Metric" unitType="length" />
-        </div>
+        <UnitDash />
       </div>
     </div>
   );
