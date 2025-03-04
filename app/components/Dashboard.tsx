@@ -72,7 +72,7 @@ const Dashboard = () => {
             </TabsList>
           </Tabs>
         </div>
-        <UnitDash />
+        <UnitDash unitType="length" />
       </div>
     </div>
   );

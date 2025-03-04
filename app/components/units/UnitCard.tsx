@@ -82,8 +82,6 @@ export default function FileCard({
           baseValue = inputValue;
       }
       Multiplier(baseValue);
-
-      // PRZENOSIMY DO PARENTA
     }
   };
 
