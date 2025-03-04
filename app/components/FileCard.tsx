@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function FileCard({
   title,
@@ -9,7 +9,6 @@ export default function FileCard({
   title: string;
   unitType: string;
 }) {
-  const [baseUnit, setBaseUnit] = useState<number>();
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
@@ -38,28 +37,54 @@ export default function FileCard({
     const inputValue = Number(event.target.value);
 
     let baseValue: number;
-    switch (inputName) {
-      case "unit1":
-        baseValue = inputValue;
-        break;
-      case "unit2":
-        baseValue = inputValue * 10;
-        break;
-      case "unit3":
-        baseValue = inputValue * 100;
-        break;
-      case "unit4":
-        baseValue = inputValue * 1000;
-        break;
-      case "unit5":
-        baseValue = inputValue * 1000000;
-        break;
-      default:
-        baseValue = inputValue;
+
+    if (title === "Imperial System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 12;
+          break;
+        case "unit3":
+          baseValue = inputValue * 36;
+          break;
+        case "unit4":
+          baseValue = inputValue * 63360;
+          break;
+        case "unit5":
+          baseValue = inputValue * 190000;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+      Multiplier(baseValue);
     }
 
-    setBaseUnit(baseValue);
-    Multiplier(baseValue);
+    if (title === "Metric System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 10;
+          break;
+        case "unit3":
+          baseValue = inputValue * 100;
+          break;
+        case "unit4":
+          baseValue = inputValue * 1000;
+          break;
+        case "unit5":
+          baseValue = inputValue * 1000000;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+      Multiplier(baseValue);
+
+      // PRZENOSIMY DO PARENTA
+    }
   };
 
   return (
