@@ -10,15 +10,17 @@ export type ValuesMetric = {
   unit5: number;
 };
 
+interface UnitCardProps {
+  title: string;
+  value?: ValuesMetric;
+  onChange: (value: string) => void;
+}
+
 export default function UnitCard({
   title,
-  value,
+  value = { unit1: 0, unit2: 0, unit3: 0, unit4: 0, unit5: 0 },
   onChange,
-}: {
-  title: string;
-  value: ValuesMetric;
-  onChange: (value: string) => void;
-}) {
+}: UnitCardProps) {
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
