@@ -2,12 +2,22 @@
 
 import { useState } from "react";
 
+export type ValuesMetric = {
+  unit1: number;
+  unit2: number;
+  unit3: number;
+  unit4: number;
+  unit5: number;
+};
+
 export default function UnitCard({
   title,
-  unitType,
+  value,
+  onChange,
 }: {
   title: string;
-  unitType: string;
+  value: ValuesMetric;
+  onChange: (value: string) => void;
 }) {
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
@@ -89,7 +99,7 @@ export default function UnitCard({
     <div className="group relative overflow-hidden rounded-lg border bg-white">
       <div className="aspect-[4/3] p-3">
         <div className="mb-8">
-          <h3 className="font-medium text-gray-900">{title}</h3>
+          <h3 className="font-medium text-gray-900"></h3>
         </div>
         <div>
           <label>millimeter [mm]</label>
@@ -99,7 +109,7 @@ export default function UnitCard({
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={unit1}
+            value={value.unit1}
           />
         </div>
         <div>
