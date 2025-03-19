@@ -111,7 +111,7 @@ export default function UnitCard({
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value.unit1}
+            value={unit1}
           />
         </div>
         <div>
