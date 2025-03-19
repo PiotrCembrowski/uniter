@@ -1,0 +1,20 @@
+import { configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = { units: 0 };
+
+const unitsSlice = createSlice({
+  name: "units",
+  initialState,
+  reducers: {
+    newState: (state) => (state = state),
+  },
+});
+
+const store = configureStore({
+  reducer: {
+    units: unitsSlice.reducer,
+  },
+});
+
+export default store;
