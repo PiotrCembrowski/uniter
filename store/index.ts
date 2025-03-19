@@ -15,4 +15,6 @@ const store = configureStore({
   reducer: unitsSlice.reducer,
 });
 
+export const { newState } = unitsSlice.actions;
+
 export default store;
