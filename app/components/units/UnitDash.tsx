@@ -3,16 +3,12 @@
 import React from "react";
 import UnitCard, { ValuesMetric } from "./UnitCard";
 import { useState } from "react";
-import { newState } from "@/store";
-import { useDispatch } from "react-redux";
 
 interface UnitDashProps {
   unitType: string;
 }
 
 const UnitDash: React.FC<UnitDashProps> = ({ unitType }) => {
-  const dispatch = useDispatch();
-
   const [metricValue, setMetricValue] = useState<ValuesMetric>({
     unit1: 0,
     unit2: 0,

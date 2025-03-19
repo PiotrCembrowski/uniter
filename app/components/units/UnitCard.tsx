@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { newState } from "@/store";
+import { useDispatch } from "react-redux";
 
 export type ValuesMetric = {
   unit1: number;
@@ -21,6 +23,8 @@ export default function UnitCard({
   value = { unit1: 0, unit2: 0, unit3: 0, unit4: 0, unit5: 0 },
   onChange,
 }: UnitCardProps) {
+  const dispatch = useDispatch();
+
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
