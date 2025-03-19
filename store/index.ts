@@ -12,9 +12,7 @@ const unitsSlice = createSlice({
 });
 
 const store = configureStore({
-  reducer: {
-    units: unitsSlice.reducer,
-  },
+  reducer: unitsSlice.reducer,
 });
 
 export default store;
