@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { newState } from "@/store";
 import { useDispatch } from "react-redux";
+import { useAppSelector } from "@/store/hooks";
 
 export type ValuesMetric = {
   unit1: number;
@@ -31,7 +32,7 @@ export default function UnitCard({
 
   let baseValue: number;
   const dispatch = useDispatch();
-
+  const showUnit = useAppSelector((state) => state.units);
   const baseUnitHandler = () => {
     dispatch(newState(baseValue));
   };
