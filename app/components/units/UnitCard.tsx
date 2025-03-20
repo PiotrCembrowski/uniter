@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { newState } from "@/store";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "@/store/hooks";
 
 export type ValuesMetric = {
   unit1: number;
@@ -19,20 +18,18 @@ interface UnitCardProps {
   onChange: (value: string) => void;
 }
 
-export default function UnitCard({
-  title,
-  value = { unit1: 0, unit2: 0, unit3: 0, unit4: 0, unit5: 0 },
-  onChange,
-}: UnitCardProps) {
+export default function UnitCard({ title, value, onChange }: UnitCardProps) {
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
   const [unit4, setUnit4] = useState<number>(0);
   const [unit5, setUnit5] = useState<number>(0);
 
+  console.log(value);
+
   let baseValue: number;
   const dispatch = useDispatch();
-  const showUnit = useAppSelector((state) => state.units);
+
   const baseUnitHandler = () => {
     dispatch(newState(baseValue));
   };
@@ -55,9 +52,6 @@ export default function UnitCard({
       setUnit5(unit * 0.000015783);
     }
   };
-  useEffect(() => {
-    console.log(showUnit);
-  }, [showUnit]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
