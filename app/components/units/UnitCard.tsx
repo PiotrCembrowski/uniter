@@ -23,13 +23,18 @@ export default function UnitCard({
   value = { unit1: 0, unit2: 0, unit3: 0, unit4: 0, unit5: 0 },
   onChange,
 }: UnitCardProps) {
-  const dispatch = useDispatch();
-
   const [unit1, setUnit1] = useState<number>(0);
   const [unit2, setUnit2] = useState<number>(0);
   const [unit3, setUnit3] = useState<number>(0);
   const [unit4, setUnit4] = useState<number>(0);
   const [unit5, setUnit5] = useState<number>(0);
+
+  let baseValue: number;
+  const dispatch = useDispatch();
+
+  const baseUnitHandler = () => {
+    dispatch(newState(baseValue));
+  };
 
   const Multiplier = (unit: number) => {
     if (title === "Metric System") {
@@ -51,8 +56,6 @@ export default function UnitCard({
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
-
-    let baseValue: number;
 
     if (title === "Imperial System") {
       switch (inputName) {
