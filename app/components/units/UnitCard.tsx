@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { newState } from "@/store";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "@/store/hooks";
@@ -38,6 +38,8 @@ export default function UnitCard({
   };
 
   const Multiplier = (unit: number) => {
+    dispatch(newState(baseValue));
+
     if (title === "Metric System") {
       setUnit1(unit);
       setUnit2(unit * 0.1);
@@ -53,6 +55,9 @@ export default function UnitCard({
       setUnit5(unit * 0.000015783);
     }
   };
+  useEffect(() => {
+    console.log(showUnit);
+  }, [showUnit]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
