@@ -8,25 +8,28 @@ import { useAppSelector } from "@/store/hooks";
 const UnitDash = () => {
   const showValue = useAppSelector((state) => state.units);
 
+  const [metricValue, setMetricValue] = useState<ValuesMetric>();
+
+  const [imperialValue, setImperialValue] = useState<ValuesMetric>();
+
   useEffect(() => {
+    setImperialValue({
+      unit1: showValue,
+      unit2: showValue * 0.083,
+      unit3: showValue * 0.0277778,
+      unit4: showValue * 0.000568182,
+      unit5: showValue * 0.000015783,
+    });
+    setMetricValue({
+      unit1: showValue,
+      unit2: showValue * 0.1,
+      unit3: showValue * 0.01,
+      unit4: showValue * 0.001,
+      unit5: showValue * 0.000001,
+    });
+
     console.log(showValue);
   }, [showValue]);
-
-  const [metricValue, setMetricValue] = useState<ValuesMetric>({
-    unit1: showValue,
-    unit2: showValue * 0.1,
-    unit3: showValue * 0.01,
-    unit4: showValue * 0.001,
-    unit5: showValue * 0.000001,
-  });
-
-  const [imperialValue, setImperialValue] = useState<ValuesMetric>({
-    unit1: showValue,
-    unit2: showValue * 0.083,
-    unit3: showValue * 0.0277778,
-    unit4: showValue * 0.000568182,
-    unit5: showValue * 0.000015783,
-  });
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
