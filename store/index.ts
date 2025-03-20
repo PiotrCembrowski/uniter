@@ -13,10 +13,18 @@ const unitsSlice = createSlice({
   },
 });
 
-const store = configureStore({
-  reducer: unitsSlice.reducer,
-});
+export const store = () => {
+  return configureStore({
+    reducer: unitsSlice.reducer,
+  });
+};
 
 export const { newState } = unitsSlice.actions;
 
 export default store;
+
+// Infer the type of Store
+export type AppStore = ReturnType<typeof store>;
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = AppStore["dispatch"];
