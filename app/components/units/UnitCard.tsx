@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { newState } from "@/store";
 import { useDispatch } from "react-redux";
 
@@ -18,13 +18,36 @@ interface UnitCardProps {
 }
 
 export default function UnitCard({ title, value }: UnitCardProps) {
+  const [unit1Name, setUnit1Name] = useState<string>();
+  const [unit2Name, setUnit2Name] = useState<string>();
+  const [unit3Name, setUnit3Name] = useState<string>();
+  const [unit4Name, setUnit4Name] = useState<string>();
+  const [unit5Name, setUnit5Name] = useState<string>();
+
+  useEffect(() => {
+    if (title === "Imperial System") {
+      setUnit1Name("Inch [in]");
+      setUnit2Name("Foot [ft]");
+      setUnit3Name("Yard [yd]");
+      setUnit4Name("Mile [mi]");
+      setUnit5Name("league [lea]");
+    }
+    if (title === "Metric System") {
+      setUnit1Name("Millimeter [mm]");
+      setUnit2Name("Centimeter [cm]");
+      setUnit3Name("Decimeter [dm]");
+      setUnit4Name("Meter [m]");
+      setUnit5Name("Kilometer [km]");
+    }
+  }, [title]);
+
   console.log(value);
 
   let baseValue: number;
   const dispatch = useDispatch();
 
   const Multiplier = (unit: number) => {
-    dispatch(newState(baseValue));
+    dispatch(newState(unit));
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,10 +109,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <h3 className="font-medium text-gray-900"></h3>
         </div>
         <div>
-          <label>millimeter [mm]</label>
+          <label>{unit1Name}</label>
           <br />
           <input
-            name="unit1"
+            name={unit1Name}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -97,10 +120,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           />
         </div>
         <div>
-          <label htmlFor="">centimeter [cm]</label>
+          <label htmlFor="">{unit2Name}</label>
           <br />
           <input
-            name="unit2"
+            name={unit2Name}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -108,10 +131,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           />
         </div>
         <div>
-          <label htmlFor="">decimeter [dm]</label>
+          <label htmlFor="">{unit3Name}</label>
           <br />
           <input
-            name="unit3"
+            name={unit3Name}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -119,10 +142,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           />
         </div>
         <div>
-          <label htmlFor="">meter [m]</label>
+          <label htmlFor="">{unit4Name}</label>
           <br />
           <input
-            name="unit4"
+            name={unit4Name}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -130,10 +153,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           />
         </div>
         <div>
-          <label htmlFor="">kilometer [km]</label>
+          <label htmlFor="">{unit5Name}</label>
           <br />
           <input
-            name="unit5"
+            name={unit5Name}
             className="border-2"
             type="text"
             onChange={handleChange}
