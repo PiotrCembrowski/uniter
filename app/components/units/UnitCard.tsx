@@ -18,43 +18,19 @@ interface UnitCardProps {
 }
 
 export default function UnitCard({ title, value }: UnitCardProps) {
-  const [unit1, setUnit1] = useState<number>(0);
-  const [unit2, setUnit2] = useState<number>(0);
-  const [unit3, setUnit3] = useState<number>(0);
-  const [unit4, setUnit4] = useState<number>(0);
-  const [unit5, setUnit5] = useState<number>(0);
-
   console.log(value);
 
   let baseValue: number;
   const dispatch = useDispatch();
 
-  const baseUnitHandler = () => {
-    dispatch(newState(baseValue));
-  };
-
   const Multiplier = (unit: number) => {
     dispatch(newState(baseValue));
-
-    if (title === "Metric System") {
-      setUnit1(unit);
-      setUnit2(unit * 0.1);
-      setUnit3(unit * 0.01);
-      setUnit4(unit * 0.001);
-      setUnit5(unit * 0.000001);
-    }
-    if (title === "Imperial System") {
-      setUnit1(unit);
-      setUnit2(unit * 0.0833333);
-      setUnit3(unit * 0.0277778);
-      setUnit4(unit * 0.000568182);
-      setUnit5(unit * 0.000015783);
-    }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
+    console.log(inputName);
 
     if (title === "Imperial System") {
       switch (inputName) {
@@ -117,7 +93,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={unit1}
+            value={value?.unit1}
           />
         </div>
         <div>
@@ -128,7 +104,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={unit2}
+            value={value?.unit2}
           />
         </div>
         <div>
@@ -139,7 +115,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={unit3}
+            value={value?.unit3}
           />
         </div>
         <div>
@@ -150,7 +126,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={unit4}
+            value={value?.unit4}
           />
         </div>
         <div>
@@ -161,7 +137,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={unit5}
+            value={value?.unit5}
           />
         </div>
       </div>
