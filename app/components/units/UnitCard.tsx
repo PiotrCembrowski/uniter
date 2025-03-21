@@ -53,7 +53,9 @@ export default function UnitCard({ title, value }: UnitCardProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
-    console.log(inputName);
+    const inputTitle = event.target.dataset.title;
+    let properValue: number;
+    console.log(inputTitle);
 
     if (title === "Imperial System") {
       switch (inputName) {
@@ -112,55 +114,60 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <label>{unit1Name}</label>
           <br />
           <input
-            name={title}
+            name="unit1"
             className="border-2"
             type="text"
             onChange={handleChange}
             value={value?.unit1}
+            data-title={title}
           />
         </div>
         <div>
           <label htmlFor="">{unit2Name}</label>
           <br />
           <input
-            name={title}
+            name="unit2"
             className="border-2"
             type="text"
             onChange={handleChange}
             value={value?.unit2}
+            data-title={title}
           />
         </div>
         <div>
           <label htmlFor="">{unit3Name}</label>
           <br />
           <input
-            name={title}
+            name="unit3"
             className="border-2"
             type="text"
             onChange={handleChange}
             value={value?.unit3}
+            data-title={title}
           />
         </div>
         <div>
           <label htmlFor="">{unit4Name}</label>
           <br />
           <input
-            name={title}
+            name="unit4"
             className="border-2"
             type="text"
             onChange={handleChange}
             value={value?.unit4}
+            data-title={title}
           />
         </div>
         <div>
           <label htmlFor="">{unit5Name}</label>
           <br />
           <input
-            name={title}
+            name="unit5"
             className="border-2"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
+            data-title={title}
           />
         </div>
       </div>
