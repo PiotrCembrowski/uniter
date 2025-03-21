@@ -112,7 +112,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <label>{unit1Name}</label>
           <br />
           <input
-            name={unit1Name}
+            name={title}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -123,7 +123,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <label htmlFor="">{unit2Name}</label>
           <br />
           <input
-            name={unit2Name}
+            name={title}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -134,7 +134,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <label htmlFor="">{unit3Name}</label>
           <br />
           <input
-            name={unit3Name}
+            name={title}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -145,7 +145,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <label htmlFor="">{unit4Name}</label>
           <br />
           <input
-            name={unit4Name}
+            name={title}
             className="border-2"
             type="text"
             onChange={handleChange}
@@ -156,7 +156,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           <label htmlFor="">{unit5Name}</label>
           <br />
           <input
-            name={unit5Name}
+            name={title}
             className="border-2"
             type="text"
             onChange={handleChange}
