@@ -46,15 +46,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
   let baseValue: number;
   const dispatch = useDispatch();
 
-  const Multiplier = (unit: number) => {
-    dispatch(newState(unit));
-  };
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
-    let properValue: number;
     console.log(inputTitle);
 
     if (title === "Imperial System") {
@@ -77,7 +72,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      Multiplier(baseValue);
+      dispatch(newState(baseValue));
     }
 
     if (title === "Metric System") {
@@ -100,7 +95,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      Multiplier(baseValue);
+      dispatch(newState(baseValue));
     }
   };
 
