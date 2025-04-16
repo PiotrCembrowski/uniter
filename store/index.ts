@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { units: 0 };
 
-const unitsSlice = createSlice({
-  name: "units",
+const metricUnitsSlice = createSlice({
+  name: "metricUnits",
   initialState,
   reducers: {
     newState: (state, action: PayloadAction<number>) => {
@@ -15,11 +15,11 @@ const unitsSlice = createSlice({
 
 export const store = () => {
   return configureStore({
-    reducer: unitsSlice.reducer,
+    reducer: metricUnitsSlice.reducer,
   });
 };
 
-export const { newState } = unitsSlice.actions;
+export const { newState } = metricUnitsSlice.actions;
 
 export default store;
 
