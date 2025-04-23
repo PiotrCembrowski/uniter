@@ -13,6 +13,16 @@ const metricUnitsSlice = createSlice({
   },
 });
 
+const imperialSlice = createSlice({
+  name: "imperialUnits",
+  initialState,
+  reducers: {
+    newState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+  },
+});
+
 export const store = () => {
   return configureStore({
     reducer: metricUnitsSlice.reducer,
