@@ -25,7 +25,10 @@ const imperialSlice = createSlice({
 
 export const store = () => {
   return configureStore({
-    reducer: metricUnitsSlice.reducer,
+    reducer: {
+      metricUnits: metricUnitsSlice.reducer,
+      imperialUnits: imperialSlice.reducer,
+    },
   });
 };
 
