@@ -7,7 +7,7 @@ const metricUnitsSlice = createSlice({
   name: "metricUnits",
   initialState,
   reducers: {
-    newState: (state, action: PayloadAction<number>) => {
+    newMetricState: (state, action: PayloadAction<number>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -17,7 +17,7 @@ const imperialSlice = createSlice({
   name: "imperialUnits",
   initialState,
   reducers: {
-    newState: (state, action: PayloadAction<number>) => {
+    newImperialState: (state, action: PayloadAction<number>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -32,7 +32,8 @@ export const store = () => {
   });
 };
 
-export const { newState } = metricUnitsSlice.actions;
+export const { newMetricState } = metricUnitsSlice.actions;
+export const { newImperialState } = imperialSlice.actions;
 
 export default store;
 
