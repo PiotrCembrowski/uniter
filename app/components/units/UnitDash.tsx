@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 
 const UnitDash = () => {
-  const showValue = useAppSelector((state) => state.units);
+  const showValue = useAppSelector((state) => state.metricUnits.units);
 
   const [metricValue, setMetricValue] = useState<ValuesMetric>();
 
