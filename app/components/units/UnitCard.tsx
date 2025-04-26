@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { newState } from "@/store";
+import { newImperialState, newMetricState } from "@/store";
 import { useDispatch } from "react-redux";
 
 export type ValuesMetric = {
@@ -76,7 +76,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      dispatch(newState(baseValue));
+      dispatch(newMetricState(baseValue));
     }
 
     if (title === "Metric System") {
@@ -99,7 +99,7 @@ export default function UnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      dispatch(newState(baseValue));
+      dispatch(newMetricState(baseValue));
     }
   };
 
