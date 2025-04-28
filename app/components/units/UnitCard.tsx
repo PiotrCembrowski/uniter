@@ -77,6 +77,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           baseValue = inputValue;
       }
       dispatch(newMetricState(baseValue));
+
+      imperialValue = baseValue / 2.54;
+      dispatch(newImperialState(imperialValue));
+      console.log(imperialValue);
     }
 
     if (title === "Metric System") {
