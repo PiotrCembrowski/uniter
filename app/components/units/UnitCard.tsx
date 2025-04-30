@@ -56,7 +56,10 @@ export default function UnitCard({ title, value }: UnitCardProps) {
     const inputTitle = event.target.dataset.title;
     console.log(inputTitle);
 
-    if (title === "Imperial System") {
+    if (title === "Imperial System" && inputTitle === "Imperial System") {
+      metricValue = inputValue * 25.4;
+      console.log(metricValue);
+
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;

@@ -6,7 +6,10 @@ import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 
 const UnitDash = () => {
-  const showValue = useAppSelector((state) => state.metricUnits.units);
+  const showMetricValue = useAppSelector((state) => state.metricUnits.units);
+  const showImperialValue = useAppSelector(
+    (state) => state.imperialUnits.units
+  );
 
   const [metricValue, setMetricValue] = useState<ValuesMetric>();
 
@@ -14,22 +17,22 @@ const UnitDash = () => {
 
   useEffect(() => {
     setImperialValue({
-      unit1: showValue,
-      unit2: showValue * 0.083,
-      unit3: showValue * 0.0277778,
-      unit4: showValue * 0.000568182,
-      unit5: showValue * 0.000015783,
+      unit1: showImperialValue,
+      unit2: showImperialValue * 0.083,
+      unit3: showImperialValue * 0.0277778,
+      unit4: showImperialValue * 0.000568182,
+      unit5: showImperialValue * 0.000015783,
     });
     setMetricValue({
-      unit1: showValue,
-      unit2: showValue * 0.1,
-      unit3: showValue * 0.01,
-      unit4: showValue * 0.001,
-      unit5: showValue * 0.000001,
+      unit1: showMetricValue,
+      unit2: showMetricValue * 0.1,
+      unit3: showMetricValue * 0.01,
+      unit4: showMetricValue * 0.001,
+      unit5: showMetricValue * 0.000001,
     });
 
-    console.log(showValue);
-  }, [showValue]);
+    console.log(showMetricValue, showImperialValue);
+  }, [showMetricValue, showImperialValue]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
