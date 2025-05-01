@@ -57,52 +57,56 @@ export default function UnitCard({ title, value }: UnitCardProps) {
     console.log(inputTitle);
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
-      metricValue = inputValue * 25.4;
-      console.log(metricValue);
-
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
+          metricValue = baseValue * 25.4;
           break;
         case "unit2":
           baseValue = inputValue * 12;
+          metricValue = baseValue * 25.4;
           break;
         case "unit3":
           baseValue = inputValue * 36;
+          metricValue = inputValue * 2540;
           break;
         case "unit4":
           baseValue = inputValue * 63360;
+          metricValue = inputValue * 25400;
           break;
         case "unit5":
           baseValue = inputValue * 190000;
+          metricValue = inputValue * 254000;
           break;
         default:
           baseValue = inputValue;
       }
-
-      console.log(baseValue);
 
       dispatch(newImperialState(baseValue));
       dispatch(newMetricState(metricValue));
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
-      imperialValue = inputValue / 25.4;
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
+          imperialValue = inputValue / 0.254;
           break;
         case "unit2":
           baseValue = inputValue * 10;
+          imperialValue = inputValue / 0.0254;
           break;
         case "unit3":
           baseValue = inputValue * 100;
+          imperialValue = inputValue / 0.00254;
           break;
         case "unit4":
           baseValue = inputValue * 1000;
+          imperialValue = inputValue / 0.000254;
           break;
         case "unit5":
           baseValue = inputValue * 1000000;
+          imperialValue = inputValue / 0.0000254;
           break;
         default:
           baseValue = inputValue;

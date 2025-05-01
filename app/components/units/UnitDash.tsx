@@ -30,8 +30,6 @@ const UnitDash = () => {
       unit4: showMetricValue * 0.001,
       unit5: showMetricValue * 0.000001,
     });
-
-    console.log(showMetricValue, showImperialValue);
   }, [showMetricValue, showImperialValue]);
 
   return (
