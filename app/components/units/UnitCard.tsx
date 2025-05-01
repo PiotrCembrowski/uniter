@@ -68,15 +68,15 @@ export default function UnitCard({ title, value }: UnitCardProps) {
           break;
         case "unit3":
           baseValue = inputValue * 36;
-          metricValue = inputValue * 2540;
+          metricValue = baseValue * 25.4;
           break;
         case "unit4":
           baseValue = inputValue * 63360;
-          metricValue = inputValue * 25400;
+          metricValue = baseValue * 25.4;
           break;
         case "unit5":
           baseValue = inputValue * 190000;
-          metricValue = inputValue * 254000;
+          metricValue = baseValue * 25.4;
           break;
         default:
           baseValue = inputValue;
