@@ -90,23 +90,23 @@ export default function UnitCard({ title, value }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          imperialValue = inputValue / 0.254;
+          imperialValue = baseValue / 25.4;
           break;
         case "unit2":
           baseValue = inputValue * 10;
-          imperialValue = inputValue / 0.0254;
+          imperialValue = baseValue / 25.4;
           break;
         case "unit3":
           baseValue = inputValue * 100;
-          imperialValue = inputValue / 0.00254;
+          imperialValue = baseValue / 25.4;
           break;
         case "unit4":
           baseValue = inputValue * 1000;
-          imperialValue = inputValue / 0.000254;
+          imperialValue = baseValue / 25.4;
           break;
         case "unit5":
           baseValue = inputValue * 1000000;
-          imperialValue = inputValue / 0.0000254;
+          imperialValue = baseValue / 25.4;
           break;
         default:
           baseValue = inputValue;
