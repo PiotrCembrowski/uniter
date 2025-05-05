@@ -1,4 +1,4 @@
-import { connfigureStore, PayloadAction } from "@reduxjs/toolkit";
+import { configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { metricDash: 1, imperialDash: 0 };
@@ -22,7 +22,7 @@ const imperialDashSlice = createSlice({
   },
 });
 export const store = () => {
-  return connfigureStore({
+  return configureStore({
     reducer: {
       metricDash: metricDashSlice.reducer,
       imperialDash: imperialDashSlice.reducer,

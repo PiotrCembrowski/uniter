@@ -1,5 +1,6 @@
 import { configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
+import { createWrapper } from "next-redux-wrapper";
 
 const initialState = { units: 0 };
 
@@ -42,3 +43,5 @@ export type AppStore = ReturnType<typeof store>;
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<AppStore["getState"]>;
 export type AppDispatch = AppStore["dispatch"];
+
+export const wrapper = createWrapper<AppStore>(store);
