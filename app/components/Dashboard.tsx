@@ -1,6 +1,7 @@
 import Header from "./header/Header";
 import MetricUnitDash from "./units/MetricUnitDash";
 import StoreProvider from "../StoreProvider";
+import MassUnitDash from "./units/MassUnitDash";
 
 const Dashboard = () => {
   return (
@@ -9,6 +10,7 @@ const Dashboard = () => {
         <Header />
         <div className="p-6">
           <MetricUnitDash />
+          <MassUnitDash />
         </div>
       </div>
     </StoreProvider>
