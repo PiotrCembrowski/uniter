@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect } from "react";
-import UnitCard, { ValuesMetric } from "./UnitCard";
+import UnitCard, { ValuesMetric } from "./MetricUnitCard";
 import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 
-const UnitDash = () => {
+const MetricUnitDash = () => {
   const showMetricValue = useAppSelector((state) => state.metricUnits.units);
   const showImperialValue = useAppSelector(
     (state) => state.imperialUnits.units
@@ -42,4 +42,4 @@ const UnitDash = () => {
   );
 };
 
-export default UnitDash;
+export default MetricUnitDash;

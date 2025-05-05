@@ -57,8 +57,8 @@ const SideBar = () => {
             Collections
           </div>
           <div className="mt-2">
-            <FolderItem href="#">Product Demos</FolderItem>
-            <FolderItem href="#">Case Studies</FolderItem>
+            <FolderItem href="#">Length units</FolderItem>
+            <FolderItem href="#">Mass units</FolderItem>
             <FolderItem href="#">Sales Collateral</FolderItem>
             <FolderItem href="#">Training Materials</FolderItem>
           </div>

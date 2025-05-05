@@ -1,5 +1,5 @@
 import Header from "./header/Header";
-import UnitDash from "./units/UnitDash";
+import MetricUnitDash from "./units/MetricUnitDash";
 import StoreProvider from "../StoreProvider";
 
 const Dashboard = () => {
@@ -8,7 +8,7 @@ const Dashboard = () => {
       <div className="flex-1">
         <Header />
         <div className="p-6">
-          <UnitDash />
+          <MetricUnitDash />
         </div>
       </div>
     </StoreProvider>

@@ -17,7 +17,7 @@ interface UnitCardProps {
   value?: ValuesMetric;
 }
 
-export default function UnitCard({ title, value }: UnitCardProps) {
+export default function MetricUnitCard({ title, value }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
