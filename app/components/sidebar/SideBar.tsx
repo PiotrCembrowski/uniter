@@ -1,7 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
 import { LayoutGrid } from "lucide-react";
-import FolderItem from "../FolderItem";
+import UnitTypes from "./UnitTypes";
 
 const SideBar = () => {
   return (
@@ -56,12 +56,7 @@ const SideBar = () => {
           <div className="px-3 text-xs font-medium uppercase text-gray-500">
             Collections
           </div>
-          <div className="mt-2">
-            <FolderItem href="#">Length units</FolderItem>
-            <FolderItem href="#">Mass units</FolderItem>
-            <FolderItem href="#">Sales Collateral</FolderItem>
-            <FolderItem href="#">Training Materials</FolderItem>
-          </div>
+          <UnitTypes />
         </div>
       </nav>
     </div>
