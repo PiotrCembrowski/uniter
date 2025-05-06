@@ -1,16 +1,42 @@
-import React from "react";
+"use client";
+
 import FolderItem from "../FolderItem";
 import { useDispatch } from "react-redux";
 import { newImperialDashState, newMetricDashState } from "@/store/dashOperator";
 
 const UnitTypes = () => {
   const dispatch = useDispatch();
+
+  const showHide = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const target = event.currentTarget.innerText;
+
+    if (target === "Length units") {
+      dispatch(newMetricDashState(true));
+      dispatch(newImperialDashState(false));
+    }
+
+    if (target === "Mass units") {
+      dispatch(newImperialDashState(true));
+      dispatch(newMetricDashState(false));
+    }
+  };
+
   return (
     <div className="mt-2">
-      <FolderItem href="#">Length units</FolderItem>
-      <FolderItem href="#">Mass units</FolderItem>
-      <FolderItem href="#">Sales Collateral</FolderItem>
-      <FolderItem href="#">Training Materials</FolderItem>
+      <FolderItem href="#" onClick={showHide}>
+        Length units
+      </FolderItem>
+      <FolderItem href="#" onClick={showHide}>
+        Mass units
+      </FolderItem>
+      <FolderItem href="#" onClick={showHide}>
+        Sales Collateral
+      </FolderItem>
+      <FolderItem href="#" onClick={showHide}>
+        Training Materials
+      </FolderItem>
     </div>
   );
 };

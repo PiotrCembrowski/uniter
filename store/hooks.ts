@@ -1,4 +1,9 @@
-import { useDispatch, useSelector, useStore } from "react-redux";
+import {
+  TypedUseSelectorHook,
+  useDispatch,
+  useSelector,
+  useStore,
+} from "react-redux";
 import type { RootState, AppDispatch, AppStore } from "./index";
 import type {
   RootDashState,
@@ -7,10 +12,12 @@ import type {
 } from "./dashOperator";
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
-export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
-export const useAppSelector = useSelector.withTypes<RootState>();
-export const useAppStore = useStore.withTypes<AppStore>();
+// export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppStore: () => AppStore = useStore;
 
-export const useAppDashDispatch = useDispatch.withTypes<AppDashDispatch>();
-export const useAppDashSelector = useSelector.withTypes<RootDashState>();
-export const useAppDashStore = useStore.withTypes<AppDashStore>();
+export const useAppDashDsipatch: () => AppDashDispatch = useDispatch;
+export const useAppDashSelector: TypedUseSelectorHook<RootDashState> =
+  useSelector;
+export const useAppDashStore: () => AppDashStore = useStore;
