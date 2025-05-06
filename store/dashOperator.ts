@@ -45,9 +45,9 @@ export const { newImperialDashState } = imperialDashSlice.actions;
 export default store;
 
 // Infer the type of Store
-export type AppStore = ReturnType<typeof store>;
+export type AppDashStore = ReturnType<typeof store>;
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore["getState"]>;
-export type AppDispatch = AppStore["dispatch"];
+export type RootDashState = ReturnType<AppDashStore["getState"]>;
+export type AppDashDispatch = AppDashStore["dispatch"];
 
 export const wrapper = createWrapper(store);

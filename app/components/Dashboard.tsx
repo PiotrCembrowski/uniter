@@ -2,14 +2,14 @@ import Header from "./header/Header";
 import MetricUnitDash from "./units/MetricUnitDash";
 import StoreProvider from "../StoreProvider";
 import MassUnitDash from "./units/MassUnitDash";
-import { useAppSelector } from "@/store/hooks";
+import { useAppDashSelector } from "@/store/hooks";
 
 const Dashboard = () => {
-  const showMetricDash = useAppSelector(
+  const showMetricDash = useAppDashSelector(
     (state) => state.metricDash.showMetricDash
   );
 
-  const showImperialDash = useAppSelector(
+  const showImperialDash = useAppDashSelector(
     (state) => state.imperialDash.showImperialDash
   );
 
