@@ -23,12 +23,10 @@ const Dashboard = () => {
   }
 
   return (
-    <StoreProvider>
-      <div className="flex-1">
-        <Header />
-        <div className="p-6">{content}</div>
-      </div>
-    </StoreProvider>
+    <div className="flex-1">
+      <Header />
+      <div className="p-6">{content}</div>
+    </div>
   );
 };
 
