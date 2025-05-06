@@ -3,18 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
 interface DashState {
-  metricDash: boolean;
-  imperialDash: boolean;
+  showMetricDash: boolean;
+  showImperialDash: boolean;
 }
 
-const initialState: DashState = { metricDash: true, imperialDash: false };
+const initialState: DashState = {
+  showMetricDash: true,
+  showImperialDash: false,
+};
 
 const metricDashSlice = createSlice({
   name: "metricDash",
   initialState,
   reducers: {
     newMetricDashState: (state, action: PayloadAction<boolean>) => {
-      return { ...state, metricDash: action.payload };
+      return { ...state, showMetricDash: action.payload };
     },
   },
 });
@@ -23,7 +26,7 @@ const imperialDashSlice = createSlice({
   initialState,
   reducers: {
     newImperialDashState: (state, action: PayloadAction<boolean>) => {
-      return { ...state, imperialDash: action.payload };
+      return { ...state, showImperialDash: action.payload };
     },
   },
 });
