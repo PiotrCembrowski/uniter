@@ -7,7 +7,6 @@ const initialState = {
   showMetricDash: true,
   showImperialDash: false,
 };
-//
 
 const dashSlice = createSlice({
   name: "dash",
