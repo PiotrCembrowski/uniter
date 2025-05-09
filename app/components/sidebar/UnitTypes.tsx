@@ -18,8 +18,8 @@ const UnitTypes = () => {
     }
 
     if (target === "Mass units") {
-      dispatch(setShowLengthDash(true));
-      dispatch(setShowMassDash(false));
+      dispatch(setShowLengthDash(false));
+      dispatch(setShowMassDash(true));
     }
   };
 
