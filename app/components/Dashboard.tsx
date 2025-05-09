@@ -1,17 +1,22 @@
+"use client";
+
 import Header from "./header/Header";
 import MetricUnitDash from "./units/MetricUnitDash";
-import StoreProvider from "../StoreProvider";
 import MassUnitDash from "./units/MassUnitDash";
 import { useAppDashSelector } from "@/store/hooks";
 
 const Dashboard = () => {
   const showMetricDash = useAppDashSelector(
-    (state) => state.metricDash.showMetricDash
+    (state) => state.metricDash?.showMetricDash
   );
 
+  console.log("showMetricDash", showMetricDash);
+
   const showImperialDash = useAppDashSelector(
-    (state) => state.imperialDash.showImperialDash
+    (state) => state.imperialDash?.showImperialDash
   );
+
+  console.log("showImperialDash", showMetricDash);
 
   let content;
 

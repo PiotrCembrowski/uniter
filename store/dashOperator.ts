@@ -1,4 +1,8 @@
-import { configureStore, PayloadAction } from "@reduxjs/toolkit";
+import {
+  combineReducers,
+  configureStore,
+  PayloadAction,
+} from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
@@ -12,35 +16,32 @@ const initialState: DashState = {
   showImperialDash: false,
 };
 
-const metricDashSlice = createSlice({
-  name: "metricDash",
+const dashSlice = createSlice({
+  name: "dash",
   initialState,
   reducers: {
-    newMetricDashState: (state, action: PayloadAction<boolean>) => {
-      return { ...state, showMetricDash: action.payload };
+    setShowMetricDash: (state, action: PayloadAction<boolean>) => {
+      state.showMetricDash = action.payload;
+    },
+    setShowImperialDash: (state, action: PayloadAction<boolean>) => {
+      state.showImperialDash = action.payload;
     },
   },
 });
-const imperialDashSlice = createSlice({
-  name: "imperialDash",
-  initialState,
-  reducers: {
-    newImperialDashState: (state, action: PayloadAction<boolean>) => {
-      return { ...state, showImperialDash: action.payload };
-    },
-  },
+
+const rootReducer = combineReducers({
+  dash: dashSlice.reducer,
 });
+
 export const store = () => {
   return configureStore({
     reducer: {
-      metricDash: metricDashSlice.reducer,
-      imperialDash: imperialDashSlice.reducer,
+      dash: rootReducer,
     },
   });
 };
 
-export const { newMetricDashState } = metricDashSlice.actions;
-export const { newImperialDashState } = imperialDashSlice.actions;
+export const { setShowMetricDash, setShowImperialDash } = dashSlice.actions;
 
 export default store;
 
