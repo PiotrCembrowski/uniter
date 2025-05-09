@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import UnitCard, { ValuesMetric } from "./MetricUnitCard";
+import UnitCard, { ValuesMetric } from "./LengthUnitCard";
 import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 
