@@ -5,7 +5,7 @@ import { createWrapper } from "next-redux-wrapper";
 const initialState = {
   units: 0,
   showLengthDash: true,
-  setShowMassDash: false,
+  showMassDash: false,
 };
 
 const dashSlice = createSlice({
@@ -16,7 +16,7 @@ const dashSlice = createSlice({
       state.showLengthDash = action.payload;
     },
     setShowMassDash: (state, action: PayloadAction<boolean>) => {
-      state.setShowMassDash = action.payload;
+      state.showMassDash = action.payload;
     },
   },
 });

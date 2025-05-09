@@ -6,22 +6,20 @@ import MassUnitDash from "./units/MassUnitDash";
 import { useAppSelector } from "@/store/hooks";
 
 const Dashboard = () => {
-  const showMetricDash = useAppSelector((state) => state.dash?.showMetricDash);
+  const showLengthDash = useAppSelector((state) => state.dash?.showLengthDash);
 
-  console.log("showMetricDash", showMetricDash);
+  console.log("showLengthDash", showLengthDash);
 
-  const showImperialDash = useAppSelector(
-    (state) => state.dash?.showImperialDash
-  );
+  const showMassDash = useAppSelector((state) => state.dash?.showMassDash);
 
-  console.log("showImperialDash", showMetricDash);
+  console.log("showMassDash", showMassDash);
 
   let content;
 
-  if (showMetricDash) {
+  if (showLengthDash) {
     content = <LengthDash />;
   }
-  if (showImperialDash) {
+  if (showMassDash) {
     content = <MassUnitDash />;
   }
 
