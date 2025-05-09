@@ -2,21 +2,16 @@ import { configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 
-const initialState = { units: 0 };
-
-interface DashState {
-  showMetricDash: boolean;
-  showImperialDash: boolean;
-}
-
-const initialDashState: DashState = {
+const initialState = {
+  units: 0,
   showMetricDash: true,
   showImperialDash: false,
 };
+//
 
 const dashSlice = createSlice({
   name: "dash",
-  initialDashState,
+  initialState,
   reducers: {
     setShowMetricDash: (state, action: PayloadAction<boolean>) => {
       state.showMetricDash = action.payload;
