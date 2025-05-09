@@ -1,23 +1,20 @@
 "use client";
 
-import FolderItem from "../FolderItem";
 import { useDispatch } from "react-redux";
 import { setShowLengthDash, setShowMassDash } from "@/store/index";
 
 const UnitTypes = () => {
   const dispatch = useDispatch();
 
-  const showHide = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
+  const showHide = (message: string) => {
+    console.log(message);
 
-    const target = event.currentTarget.innerText;
-
-    if (target === "Length units") {
+    if (message === "Length units") {
       dispatch(setShowLengthDash(true));
       dispatch(setShowMassDash(false));
     }
 
-    if (target === "Mass units") {
+    if (message === "Mass units") {
       dispatch(setShowLengthDash(false));
       dispatch(setShowMassDash(true));
     }
@@ -25,18 +22,18 @@ const UnitTypes = () => {
 
   return (
     <div className="mt-2">
-      <FolderItem href="#" onClick={showHide}>
+      <h5
+        className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 ml-3 my-1"
+        onClick={() => showHide("Length units")}
+      >
         Length units
-      </FolderItem>
-      <FolderItem href="#" onClick={showHide}>
+      </h5>
+      <h5
+        className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 ml-3 my-1"
+        onClick={() => showHide("Mass units")}
+      >
         Mass units
-      </FolderItem>
-      <FolderItem href="#" onClick={showHide}>
-        Sales Collateral
-      </FolderItem>
-      <FolderItem href="#" onClick={showHide}>
-        Training Materials
-      </FolderItem>
+      </h5>
     </div>
   );
 };

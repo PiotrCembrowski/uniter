@@ -41,8 +41,6 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     }
   }, [title]);
 
-  console.log(value);
-
   let baseValue: number;
   let imperialValue: number;
   let metricValue: number;
