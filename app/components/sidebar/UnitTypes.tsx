@@ -2,7 +2,7 @@
 
 import FolderItem from "../FolderItem";
 import { useDispatch } from "react-redux";
-import { newImperialDashState, newMetricDashState } from "@/store/dashOperator";
+import { setShowMetricDash, setShowImperialDash } from "@/store/index";
 
 const UnitTypes = () => {
   const dispatch = useDispatch();
@@ -13,13 +13,13 @@ const UnitTypes = () => {
     const target = event.currentTarget.innerText;
 
     if (target === "Length units") {
-      dispatch(newMetricDashState(true));
-      dispatch(newImperialDashState(false));
+      dispatch(setShowMetricDash(true));
+      dispatch(setShowImperialDash(false));
     }
 
     if (target === "Mass units") {
-      dispatch(newImperialDashState(true));
-      dispatch(newMetricDashState(false));
+      dispatch(setShowMetricDash(true));
+      dispatch(setShowImperialDash(false));
     }
   };
 

@@ -3,16 +3,16 @@
 import Header from "./header/Header";
 import MetricUnitDash from "./units/MetricUnitDash";
 import MassUnitDash from "./units/MassUnitDash";
-import { useAppDashSelector } from "@/store/hooks";
+import { useAppSelector } from "@/store/hooks";
 
 const Dashboard = () => {
-  const showMetricDash = useAppDashSelector(
+  const showMetricDash = useAppSelector(
     (state) => state.metricDash?.showMetricDash
   );
 
   console.log("showMetricDash", showMetricDash);
 
-  const showImperialDash = useAppDashSelector(
+  const showImperialDash = useAppSelector(
     (state) => state.imperialDash?.showImperialDash
   );
 
