@@ -51,10 +51,21 @@ const metricMassSlice = createSlice({
   },
 });
 
+const imperialMassSlice = createSlice({
+  name: "imperialMass",
+  initialState,
+  reducers: {
+    newImperialMassState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+  },
+});
+
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
   metricMassSlice: metricMassSlice.reducer,
+  imperialMassSlice: imperialMassSlice.reducer,
   dash: dashSlice.reducer,
 };
 
