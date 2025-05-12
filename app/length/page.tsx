@@ -7,7 +7,7 @@ const LengthDash = () => {
     <div className="flex">
       <SideBar />
       <div>
-        <Dashboard />
+        <Dashboard dashType="length" />
       </div>
     </div>
   );
