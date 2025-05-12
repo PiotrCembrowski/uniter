@@ -4,22 +4,7 @@ import { createWrapper } from "next-redux-wrapper";
 
 const initialState = {
   units: 0,
-  showLengthDash: true,
-  showMassDash: false,
 };
-
-const dashSlice = createSlice({
-  name: "dash",
-  initialState,
-  reducers: {
-    setShowLengthDash: (state, action: PayloadAction<boolean>) => {
-      state.showLengthDash = action.payload;
-    },
-    setShowMassDash: (state, action: PayloadAction<boolean>) => {
-      state.showMassDash = action.payload;
-    },
-  },
-});
 
 const metricUnitsSlice = createSlice({
   name: "metricUnits",
@@ -66,7 +51,6 @@ const rootReducer = {
   imperialUnits: imperialSlice.reducer,
   metricMassSlice: metricMassSlice.reducer,
   imperialMassSlice: imperialMassSlice.reducer,
-  dash: dashSlice.reducer,
 };
 
 export const store = () => {
@@ -77,7 +61,6 @@ export const store = () => {
 
 export const { newMetricState } = metricUnitsSlice.actions;
 export const { newImperialState } = imperialSlice.actions;
-export const { setShowLengthDash, setShowMassDash } = dashSlice.actions;
 
 export default store;
 
