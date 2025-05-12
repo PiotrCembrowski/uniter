@@ -4,9 +4,15 @@ import MassDash from "./units/MassUnitDash";
 
 const Dashboard = ({ dashType }) => {
   let content;
+
+  if (dashType === "length") {
+    content = <LengthDash />;
+  }
+
   if (dashType === "mass") {
     content = <MassDash />;
   }
+
   return (
     <div>
       <Header />
