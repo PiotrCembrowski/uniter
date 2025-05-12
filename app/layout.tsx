@@ -30,10 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <main className="flex h-screen bg-white">
-          <StoreProvider>
-            <SideBar />
-            {children}
-          </StoreProvider>
+          <StoreProvider>{children}</StoreProvider>
         </main>
       </body>
     </html>
