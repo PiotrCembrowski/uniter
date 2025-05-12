@@ -56,7 +56,7 @@ const SideBar = () => {
           <div className="px-3 text-xs font-medium uppercase text-gray-500">
             Collections
           </div>
-          <UnitTypes />
+          <UnitTypes text="asd" />
         </div>
       </nav>
     </div>
