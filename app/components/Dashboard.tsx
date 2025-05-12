@@ -2,7 +2,11 @@ import Header from "./header/Header";
 import LengthDash from "./units/LengthUnitDash";
 import MassDash from "./units/MassUnitDash";
 
-const Dashboard = ({ dashType }) => {
+type DashboardProps = {
+  dashType: string;
+};
+
+const Dashboard: React.FC<DashboardProps> = ({ dashType }) => {
   let content;
 
   if (dashType === "length") {
