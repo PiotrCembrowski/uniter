@@ -1,45 +1,192 @@
 "use client";
 
-import React, { useEffect } from "react";
-import UnitCard, { ValuesMetric } from "./LengthUnitCard";
-import { useState } from "react";
-import { useAppSelector } from "@/store/hooks";
+import { useEffect, useState } from "react";
+import { newImperialState, newMetricState } from "@/store";
+import { useDispatch } from "react-redux";
 
-const MassUnitDash = () => {
-  const showMetricValue = useAppSelector((state) => state.metricUnits.units);
-  const showImperialValue = useAppSelector(
-    (state) => state.imperialUnits.units
-  );
-
-  const [metricValue, setMetricValue] = useState<ValuesMetric>();
-
-  const [imperialValue, setImperialValue] = useState<ValuesMetric>();
-
-  useEffect(() => {
-    setImperialValue({
-      unit1: showImperialValue,
-      unit2: showImperialValue * 0.083,
-      unit3: showImperialValue * 0.0277778,
-      unit4: showImperialValue * 0.000568182,
-      unit5: showImperialValue * 0.000015783,
-    });
-    setMetricValue({
-      unit1: showMetricValue,
-      unit2: showMetricValue * 0.1,
-      unit3: showMetricValue * 0.01,
-      unit4: showMetricValue * 0.001,
-      unit5: showMetricValue * 0.000001,
-    });
-  }, [showMetricValue, showImperialValue]);
-
-  return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <UnitCard title="Metric System" value={metricValue} />
-      <UnitCard title="Imperial System" value={imperialValue} />
-      <UnitCard title="Sea Metric" />
-      <UnitCard title="Astronomic Metric" />
-    </div>
-  );
+export type ValuesMass = {
+  unit1: number;
+  unit2: number;
+  unit3: number;
+  unit4: number;
+  unit5: number;
 };
 
-export default MassUnitDash;
+interface UnitCardProps {
+  title: string;
+  value?: ValuesMass;
+}
+
+export default function MassUnitCard({ title, value }: UnitCardProps) {
+  const [unit1Name, setUnit1Name] = useState<string>();
+  const [unit2Name, setUnit2Name] = useState<string>();
+  const [unit3Name, setUnit3Name] = useState<string>();
+  const [unit4Name, setUnit4Name] = useState<string>();
+  const [unit5Name, setUnit5Name] = useState<string>();
+  const [unit6Name, setUnit6Name] = useState<string>();
+  const [unit7Name, setUnit7Name] = useState<string>();
+  const [unit8Name, setUnit8Name] = useState<string>();
+
+  useEffect(() => {
+    if (title === "Imperial System") {
+      setUnit1Name("uncja [oz]]");
+      setUnit2Name("pound [lb]");
+      setUnit3Name("stone [st]");
+      setUnit4Name("cetnar us.]");
+      setUnit5Name("cetnar ang. [cwt]");
+      setUnit6Name("tona krótka [tonUS]");
+      setUnit7Name("tona długa [tonUK]");
+      setUnit8Name("grain [gr]");
+    }
+    if (title === "Metric System") {
+      setUnit1Name("miligram [mg]]");
+      setUnit2Name("gram [g]");
+      setUnit3Name("dekagram [dkg]");
+      setUnit4Name("kilogram [kg]");
+      setUnit5Name("tone [T]]");
+    }
+  }, [title]);
+
+  let baseValue: number;
+  let imperialValue: number;
+  let metricValue: number;
+  let seaValue: number;
+  let astronomicValue: number;
+  const dispatch = useDispatch();
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputName = event.target.name;
+    const inputValue = Number(event.target.value);
+    const inputTitle = event.target.dataset.title;
+    console.log(inputTitle);
+
+    if (title === "Imperial System" && inputTitle === "Imperial System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit2":
+          baseValue = inputValue * 12;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit3":
+          baseValue = inputValue * 36;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit4":
+          baseValue = inputValue * 63360;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit5":
+          baseValue = inputValue * 190000;
+          metricValue = baseValue * 25.4;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+
+      dispatch(newImperialState(baseValue));
+      dispatch(newMetricState(metricValue));
+    }
+
+    if (title === "Metric System" && inputTitle === "Metric System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit2":
+          baseValue = inputValue * 10;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit3":
+          baseValue = inputValue * 100;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit4":
+          baseValue = inputValue * 1000;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit5":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+      dispatch(newMetricState(baseValue));
+      dispatch(newImperialState(imperialValue));
+    }
+  };
+
+  return (
+    <div className="group relative overflow-hidden rounded-lg border bg-white">
+      <div className="aspect-[4/3] p-3">
+        <div className="mb-8">
+          <h3 className="font-medium text-gray-900"></h3>
+        </div>
+        <div>
+          <label>{unit1Name}</label>
+          <br />
+          <input
+            name="unit1"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit1}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit2Name}</label>
+          <br />
+          <input
+            name="unit2"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit2}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit3Name}</label>
+          <br />
+          <input
+            name="unit3"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit3}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit4Name}</label>
+          <br />
+          <input
+            name="unit4"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit4}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit5Name}</label>
+          <br />
+          <input
+            name="unit5"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit5}
+            data-title={title}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
