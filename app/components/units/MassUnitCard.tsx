@@ -59,65 +59,14 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
-    console.log(inputTitle);
+    console.log(event);
 
-    if (title === "Imperial System" && inputTitle === "Imperial System") {
-      switch (inputName) {
-        case "unit1":
-          baseValue = inputValue;
-          metricValue = baseValue * 25.4;
-          break;
-        case "unit2":
-          baseValue = inputValue * 12;
-          metricValue = baseValue * 25.4;
-          break;
-        case "unit3":
-          baseValue = inputValue * 36;
-          metricValue = baseValue * 25.4;
-          break;
-        case "unit4":
-          baseValue = inputValue * 63360;
-          metricValue = baseValue * 25.4;
-          break;
-        case "unit5":
-          baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
-          break;
-        default:
-          baseValue = inputValue;
-      }
-
-      dispatch(newImperialState(baseValue));
-      dispatch(newMetricState(metricValue));
+    if (title === "Mass imperial" && inputTitle === "Mass imperial") {
+      dispatch(newImperialState(inputValue));
     }
 
-    if (title === "Metric System" && inputTitle === "Metric System") {
-      switch (inputName) {
-        case "unit1":
-          baseValue = inputValue;
-          imperialValue = baseValue / 25.4;
-          break;
-        case "unit2":
-          baseValue = inputValue * 10;
-          imperialValue = baseValue / 25.4;
-          break;
-        case "unit3":
-          baseValue = inputValue * 100;
-          imperialValue = baseValue / 25.4;
-          break;
-        case "unit4":
-          baseValue = inputValue * 1000;
-          imperialValue = baseValue / 25.4;
-          break;
-        case "unit5":
-          baseValue = inputValue * 1000000;
-          imperialValue = baseValue / 25.4;
-          break;
-        default:
-          baseValue = inputValue;
-      }
-      dispatch(newMetricState(baseValue));
-      dispatch(newImperialState(imperialValue));
+    if (title === "Mass metric" && inputTitle === "Mass metric") {
+      dispatch(newMetricState(inputValue));
     }
   };
 

@@ -52,7 +52,6 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
-    console.log(inputTitle);
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
