@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import UnitCard, { ValuesMetric } from "./LengthUnitCard";
+import MassUnitCard, { ValuesMass } from "./MassUnitCard";
 import { useAppSelector } from "@/store/hooks";
 
 const MassUnitDash = () => {
@@ -13,9 +13,9 @@ const MassUnitDash = () => {
     console.log("MassUnitDash", showImperialValue, showImperialValue);
   }, [showImperialValue, showMetricValue]);
 
-  const [metricValue, setMetricValue] = useState<ValuesMetric>();
+  const [metricValue, setMetricValue] = useState<ValuesMass>();
 
-  const [imperialValue, setImperialValue] = useState<ValuesMetric>();
+  const [imperialValue, setImperialValue] = useState<ValuesMass>();
 
   useEffect(() => {
     setImperialValue({
@@ -36,10 +36,10 @@ const MassUnitDash = () => {
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <UnitCard title="Mass metric" value={metricValue} />
-      <UnitCard title="Mass imperial" value={imperialValue} />
-      <UnitCard title="Sea Metric" />
-      <UnitCard title="Astronomic Metric" />
+      <MassUnitCard title="Mass metric" value={metricValue} />
+      <MassUnitCard title="Mass imperial" value={imperialValue} />
+      <MassUnitCard title="Sea Metric" />
+      <MassUnitCard title="Astronomic Metric" />
     </div>
   );
 };

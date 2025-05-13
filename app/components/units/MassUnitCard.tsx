@@ -29,9 +29,10 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
+  console.log("MassUnitCard", title, value);
 
   useEffect(() => {
-    if (title === "Imperial System") {
+    if (title === "Mass imperial") {
       setUnit1Name("uncja [oz]]");
       setUnit2Name("pound [lb]");
       setUnit3Name("stone [st]");
@@ -41,7 +42,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
       setUnit7Name("tona długa [tonUK]");
       setUnit8Name("grain [gr]");
     }
-    if (title === "Metric System") {
+    if (title === "Mass metric") {
       setUnit1Name("miligram [mg]]");
       setUnit2Name("gram [g]");
       setUnit3Name("dekagram [dkg]");
@@ -59,7 +60,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
-    console.log(event);
+    console.log(inputName, inputValue, inputTitle);
 
     if (title === "Mass imperial" && inputTitle === "Mass imperial") {
       dispatch(newImperialState(inputValue));
