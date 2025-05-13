@@ -6,6 +6,8 @@ const initialState = {
   units: 0,
 };
 
+// Length Units
+
 const metricUnitsSlice = createSlice({
   name: "metricUnits",
   initialState,
@@ -26,20 +28,16 @@ const imperialSlice = createSlice({
   },
 });
 
-const metricMassSlice = createSlice({
-  name: "metricMass",
+// Mass Units
+// The initial state for mass units is the same as length units
+
+const massSlice = createSlice({
+  name: "mass",
   initialState,
   reducers: {
     newMetricMassState: (state, action: PayloadAction<number>) => {
       return { ...state, units: action.payload };
     },
-  },
-});
-
-const imperialMassSlice = createSlice({
-  name: "imperialMass",
-  initialState,
-  reducers: {
     newImperialMassState: (state, action: PayloadAction<number>) => {
       return { ...state, units: action.payload };
     },
@@ -49,8 +47,7 @@ const imperialMassSlice = createSlice({
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
-  metricMassSlice: metricMassSlice.reducer,
-  imperialMassSlice: imperialMassSlice.reducer,
+  massSlice: massSlice.reducer,
 };
 
 export const store = () => {
