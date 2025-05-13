@@ -5,11 +5,14 @@ import { newImperialState, newMetricState } from "@/store";
 import { useDispatch } from "react-redux";
 
 export type ValuesMass = {
-  unit1: number;
-  unit2: number;
-  unit3: number;
-  unit4: number;
-  unit5: number;
+  unit1?: number;
+  unit2?: number;
+  unit3?: number;
+  unit4?: number;
+  unit5?: number;
+  unit6?: number;
+  unit7?: number;
+  unit8?: number;
 };
 
 interface UnitCardProps {
@@ -183,6 +186,42 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             type="text"
             onChange={handleChange}
             value={value?.unit5}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit6Name}</label>
+          <br />
+          <input
+            name="unit6"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit6}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit7Name}</label>
+          <br />
+          <input
+            name="unit7"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit7}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit8Name}</label>
+          <br />
+          <input
+            name="unit8"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit8}
             data-title={title}
           />
         </div>
