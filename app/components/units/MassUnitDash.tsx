@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UnitCard, { ValuesMetric } from "./LengthUnitCard";
-import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 
 const MassUnitDash = () => {
-  const showMetricValue = useAppSelector((state) => state.metricUnits.units);
-  const showImperialValue = useAppSelector(
-    (state) => state.imperialUnits.units
-  );
+  const showMetricValue = useAppSelector((state) => state.massSlice.metric);
+
+  const showImperialValue = useAppSelector((state) => state.massSlice.imperial);
+
+  useEffect(() => {
+    console.log("MassUnitDash", showImperialValue, showImperialValue);
+  }, [showImperialValue, showMetricValue]);
 
   const [metricValue, setMetricValue] = useState<ValuesMetric>();
 

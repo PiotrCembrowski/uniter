@@ -53,8 +53,6 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
   let baseValue: number;
   let imperialValue: number;
   let metricValue: number;
-  let seaValue: number;
-  let astronomicValue: number;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
