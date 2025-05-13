@@ -33,7 +33,10 @@ const imperialSlice = createSlice({
 
 const massSlice = createSlice({
   name: "mass",
-  initialState,
+  initialState: {
+    imperial: 0,
+    metric: 0,
+  },
   reducers: {
     newMetricMassState: (state, action: PayloadAction<number>) => {
       return { ...state, units: action.payload };
