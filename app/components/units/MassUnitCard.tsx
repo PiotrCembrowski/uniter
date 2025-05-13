@@ -137,42 +137,48 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             data-title={title}
           />
         </div>
-        <div>
-          <label htmlFor="">{unit6Name}</label>
-          <br />
-          <input
-            name="unit6"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={value?.unit6}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit7Name}</label>
-          <br />
-          <input
-            name="unit7"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={value?.unit7}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit8Name}</label>
-          <br />
-          <input
-            name="unit8"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={value?.unit8}
-            data-title={title}
-          />
-        </div>
+        {unit6Name && (
+          <div>
+            <label htmlFor="">{unit6Name}</label>
+            <br />
+            <input
+              name="unit6"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit6}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit7Name && (
+          <div>
+            <label htmlFor="">{unit7Name}</label>
+            <br />
+            <input
+              name="unit7"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit7}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit8Name && (
+          <div>
+            <label htmlFor="">{unit8Name}</label>
+            <br />
+            <input
+              name="unit8"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit8}
+              data-title={title}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
