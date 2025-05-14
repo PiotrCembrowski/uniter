@@ -15,8 +15,10 @@ export default function MassUnitCard({ title }: { title: string }) {
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
 
-  const imperialState = useAppSelector((state) => state.imperialUnits.units);
-  const metricState = useAppSelector((state) => state.metricUnits.units);
+  const imperialState = useAppSelector((state) => state.massSlice.imperial);
+  const metricState = useAppSelector((state) => state.massSlice.metric);
+
+  console.log("MassUnitCard", imperialState, metricState);
 
   useEffect(() => {
     if (title === "Mass imperial") {
@@ -38,19 +40,24 @@ export default function MassUnitCard({ title }: { title: string }) {
     }
   }, [title]);
 
+  let baseValue: number;
+  let imperialValue: number;
+  let metricValue: number;
   const dispatch = useDispatch();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputName = event.target.name;
+    const inputValue = Number(event.target.value);
+    const inputTitle = event.target.dataset.title;
 
-  useEffect(() => {
-    if (title === "Mass imperial") {
-      console.log("Mass imperial", imperialState);
+    if (title === "Mass imperial" && inputTitle === "Mass imperial") {
+      dispatch(newImperialState(inputValue));
     }
 
-    if (title === "Mass metric") {
-      console.log("Mass metric", metricState);
+    if (title === "Mass metric" && inputTitle === "Mass metric") {
+      dispatch(newMetricState(inputValue));
     }
-  }, [imperialState, metricState, title]);
+  };
 
   return (
     <div className="group relative overflow-hidden rounded-lg border bg-white">
@@ -66,7 +73,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={}
+            value={metricState}
             data-title={title}
           />
         </div>
@@ -78,7 +85,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={}
+            value={metricState}
             data-title={title}
           />
         </div>
@@ -90,7 +97,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={}
+            value={metricState}
             data-title={title}
           />
         </div>
@@ -102,7 +109,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={}
+            value={metricState}
             data-title={title}
           />
         </div>
@@ -114,7 +121,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={}
+            value={metricState}
             data-title={title}
           />
         </div>
@@ -127,7 +134,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={}
+              value={metricState}
               data-title={title}
             />
           </div>
@@ -141,7 +148,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={}
+              value={metricState}
               data-title={title}
             />
           </div>
@@ -155,7 +162,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={}
+              value={metricState}
               data-title={title}
             />
           </div>
