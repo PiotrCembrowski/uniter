@@ -49,6 +49,7 @@ export default function MassUnitCard({ title }: { title: string }) {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
+    console.log("inputValue", inputValue);
 
     if (title === "Mass imperial" && inputTitle === "Mass imperial") {
       dispatch(newImperialState(inputValue));
