@@ -34,9 +34,16 @@ export default function MassUnitCard({ title }: { title: string }) {
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
-
-  const [metricValue, setMetricValue] = useState<ValuesMass>();
-  const [imperialValue, setImperialValue] = useState<ValuesMass>();
+  const [unitValue, setUnitValue] = useState<ValuesMass>({
+    unit1: 0,
+    unit2: 0,
+    unit3: 0,
+    unit4: 0,
+    unit5: 0,
+    unit6: 0,
+    unit7: 0,
+    unit8: 0,
+  });
 
   useEffect(() => {
     console.log("MassUnitCard", imperialState, metricState);
@@ -51,7 +58,7 @@ export default function MassUnitCard({ title }: { title: string }) {
       setUnit7Name("tona długa [tonUK]");
       setUnit8Name("grain [gr]");
 
-      setImperialValue({
+      setUnitValue({
         unit1: imperialState.unit1,
         unit2: imperialState.unit2,
         unit3: imperialState.unit3,
@@ -69,7 +76,7 @@ export default function MassUnitCard({ title }: { title: string }) {
       setUnit4Name("kilogram [kg]");
       setUnit5Name("tone [T]]");
 
-      setMetricValue({
+      setUnitValue({
         unit1: imperialState.unit1,
         unit2: imperialState.unit2,
         unit3: imperialState.unit3,
@@ -106,7 +113,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={imperialValue?.unit1}
+            value={unitValue?.unit1}
             data-title={title}
           />
         </div>
@@ -118,7 +125,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={imperialValue?.unit2}
+            value={unitValue?.unit2}
             data-title={title}
           />
         </div>
@@ -130,7 +137,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={imperialValue?.unit3}
+            value={unitValue?.unit3}
             data-title={title}
           />
         </div>
@@ -142,7 +149,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={imperialValue?.unit4}
+            value={unitValue?.unit4}
             data-title={title}
           />
         </div>
@@ -154,7 +161,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={imperialValue?.unit5}
+            value={unitValue?.unit5}
             data-title={title}
           />
         </div>
@@ -167,7 +174,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={imperialValue?.unit6}
+              value={unitValue?.unit6}
               data-title={title}
             />
           </div>
@@ -181,7 +188,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={imperialValue?.unit7}
+              value={unitValue?.unit7}
               data-title={title}
             />
           </div>
@@ -195,7 +202,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={imperialValue?.unit8}
+              value={unitValue?.unit8}
               data-title={title}
             />
           </div>
