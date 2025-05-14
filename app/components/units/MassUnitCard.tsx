@@ -49,6 +49,17 @@ export default function MassUnitCard({ title }: { title: string }) {
       setUnit6Name("tona krótka [tonUS]");
       setUnit7Name("tona długa [tonUK]");
       setUnit8Name("grain [gr]");
+
+      setImperialValue({
+        unit1: imperialState.unit1,
+        unit2: imperialState.unit2,
+        unit3: imperialState.unit3,
+        unit4: imperialState.unit4,
+        unit5: imperialState.unit5,
+        unit6: imperialState.unit6,
+        unit7: imperialState.unit7,
+        unit8: imperialState.unit8,
+      });
     }
     if (title === "Mass metric") {
       setUnit1Name("miligram [mg]]");
@@ -56,12 +67,18 @@ export default function MassUnitCard({ title }: { title: string }) {
       setUnit3Name("dekagram [dkg]");
       setUnit4Name("kilogram [kg]");
       setUnit5Name("tone [T]]");
+
+      setMetricValue({
+        unit1: imperialState.unit1,
+        unit2: imperialState.unit2,
+        unit3: imperialState.unit3,
+        unit4: imperialState.unit4,
+        unit5: imperialState.unit5,
+      });
     }
-  }, [title]);
+  }, [title, imperialState, metricState]);
 
   let baseValue: number;
-  let imperialValue: number;
-  let metricValue: number;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
