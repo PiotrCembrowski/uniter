@@ -12,21 +12,9 @@ export type ValuesMetric = {
   unit5: number;
 };
 
-export type ValuesImperial = {
-  unit1: number;
-  unit2: number;
-  unit3: number;
-  unit4: number;
-  unit5: number;
-  unit6: number;
-  unit7: number;
-  unit8: number;
-};
-
 interface UnitCardProps {
   title: string;
-  valueMetric: ValuesMetric;
-  valueImperial: ValuesImperial;
+  value?: ValuesMetric;
 }
 
 export default function MetricUnitCard({ title, value }: UnitCardProps) {

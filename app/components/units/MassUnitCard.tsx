@@ -5,7 +5,26 @@ import { newImperialState, newMetricState } from "@/store";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "@/store/hooks";
 
+export interface ValuesMass {
+  unit1: number;
+  unit2: number;
+  unit3: number;
+  unit4: number;
+  unit5: number;
+  unit6?: number;
+  unit7?: number;
+  unit8?: number;
+}
+export interface UnitCardProps {
+  title: string;
+  value?: ValuesMass;
+}
+
 export default function MassUnitCard({ title }: { title: string }) {
+  const imperialState = useAppSelector((state) => state.massSlice.imperial);
+  const metricState = useAppSelector((state) => state.massSlice.metric);
+
+  // useState vars
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -15,8 +34,8 @@ export default function MassUnitCard({ title }: { title: string }) {
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
 
-  const imperialState = useAppSelector((state) => state.massSlice.imperial);
-  const metricState = useAppSelector((state) => state.massSlice.metric);
+  const [metricValue, setMetricValue] = useState<ValuesMass>();
+  const [imperialValue, setImperialValue] = useState<ValuesMass>();
 
   console.log("MassUnitCard", imperialState, metricState);
 
