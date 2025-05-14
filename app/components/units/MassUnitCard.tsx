@@ -21,6 +21,7 @@ export interface UnitCardProps {
 }
 
 export default function MassUnitCard({ title }: { title: string }) {
+  const dispatch = useDispatch();
   const imperialState = useAppSelector((state) => state.massSlice.imperial);
   const metricState = useAppSelector((state) => state.massSlice.metric);
 
@@ -37,9 +38,9 @@ export default function MassUnitCard({ title }: { title: string }) {
   const [metricValue, setMetricValue] = useState<ValuesMass>();
   const [imperialValue, setImperialValue] = useState<ValuesMass>();
 
-  console.log("MassUnitCard", imperialState, metricState);
-
   useEffect(() => {
+    console.log("MassUnitCard", imperialState, metricState);
+
     if (title === "Mass imperial") {
       setUnit1Name("uncja [oz]]");
       setUnit2Name("pound [lb]");
@@ -78,14 +79,9 @@ export default function MassUnitCard({ title }: { title: string }) {
     }
   }, [title, imperialState, metricState]);
 
-  let baseValue: number;
-  const dispatch = useDispatch();
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
-    console.log("inputValue", inputValue);
 
     if (title === "Mass imperial" && inputTitle === "Mass imperial") {
       dispatch(newImperialState(inputValue));
@@ -110,7 +106,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={metricState}
+            value={imperialValue?.unit1}
             data-title={title}
           />
         </div>
@@ -122,7 +118,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={metricState}
+            value={imperialValue?.unit2}
             data-title={title}
           />
         </div>
@@ -134,7 +130,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={metricState}
+            value={imperialValue?.unit3}
             data-title={title}
           />
         </div>
@@ -146,7 +142,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={metricState}
+            value={imperialValue?.unit4}
             data-title={title}
           />
         </div>
@@ -158,7 +154,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={metricState}
+            value={imperialValue?.unit5}
             data-title={title}
           />
         </div>
@@ -171,7 +167,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={metricState}
+              value={imperialValue?.unit6}
               data-title={title}
             />
           </div>
@@ -185,7 +181,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={metricState}
+              value={imperialValue?.unit7}
               data-title={title}
             />
           </div>
@@ -199,7 +195,7 @@ export default function MassUnitCard({ title }: { title: string }) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={metricState}
+              value={imperialValue?.unit8}
               data-title={title}
             />
           </div>
