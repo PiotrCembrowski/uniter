@@ -3,24 +3,9 @@
 import { useEffect, useState } from "react";
 import { newImperialState, newMetricState } from "@/store";
 import { useDispatch } from "react-redux";
+import { useAppSelector } from "@/store/hooks";
 
-export type ValuesMass = {
-  unit1?: number;
-  unit2?: number;
-  unit3?: number;
-  unit4?: number;
-  unit5?: number;
-  unit6?: number;
-  unit7?: number;
-  unit8?: number;
-};
-
-interface UnitCardProps {
-  title: string;
-  value?: ValuesMass;
-}
-
-export default function MassUnitCard({ title, value }: UnitCardProps) {
+export default function MassUnitCard({ title }: { title: string }) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -29,7 +14,9 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
-  console.log("MassUnitCard", title, value);
+
+  const imperialState = useAppSelector((state) => state.imperialUnits.units);
+  const metricState = useAppSelector((state) => state.metricUnits.units);
 
   useEffect(() => {
     if (title === "Mass imperial") {
@@ -51,25 +38,19 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
     }
   }, [title]);
 
-  let baseValue: number;
-  let imperialValue: number;
-  let metricValue: number;
   const dispatch = useDispatch();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
-    const inputTitle = event.target.dataset.title;
-    console.log(inputName, inputValue, inputTitle);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {};
 
-    if (title === "Mass imperial" && inputTitle === "Mass imperial") {
-      dispatch(newImperialState(inputValue));
+  useEffect(() => {
+    if (title === "Mass imperial") {
+      console.log("Mass imperial", imperialState);
     }
 
-    if (title === "Mass metric" && inputTitle === "Mass metric") {
-      dispatch(newMetricState(inputValue));
+    if (title === "Mass metric") {
+      console.log("Mass metric", metricState);
     }
-  };
+  }, [imperialState, metricState, title]);
 
   return (
     <div className="group relative overflow-hidden rounded-lg border bg-white">
@@ -85,7 +66,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit1}
+            value={}
             data-title={title}
           />
         </div>
@@ -97,7 +78,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit2}
+            value={}
             data-title={title}
           />
         </div>
@@ -109,7 +90,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit3}
+            value={}
             data-title={title}
           />
         </div>
@@ -121,7 +102,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit4}
+            value={}
             data-title={title}
           />
         </div>
@@ -133,7 +114,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={}
             data-title={title}
           />
         </div>
@@ -146,7 +127,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={value?.unit6}
+              value={}
               data-title={title}
             />
           </div>
@@ -160,7 +141,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={value?.unit7}
+              value={}
               data-title={title}
             />
           </div>
@@ -174,7 +155,7 @@ export default function MassUnitCard({ title, value }: UnitCardProps) {
               className="border-2"
               type="text"
               onChange={handleChange}
-              value={value?.unit8}
+              value={}
               data-title={title}
             />
           </div>
