@@ -10,6 +10,7 @@ const Header = () => {
       <div className="w-96">
         <div className="relative">
           <Link href="/">HOME</Link>
+          <div className="absolute inset-0 h-[2px] w-full bg-blue-500 transition-all duration-300 group-hover:w-full" />
         </div>
       </div>
       <div className="flex items-center gap-4">
