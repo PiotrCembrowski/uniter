@@ -4,12 +4,17 @@ import { useEffect, useState } from "react";
 import { newImperialState, newMetricState } from "@/store";
 import { useDispatch } from "react-redux";
 
-export type ValuesMetric = {
+export type Values = {
   unit1: number;
   unit2: number;
   unit3: number;
   unit4: number;
   unit5: number;
+  unit6: number;
+  unit7: number;
+  unit8: number;
+  unit9: number;
+  unit10: number;
 };
 
 export default function PressureUnitCard() {
@@ -23,6 +28,18 @@ export default function PressureUnitCard() {
   const [unit8Name, setUnit8Name] = useState<string>();
   const [unit9Name, setUnit9Name] = useState<string>();
   const [unit10Name, setUnit10Name] = useState<string>();
+  const [value, setValue] = useState<Values>({
+    unit1: 0,
+    unit2: 0,
+    unit3: 0,
+    unit4: 0,
+    unit5: 0,
+    unit6: 0,
+    unit7: 0,
+    unit8: 0,
+    unit9: 0,
+    unit10: 0,
+  });
 
   useEffect(() => {
     setUnit1Name("Pascal [1 Pa=N/m2]");
