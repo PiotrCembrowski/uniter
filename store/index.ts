@@ -77,6 +77,7 @@ const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
   massSlice: massSlice.reducer,
+  pressureSlice: pressureSlice.reducer,
 };
 
 export const store = () => {
