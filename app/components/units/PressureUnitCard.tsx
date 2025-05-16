@@ -12,34 +12,30 @@ export type ValuesMetric = {
   unit5: number;
 };
 
-interface UnitCardProps {
-  title: string;
-  value?: ValuesMetric;
-}
-
-export default function PressureUnitCard({ title, value }: UnitCardProps) {
+export default function PressureUnitCard() {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
   const [unit4Name, setUnit4Name] = useState<string>();
   const [unit5Name, setUnit5Name] = useState<string>();
+  const [unit6Name, setUnit6Name] = useState<string>();
+  const [unit7Name, setUnit7Name] = useState<string>();
+  const [unit8Name, setUnit8Name] = useState<string>();
+  const [unit9Name, setUnit9Name] = useState<string>();
+  const [unit10Name, setUnit10Name] = useState<string>();
 
   useEffect(() => {
-    if (title === "Imperial System") {
-      setUnit1Name("Inch [in]");
-      setUnit2Name("Foot [ft]");
-      setUnit3Name("Yard [yd]");
-      setUnit4Name("Mile [mi]");
-      setUnit5Name("league [lea]");
-    }
-    if (title === "Metric System") {
-      setUnit1Name("Millimeter [mm]");
-      setUnit2Name("Centimeter [cm]");
-      setUnit3Name("Decimeter [dm]");
-      setUnit4Name("Meter [m]");
-      setUnit5Name("Kilometer [km]");
-    }
-  }, [title]);
+    setUnit1Name("Pascal [1 Pa=N/m2]");
+    setUnit2Name("Hektopascal [hPa]");
+    setUnit3Name("Bar [bar]");
+    setUnit4Name("Newton/milimetr2 [1 N/mm2]");
+    setUnit5Name("Kilogram/metr2 [1 KG/m2]");
+    setUnit6Name("Technical atmosphere [at]");
+    setUnit7Name("Standard atmosphere [atm]");
+    setUnit8Name("Tor [Tr]");
+    setUnit9Name("Millimeter of mercury [mmHg]");
+    setUnit10Name("Psi [lbf/in2]");
+  });
 
   let baseValue: number;
   let imperialValue: number;
