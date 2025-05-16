@@ -35,7 +35,7 @@ export default function PressureUnitCard() {
     setUnit8Name("Tor [Tr]");
     setUnit9Name("Millimeter of mercury [mmHg]");
     setUnit10Name("Psi [lbf/in2]");
-  });
+  }, []);
 
   let baseValue: number;
   let imperialValue: number;
