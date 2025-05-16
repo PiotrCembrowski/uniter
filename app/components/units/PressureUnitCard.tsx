@@ -16,7 +16,11 @@ export type Values = {
   unit10: number;
 };
 
-export default function PressureUnitCard() {
+interface UnitCardProps {
+  value?: Values;
+}
+
+export default function PressureUnitCard({ value }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -27,7 +31,7 @@ export default function PressureUnitCard() {
   const [unit8Name, setUnit8Name] = useState<string>();
   const [unit9Name, setUnit9Name] = useState<string>();
   const [unit10Name, setUnit10Name] = useState<string>();
-  const [value, setValue] = useState<Values>({
+  const [values, setValues] = useState<Values>({
     unit1: 0,
     unit2: 0,
     unit3: 0,
@@ -59,7 +63,7 @@ export default function PressureUnitCard() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
-    const inputTitle = event.target.dataset.title;
+    console.log(inputValue);
 
     switch (inputName) {
       case "unit1":
