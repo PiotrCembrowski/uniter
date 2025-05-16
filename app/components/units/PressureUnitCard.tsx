@@ -124,7 +124,6 @@ export default function PressureUnitCard() {
             type="text"
             onChange={handleChange}
             value={value?.unit1}
-            data-title={title}
           />
         </div>
         <div>
@@ -136,7 +135,6 @@ export default function PressureUnitCard() {
             type="text"
             onChange={handleChange}
             value={value?.unit2}
-            data-title={title}
           />
         </div>
         <div>
@@ -148,7 +146,6 @@ export default function PressureUnitCard() {
             type="text"
             onChange={handleChange}
             value={value?.unit3}
-            data-title={title}
           />
         </div>
         <div>
@@ -160,7 +157,6 @@ export default function PressureUnitCard() {
             type="text"
             onChange={handleChange}
             value={value?.unit4}
-            data-title={title}
           />
         </div>
         <div>
@@ -172,7 +168,61 @@ export default function PressureUnitCard() {
             type="text"
             onChange={handleChange}
             value={value?.unit5}
-            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit6Name}</label>
+          <br />
+          <input
+            name="unit6"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit5}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit7Name}</label>
+          <br />
+          <input
+            name="unit7"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit5}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit8Name}</label>
+          <br />
+          <input
+            name="unit8"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit5}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit9Name}</label>
+          <br />
+          <input
+            name="unit9"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit5}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit10Name}</label>
+          <br />
+          <input
+            name="unit10"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit5}
           />
         </div>
       </div>
