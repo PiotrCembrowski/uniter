@@ -5,7 +5,7 @@ import PressureUnitCard, { Values } from "./PressureUnitCard";
 import { useAppSelector } from "@/store/hooks";
 
 const PressureUnitDash = () => {
-  const showState = useAppSelector((state) => state.);
+  const showState = useAppSelector((state) => state.pressureSlice.units);
 
   const [values, setValues] = useState<Values>({
     unit1: showState,
