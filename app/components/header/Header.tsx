@@ -1,16 +1,38 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { Bell, Grid } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
     <header className="flex items-center justify-between border-b px-6 py-4">
       <div className="w-96">
-        <div className="relative">
+        <div className="relative flex items-center gap-4">
           <Link href="/">HOME</Link>
-          <div className="absolute inset-0 h-[2px] w-full bg-blue-500 transition-all duration-300 group-hover:w-full" />
+          <DropdownMenu>
+            <DropdownMenuTrigger>KONWERTERS</DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>Unit Types</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <Link href="/length">Length</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/mass">Mass</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/pressure">Pressure</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
       <div className="flex items-center gap-4">
