@@ -62,6 +62,17 @@ const massSlice = createSlice({
   },
 });
 
+// pressure units
+const pressureSlice = createSlice({
+  name: "pressure",
+  initialState: initialState,
+  reducers: {
+    newPressureState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+  },
+});
+
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
@@ -76,6 +87,7 @@ export const store = () => {
 
 export const { newMetricState } = metricUnitsSlice.actions;
 export const { newImperialState } = imperialSlice.actions;
+export const { newPressureState } = pressureSlice.actions;
 
 export default store;
 
