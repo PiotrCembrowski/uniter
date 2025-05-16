@@ -128,16 +128,16 @@ export default function PressureUnitCard() {
 
   return (
     <div className="group relative overflow-hidden rounded-lg border bg-white">
-      <div className="aspect-[4/3] p-3">
+      <div className="aspect-[4/3] p-3 flex flex-col justify-between space-y-2">
         <div className="mb-8">
           <h3 className="font-medium text-gray-900"></h3>
         </div>
-        <div>
+        <div className="w-full">
           <label>{unit1Name}</label>
           <br />
           <input
             name="unit1"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit1}
@@ -148,7 +148,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit2"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit2}
@@ -159,7 +159,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit3"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit3}
@@ -170,7 +170,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit4"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit4}
@@ -181,7 +181,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit5"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -192,7 +192,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit6"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -203,7 +203,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit7"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -214,7 +214,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit8"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -225,7 +225,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit9"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -236,7 +236,7 @@ export default function PressureUnitCard() {
           <br />
           <input
             name="unit10"
-            className="border-2"
+            className="border-2 w-full"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
