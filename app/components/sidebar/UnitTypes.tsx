@@ -12,6 +12,19 @@ type Units = {
 };
 
 const UnitTypes = ({ unitTable }: { unitTable: string }) => {
+  const units: Units = {
+    unit1: 0,
+    unit2: 0,
+    unit3: 0,
+    unit4: 0,
+    unit5: 0,
+    unit6: 0,
+    unit7: 0,
+    unit8: 0,
+    unit9: 0,
+    unit10: 0,
+  };
+
   if (unitTable !== "pressure") {
     return null; // Do not render anything if the unitTable is not "pressure"
   }
