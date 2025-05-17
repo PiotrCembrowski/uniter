@@ -1,0 +1,44 @@
+{
+  "pressure": [
+    {
+      "name": "Paskal",
+      "conversionFactor": 1
+    },
+    {
+      "name": "Hektopaskal",
+      "conversionFactor": 100
+    },
+    {
+      "name": "Bar",
+      "conversionFactor": 100000
+    },
+    {
+      "name": "1 N/m²",
+      "conversionFactor": 1000000
+    },
+    {
+      "name": "1 KG/m2",
+      "conversionFactor": 9.80665
+    },
+    {
+      "name": "Atmosfera techniczna [at]",
+      "conversionFactor": 98066.5
+    },
+    {
+      "name": "Atmosfera fizyczna [atm]",
+      "conversionFactor": 101325
+    },
+    {
+      "name": "Tor [Tr]",
+      "conversionFactor": 133.322
+    },
+    {
+      "name": "mmHg",
+      "conversionFactor": 133.322
+    },
+    {
+      "name": "Psi [lbf/in2]",
+      "conversionFactor": 6894.76
+    }
+  ]
+}
