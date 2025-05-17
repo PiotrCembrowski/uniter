@@ -3,7 +3,7 @@ import NavItem from "./NavItem";
 import { LayoutGrid } from "lucide-react";
 import UnitTypes from "./UnitTypes";
 
-const SideBar = () => {
+const SideBar = ({ unitTable }) => {
   return (
     <div className="w-64 border-r bg-white">
       <div className="p-4">
@@ -56,7 +56,7 @@ const SideBar = () => {
           <div className="px-3 text-xs font-medium uppercase text-gray-500">
             Collections
           </div>
-          <UnitTypes text="asd" />
+          <UnitTypes unitTable={unitTable} />
         </div>
       </nav>
     </div>

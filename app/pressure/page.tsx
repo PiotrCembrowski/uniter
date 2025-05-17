@@ -4,7 +4,7 @@ import Dashboard from "../components/Dashboard";
 const PressureDash = () => {
   return (
     <div className="flex">
-      <SideBar />
+      <SideBar unitTable="pressure" />
       <div>
         <Dashboard dashType="pressure" />
       </div>
