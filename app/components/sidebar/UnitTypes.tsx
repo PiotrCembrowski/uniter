@@ -1,3 +1,5 @@
+import * as lib from "../../../lib/unitsCalc.json";
+
 type Units = {
   unit1: number;
   unit2: number;
@@ -24,6 +26,10 @@ const UnitTypes = ({ unitTable }: { unitTable: string }) => {
     unit9: 0,
     unit10: 0,
   };
+
+  // Opening json file
+  const jsonFile = lib;
+  console.log(jsonFile.pressure);
 
   if (unitTable !== "pressure") {
     return null; // Do not render anything if the unitTable is not "pressure"
