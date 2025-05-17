@@ -26,7 +26,10 @@ type UnitNames = {
   unit10: string;
 };
 
-const UnitTypes = ({ unitTable }: { unitTable: string }) => {
+const jsonFile = lib;
+type UnitKey = keyof typeof jsonFile;
+
+const UnitTypes = ({ unitTable }: { unitTable: any }) => {
   const units: Units = {
     unit1: 0,
     unit2: 0,
@@ -41,12 +44,31 @@ const UnitTypes = ({ unitTable }: { unitTable: string }) => {
   };
 
   // Opening json file
-  const jsonFile = lib;
-  console.log(jsonFile.pressure);
+  const unitTableKey: UnitKey = unitTable;
 
-  if (unitTable !== "pressure") {
-    return null; // Do not render anything if the unitTable is not "pressure"
-  }
+  units.unit1 = jsonFile[unitTableKey][0].conversionFactor;
+  units.unit2 = jsonFile[unitTableKey][1].conversionFactor;
+  units.unit3 = jsonFile[unitTableKey][2].conversionFactor;
+  units.unit4 = jsonFile[unitTableKey][3].conversionFactor;
+  units.unit5 = jsonFile[unitTableKey][4].conversionFactor;
+  units.unit6 = jsonFile[unitTableKey][5].conversionFactor;
+  units.unit7 = jsonFile[unitTableKey][6].conversionFactor;
+  units.unit8 = jsonFile[unitTableKey][7].conversionFactor;
+  units.unit9 = jsonFile[unitTableKey][8].conversionFactor;
+  units.unit10 = jsonFile[unitTableKey][9].conversionFactor;
+
+  const unitNames: UnitNames = {
+    unit1: jsonFile[unitTableKey][0].name,
+    unit2: jsonFile[unitTableKey][1].name,
+    unit3: jsonFile[unitTableKey][2].name,
+    unit4: jsonFile[unitTableKey][3].name,
+    unit5: jsonFile[unitTableKey][4].name,
+    unit6: jsonFile[unitTableKey][5].name,
+    unit7: jsonFile[unitTableKey][6].name,
+    unit8: jsonFile[unitTableKey][7].name,
+    unit9: jsonFile[unitTableKey][8].name,
+    unit10: jsonFile[unitTableKey][9].name,
+  };
 
   return (
     <div className="mt-2">
