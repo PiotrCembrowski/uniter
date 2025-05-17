@@ -13,6 +13,19 @@ type Units = {
   unit10: number;
 };
 
+type UnitNames = {
+  unit1: string;
+  unit2: string;
+  unit3: string;
+  unit4: string;
+  unit5: string;
+  unit6: string;
+  unit7: string;
+  unit8: string;
+  unit9: string;
+  unit10: string;
+};
+
 const UnitTypes = ({ unitTable }: { unitTable: string }) => {
   const units: Units = {
     unit1: 0,
