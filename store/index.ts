@@ -76,9 +76,15 @@ const pressureSlice = createSlice({
 // time units
 const timeSlice = createSlice({
   name: "time",
-  initialState: initialState,
+  initialState: {
+    day: 0,
+    overDay: 0,
+  },
   reducers: {
-    newTimeState: (state, action: PayloadAction<number>) => {
+    newDayState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+    newOverDayState: (state, action: PayloadAction<number>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -101,7 +107,7 @@ export const store = () => {
 export const { newMetricState } = metricUnitsSlice.actions;
 export const { newImperialState } = imperialSlice.actions;
 export const { newPressureState } = pressureSlice.actions;
-export const { newTimeState } = timeSlice.actions;
+export const { newDayState, newOverDayState } = timeSlice.actions;
 
 export default store;
 
