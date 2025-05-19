@@ -2,28 +2,28 @@ import * as lib from "../../../lib/unitsCalc.json";
 
 type Units = {
   unit1: number;
-  unit2: number;
-  unit3: number;
-  unit4: number;
-  unit5: number;
-  unit6: number;
-  unit7: number;
-  unit8: number;
-  unit9: number;
-  unit10: number;
+  unit2?: number;
+  unit3?: number;
+  unit4?: number;
+  unit5?: number;
+  unit6?: number;
+  unit7?: number;
+  unit8?: number;
+  unit9?: number;
+  unit10?: number;
 };
 
 type UnitNames = {
   unit1: string;
-  unit2: string;
-  unit3: string;
-  unit4: string;
-  unit5: string;
-  unit6: string;
-  unit7: string;
-  unit8: string;
-  unit9: string;
-  unit10: string;
+  unit2?: string;
+  unit3?: string;
+  unit4?: string;
+  unit5?: string;
+  unit6?: string;
+  unit7?: string;
+  unit8?: string;
+  unit9?: string;
+  unit10?: string;
 };
 
 const jsonFile = lib;
@@ -42,33 +42,46 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unit9: 0,
     unit10: 0,
   };
+  const unitNames: UnitNames = {
+    unit1: "",
+    unit2: "",
+    unit3: "",
+    unit4: "",
+    unit5: "",
+    unit6: "",
+    unit7: "",
+    unit8: "",
+    unit9: "",
+    unit10: "",
+  };
 
   // Opening json file
   const unitTableKey: UnitKey = unitTable;
+  console.log(jsonFile);
 
-  units.unit1 = jsonFile[unitTableKey][0].conversionFactor;
-  units.unit2 = jsonFile[unitTableKey][1].conversionFactor;
-  units.unit3 = jsonFile[unitTableKey][2].conversionFactor;
-  units.unit4 = jsonFile[unitTableKey][3].conversionFactor;
-  units.unit5 = jsonFile[unitTableKey][4].conversionFactor;
-  units.unit6 = jsonFile[unitTableKey][5].conversionFactor;
-  units.unit7 = jsonFile[unitTableKey][6].conversionFactor;
-  units.unit8 = jsonFile[unitTableKey][7].conversionFactor;
-  units.unit9 = jsonFile[unitTableKey][8].conversionFactor;
-  units.unit10 = jsonFile[unitTableKey][9].conversionFactor;
+  if (unitTable === "pressure") {
+    units.unit1 = jsonFile[unitTableKey][0].conversionFactor;
+    units.unit2 = jsonFile[unitTableKey][1].conversionFactor;
+    units.unit3 = jsonFile[unitTableKey][2].conversionFactor;
+    units.unit4 = jsonFile[unitTableKey][3].conversionFactor;
+    units.unit5 = jsonFile[unitTableKey][4].conversionFactor;
+    units.unit6 = jsonFile[unitTableKey][5].conversionFactor;
+    units.unit7 = jsonFile[unitTableKey][6].conversionFactor;
+    units.unit8 = jsonFile[unitTableKey][7].conversionFactor;
+    units.unit9 = jsonFile[unitTableKey][8].conversionFactor;
+    units.unit10 = jsonFile[unitTableKey][9].conversionFactor;
 
-  const unitNames: UnitNames = {
-    unit1: jsonFile[unitTableKey][0].name,
-    unit2: jsonFile[unitTableKey][1].name,
-    unit3: jsonFile[unitTableKey][2].name,
-    unit4: jsonFile[unitTableKey][3].name,
-    unit5: jsonFile[unitTableKey][4].name,
-    unit6: jsonFile[unitTableKey][5].name,
-    unit7: jsonFile[unitTableKey][6].name,
-    unit8: jsonFile[unitTableKey][7].name,
-    unit9: jsonFile[unitTableKey][8].name,
-    unit10: jsonFile[unitTableKey][9].name,
-  };
+    unitNames.unit1 = jsonFile[unitTableKey][0].name;
+    unitNames.unit2 = jsonFile[unitTableKey][1].name;
+    unitNames.unit3 = jsonFile[unitTableKey][2].name;
+    unitNames.unit4 = jsonFile[unitTableKey][3].name;
+    unitNames.unit5 = jsonFile[unitTableKey][4].name;
+    unitNames.unit6 = jsonFile[unitTableKey][5].name;
+    unitNames.unit7 = jsonFile[unitTableKey][6].name;
+    unitNames.unit8 = jsonFile[unitTableKey][7].name;
+    unitNames.unit9 = jsonFile[unitTableKey][8].name;
+    unitNames.unit10 = jsonFile[unitTableKey][9].name;
+  }
 
   return (
     <div className="mt-2">
