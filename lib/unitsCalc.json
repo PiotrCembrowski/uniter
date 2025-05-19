@@ -40,5 +40,67 @@
       "name": "Psi [lbf/in2]",
       "conversionFactor": 6894.76
     }
-  ]
+  ],
+  "time": {
+    "day": [
+      {
+        "name": "day",
+        "conversionFactor": 86400
+      },
+      {
+        "name": "hour",
+        "conversionFactor": 3600
+      },
+      {
+        "name": "minute",
+        "conversionFactor": 60
+      },
+      {
+        "name": "second",
+        "conversionFactor": 1
+      },
+      {
+        "name": "millisecond",
+        "conversionFactor": 0.001
+      },
+      {
+        "name": "microsecond",
+        "conversionFactor": 1e-6
+      }
+    ],
+    "moreThanDay": [
+      {
+        "name": "week",
+        "conversionFactor": 604800
+      },
+      {
+        "name": "month",
+        "conversionFactor": 2592000
+      },
+      {
+        "name": "year",
+        "conversionFactor": 31536000
+      },
+      {
+        "name": "leap year",
+        "conversionFactor": 31622400
+      },
+      {
+        "name": "average year",
+        "conversionFactor": 31557600
+      },
+      {
+        "name": "decade",
+        "conversionFactor": 315360000
+      },
+      {
+        "name": "century",
+        "conversionFactor": 3153600000
+      },
+      {
+        "name": "millennium",
+        "conversionFactor": 31536000000
+      }
+    ]
+  }
 }
