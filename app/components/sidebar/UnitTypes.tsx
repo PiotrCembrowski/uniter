@@ -84,44 +84,44 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
         </thead>
         <tbody>
           <tr>
-            <td className="border px-4 py-2">Pascal</td>
-            <td className="border px-4 py-2">1 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit1}</td>
+            <td className="border px-4 py-2">{units.unit1}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Bar</td>
-            <td className="border px-4 py-2">100000 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit2}</td>
+            <td className="border px-4 py-2">{units.unit2}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Kilopascal</td>
-            <td className="border px-4 py-2">1000 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit3}</td>
+            <td className="border px-4 py-2">{units.unit3}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Megapascal</td>
-            <td className="border px-4 py-2">1000000 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit4}</td>
+            <td className="border px-4 py-2">{units.unit4}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Hektopascal</td>
-            <td className="border px-4 py-2">100 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit5}</td>
+            <td className="border px-4 py-2">{units.unit5}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Milimetr słupa rtęci</td>
-            <td className="border px-4 py-2">133.322 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit6}</td>
+            <td className="border px-4 py-2">{units.unit6}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Centymetr słupa rtęci</td>
-            <td className="border px-4 py-2">1333.22 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit7}</td>
+            <td className="border px-4 py-2">{units.unit7}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Cal</td>
-            <td className="border px-4 py-2">6894.76 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit8}</td>
+            <td className="border px-4 py-2">{units.unit8}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Funt na cal kwadratowy</td>
-            <td className="border px-4 py-2">6894.76 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit9}</td>
+            <td className="border px-4 py-2">{units.unit9}</td>
           </tr>
           <tr>
-            <td className="border px-4 py-2">Psi</td>
-            <td className="border px-4 py-2">6894.76 Pa</td>
+            <td className="border px-4 py-2">{unitNames.unit10}</td>
+            <td className="border px-4 py-2">{units.unit10}</td>
           </tr>
           {/* Add more rows as needed */}
         </tbody>
