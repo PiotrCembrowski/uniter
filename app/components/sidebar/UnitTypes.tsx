@@ -59,6 +59,26 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
   const unitTableKey: UnitKey = unitTable;
   console.log(jsonFile);
 
+  if (unitTable === "time") {
+    units.unit1 = jsonFile.time.day[0].conversionFactor;
+    units.unit2 = jsonFile.time.day[1].conversionFactor;
+    units.unit3 = jsonFile.time.day[2].conversionFactor;
+    units.unit4 = jsonFile.time.day[3].conversionFactor;
+    units.unit5 = jsonFile.time.day[4].conversionFactor;
+    units.unit6 = jsonFile.time.day[5].conversionFactor;
+    units.unit7 = jsonFile.time.day[6].conversionFactor;
+    units.unit8 = jsonFile.time.day[7].conversionFactor;
+
+    unitNames.unit1 = jsonFile.time.moreThanDay[0].name;
+    unitNames.unit2 = jsonFile.time.moreThanDay[1].name;
+    unitNames.unit3 = jsonFile.time.moreThanDay[2].name;
+    unitNames.unit4 = jsonFile.time.moreThanDay[3].name;
+    unitNames.unit5 = jsonFile.time.moreThanDay[4].name;
+    unitNames.unit6 = jsonFile.time.moreThanDay[5].name;
+    unitNames.unit7 = jsonFile.time.moreThanDay[6].name;
+    unitNames.unit8 = jsonFile.time.moreThanDay[7].name;
+  }
+
   if (unitTable === "pressure") {
     units.unit1 = jsonFile[unitTableKey][0].conversionFactor;
     units.unit2 = jsonFile[unitTableKey][1].conversionFactor;
@@ -116,26 +136,36 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
             <td className="border px-4 py-2">{unitNames.unit5}</td>
             <td className="border px-4 py-2">{units.unit5}</td>
           </tr>
-          <tr>
-            <td className="border px-4 py-2">{unitNames.unit6}</td>
-            <td className="border px-4 py-2">{units.unit6}</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">{unitNames.unit7}</td>
-            <td className="border px-4 py-2">{units.unit7}</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">{unitNames.unit8}</td>
-            <td className="border px-4 py-2">{units.unit8}</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">{unitNames.unit9}</td>
-            <td className="border px-4 py-2">{units.unit9}</td>
-          </tr>
-          <tr>
-            <td className="border px-4 py-2">{unitNames.unit10}</td>
-            <td className="border px-4 py-2">{units.unit10}</td>
-          </tr>
+          {unitNames.unit6 && (
+            <tr>
+              <td className="border px-4 py-2">{unitNames.unit6}</td>
+              <td className="border px-4 py-2">{units.unit6}</td>
+            </tr>
+          )}
+          {unitNames.unit7 && (
+            <tr>
+              <td className="border px-4 py-2">{unitNames.unit7}</td>
+              <td className="border px-4 py-2">{units.unit7}</td>
+            </tr>
+          )}
+          {unitNames.unit8 && (
+            <tr>
+              <td className="border px-4 py-2">{unitNames.unit8}</td>
+              <td className="border px-4 py-2">{units.unit8}</td>
+            </tr>
+          )}
+          {unitNames.unit9 && (
+            <tr>
+              <td className="border px-4 py-2">{unitNames.unit9}</td>
+              <td className="border px-4 py-2">{units.unit9}</td>
+            </tr>
+          )}
+          {unitNames.unit10 && (
+            <tr>
+              <td className="border px-4 py-2">{unitNames.unit10}</td>
+              <td className="border px-4 py-2">{units.unit10}</td>
+            </tr>
+          )}
           {/* Add more rows as needed */}
         </tbody>
       </table>
