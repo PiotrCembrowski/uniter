@@ -1,5 +1,6 @@
 "use client";
 
+import { newPressureState } from "@/store";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -84,6 +85,8 @@ export default function PressureUnitCard({ value }: UnitCardProps) {
       default:
         baseValue = inputValue;
     }
+
+    dispatch(newPressureState(baseValue));
   };
 
   return (
