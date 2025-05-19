@@ -1,43 +1,42 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import PressureUnitCard, { Values } from "./PressureUnitCard";
+import TimeUnitCard, { Values } from "./TimeUnitCard";
 import { useAppSelector } from "@/store/hooks";
 
 const TimeUnitDash = () => {
-  const showState = useAppSelector((state) => state.pressureSlice.units);
+  const timeState = useAppSelector((state) => state.timeSlice.units);
 
   const [values, setValues] = useState<Values>({
-    unit1: showState,
-    unit2: showState / 100,
-    unit3: showState / 100000,
-    unit4: showState / 1000000,
-    unit5: showState / 9.80665,
-    unit6: showState / 98066.5,
-    unit7: showState / 101325,
-    unit8: showState / 133.322,
-    unit9: showState / 133.322,
-    unit10: showState / 6894.76,
+    unit1: timeState,
+    unit2: timeState / 1e-12,
+    unit3: timeState / 1e-9,
+    unit4: timeState / 1e-6,
+    unit5: timeState / 0.001,
+    unit6: timeState / 1,
+    unit7: timeState / 60,
+    unit8: timeState / 3600,
+    unit9: timeState / 86400,
   });
 
   useEffect(() => {
     setValues({
-      unit1: showState,
-      unit2: showState / 100,
-      unit3: showState / 100000,
-      unit4: showState / 1000000,
-      unit5: showState / 9.80665,
-      unit6: showState / 98066.5,
-      unit7: showState / 101325,
-      unit8: showState / 133.322,
-      unit9: showState / 133.322,
-      unit10: showState / 6894.76,
+      unit1: timeState,
+      unit2: timeState / 1e-12,
+      unit3: timeState / 1e-9,
+      unit4: timeState / 1e-6,
+      unit5: timeState / 0.001,
+      unit6: timeState / 1,
+      unit7: timeState / 60,
+      unit8: timeState / 3600,
+      unit9: timeState / 86400,
     });
-  }, [showState]);
+  }, [timeState]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <PressureUnitCard value={values} />
+      <TimeUnitCard title="day" values={values} />
+      <TimeUnitCard title="More than a day" values={values} />
     </div>
   );
 };
