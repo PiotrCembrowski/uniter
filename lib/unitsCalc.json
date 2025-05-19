@@ -44,28 +44,36 @@
   "time": {
     "day": [
       {
-        "name": "day",
-        "conversionFactor": 86400
+        "name": "picosecond",
+        "conversionFactor": 1e-12
       },
       {
-        "name": "hour",
-        "conversionFactor": 3600
+        "name": "nanosecond",
+        "conversionFactor": 1e-9
       },
       {
-        "name": "minute",
-        "conversionFactor": 60
-      },
-      {
-        "name": "second",
-        "conversionFactor": 1
+        "name": "microsecond",
+        "conversionFactor": 1e-6
       },
       {
         "name": "millisecond",
         "conversionFactor": 0.001
       },
       {
-        "name": "microsecond",
-        "conversionFactor": 1e-6
+        "name": "second",
+        "conversionFactor": 1
+      },
+      {
+        "name": "minute",
+        "conversionFactor": 60
+      },
+      {
+        "name": "hour",
+        "conversionFactor": 3600
+      },
+      {
+        "name": "day",
+        "conversionFactor": 86400
       }
     ],
     "moreThanDay": [
