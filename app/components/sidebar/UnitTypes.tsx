@@ -29,7 +29,7 @@ type UnitNames = {
 const jsonFile = lib;
 type UnitKey = keyof typeof jsonFile;
 
-const UnitTypes = ({ unitTable }: { unitTable: any }) => {
+const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
   const units: Units = {
     unit1: 0,
     unit2: 0,
