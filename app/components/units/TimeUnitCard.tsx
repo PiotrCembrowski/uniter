@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { newImperialState, newMetricState } from "@/store";
+import { newDayState, newOverDayState } from "@/store";
 import { useDispatch } from "react-redux";
 
 export type Values = {
@@ -54,10 +54,8 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
   }, [title]);
 
   let baseValue: number;
-  let imperialValue: number;
-  let metricValue: number;
-  let seaValue: number;
-  let astronomicValue: number;
+  let dayValue: number;
+  let overDayValue: number;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,63 +63,86 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
 
-    if (title === "Imperial System" && inputTitle === "Imperial System") {
+    if (title === "day" && inputTitle === "day") {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          metricValue = baseValue * 25.4;
+          dayValue = baseValue * 25.4;
           break;
         case "unit2":
           baseValue = inputValue * 12;
-          metricValue = baseValue * 25.4;
+          dayValue = baseValue * 25.4;
           break;
         case "unit3":
           baseValue = inputValue * 36;
-          metricValue = baseValue * 25.4;
+          dayValue = baseValue * 25.4;
           break;
         case "unit4":
           baseValue = inputValue * 63360;
-          metricValue = baseValue * 25.4;
+          dayValue = baseValue * 25.4;
           break;
         case "unit5":
           baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          dayValue = baseValue * 25.4;
+          break;
+        case "unit6":
+          baseValue = inputValue * 1900000;
+          dayValue = baseValue * 25.4;
+          break;
+        case "unit7":
+          baseValue = inputValue * 19000000;
+          dayValue = baseValue * 25.4;
+          break;
+        case "unit8":
+          baseValue = inputValue * 1900000000;
+          dayValue = baseValue * 25.4;
           break;
         default:
           baseValue = inputValue;
       }
-
-      dispatch(newImperialState(baseValue));
-      dispatch(newMetricState(metricValue));
+      dispatch(newDayState(baseValue));
+      dispatch(newOverDayState(overDayValue));
     }
 
-    if (title === "Metric System" && inputTitle === "Metric System") {
+    if (title === "More than a day" && inputTitle === "More than a day") {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          imperialValue = baseValue / 25.4;
+          overDayValue = baseValue / 25.4;
           break;
         case "unit2":
           baseValue = inputValue * 10;
-          imperialValue = baseValue / 25.4;
+          overDayValue = baseValue / 25.4;
           break;
         case "unit3":
           baseValue = inputValue * 100;
-          imperialValue = baseValue / 25.4;
+          overDayValue = baseValue / 25.4;
           break;
         case "unit4":
           baseValue = inputValue * 1000;
-          imperialValue = baseValue / 25.4;
+          overDayValue = baseValue / 25.4;
           break;
         case "unit5":
           baseValue = inputValue * 1000000;
-          imperialValue = baseValue / 25.4;
+          overDayValue = baseValue / 25.4;
+          break;
+        case "unit6":
+          baseValue = inputValue * 10000000;
+          overDayValue = baseValue / 25.4;
+          break;
+        case "unit7":
+          baseValue = inputValue * 100000000;
+          overDayValue = baseValue / 25.4;
+          break;
+        case "unit8":
+          baseValue = inputValue * 1000000000;
+          overDayValue = baseValue / 25.4;
           break;
         default:
           baseValue = inputValue;
       }
-      dispatch(newMetricState(baseValue));
-      dispatch(newImperialState(imperialValue));
+      dispatch(newOverDayState(baseValue));
+      dispatch(newDayState(dayValue));
     }
   };
 
@@ -188,6 +209,42 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             type="text"
             onChange={handleChange}
             value={value?.unit5}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit6Name}</label>
+          <br />
+          <input
+            name="unit6"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit6}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit7Name}</label>
+          <br />
+          <input
+            name="unit7"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit7}
+            data-title={title}
+          />
+        </div>
+        <div>
+          <label htmlFor="">{unit7Name}</label>
+          <br />
+          <input
+            name="unit8"
+            className="border-2"
+            type="text"
+            onChange={handleChange}
+            value={value?.unit8}
             data-title={title}
           />
         </div>
