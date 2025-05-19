@@ -31,6 +31,9 @@ const Header = () => {
               <DropdownMenuItem>
                 <Link href="/pressure">Pressure</Link>
               </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/Time">Time</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
