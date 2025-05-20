@@ -110,5 +110,37 @@
         "conversionFactor": 31536000000
       }
     ]
+  },
+  "energy": {
+    "Metric System": [
+      {
+        "name": "Joule [J]",
+        "conversionFactor": 1
+      },
+      {
+        "name": "Kilojoule [kJ]",
+        "conversionFactor": 1000
+      },
+      {
+        "name": "kilogram-meter [kgm]",
+        "conversionFactor": 9.80665
+      },
+      {
+        "name": "Megajoule [MJ]",
+        "conversionFactor": 1000000
+      },
+      {
+        "name": "watt-hour [Wh]",
+        "conversionFactor": 3600
+      },
+      {
+        "name": "kilowatt-hour [kWh]",
+        "conversionFactor": 3600000
+      },
+      {
+        "name": "Erg [erg]",
+        "conversionFactor": 1e-7
+      }
+    ]
   }
 }
