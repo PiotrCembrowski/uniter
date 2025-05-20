@@ -108,35 +108,35 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
     if (title === "More than a day" && inputTitle === "More than a day") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue;
+          baseValue = inputValue * 604800;
           dayValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue;
+          baseValue = inputValue * 2592000;
           dayValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue;
+          baseValue = inputValue * 31536000;
           dayValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue;
+          baseValue = inputValue * 31622400;
           dayValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue;
+          baseValue = inputValue * 31557600;
           dayValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue;
+          baseValue = inputValue * 315576000;
           dayValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue;
+          baseValue = inputValue * 3155760000;
           dayValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue;
+          baseValue = inputValue * 31557600000;
           dayValue = baseValue;
           break;
         default:
