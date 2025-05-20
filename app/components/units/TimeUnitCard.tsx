@@ -66,36 +66,36 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
     if (title === "day" && inputTitle === "day") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 1e-12;
+          overDayValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 12;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 1e-9;
+          overDayValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 36;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 1e-6;
+          overDayValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 63360;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 1e-3;
+          overDayValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 190000;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue;
+          overDayValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 1900000;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 60;
+          overDayValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 19000000;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 3600;
+          overDayValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue * 1900000000;
-          overDayValue = baseValue * 25.4;
+          baseValue = inputValue * 86400;
+          overDayValue = baseValue;
           break;
         default:
           baseValue = inputValue;
@@ -109,35 +109,35 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          dayValue = baseValue / 25.4;
+          dayValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 10;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 100;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 1000;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1000000;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 10000000;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 100000000;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue * 1000000000;
-          dayValue = baseValue / 25.4;
+          baseValue = inputValue;
+          dayValue = baseValue;
           break;
         default:
           baseValue = inputValue;
