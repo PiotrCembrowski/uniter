@@ -67,39 +67,40 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit2":
           baseValue = inputValue * 12;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit3":
           baseValue = inputValue * 36;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit4":
           baseValue = inputValue * 63360;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit5":
           baseValue = inputValue * 190000;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit6":
           baseValue = inputValue * 1900000;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit7":
           baseValue = inputValue * 19000000;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         case "unit8":
           baseValue = inputValue * 1900000000;
-          dayValue = baseValue * 25.4;
+          overDayValue = baseValue * 25.4;
           break;
         default:
           baseValue = inputValue;
       }
+
       dispatch(newDayState(baseValue));
       dispatch(newOverDayState(overDayValue));
     }
@@ -108,35 +109,35 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit2":
           baseValue = inputValue * 10;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit3":
           baseValue = inputValue * 100;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit4":
           baseValue = inputValue * 1000;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit5":
           baseValue = inputValue * 1000000;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit6":
           baseValue = inputValue * 10000000;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit7":
           baseValue = inputValue * 100000000;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         case "unit8":
           baseValue = inputValue * 1000000000;
-          overDayValue = baseValue / 25.4;
+          dayValue = baseValue / 25.4;
           break;
         default:
           baseValue = inputValue;

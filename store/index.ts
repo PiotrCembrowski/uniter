@@ -82,10 +82,10 @@ const timeSlice = createSlice({
   },
   reducers: {
     newDayState: (state, action: PayloadAction<number>) => {
-      return { ...state, units: action.payload };
+      return { ...state, day: action.payload };
     },
     newOverDayState: (state, action: PayloadAction<number>) => {
-      return { ...state, units: action.payload };
+      return { ...state, overDay: action.payload };
     },
   },
 });

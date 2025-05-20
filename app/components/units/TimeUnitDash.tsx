@@ -8,6 +8,9 @@ const TimeUnitDash = () => {
   const timeState = useAppSelector((state) => state.timeSlice.day);
   const overTimeState = useAppSelector((state) => state.timeSlice.overDay);
 
+  console.log("timeState", timeState);
+  console.log("overTimeState", overTimeState);
+
   const [dayValues, setDayValues] = useState<Values>({
     unit1: timeState / 1e-12,
     unit2: timeState / 1e-9,
