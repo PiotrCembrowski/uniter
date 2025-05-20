@@ -141,6 +141,32 @@
         "name": "Erg [erg]",
         "conversionFactor": 1e-7
       }
+    ],
+    "Imperial System": [
+      {
+        "name": "foot-poundal [ft pdl]",
+        "conversionFactor": 0.0421401
+      },
+      {
+        "name": "inch-pound force [in lbf]",
+        "conversionFactor": 0.112985
+      },
+      {
+        "name": "foot-pound force [ft lbf]",
+        "conversionFactor": 1.35582
+      },
+      {
+        "name": "foot-pound [ft lb]",
+        "conversionFactor": 1.35582
+      },
+      {
+        "name": "horsepower-hour [hph]",
+        "conversionFactor": 2684519.54
+      },
+      {
+        "name": "British thermal unit [BTU]",
+        "conversionFactor": 1055.06
+      }
     ]
   }
 }
