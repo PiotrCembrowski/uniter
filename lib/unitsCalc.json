@@ -185,6 +185,40 @@
         "name": "large calorie [Cal]",
         "conversionFactor": 4184
       }
+    ],
+    "Atomic Units": [
+      {
+        "name": "electron volt [eV]",
+        "conversionFactor": 1.60218e-19
+      },
+      {
+        "name": "kiloelectron volt [keV]",
+        "conversionFactor": 1.60218e-16
+      },
+      {
+        "name": "megaelectron volt [MeV]",
+        "conversionFactor": 1.60218e-13
+      },
+      {
+        "name": "atomic mass unit [amu]",
+        "conversionFactor": 1.49242e-10
+      },
+      {
+        "name": "Hartree [Eh]",
+        "conversionFactor": 4.35974e-18
+      },
+      {
+        "name": "Rydberg [Ry]",
+        "conversionFactor": 2.17987e-18
+      },
+      {
+        "name": "Bohr magneton [μB]",
+        "conversionFactor": 9.27401e-24
+      },
+      {
+        "name": "Nuclear magneton [μN]",
+        "conversionFactor": 5.05078e-27
+      }
     ]
   }
 }
