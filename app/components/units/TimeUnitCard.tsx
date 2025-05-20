@@ -160,7 +160,7 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit1}
+            value={values?.unit1}
             data-title={title}
           />
         </div>
@@ -172,7 +172,7 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit2}
+            value={values?.unit2}
             data-title={title}
           />
         </div>
@@ -184,7 +184,7 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit3}
+            value={values?.unit3}
             data-title={title}
           />
         </div>
@@ -196,7 +196,7 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit4}
+            value={values?.unit4}
             data-title={title}
           />
         </div>
@@ -208,7 +208,7 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={values?.unit5}
             data-title={title}
           />
         </div>
@@ -220,7 +220,7 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit6}
+            value={values?.unit6}
             data-title={title}
           />
         </div>
@@ -232,19 +232,19 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit7}
+            value={values?.unit7}
             data-title={title}
           />
         </div>
         <div>
-          <label htmlFor="">{unit7Name}</label>
+          <label htmlFor="">{unit8Name}</label>
           <br />
           <input
             name="unit8"
             className="border-2"
             type="text"
             onChange={handleChange}
-            value={value?.unit8}
+            value={values?.unit8}
             data-title={title}
           />
         </div>
