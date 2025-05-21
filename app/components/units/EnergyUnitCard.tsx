@@ -69,8 +69,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
   }, [title]);
 
   let baseValue: number;
-  let dayValue: number;
-  let overDayValue: number;
+  let metricValue: number;
+  let imperialValue: number;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,83 +82,83 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue * 1e-12;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit2":
           baseValue = inputValue * 1e-9;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue * 1e-6;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue * 1e-3;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit5":
           baseValue = inputValue;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit6":
           baseValue = inputValue * 60;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit7":
           baseValue = inputValue * 3600;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         case "unit8":
           baseValue = inputValue * 86400;
-          overDayValue = baseValue;
+          imperialValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
       dispatch(newDayState(baseValue));
-      dispatch(newOverDayState(overDayValue));
+      dispatch(newOverDayState(imperialValue));
     }
 
     if (title === "More than a day" && inputTitle === "More than a day") {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue * 604800;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit2":
           baseValue = inputValue * 2592000;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue * 31536000;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue * 31622400;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit5":
           baseValue = inputValue * 31557600;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit6":
           baseValue = inputValue * 315576000;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit7":
           baseValue = inputValue * 3155760000;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         case "unit8":
           baseValue = inputValue * 31557600000;
-          dayValue = baseValue;
+          metricValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
       dispatch(newOverDayState(baseValue));
-      dispatch(newDayState(dayValue));
+      dispatch(newDayState(metricValue));
     }
   };
 
