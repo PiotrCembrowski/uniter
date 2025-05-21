@@ -208,5 +208,36 @@
         "conversionFactor": 5.05078e-27
       }
     ]
-  }
+  },
+  "power": [
+    {
+      "name": "watt [W]",
+      "conversionFactor": 1
+    },
+    {
+      "name": "kilowatt [kW]",
+      "conversionFactor": 1000
+    },
+    {
+      "name": "megawatt [MW]",
+      "conversionFactor": 1000000
+    },
+
+    {
+      "name": "horsepower [hp]",
+      "conversionFactor": 745.7
+    },
+    {
+      "name": "British thermal unit per hour [BTU/h]",
+      "conversionFactor": 0.293071
+    },
+    {
+      "name": "British thermal unit per minute [BTU/min]",
+      "conversionFactor": 17.5843
+    },
+    {
+      "name": "British thermal unit per second [BTU/s]",
+      "conversionFactor": 1055.06
+    }
+  ]
 }
