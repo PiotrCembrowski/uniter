@@ -90,12 +90,46 @@ const timeSlice = createSlice({
   },
 });
 
+// energy units
+const energySlice = createSlice({
+  name: "energy",
+  initialState: {
+    metric: {
+      units: 0,
+    },
+    imperial: {
+      units: 0,
+    },
+    calories: {
+      units: 0,
+    },
+    atomic: {
+      units: 0,
+    },
+  },
+  reducers: {
+    newMetricEnergyState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+    newImperialEnergyState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+    newCaloriesEnergyState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+    newAtomicEnergyState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+  },
+});
+
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
   massSlice: massSlice.reducer,
   pressureSlice: pressureSlice.reducer,
   timeSlice: timeSlice.reducer,
+  energySlice: energySlice.reducer,
 };
 
 export const store = () => {
@@ -108,6 +142,12 @@ export const { newMetricState } = metricUnitsSlice.actions;
 export const { newImperialState } = imperialSlice.actions;
 export const { newPressureState } = pressureSlice.actions;
 export const { newDayState, newOverDayState } = timeSlice.actions;
+export const {
+  newMetricEnergyState,
+  newImperialEnergyState,
+  newCaloriesEnergyState,
+  newAtomicEnergyState,
+} = energySlice.actions;
 
 export default store;
 
