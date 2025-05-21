@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TimeUnitCard, { Values } from "./TimeUnitCard";
+import TimeUnitCard, { Values } from "./EnergyUnitCard";
 import { useAppSelector } from "@/store/hooks";
 
 const EnegyUnitDash = () => {
@@ -19,90 +19,75 @@ const EnegyUnitDash = () => {
   );
 
   const [metricStateValues, setMetricStateValues] = useState<Values>({
-    unit1: energyMetricState / 1e-12,
-    unit2: energyMetricState / 1e-9,
-    unit3: energyMetricState / 1e-6,
-    unit4: energyMetricState / 0.001,
-    unit5: energyMetricState,
-    unit6: energyMetricState / 60,
-    unit7: energyMetricState / 3600,
-    unit8: energyMetricState / 86400,
+    unit1: energyMetricState,
+    unit2: energyMetricState / 1000,
+    unit3: energyMetricState / 9.80665,
+    unit4: energyMetricState / 1000000,
+    unit5: energyMetricState / 3600,
+    unit6: energyMetricState / 3600000,
+    unit7: energyMetricState / 1e-7,
   });
 
   const [imeprialValues, setImperialValues] = useState<Values>({
-    unit1: energyImperialState / 604800,
-    unit2: energyImperialState / 2592000,
-    unit3: energyImperialState / 31536000,
-    unit4: energyImperialState / 31622400,
-    unit5: energyImperialState / 31557600,
-    unit6: energyImperialState / 315576000,
-    unit7: energyImperialState / 3155760000,
-    unit8: energyImperialState / 31557600000,
+    unit1: energyImperialState / 0.0421401,
+    unit2: energyImperialState / 0.112985,
+    unit3: energyImperialState / 1.35582,
+    unit4: energyImperialState / 2684519.54,
+    unit5: energyImperialState / 1055.06,
   });
 
   const [caloriesValues, setCaloriesValues] = useState<Values>({
-    unit1: energyCaloriesState / 1e-12,
-    unit2: energyCaloriesState / 1e-9,
-    unit3: energyCaloriesState / 1e-6,
-    unit4: energyCaloriesState / 0.001,
-    unit5: energyCaloriesState,
-    unit6: energyCaloriesState / 60,
-    unit7: energyCaloriesState / 3600,
-    unit8: energyCaloriesState / 86400,
+    unit1: energyCaloriesState / 4.184,
+    unit2: energyCaloriesState / 4184,
+    unit3: energyCaloriesState / 4.184,
+    unit4: energyCaloriesState / 4184,
   });
+
   const [atomicValues, setAtomicValues] = useState<Values>({
-    unit1: energyAtomicState / 604800,
-    unit2: energyAtomicState / 2592000,
-    unit3: energyAtomicState / 31536000,
-    unit4: energyAtomicState / 31622400,
-    unit5: energyAtomicState / 31557600,
-    unit6: energyAtomicState / 315576000,
-    unit7: energyAtomicState / 3155760000,
-    unit8: energyAtomicState / 31557600000,
+    unit1: energyAtomicState / 1.60218e-19,
+    unit2: energyAtomicState / 1.60218e-16,
+    unit3: energyAtomicState / 1.60218e-13,
+    unit4: energyAtomicState / 1.49242e-10,
+    unit5: energyAtomicState / 4.35974e-18,
+    unit6: energyAtomicState / 2.17987e-18,
+    unit7: energyAtomicState / 9.27401e-24,
+    unit8: energyAtomicState / 5.05078e-27,
   });
 
   useEffect(() => {
     setMetricStateValues({
-      unit1: energyMetricState / 1e-12,
-      unit2: energyMetricState / 1e-9,
-      unit3: energyMetricState / 1e-6,
-      unit4: energyMetricState / 0.001,
-      unit5: energyMetricState,
-      unit6: energyMetricState / 60,
-      unit7: energyMetricState / 3600,
-      unit8: energyMetricState / 86400,
+      unit1: energyMetricState,
+      unit2: energyMetricState / 1000,
+      unit3: energyMetricState / 9.80665,
+      unit4: energyMetricState / 1000000,
+      unit5: energyMetricState / 3600,
+      unit6: energyMetricState / 3600000,
+      unit7: energyMetricState / 1e-7,
     });
 
     setImperialValues({
-      unit1: energyImperialState / 604800,
-      unit2: energyImperialState / 2592000,
-      unit3: energyImperialState / 31536000,
-      unit4: energyImperialState / 31622400,
-      unit5: energyImperialState / 31557600,
-      unit6: energyImperialState / 315576000,
-      unit7: energyImperialState / 3155760000,
-      unit8: energyImperialState / 31557600000,
+      unit1: energyImperialState / 0.0421401,
+      unit2: energyImperialState / 0.112985,
+      unit3: energyImperialState / 1.35582,
+      unit4: energyImperialState / 2684519.54,
+      unit5: energyImperialState / 1055.06,
     });
 
     setCaloriesValues({
-      unit1: energyCaloriesState / 1e-12,
-      unit2: energyCaloriesState / 1e-9,
-      unit3: energyCaloriesState / 1e-6,
-      unit4: energyCaloriesState / 0.001,
-      unit5: energyCaloriesState,
-      unit6: energyCaloriesState / 60,
-      unit7: energyCaloriesState / 3600,
-      unit8: energyCaloriesState / 86400,
+      unit1: energyCaloriesState / 4.184,
+      unit2: energyCaloriesState / 4184,
+      unit3: energyCaloriesState / 4.184,
+      unit4: energyCaloriesState / 4184,
     });
     setAtomicValues({
-      unit1: energyAtomicState / 604800,
-      unit2: energyAtomicState / 2592000,
-      unit3: energyAtomicState / 31536000,
-      unit4: energyAtomicState / 31622400,
-      unit5: energyAtomicState / 31557600,
-      unit6: energyAtomicState / 315576000,
-      unit7: energyAtomicState / 3155760000,
-      unit8: energyAtomicState / 31557600000,
+      unit1: energyAtomicState / 1.60218e-19,
+      unit2: energyAtomicState / 1.60218e-16,
+      unit3: energyAtomicState / 1.60218e-13,
+      unit4: energyAtomicState / 1.49242e-10,
+      unit5: energyAtomicState / 4.35974e-18,
+      unit6: energyAtomicState / 2.17987e-18,
+      unit7: energyAtomicState / 9.27401e-24,
+      unit8: energyAtomicState / 5.05078e-27,
     });
   }, [
     energyMetricState,
