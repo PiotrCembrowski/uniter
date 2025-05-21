@@ -5,18 +5,14 @@ import EnergyUnitCard, { Values } from "./EnergyUnitCard";
 import { useAppSelector } from "@/store/hooks";
 
 const EnegyUnitDash = () => {
-  const energyMetricState = useAppSelector(
-    (state) => state.energySlice.metric.units
-  );
+  const energyMetricState = useAppSelector((state) => state.energySlice.metric);
   const energyImperialState = useAppSelector(
-    (state) => state.energySlice.imperial.units
+    (state) => state.energySlice.imperial
   );
   const energyCaloriesState = useAppSelector(
-    (state) => state.energySlice.calories.units
+    (state) => state.energySlice.calories
   );
-  const energyAtomicState = useAppSelector(
-    (state) => state.energySlice.atomic.units
-  );
+  const energyAtomicState = useAppSelector((state) => state.energySlice.atomic);
 
   const [metricStateValues, setMetricStateValues] = useState<Values>({
     unit1: energyMetricState,
