@@ -30,26 +30,41 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
 
+  console.log("EnergyUnitCard", title);
+  console.log("EnergyUnitCard", values);
+
   useEffect(() => {
-    if (title === "day") {
-      setUnit1Name("picosecond [ps]");
-      setUnit2Name("nanosecond [ns]");
-      setUnit3Name("microsecond [μs]");
-      setUnit4Name("millisecond [ms]");
-      setUnit5Name("second [s]");
-      setUnit6Name("minute [min]");
-      setUnit7Name("hour [h]");
-      setUnit8Name("day [d]");
+    if (title === "Metric System") {
+      setUnit1Name("Joule [J]");
+      setUnit2Name("Kilojoule [kJ]");
+      setUnit3Name("kilogram-meter [kgm]");
+      setUnit4Name("megajoule [MJ]");
+      setUnit5Name("watt-hour [Wh]");
+      setUnit6Name("kilowatt-hour [kWh]");
+      setUnit7Name("Erg [erg]");
     }
-    if (title === "More than a day") {
-      setUnit1Name("week [wk]");
-      setUnit2Name("month [mo]");
-      setUnit3Name("year [yr]");
-      setUnit4Name("leap year [ly]");
-      setUnit5Name("average year [a]");
-      setUnit6Name("decade [dec]");
-      setUnit7Name("century [cent]");
-      setUnit8Name("millennium [kyr]");
+    if (title === "Imperial System") {
+      setUnit1Name("foot-poundal [ft pdl]");
+      setUnit2Name("inch-pound force [in lbf]");
+      setUnit3Name("foot-pound force [ft lbf]");
+      setUnit4Name("horsepower-hour [hph]");
+      setUnit5Name("British thermal unit [BTU]");
+    }
+    if (title === "Calories") {
+      setUnit1Name("calorie [cal]");
+      setUnit2Name("kilocalorie [kcal]");
+      setUnit3Name("thermochemical calorie [th cal]");
+      setUnit4Name("large calorie [Cal]");
+    }
+    if (title === "Atomic") {
+      setUnit1Name("electron volt [eV]");
+      setUnit2Name("kiloelectron volt [keV]");
+      setUnit3Name("megaelectron volt [MeV]");
+      setUnit4Name("atomic mass unit [amu]");
+      setUnit5Name("Hartree [Eh]");
+      setUnit6Name("Rydberg [Ry]");
+      setUnit7Name("Bohr magneton [μB]");
+      setUnit8Name("Nuclear magneton [μN]");
     }
   }, [title]);
 
@@ -189,66 +204,76 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             data-title={title}
           />
         </div>
-        <div>
-          <label htmlFor="">{unit4Name}</label>
-          <br />
-          <input
-            name="unit4"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={values?.unit4}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit5Name}</label>
-          <br />
-          <input
-            name="unit5"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={values?.unit5}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit6Name}</label>
-          <br />
-          <input
-            name="unit6"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={values?.unit6}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit7Name}</label>
-          <br />
-          <input
-            name="unit7"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={values?.unit7}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit8Name}</label>
-          <br />
-          <input
-            name="unit8"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={values?.unit8}
-            data-title={title}
-          />
-        </div>
+        {unit4Name && (
+          <div>
+            <label htmlFor="">{unit4Name}</label>
+            <br />
+            <input
+              name="unit4"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={values?.unit4}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit5Name && (
+          <div>
+            <label htmlFor="">{unit5Name}</label>
+            <br />
+            <input
+              name="unit5"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={values?.unit5}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit6Name && (
+          <div>
+            <label htmlFor="">{unit6Name}</label>
+            <br />
+            <input
+              name="unit6"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={values?.unit6}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit7Name && (
+          <div>
+            <label htmlFor="">{unit7Name}</label>
+            <br />
+            <input
+              name="unit7"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={values?.unit7}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit8Name && (
+          <div>
+            <label htmlFor="">{unit8Name}</label>
+            <br />
+            <input
+              name="unit8"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={values?.unit8}
+              data-title={title}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

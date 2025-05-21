@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TimeUnitCard, { Values } from "./EnergyUnitCard";
+import EnergyUnitCard, { Values } from "./EnergyUnitCard";
 import { useAppSelector } from "@/store/hooks";
 
 const EnegyUnitDash = () => {
@@ -98,10 +98,10 @@ const EnegyUnitDash = () => {
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <TimeUnitCard title="Metric System" values={metricStateValues} />
-      <TimeUnitCard title="Imperial System" values={imeprialValues} />
-      <TimeUnitCard title="Calories" values={caloriesValues} />
-      <TimeUnitCard title="Atomic" values={atomicValues} />
+      <EnergyUnitCard title="Metric System" values={metricStateValues} />
+      <EnergyUnitCard title="Imperial System" values={imeprialValues} />
+      <EnergyUnitCard title="Calories" values={caloriesValues} />
+      <EnergyUnitCard title="Atomic" values={atomicValues} />
     </div>
   );
 };
