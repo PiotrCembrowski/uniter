@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { newDayState, newOverDayState } from "@/store";
+import {
+  newDayState,
+  newImperialEnergyState,
+  newMetricEnergyState,
+  newOverDayState,
+} from "@/store";
 import { useDispatch } from "react-redux";
 
 export type Values = {
@@ -78,7 +83,7 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
 
-    if (title === "day" && inputTitle === "day") {
+    if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue * 1e-12;
@@ -116,11 +121,11 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newDayState(baseValue));
-      dispatch(newOverDayState(imperialValue));
+      dispatch(newMetricEnergyState(baseValue));
+      dispatch(newImperialEnergyState(imperialValue));
     }
 
-    if (title === "More than a day" && inputTitle === "More than a day") {
+    if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue * 604800;
@@ -157,8 +162,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      dispatch(newOverDayState(baseValue));
-      dispatch(newDayState(metricValue));
+      dispatch(newImperialEnergyState(baseValue));
+      dispatch(newMetricEnergyState(metricValue));
     }
   };
 
