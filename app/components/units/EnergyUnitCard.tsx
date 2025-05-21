@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import {
+  newAtomicEnergyState,
+  newCaloriesEnergyState,
   newDayState,
   newImperialEnergyState,
   newMetricEnergyState,
@@ -57,8 +59,6 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     if (title === "Calories") {
       setUnit1Name("calorie [cal]");
       setUnit2Name("kilocalorie [kcal]");
-      setUnit3Name("thermochemical calorie [th cal]");
-      setUnit4Name("large calorie [Cal]");
     }
     if (title === "Atomic") {
       setUnit1Name("electron volt [eV]");
@@ -89,10 +89,13 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
         case "unit1":
           baseValue = inputValue;
           imperialValue = baseValue;
+          caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit2":
           baseValue = inputValue / 1000;
           imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue / 9.80665;
@@ -120,6 +123,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
 
       dispatch(newMetricEnergyState(baseValue));
       dispatch(newImperialEnergyState(imperialValue));
+      dispatch(newCaloriesEnergyState(caloriesValue));
+      dispatch(newAtomicEnergyState(atomicValue));
     }
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
@@ -251,18 +256,20 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             data-title={title}
           />
         </div>
-        <div>
-          <label htmlFor="">{unit3Name}</label>
-          <br />
-          <input
-            name="unit3"
-            className="border-2"
-            type="text"
-            onChange={handleChange}
-            value={values?.unit3}
-            data-title={title}
-          />
-        </div>
+        {unit3Name && (
+          <div>
+            <label htmlFor="">{unit3Name}</label>
+            <br />
+            <input
+              name="unit3"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={values?.unit3}
+              data-title={title}
+            />
+          </div>
+        )}
         {unit4Name && (
           <div>
             <label htmlFor="">{unit4Name}</label>

@@ -172,14 +172,6 @@
       {
         "name": "kilocalorie [kcal]",
         "conversionFactor": 4184
-      },
-      {
-        "name": "thermochemical calorie [th cal]",
-        "conversionFactor": 4.184
-      },
-      {
-        "name": "large calorie [Cal]",
-        "conversionFactor": 4184
       }
     ],
     "Atomic Units": [

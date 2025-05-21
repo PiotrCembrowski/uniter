@@ -36,7 +36,6 @@ const EnegyUnitDash = () => {
     unit1: energyCaloriesState / 4.184,
     unit2: energyCaloriesState / 4184,
     unit3: energyCaloriesState / 4.184,
-    unit4: energyCaloriesState / 4184,
   });
 
   const [atomicValues, setAtomicValues] = useState<Values>({
@@ -72,8 +71,6 @@ const EnegyUnitDash = () => {
     setCaloriesValues({
       unit1: energyCaloriesState / 4.184,
       unit2: energyCaloriesState / 4184,
-      unit3: energyCaloriesState / 4.184,
-      unit4: energyCaloriesState / 4184,
     });
     setAtomicValues({
       unit1: energyAtomicState / 1.60218e-19,
