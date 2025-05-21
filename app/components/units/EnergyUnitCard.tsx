@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 import {
   newAtomicEnergyState,
   newCaloriesEnergyState,
-  newDayState,
   newImperialEnergyState,
   newMetricEnergyState,
-  newOverDayState,
 } from "@/store";
 import { useDispatch } from "react-redux";
 
