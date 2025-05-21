@@ -4,6 +4,7 @@ import LengthDash from "./units/LengthUnitDash";
 import MassDash from "./units/MassUnitDash";
 import TimeUnitDash from "./units/TimeUnitDash";
 import EnergyUnitDash from "./units/EnergyUnitDash";
+import PowerDash from "../power/page";
 
 type DashboardProps = {
   dashType: string;
@@ -30,6 +31,10 @@ const Dashboard: React.FC<DashboardProps> = ({ dashType }) => {
 
   if (dashType === "energy") {
     content = <EnergyUnitDash />;
+  }
+
+  if (dashType === "power") {
+    content = <PowerDash />;
   }
 
   return (
