@@ -35,7 +35,6 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
 
-  console.log("EnergyUnitCard", title);
   console.log("EnergyUnitCard", values);
 
   useEffect(() => {
@@ -76,6 +75,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
   let baseValue: number;
   let metricValue: number;
   let imperialValue: number;
+  let caloriesValue: number;
+  let atomicValue: number;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,35 +87,31 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 1e-12;
-          imperialValue = baseValue;
-          break;
-        case "unit2":
-          baseValue = inputValue * 1e-9;
-          imperialValue = baseValue;
-          break;
-        case "unit3":
-          baseValue = inputValue * 1e-6;
-          imperialValue = baseValue;
-          break;
-        case "unit4":
-          baseValue = inputValue * 1e-3;
-          imperialValue = baseValue;
-          break;
-        case "unit5":
           baseValue = inputValue;
           imperialValue = baseValue;
           break;
+        case "unit2":
+          baseValue = inputValue / 1000;
+          imperialValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue / 9.80665;
+          imperialValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue / 1000000;
+          imperialValue = baseValue;
+          break;
+        case "unit5":
+          baseValue = inputValue / 3600;
+          imperialValue = baseValue;
+          break;
         case "unit6":
-          baseValue = inputValue * 60;
+          baseValue = inputValue / 3600000;
           imperialValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 3600;
-          imperialValue = baseValue;
-          break;
-        case "unit8":
-          baseValue = inputValue * 86400;
+          baseValue = inputValue / 1e-7;
           imperialValue = baseValue;
           break;
         default:
@@ -128,42 +125,99 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 604800;
+          baseValue = inputValue * 0.0421401;
           metricValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 2592000;
+          baseValue = inputValue * 0.112985;
           metricValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 31536000;
+          baseValue = inputValue * 1.35582;
           metricValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 31622400;
+          baseValue = inputValue * 2684519.54;
           metricValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 31557600;
-          metricValue = baseValue;
-          break;
-        case "unit6":
-          baseValue = inputValue * 315576000;
-          metricValue = baseValue;
-          break;
-        case "unit7":
-          baseValue = inputValue * 3155760000;
-          metricValue = baseValue;
-          break;
-        case "unit8":
-          baseValue = inputValue * 31557600000;
+          baseValue = inputValue * 1055.06;
           metricValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
+
       dispatch(newImperialEnergyState(baseValue));
       dispatch(newMetricEnergyState(metricValue));
+    }
+
+    if (title === "Calories" && inputTitle === "Calories") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          metricValue = baseValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 1000;
+          metricValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue * 4184;
+          metricValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue * 4184000;
+          metricValue = baseValue;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+
+      dispatch(newMetricEnergyState(baseValue));
+      dispatch(newImperialEnergyState(metricValue));
+    }
+    if (title === "Atomic" && inputTitle === "Atomic") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue * 1.60218e-19;
+          metricValue = baseValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 1.60218e-16;
+          metricValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue * 1.60218e-13;
+          metricValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue * 1.66054e-27;
+          metricValue = baseValue;
+          break;
+        case "unit5":
+          baseValue = inputValue * 4.35974e-18;
+          metricValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 2.17987e-18;
+          metricValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 9.27401e-24;
+          metricValue = baseValue;
+          break;
+        case "unit8":
+          baseValue = inputValue * 5.05078e-27;
+          metricValue = baseValue;
+          break;
+
+        default:
+          baseValue = inputValue;
+      }
+
+      dispatch(newMetricEnergyState(baseValue));
+      dispatch(newImperialEnergyState(metricValue));
     }
   };
 
