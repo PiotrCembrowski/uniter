@@ -96,27 +96,37 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           baseValue = inputValue / 1000;
           imperialValue = baseValue;
           caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue / 9.80665;
           imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue / 1000000;
           imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit5":
           baseValue = inputValue / 3600;
           imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit6":
           baseValue = inputValue / 3600000;
           imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit7":
           baseValue = inputValue / 1e-7;
           imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
+        case "unit8":
+          baseValue = inputValue / 5.05078e-27;
+          imperialValue = baseValue;
+          atomicValue = baseValue;
         default:
           baseValue = inputValue;
       }
@@ -155,6 +165,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
 
       dispatch(newImperialEnergyState(baseValue));
       dispatch(newMetricEnergyState(metricValue));
+      dispatch(newCaloriesEnergyState(caloriesValue));
+      dispatch(newAtomicEnergyState(atomicValue));
     }
 
     if (title === "Calories" && inputTitle === "Calories") {
@@ -179,8 +191,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newMetricEnergyState(baseValue));
+      dispatch(newCaloriesEnergyState(baseValue));
+      dispatch(newMetricEnergyState(metricValue));
       dispatch(newImperialEnergyState(metricValue));
+      dispatch(newAtomicEnergyState(atomicValue));
     }
     if (title === "Atomic" && inputTitle === "Atomic") {
       switch (inputName) {
@@ -221,8 +235,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newMetricEnergyState(baseValue));
+      dispatch(newAtomicEnergyState(baseValue));
+      dispatch(newMetricEnergyState(metricValue));
       dispatch(newImperialEnergyState(metricValue));
+      dispatch(newCaloriesEnergyState(caloriesValue));
     }
   };
 
