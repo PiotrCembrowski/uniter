@@ -103,6 +103,24 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit10 = jsonFile[unitTableKey][9].name;
   }
 
+  if (unitTable === "energy") {
+    units.unit1 = jsonFile.energy["Metric System"][0].conversionFactor;
+    units.unit2 = jsonFile.energy["Metric System"][1].conversionFactor;
+    units.unit3 = jsonFile.energy["Metric System"][2].conversionFactor;
+    units.unit4 = jsonFile.energy["Metric System"][3].conversionFactor;
+    units.unit5 = jsonFile.energy["Metric System"][4].conversionFactor;
+    units.unit6 = jsonFile.energy["Metric System"][5].conversionFactor;
+    units.unit7 = jsonFile.energy["Metric System"][6].conversionFactor;
+
+    unitNames.unit1 = jsonFile.energy["Metric System"][0].name;
+    unitNames.unit2 = jsonFile.energy["Metric System"][1].name;
+    unitNames.unit3 = jsonFile.energy["Metric System"][2].name;
+    unitNames.unit4 = jsonFile.energy["Metric System"][3].name;
+    unitNames.unit5 = jsonFile.energy["Metric System"][4].name;
+    unitNames.unit6 = jsonFile.energy["Metric System"][5].name;
+    unitNames.unit7 = jsonFile.energy["Metric System"][6].name;
+  }
+
   return (
     <div className="mt-2">
       <h5 className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 ml-3 my-1">
