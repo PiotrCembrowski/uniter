@@ -1,6 +1,6 @@
 "use client";
 
-import { newPressureState } from "@/store";
+import { newPowerState } from "@/store";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -26,9 +26,6 @@ export default function PowerUnitCard({ value }: UnitCardProps) {
   const [unit5Name, setUnit5Name] = useState<string>();
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
-  const [unit8Name, setUnit8Name] = useState<string>();
-  const [unit9Name, setUnit9Name] = useState<string>();
-  const [unit10Name, setUnit10Name] = useState<string>();
   const [values, setValues] = useState<Values>({
     unit1: 0,
     unit2: 0,
@@ -37,22 +34,16 @@ export default function PowerUnitCard({ value }: UnitCardProps) {
     unit5: 0,
     unit6: 0,
     unit7: 0,
-    unit8: 0,
-    unit9: 0,
-    unit10: 0,
   });
 
   useEffect(() => {
-    setUnit1Name("Pascal [1 Pa=N/m2]");
-    setUnit2Name("Hektopascal [hPa]");
-    setUnit3Name("Bar [bar]");
-    setUnit4Name("Newton/milimetr2 [1 N/mm2]");
-    setUnit5Name("Kilogram/metr2 [1 KG/m2]");
-    setUnit6Name("Technical atmosphere [at]");
-    setUnit7Name("Standard atmosphere [atm]");
-    setUnit8Name("Tor [Tr]");
-    setUnit9Name("Millimeter of mercury [mmHg]");
-    setUnit10Name("Psi [lbf/in2]");
+    setUnit1Name("watt [W]");
+    setUnit2Name("kilowatt [kW]");
+    setUnit3Name("megawatt [MW]");
+    setUnit4Name("horsepower [hp]");
+    setUnit5Name("BTU/h");
+    setUnit6Name("BTU/min");
+    setUnit7Name("BTU/s");
   }, []);
 
   let baseValue: number;
@@ -68,22 +59,28 @@ export default function PowerUnitCard({ value }: UnitCardProps) {
         baseValue = inputValue;
         break;
       case "unit2":
-        baseValue = inputValue * 10;
+        baseValue = inputValue / 1000;
         break;
       case "unit3":
-        baseValue = inputValue * 100;
+        baseValue = inputValue / 1000000;
         break;
       case "unit4":
-        baseValue = inputValue * 1000;
+        baseValue = inputValue / 745.7;
         break;
       case "unit5":
-        baseValue = inputValue * 1000000;
+        baseValue = inputValue / 0.293071;
+        break;
+      case "unit6":
+        baseValue = inputValue / 17.5843;
+        break;
+      case "unit7":
+        baseValue = inputValue / 1055.06;
         break;
       default:
         baseValue = inputValue;
     }
 
-    dispatch(newPressureState(baseValue));
+    dispatch(newPowerState(baseValue));
   };
 
   return (
@@ -155,7 +152,7 @@ export default function PowerUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit6}
           />
         </div>
         <div>
@@ -166,40 +163,7 @@ export default function PowerUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit8Name}</label>
-          <br />
-          <input
-            name="unit8"
-            className="border-2 w-full"
-            type="text"
-            onChange={handleChange}
-            value={value?.unit5}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit9Name}</label>
-          <br />
-          <input
-            name="unit9"
-            className="border-2 w-full"
-            type="text"
-            onChange={handleChange}
-            value={value?.unit5}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit10Name}</label>
-          <br />
-          <input
-            name="unit10"
-            className="border-2 w-full"
-            type="text"
-            onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit7}
           />
         </div>
       </div>

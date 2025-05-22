@@ -158,7 +158,7 @@ export default function PressureUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit6}
           />
         </div>
         <div>
@@ -169,7 +169,7 @@ export default function PressureUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit7}
           />
         </div>
         <div>
@@ -180,7 +180,7 @@ export default function PressureUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit8}
           />
         </div>
         <div>
@@ -191,7 +191,7 @@ export default function PressureUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit9}
           />
         </div>
         <div>
@@ -202,7 +202,7 @@ export default function PressureUnitCard({ value }: UnitCardProps) {
             className="border-2 w-full"
             type="text"
             onChange={handleChange}
-            value={value?.unit5}
+            value={value?.unit10}
           />
         </div>
       </div>
