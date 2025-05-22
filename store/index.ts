@@ -115,6 +115,16 @@ const energySlice = createSlice({
   },
 });
 
+const powerSlice = createSlice({
+  name: "power",
+  initialState: initialState,
+  reducers: {
+    newPowerState: (state, action: PayloadAction<number>) => {
+      return { ...state, units: action.payload };
+    },
+  },
+});
+
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
@@ -122,6 +132,7 @@ const rootReducer = {
   pressureSlice: pressureSlice.reducer,
   timeSlice: timeSlice.reducer,
   energySlice: energySlice.reducer,
+  powerSlice: powerSlice.reducer,
 };
 
 export const store = () => {
@@ -140,6 +151,7 @@ export const {
   newCaloriesEnergyState,
   newAtomicEnergyState,
 } = energySlice.actions;
+export const { newPowerState } = powerSlice.actions;
 
 export default store;
 
