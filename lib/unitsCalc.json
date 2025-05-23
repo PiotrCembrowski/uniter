@@ -285,6 +285,44 @@
           "name": "cubic inch [in³]",
           "conversionFactor": 36.36872
         }
+      ],
+      "american": [
+        {
+          "name": "fluid ounce [fl oz]",
+          "conversionFactor": 0.0295735
+        },
+        {
+          "name": "liquid pint [dr pt]",
+          "conversionFactor": 0.473176
+        },
+        {
+          "name": "dry pint [fl pt]",
+          "conversionFactor": 0.55061
+        },
+        {
+          "name": "liquid quart [fl qt]",
+          "conversionFactor": 0.946353
+        },
+        {
+          "name": "dry quart [fl qt]",
+          "conversionFactor": 1.10122
+        },
+        {
+          "name": "liquid gallon [fl gal]",
+          "conversionFactor": 3.78541
+        },
+        {
+          "name": "dry gallon [fl gal]",
+          "conversionFactor": 4.40488
+        },
+        {
+          "name": "bushel [bsh][bu]",
+          "conversionFactor": 35.2391
+        },
+        {
+          "name": "barrel [bbl]",
+          "conversionFactor": 158.987294928
+        }
       ]
     }
   ]
