@@ -239,5 +239,31 @@
       "name": "British thermal unit per second [BTU/s]",
       "conversionFactor": 1055.06
     }
+  ],
+  "volume": [
+    {
+      "metric": [
+        {
+          "name": "mililiter",
+          "conversionFactor": 0.001
+        },
+        {
+          "name": "centiliter",
+          "conversionFactor": 0.01
+        },
+        {
+          "name": "deciliter",
+          "conversionFactor": 0.1
+        },
+        {
+          "name": "liter",
+          "conversionFactor": 1
+        },
+        {
+          "name": "meter [m³]",
+          "conversionFactor": 1000
+        }
+      ]
+    }
   ]
 }
