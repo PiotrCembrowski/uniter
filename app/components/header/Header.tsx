@@ -41,7 +41,7 @@ const Header = () => {
                 <Link href="/power">Power</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Link href="/power">Volume</Link>
+                <Link href="/volume">Volume</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
