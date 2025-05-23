@@ -27,21 +27,49 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
   const [unit3Name, setUnit3Name] = useState<string>();
   const [unit4Name, setUnit4Name] = useState<string>();
   const [unit5Name, setUnit5Name] = useState<string>();
+  const [unit6Name, setUnit6Name] = useState<string>();
+  const [unit7Name, setUnit7Name] = useState<string>();
+  const [unit8Name, setUnit8Name] = useState<string>();
+  const [unit9Name, setUnit9Name] = useState<string>();
 
   useEffect(() => {
-    if (title === "Imperial System") {
-      setUnit1Name("Inch [in]");
-      setUnit2Name("Foot [ft]");
-      setUnit3Name("Yard [yd]");
-      setUnit4Name("Mile [mi]");
-      setUnit5Name("league [lea]");
-    }
     if (title === "Metric System") {
-      setUnit1Name("Millimeter [mm]");
-      setUnit2Name("Centimeter [cm]");
-      setUnit3Name("Decimeter [dm]");
-      setUnit4Name("Meter [m]");
-      setUnit5Name("Kilometer [km]");
+      setUnit1Name("mililitr [ml]");
+      setUnit2Name("centylitr [cl]");
+      setUnit3Name("decylitr [dl]");
+      setUnit4Name("litr [l]");
+      setUnit5Name("metr [m3]");
+    }
+
+    if (title === "Imperial System") {
+      setUnit1Name("ounce [fl oz]");
+      setUnit2Name("pint [pt]");
+      setUnit3Name("quart [qt]");
+      setUnit4Name("gallon [gal]");
+      setUnit5Name("bushel [bu]");
+    }
+
+    if (title === "Kitchen System") {
+      setUnit1Name("spoon (5ml)");
+      setUnit2Name("table spoon (15ml)");
+      setUnit3Name("glass [250ml]");
+      setUnit4Name("cup (UK, Europe) [284ml]");
+      setUnit5Name("cup (US) [240ml]");
+      setUnit6Name("cup (JP) [200ml]");
+      setUnit7Name("tablespoon (Australia) [20ml]");
+      setUnit8Name("teaspoon [5ml]");
+    }
+
+    if (title === "American System") {
+      setUnit1Name("ounce US [fl oz US]");
+      setUnit2Name("liquid pint [fl pt]");
+      setUnit3Name("dry pint [dr pt]");
+      setUnit4Name("liquid quart [fl qt]");
+      setUnit5Name("dry quart [dr qt]");
+      setUnit6Name("liquid gallon [fl gal]");
+      setUnit7Name("dry gallon [dr gal]");
+      setUnit8Name("bushel [bsh][bu]");
+      setUnit9Name("barrel [bbl]");
     }
   }, [title]);
 
