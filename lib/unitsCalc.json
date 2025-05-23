@@ -263,6 +263,28 @@
           "name": "meter [m³]",
           "conversionFactor": 1000
         }
+      ],
+      "imperial": [
+        {
+          "name": "fluid ounce [fl oz]",
+          "conversionFactor": 0.0295735
+        },
+        {
+          "name": "pint [pt]",
+          "conversionFactor": 0.56826125
+        },
+        {
+          "name": "quart [qt]",
+          "conversionFactor": 1.1365225
+        },
+        {
+          "name": "gallon [gal]",
+          "conversionFactor": 4.54609
+        },
+        {
+          "name": "cubic inch [in³]",
+          "conversionFactor": 36.36872
+        }
       ]
     }
   ]
