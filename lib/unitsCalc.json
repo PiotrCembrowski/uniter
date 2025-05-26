@@ -267,7 +267,7 @@
       "imperial": [
         {
           "name": "fluid ounce [fl oz]",
-          "conversionFactor": 0.0295735
+          "conversionFactor": 0.0284130625
         },
         {
           "name": "pint [pt]",

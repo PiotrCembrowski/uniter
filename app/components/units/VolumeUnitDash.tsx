@@ -34,33 +34,33 @@ const VolumeUnitDash = () => {
     });
 
     setImperialValue({
-      unit1: showImperialValue * 0.0295735,
-      unit2: showImperialValue * 0.56826125,
-      unit3: showImperialValue * 1.1365225,
-      unit4: showImperialValue * 4.54609,
-      unit5: showImperialValue * 36.36872,
+      unit1: showImperialValue / 0.0284130625,
+      unit2: showImperialValue / 0.56826125,
+      unit3: showImperialValue / 1.1365225,
+      unit4: showImperialValue / 4.54609,
+      unit5: showImperialValue / 36.36872,
     });
 
     setKitchenValue({
-      unit1: showKitchenValue * 0.005,
-      unit2: showKitchenValue * 0.015,
-      unit3: showKitchenValue * 0.25,
-      unit4: showKitchenValue * 0.25,
-      unit5: showKitchenValue * 0.24,
-      unit6: showKitchenValue * 0.2,
-      unit7: showKitchenValue * 0.02,
+      unit1: showKitchenValue / 0.005,
+      unit2: showKitchenValue / 0.015,
+      unit3: showKitchenValue / 0.25,
+      unit4: showKitchenValue / 0.25,
+      unit5: showKitchenValue / 0.24,
+      unit6: showKitchenValue / 0.2,
+      unit7: showKitchenValue / 0.02,
     });
 
     setAmericanValue({
-      unit1: showAmericanValue * 0.0295735,
-      unit2: showAmericanValue * 0.473176,
-      unit3: showAmericanValue * 0.55061,
-      unit4: showAmericanValue * 0.946353,
-      unit5: showAmericanValue * 1.10122,
-      unit6: showAmericanValue * 3.78541,
-      unit7: showAmericanValue * 4.40488,
-      unit8: showAmericanValue * 35.2391,
-      unit9: showAmericanValue * 158.987294928,
+      unit1: showAmericanValue / 0.0295735,
+      unit2: showAmericanValue / 0.473176,
+      unit3: showAmericanValue / 0.55061,
+      unit4: showAmericanValue / 0.946353,
+      unit5: showAmericanValue / 1.10122,
+      unit6: showAmericanValue / 3.78541,
+      unit7: showAmericanValue / 4.40488,
+      unit8: showAmericanValue / 35.2391,
+      unit9: showAmericanValue / 158.987294928,
     });
   }, [showMetricValue, showImperialValue, showKitchenValue, showAmericanValue]);
 

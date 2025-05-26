@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { newImperialState, newMetricState } from "@/store";
+import {
+  newMetricVolumeState,
+  newImperialVolumeState,
+  newAmericanVolumeState,
+  newKitchenVolumeState,
+} from "@/store";
 import { useDispatch } from "react-redux";
 
 export type Values = {
@@ -83,64 +88,202 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
     const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
+    console.log(inputTitle, inputName, inputValue);
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          metricValue = baseValue * 25.4;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit2":
           baseValue = inputValue * 12;
-          metricValue = baseValue * 25.4;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue * 36;
-          metricValue = baseValue * 25.4;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue * 63360;
-          metricValue = baseValue * 25.4;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit5":
           baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newImperialState(baseValue));
-      dispatch(newMetricState(metricValue));
+      dispatch(newImperialVolumeState(baseValue));
+      dispatch(newMetricVolumeState(metricValue));
+      dispatch(newKitchenVolumeState(kitchenValue));
+      dispatch(newAmericanVolumeState(americanValue));
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue * 0.001;
+          imperialValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 10;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue * 0.01;
+          imperialValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 100;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue * 0.1;
+          imperialValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 1000;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue;
+          imperialValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1000000;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue * 1000;
+          imperialValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
-      dispatch(newMetricState(baseValue));
-      dispatch(newImperialState(imperialValue));
+
+      dispatch(newMetricVolumeState(baseValue));
+      dispatch(newImperialVolumeState(imperialValue));
+      dispatch(newKitchenVolumeState(baseValue));
+      dispatch(newAmericanVolumeState(baseValue));
+    }
+
+    if (title === "Kitchen System" && inputTitle === "Kitchen System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue * 5;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 15;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue * 250;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue * 284;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+        case "unit5":
+          baseValue = inputValue * 240;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 200;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 20;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          americanValue = baseValue;
+          break;
+
+        default:
+          baseValue = inputValue;
+      }
+
+      dispatch(newKitchenVolumeState(baseValue));
+      dispatch(newImperialVolumeState(imperialValue));
+      dispatch(newMetricVolumeState(metricValue));
+      dispatch(newAmericanVolumeState(americanValue));
+    }
+
+    if (title === "American System" && inputTitle === "American System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue * 29.5735;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 473.176;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue * 550.61;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue * 946.353;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+        case "unit5":
+          baseValue = inputValue * 1101.22;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 3785.41;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 4404.88;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+
+        case "unit8":
+          baseValue = inputValue * 35239.1;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+        case "unit9":
+          baseValue = inputValue * 158987.294928;
+          imperialValue = baseValue;
+          metricValue = baseValue;
+          kitchenValue = baseValue;
+          break;
+
+        default:
+          baseValue = inputValue;
+      }
+
+      dispatch(newAmericanVolumeState(baseValue));
+      dispatch(newImperialVolumeState(imperialValue));
+      dispatch(newMetricVolumeState(metricValue));
+      dispatch(newKitchenVolumeState(kitchenValue));
     }
   };
 
