@@ -137,7 +137,7 @@ const volumeSlice = createSlice({
     american: {
       units: 0,
     },
-    kitcken: {
+    kitchen: {
       units: 0,
     },
   },

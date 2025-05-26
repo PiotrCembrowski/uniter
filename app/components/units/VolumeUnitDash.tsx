@@ -1,19 +1,27 @@
 "use client";
 
 import React, { useEffect } from "react";
-import UnitCard, { ValuesMetric } from "./LengthUnitCard";
 import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
+import VolumeUnitCard, { Values } from "./VolumeUnitCard";
 
 const VolumeUnitDash = () => {
-  const showMetricValue = useAppSelector((state) => state.metricUnits.units);
+  const showMetricValue = useAppSelector(
+    (state) => state.volumeSlice.metric.units
+  );
   const showImperialValue = useAppSelector(
-    (state) => state.imperialUnits.units
+    (state) => state.volumeSlice.imperial.units
+  );
+  const showKitchenValue = useAppSelector(
+    (state) => state.volumeSlice.kitchen.units
+  );
+  const showAmericanValue = useAppSelector(
+    (state) => state.volumeSlice.american.units
   );
 
-  const [metricValue, setMetricValue] = useState<ValuesMetric>();
+  const [metricValue, setMetricValue] = useState<Values>();
 
-  const [imperialValue, setImperialValue] = useState<ValuesMetric>();
+  const [imperialValue, setImperialValue] = useState<Values>();
 
   useEffect(() => {
     setImperialValue({
