@@ -282,7 +282,7 @@
           "conversionFactor": 4.54609
         },
         {
-          "name": "cubic inch [in³]",
+          "name": "bushel [bu]",
           "conversionFactor": 36.36872
         }
       ],
@@ -322,6 +322,36 @@
         {
           "name": "barrel [bbl]",
           "conversionFactor": 158.987294928
+        }
+      ],
+      "kitchen": [
+        {
+          "name": "teaspoon [tsp]",
+          "conversionFactor": 0.005
+        },
+        {
+          "name": "tablespoon [tbsp]",
+          "conversionFactor": 0.015
+        },
+        {
+          "name": "cup [cup]",
+          "conversionFactor": 0.25
+        },
+        {
+          "name": "cup (UK, Europe)",
+          "conversionFactor": 0.25
+        },
+        {
+          "name": "cup (US)",
+          "conversionFactor": 0.24
+        },
+        {
+          "name": "cup (JP)",
+          "conversionFactor": 0.2
+        },
+        {
+          "name": "tablespoon (Australia)",
+          "conversionFactor": 0.473176
         }
       ]
     }
