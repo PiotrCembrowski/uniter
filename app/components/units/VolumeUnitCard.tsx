@@ -50,14 +50,13 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
     }
 
     if (title === "Kitchen System") {
-      setUnit1Name("spoon (5ml)");
+      setUnit1Name("teaspoon (5ml)");
       setUnit2Name("table spoon (15ml)");
       setUnit3Name("glass [250ml]");
       setUnit4Name("cup (UK, Europe) [284ml]");
       setUnit5Name("cup (US) [240ml]");
       setUnit6Name("cup (JP) [200ml]");
       setUnit7Name("tablespoon (Australia) [20ml]");
-      setUnit8Name("teaspoon [5ml]");
     }
 
     if (title === "American System") {
@@ -211,6 +210,62 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
             data-title={title}
           />
         </div>
+        {unit6Name && (
+          <div>
+            <label htmlFor="">{unit6Name}</label>
+            <br />
+            <input
+              name="unit6"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit6}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit7Name && (
+          <div>
+            <label htmlFor="">{unit7Name}</label>
+            <br />
+            <input
+              name="unit7"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit7}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit8Name && (
+          <div>
+            <label htmlFor="">{unit8Name}</label>
+            <br />
+            <input
+              name="unit8"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit8}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit9Name && (
+          <div>
+            <label htmlFor="">{unit9Name}</label>
+            <br />
+            <input
+              name="unit9"
+              className="border-2"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit9}
+              data-title={title}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
