@@ -20,32 +20,56 @@ const VolumeUnitDash = () => {
   );
 
   const [metricValue, setMetricValue] = useState<Values>();
-
   const [imperialValue, setImperialValue] = useState<Values>();
+  const [kitchenValue, setKitchenValue] = useState<Values>();
+  const [americanValue, setAmericanValue] = useState<Values>();
 
   useEffect(() => {
-    setImperialValue({
-      unit1: showImperialValue,
-      unit2: showImperialValue * 0.083,
-      unit3: showImperialValue * 0.0277778,
-      unit4: showImperialValue * 0.000568182,
-      unit5: showImperialValue * 0.000015783,
-    });
     setMetricValue({
-      unit1: showMetricValue,
-      unit2: showMetricValue * 0.1,
-      unit3: showMetricValue * 0.01,
-      unit4: showMetricValue * 0.001,
-      unit5: showMetricValue * 0.000001,
+      unit1: showImperialValue * 0.001,
+      unit2: showImperialValue * 0.01,
+      unit3: showImperialValue * 0.1,
+      unit4: showImperialValue,
+      unit5: showImperialValue * 1000,
     });
-  }, [showMetricValue, showImperialValue]);
+
+    setImperialValue({
+      unit1: showImperialValue * 0.0295735,
+      unit2: showImperialValue * 0.56826125,
+      unit3: showImperialValue * 1.1365225,
+      unit4: showImperialValue * 4.54609,
+      unit5: showImperialValue * 36.36872,
+    });
+
+    setKitchenValue({
+      unit1: showKitchenValue * 0.005,
+      unit2: showKitchenValue * 0.015,
+      unit3: showKitchenValue * 0.25,
+      unit4: showKitchenValue * 0.25,
+      unit5: showKitchenValue * 0.24,
+      unit6: showKitchenValue * 0.2,
+      unit7: showKitchenValue * 0.02,
+    });
+
+    setAmericanValue({
+      unit1: showAmericanValue * 0.0295735,
+      unit2: showAmericanValue * 0.473176,
+      unit3: showAmericanValue * 0.55061,
+      unit4: showAmericanValue * 0.946353,
+      unit5: showAmericanValue * 1.10122,
+      unit6: showAmericanValue * 3.78541,
+      unit7: showAmericanValue * 4.40488,
+      unit8: showAmericanValue * 35.2391,
+      unit9: showAmericanValue * 158.987294928,
+    });
+  }, [showMetricValue, showImperialValue, showKitchenValue, showAmericanValue]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <UnitCard title="Metric System" value={metricValue} />
-      <UnitCard title="Imperial System" value={imperialValue} />
-      <UnitCard title="Sea Metric" />
-      <UnitCard title="Astronomic Metric" />
+      <VolumeUnitCard title="Metric System" value={metricValue} />
+      <VolumeUnitCard title="Imperial System" value={imperialValue} />
+      <VolumeUnitCard title="Kitchen System" value={kitchenValue} />
+      <VolumeUnitCard title="American System" value={americanValue} />
     </div>
   );
 };
