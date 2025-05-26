@@ -125,6 +125,38 @@ const powerSlice = createSlice({
   },
 });
 
+const volumeSlice = createSlice({
+  name: "volume",
+  initialState: {
+    metric: {
+      units: 0,
+    },
+    imperial: {
+      units: 0,
+    },
+    american: {
+      units: 0,
+    },
+    kitcken: {
+      units: 0,
+    },
+  },
+  reducers: {
+    newMetricVolumeState: (state, action: PayloadAction<number>) => {
+      return { ...state, metric: { units: action.payload } };
+    },
+    newImperialVolumeState: (state, action: PayloadAction<number>) => {
+      return { ...state, imperial: { units: action.payload } };
+    },
+    newAmericanVolumeState: (state, action: PayloadAction<number>) => {
+      return { ...state, american: { units: action.payload } };
+    },
+    newKitchenVolumeState: (state, action: PayloadAction<number>) => {
+      return { ...state, kitchen: { units: action.payload } };
+    },
+  },
+});
+
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
@@ -133,6 +165,7 @@ const rootReducer = {
   timeSlice: timeSlice.reducer,
   energySlice: energySlice.reducer,
   powerSlice: powerSlice.reducer,
+  volumeSlice: volumeSlice.reducer,
 };
 
 export const store = () => {
@@ -152,6 +185,12 @@ export const {
   newAtomicEnergyState,
 } = energySlice.actions;
 export const { newPowerState } = powerSlice.actions;
+export const {
+  newMetricVolumeState,
+  newImperialVolumeState,
+  newAmericanVolumeState,
+  newKitchenVolumeState,
+} = volumeSlice.actions;
 
 export default store;
 
