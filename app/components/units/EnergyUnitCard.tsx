@@ -236,7 +236,7 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
       dispatch(newAtomicEnergyState(baseValue));
       dispatch(newMetricEnergyState(metricValue));
       dispatch(newImperialEnergyState(metricValue));
-      dispatch(newCaloriesEnergyState(caloriesValue));
+      dispatch(newCaloriesEnergyState(metricValue));
     }
   };
 
