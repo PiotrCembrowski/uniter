@@ -6,7 +6,7 @@ import TimeUnitDash from "./units/TimeUnitDash";
 import EnergyUnitDash from "./units/EnergyUnitDash";
 import PowerUnitDash from "./units/PowerUnitDash";
 import VolumeUnitDash from "./units/VolumeUnitDash";
-import SurfaceDash from "../surface/page";
+import SurfaceDash from "./units/SurfaceUnitDash";
 
 type DashboardProps = {
   dashType: string;
