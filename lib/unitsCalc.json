@@ -355,5 +355,65 @@
         }
       ]
     }
+  ],
+  "surface": [
+    {
+      "metric": [
+        {
+          "name": "square millimeter [mm²]",
+          "conversionFactor": 1e-6
+        },
+        {
+          "name": "square centimeter [cm²]",
+          "conversionFactor": 0.0001
+        },
+        {
+          "name": "square meter [m²]",
+          "conversionFactor": 1
+        },
+        {
+          "name": "hectare [ha]",
+          "conversionFactor": 10000
+        },
+        {
+          "name": "square kilometer [km²]",
+          "conversionFactor": 1000000
+        },
+        {
+          "name": "are [ar]",
+          "conversionFactor": 100
+        },
+        {
+          "name": "hectare [ha]",
+          "conversionFactor": 10000
+        }
+      ],
+      "imperial": [
+        {
+          "name": "square inch [in²]",
+          "conversionFactor": 0.00064516
+        },
+        {
+          "name": "square foot [ft²]",
+          "conversionFactor": 0.09290304
+        },
+        {
+          "name": "square yard [yd²]",
+          "conversionFactor": 0.83612736
+        },
+        {
+          "name": "mile",
+          "conversionFactor": 2589988.110336
+        },
+        {
+          "name": "imperial acre [UK]",
+          "conversionFactor": 4046.8564224
+        },
+        {
+          "name": "american acre [US]",
+          "conversionFactor": 24046.87261
+        }
+      ]
+    }
   ]
 }
