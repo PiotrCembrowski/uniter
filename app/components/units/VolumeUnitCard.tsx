@@ -167,43 +167,43 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
     if (title === "Kitchen System" && inputTitle === "Kitchen System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 5;
+          baseValue = inputValue * 0.005;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 15;
+          baseValue = inputValue * 0.015;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 250;
+          baseValue = inputValue * 0.25;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 284;
+          baseValue = inputValue * 0.284;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 240;
+          baseValue = inputValue * 0.24;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 200;
+          baseValue = inputValue * 0.2;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 20;
+          baseValue = inputValue * 0.02;
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
