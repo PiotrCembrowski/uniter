@@ -26,11 +26,11 @@ const VolumeUnitDash = () => {
 
   useEffect(() => {
     setMetricValue({
-      unit1: showImperialValue * 0.001,
-      unit2: showImperialValue * 0.01,
-      unit3: showImperialValue * 0.1,
+      unit1: showImperialValue / 0.001,
+      unit2: showImperialValue / 0.01,
+      unit3: showImperialValue / 0.1,
       unit4: showImperialValue,
-      unit5: showImperialValue * 1000,
+      unit5: showImperialValue / 1000,
     });
 
     setImperialValue({
