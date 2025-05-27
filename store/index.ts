@@ -115,6 +115,7 @@ const energySlice = createSlice({
   },
 });
 
+// power units
 const powerSlice = createSlice({
   name: "power",
   initialState: initialState,
@@ -125,6 +126,7 @@ const powerSlice = createSlice({
   },
 });
 
+// volume units
 const volumeSlice = createSlice({
   name: "volume",
   initialState: {
@@ -157,6 +159,27 @@ const volumeSlice = createSlice({
   },
 });
 
+// Surface Units
+const surfaceSlice = createSlice({
+  name: "surface",
+  initialState: {
+    metric: {
+      units: 0,
+    },
+    imperial: {
+      units: 0,
+    },
+  },
+  reducers: {
+    newMetricSurfaceState: (state, action: PayloadAction<number>) => {
+      return { ...state, metric: { units: action.payload } };
+    },
+    newImperialSurfaceState: (state, action: PayloadAction<number>) => {
+      return { ...state, imperial: { units: action.payload } };
+    },
+  },
+});
+
 const rootReducer = {
   metricUnits: metricUnitsSlice.reducer,
   imperialUnits: imperialSlice.reducer,
@@ -166,6 +189,7 @@ const rootReducer = {
   energySlice: energySlice.reducer,
   powerSlice: powerSlice.reducer,
   volumeSlice: volumeSlice.reducer,
+  surfaceSlice: surfaceSlice.reducer,
 };
 
 export const store = () => {
@@ -191,6 +215,8 @@ export const {
   newAmericanVolumeState,
   newKitchenVolumeState,
 } = volumeSlice.actions;
+export const { newMetricSurfaceState, newImperialSurfaceState } =
+  surfaceSlice.actions;
 
 export default store;
 
