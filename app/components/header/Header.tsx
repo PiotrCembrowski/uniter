@@ -43,6 +43,9 @@ const Header = () => {
               <DropdownMenuItem>
                 <Link href="/volume">Volume</Link>
               </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/surface">Surface</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
