@@ -1,100 +1,63 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import EnergyUnitCard, { Values } from "./EnergyUnitCard";
 import { useAppSelector } from "@/store/hooks";
+import SurfaceUnitCard, { Values } from "./SurfaceUnitCard";
 
 const SurfaceUnitDash = () => {
-  const energyMetricState = useAppSelector((state) => state.energySlice.metric);
-  const energyImperialState = useAppSelector(
-    (state) => state.energySlice.imperial
+  const metricState = useAppSelector(
+    (state) => state.surfaceSlice.metric.units
   );
-  const energyCaloriesState = useAppSelector(
-    (state) => state.energySlice.calories
+  const imperialState = useAppSelector(
+    (state) => state.surfaceSlice.imperial.units
   );
-  const energyAtomicState = useAppSelector((state) => state.energySlice.atomic);
 
   const [metricStateValues, setMetricStateValues] = useState<Values>({
-    unit1: energyMetricState,
-    unit2: energyMetricState / 1000,
-    unit3: energyMetricState / 9.80665,
-    unit4: energyMetricState / 1000000,
-    unit5: energyMetricState / 3600,
-    unit6: energyMetricState / 3600000,
-    unit7: energyMetricState / 1e-7,
+    unit1: metricState * 0.000001,
+    unit2: metricState * 0.0001,
+    unit3: metricState / 0.01,
+    unit4: metricState,
+    unit5: metricState * 10000,
+    unit6: metricState * 1000000,
+    unit7: metricState * 100,
+    unit8: metricState * 10000,
   });
 
-  const [imeprialValues, setImperialValues] = useState<Values>({
-    unit1: energyImperialState / 0.0421401,
-    unit2: energyImperialState / 0.112985,
-    unit3: energyImperialState / 1.35582,
-    unit4: energyImperialState / 2684519.54,
-    unit5: energyImperialState / 1055.06,
-  });
-
-  const [caloriesValues, setCaloriesValues] = useState<Values>({
-    unit1: energyCaloriesState / 4.184,
-    unit2: energyCaloriesState / 4184,
-    unit3: energyCaloriesState / 4.184,
-  });
-
-  const [atomicValues, setAtomicValues] = useState<Values>({
-    unit1: energyAtomicState / 1.60218e-19,
-    unit2: energyAtomicState / 1.60218e-16,
-    unit3: energyAtomicState / 1.60218e-13,
-    unit4: energyAtomicState / 1.49242e-10,
-    unit5: energyAtomicState / 4.35974e-18,
-    unit6: energyAtomicState / 2.17987e-18,
-    unit7: energyAtomicState / 9.27401e-24,
-    unit8: energyAtomicState / 5.05078e-27,
+  const [imperialValues, setImperialValues] = useState<Values>({
+    unit1: imperialState * 0.00064516,
+    unit2: imperialState * 0.09290304,
+    unit3: imperialState * 0.83612736,
+    unit4: imperialState * 2589988.110336,
+    unit5: imperialState * 4046.8564224,
+    unit6: imperialState * 24046.87261,
   });
 
   useEffect(() => {
     setMetricStateValues({
-      unit1: energyMetricState,
-      unit2: energyMetricState / 1000,
-      unit3: energyMetricState / 9.80665,
-      unit4: energyMetricState / 1000000,
-      unit5: energyMetricState / 3600,
-      unit6: energyMetricState / 3600000,
-      unit7: energyMetricState / 1e-7,
+      unit1: metricState * 0.000001,
+      unit2: metricState * 0.0001,
+      unit3: metricState / 0.01,
+      unit4: metricState,
+      unit5: metricState * 10000,
+      unit6: metricState * 1000000,
+      unit7: metricState * 100,
+      unit8: metricState * 10000,
     });
 
     setImperialValues({
-      unit1: energyImperialState / 0.0421401,
-      unit2: energyImperialState / 0.112985,
-      unit3: energyImperialState / 1.35582,
-      unit4: energyImperialState / 2684519.54,
-      unit5: energyImperialState / 1055.06,
+      unit1: imperialState * 0.00064516,
+      unit2: imperialState * 0.09290304,
+      unit3: imperialState * 0.83612736,
+      unit4: imperialState * 2589988.110336,
+      unit5: imperialState * 4046.8564224,
+      unit6: imperialState * 24046.87261,
     });
-
-    setCaloriesValues({
-      unit1: energyCaloriesState / 4.184,
-      unit2: energyCaloriesState / 4184,
-    });
-    setAtomicValues({
-      unit1: energyAtomicState / 1.60218e-19,
-      unit2: energyAtomicState / 1.60218e-16,
-      unit3: energyAtomicState / 1.60218e-13,
-      unit4: energyAtomicState / 1.49242e-10,
-      unit5: energyAtomicState / 4.35974e-18,
-      unit6: energyAtomicState / 2.17987e-18,
-      unit7: energyAtomicState / 9.27401e-24,
-      unit8: energyAtomicState / 5.05078e-27,
-    });
-  }, [
-    energyMetricState,
-    energyImperialState,
-    energyCaloriesState,
-    energyAtomicState,
-  ]);
+  }, [metricState, imperialState]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <EnergyUnitCard title="Metric System" values={metricStateValues} />
-      <EnergyUnitCard title="Imperial System" values={imeprialValues} />
-      <EnergyUnitCard title="Calories" values={caloriesValues} />
-      <EnergyUnitCard title="Atomic" values={atomicValues} />
+      <SurfaceUnitCard title="Metric System" values={metricStateValues} />
+      <SurfaceUnitCard title="Imperial System" values={imperialValues} />
     </div>
   );
 };
