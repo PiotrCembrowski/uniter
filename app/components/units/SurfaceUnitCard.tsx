@@ -39,6 +39,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
       setUnit6Name("ar [ar]");
       setUnit7Name("hektar [ha]");
     }
+
     if (title === "Imperial System") {
       setUnit1Name("cal2 [in2]");
       setUnit2Name("stopa2 [ft2]");
@@ -62,36 +63,33 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue;
+          baseValue = inputValue * 0.000001;
           imperialValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue / 1000;
+          baseValue = inputValue * 0.0001;
           imperialValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue / 9.80665;
+          baseValue = inputValue * 0.01;
           imperialValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue / 1000000;
+          baseValue = inputValue;
           imperialValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue / 3600;
+          baseValue = inputValue * 1000000;
           imperialValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue / 3600000;
+          baseValue = inputValue / 100;
           imperialValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue / 1e-7;
+          baseValue = inputValue / 10000;
           imperialValue = baseValue;
           break;
-        case "unit8":
-          baseValue = inputValue / 5.05078e-27;
-          imperialValue = baseValue;
         default:
           baseValue = inputValue;
       }
@@ -101,25 +99,31 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
     }
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
+      console.log("Imperial System Input:", inputValue);
+
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.0421401;
+          baseValue = inputValue * 0.00064516;
           metricValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.112985;
+          baseValue = inputValue * 0.09290304;
           metricValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 1.35582;
+          baseValue = inputValue * 0.83612736;
           metricValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 2684519.54;
+          baseValue = inputValue * 2589988.110336;
           metricValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1055.06;
+          baseValue = inputValue * 4046.8564224;
+          metricValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 4046.87261;
           metricValue = baseValue;
           break;
         default:
