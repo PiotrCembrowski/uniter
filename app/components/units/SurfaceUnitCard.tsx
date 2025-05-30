@@ -20,7 +20,7 @@ interface UnitCardProps {
   values?: Values;
 }
 
-export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
+export default function SurfaceUnitCard({ values }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -30,25 +30,14 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
   const [unit7Name, setUnit7Name] = useState<string>();
 
   useEffect(() => {
-    if (title === "Metric System") {
-      setUnit1Name("milimeter2 [mm2]");
-      setUnit2Name("centimeter2 [cm2]");
-      setUnit3Name("decimiter2 [dm2]");
-      setUnit4Name("meter2 [m2]");
-      setUnit5Name("kilometr2 [km2]");
-      setUnit6Name("ar [ar]");
-      setUnit7Name("hektar [ha]");
-    }
-
-    if (title === "Imperial System") {
-      setUnit1Name("cal2 [in2]");
-      setUnit2Name("stopa2 [ft2]");
-      setUnit3Name("jard2 [jard2]");
-      setUnit4Name("mila2 [mi2]");
-      setUnit5Name("UK akre [UK acre]");
-      setUnit6Name("US akre [US acre]");
-    }
-  }, [title]);
+    setUnit1Name("milimeter2 [mm2]");
+    setUnit2Name("centimeter2 [cm2]");
+    setUnit3Name("decimiter2 [dm2]");
+    setUnit4Name("meter2 [m2]");
+    setUnit5Name("kilometr2 [km2]");
+    setUnit6Name("ar [ar]");
+    setUnit7Name("hektar [ha]");
+  }, []);
 
   let baseValue: number;
   let metricValue: number;
