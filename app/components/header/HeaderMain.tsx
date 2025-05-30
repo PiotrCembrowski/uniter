@@ -13,7 +13,7 @@ import {
 
 const HeaderMain = () => {
   return (
-    <header className="flex justify-around w-full h-14 border-b-2 border-[#221E40] px-6 py-4 ">
+    <header className="flex justify-around w-full h-14 border-b-2 border-[#221E40] px-6 py-4">
       <div className="w-96">
         <div className="relative flex items-center gap-4 text-[#9177F2]">
           <Link href="/">HOME</Link>

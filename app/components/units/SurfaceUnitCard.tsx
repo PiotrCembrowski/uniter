@@ -136,17 +136,17 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-white">
+    <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
       <div className="aspect-[4/3] p-3">
         <div className="mb-8">
-          <h3 className="font-medium text-gray-900">{title}</h3>
+          <h3 className="font-medium">{title}</h3>
         </div>
         <div>
           <label>{unit1Name}</label>
           <br />
           <input
             name="unit1"
-            className="border-2"
+            className="box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
             type="text"
             onChange={handleChange}
             value={values?.unit1}
@@ -158,7 +158,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
           <br />
           <input
             name="unit2"
-            className="border-2"
+            className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
             type="text"
             onChange={handleChange}
             value={values?.unit2}
@@ -171,7 +171,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit3"
-              className="border-2"
+              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
               type="text"
               onChange={handleChange}
               value={values?.unit3}
@@ -185,7 +185,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit4"
-              className="border-2"
+              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
               type="text"
               onChange={handleChange}
               value={values?.unit4}
@@ -199,7 +199,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit5"
-              className="border-2"
+              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
               type="text"
               onChange={handleChange}
               value={values?.unit5}
@@ -213,7 +213,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit6"
-              className="border-2"
+              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
               type="text"
               onChange={handleChange}
               value={values?.unit6}
@@ -227,7 +227,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit7"
-              className="border-2"
+              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
               type="text"
               onChange={handleChange}
               value={values?.unit7}

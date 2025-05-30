@@ -5,11 +5,11 @@ import UnitTypes from "./UnitTypes";
 
 const SideBar = ({ unitTable }: { unitTable: string }) => {
   return (
-    <div className="w-64 border-r bg-white">
+    <div className="w-1/3 border-r-2 border-[#221E40] bg-[#161426] ">
       <div className="p-4">
-        <h1 className="text-xl font-bold">Showpad</h1>
+        <h1 className="text-xl font-bold text-[#9177F2]">Showpad</h1>
       </div>
-      <nav className="space-y-1 px-2">
+      <nav className="space-y-1 px-2 text-[#9177F2]">
         <NavItem href="#" icon={<LayoutGrid className="h-4 w-4" />} active>
           All content
         </NavItem>

@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Bell, Grid } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -13,7 +10,7 @@ import {
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between border-b px-6 py-4">
+    <header className="flex items-center justify-between border-b border-[#4F3E8C] px-6 py-4 text-[#9177F2]">
       <div className="w-96">
         <div className="relative flex items-center gap-4">
           <Link href="/">HOME</Link>
@@ -50,7 +47,7 @@ const Header = () => {
           </DropdownMenu>
         </div>
       </div>
-      <div className="flex items-center gap-4">
+      {/* <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon">
           <Grid className="h-4 w-4" />
         </Button>
@@ -66,7 +63,7 @@ const Header = () => {
             className="h-full w-full object-cover"
           />
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };
