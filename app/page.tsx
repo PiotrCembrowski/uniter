@@ -95,6 +95,14 @@ export default function Home() {
                 ares to hectares...
               </TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell className="font-medium text-[#46A66F]">
+                <Link href="/speed">Speed</Link>
+              </TableCell>
+              <TableCell className="text-[#9177F2]">
+                - mph to km/h, 1 mph to ...,
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </div>

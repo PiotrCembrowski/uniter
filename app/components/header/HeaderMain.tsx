@@ -46,6 +46,9 @@ const HeaderMain = () => {
               <DropdownMenuItem>
                 <Link href="/surface">Surface</Link>
               </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/speed">Speed</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
