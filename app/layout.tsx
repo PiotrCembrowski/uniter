@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="flex h-screen">
+        <main className="flex h-auto">
           <StoreProvider>{children}</StoreProvider>
         </main>
       </body>

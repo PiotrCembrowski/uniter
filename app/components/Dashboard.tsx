@@ -53,7 +53,7 @@ const Dashboard: React.FC<DashboardProps> = ({ dashType }) => {
   }
 
   return (
-    <div>
+    <div className="h-auto">
       <Header />
       <div className="p-6">{content}</div>
     </div>

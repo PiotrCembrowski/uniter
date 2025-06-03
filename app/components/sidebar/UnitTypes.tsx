@@ -171,10 +171,113 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
   }
 
   return (
-    <div className="mt-2">
+    <div className="mt-2 height-auto">
       <h5 className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 ml-3 my-1">
         Jednostką ciśnienia w układzie SI jest Paskal [Pa] (Pascal).
       </h5>
+      <h2>{systemNames.system1}</h2>
+      <table className="">
+        <thead className="">
+          <tr>
+            <th className="px-4 py-2">Jednostka</th>
+            <th className="px-4 py-2">Przelicznik</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="border border-[#4F3E8C] px-4 py-2">
+              {unitNames.unit1}
+            </td>
+            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+              {units.unit1}
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-[#4F3E8C] px-4 py-2">
+              {unitNames.unit2}
+            </td>
+            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+              {units.unit2}
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-[#4F3E8C] px-4 py-2">
+              {unitNames.unit3}
+            </td>
+            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+              {units.unit3}
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-[#4F3E8C] px-4 py-2">
+              {unitNames.unit4}
+            </td>
+            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+              {units.unit4}
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-[#4F3E8C] px-4 py-2">
+              {unitNames.unit5}
+            </td>
+            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+              {units.unit5}
+            </td>
+          </tr>
+          {unitNames.unit6 && (
+            <tr>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit6}
+              </td>
+              <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                {units.unit6}
+              </td>
+            </tr>
+          )}
+          {unitNames.unit7 && (
+            <tr>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit7}
+              </td>
+              <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                {units.unit7}
+              </td>
+            </tr>
+          )}
+          {unitNames.unit8 && (
+            <tr>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit8}
+              </td>
+              <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                {units.unit8}
+              </td>
+            </tr>
+          )}
+          {unitNames.unit9 && (
+            <tr>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit9}
+              </td>
+              <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                {units.unit9}
+              </td>
+            </tr>
+          )}
+          {unitNames.unit10 && (
+            <tr>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit10}
+              </td>
+              <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                {units.unit10}
+              </td>
+            </tr>
+          )}
+          {/* Add more rows as needed */}
+        </tbody>
+      </table>
+      <h2>{systemNames.system2}</h2>
       <table className="">
         <thead className="">
           <tr>
