@@ -36,8 +36,8 @@ const LengthUnitDash = () => {
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
       <UnitCard title="Metric System" value={metricValue} />
       <UnitCard title="Imperial System" value={imperialValue} />
-      <UnitCard title="Sea Metric" />
-      <UnitCard title="Astronomic Metric" />
+      {/* <UnitCard title="Sea Metric" />
+      <UnitCard title="Astronomic Metric" /> */}
     </div>
   );
 };
