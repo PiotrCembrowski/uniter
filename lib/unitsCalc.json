@@ -1,4 +1,52 @@
 {
+  "length": [
+    {
+      "metric": [
+        {
+          "name": "millimeter [mm]",
+          "conversionFactor": 0.001
+        },
+        {
+          "name": "centimeter [cm]",
+          "conversionFactor": 0.01
+        },
+        {
+          "name": "decimeter [dm]",
+          "conversionFactor": 0.1
+        },
+        {
+          "name": "meter [m]",
+          "conversionFactor": 1
+        },
+        {
+          "name": "kilometer [km]",
+          "conversionFactor": 1000
+        }
+      ],
+      "imperial": [
+        {
+          "name": "inch [in]",
+          "conversionFactor": 0.0254
+        },
+        {
+          "name": "foot [ft]",
+          "conversionFactor": 0.3048
+        },
+        {
+          "name": "yard [yd]",
+          "conversionFactor": 0.9144
+        },
+        {
+          "name": "mile [mi]",
+          "conversionFactor": 1609.344
+        },
+        {
+          "name": "league [lea]",
+          "conversionFactor": 4828.032
+        }
+      ]
+    }
+  ],
   "pressure": [
     {
       "name": "Paskal",
