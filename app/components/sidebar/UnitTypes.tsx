@@ -191,12 +191,12 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
   }
 
   return (
-    <div className="mt-2 height-auto">
-      <h5 className="cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 ml-3 my-1">
+    <div className="mt-2 pl-2 height-auto">
+      <h5 className="my-1">
         Jednostką ciśnienia w układzie SI jest Paskal [Pa] (Pascal).
       </h5>
-      <h2>{systemNames.system1}</h2>
-      <table className="">
+      <h2 className="font-bold text-2xl">{systemNames.system1}</h2>
+      <table className="mt-3 mb-8">
         <thead className="">
           <tr>
             <th className="px-4 py-2">Jednostka</th>
@@ -297,8 +297,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           {/* Add more rows as needed */}
         </tbody>
       </table>
-      <h2>{systemNames.system2}</h2>
-      <table className="">
+      <h2 className="font-bold text-2xl">{systemNames.system2}</h2>
+      <table className="mt-3">
         <thead className="">
           <tr>
             <th className="px-4 py-2">Jednostka</th>

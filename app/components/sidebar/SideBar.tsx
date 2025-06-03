@@ -10,7 +10,7 @@ const SideBar = ({ unitTable }: { unitTable: string }) => {
         <h1 className="text-xl font-bold text-[#9177F2]">Showpad</h1>
       </div>
       <nav className="space-y-1 px-2 text-[#9177F2]">
-        <NavItem href="#" icon={<LayoutGrid className="h-4 w-4" />} active>
+        {/* <NavItem href="#" icon={<LayoutGrid className="h-4 w-4" />} active>
           All content
         </NavItem>
         <NavItem
@@ -51,11 +51,11 @@ const SideBar = ({ unitTable }: { unitTable: string }) => {
           }
         >
           Analytics
-        </NavItem>
+        </NavItem> */}
         <div className="py-3">
-          <div className="px-3 text-xs font-medium uppercase text-gray-500">
+          {/* <div className="px-3 text-xs font-medium uppercase text-gray-500">
             Collections
-          </div>
+          </div> */}
           <UnitTypes unitTable={unitTable} />
         </div>
       </nav>
