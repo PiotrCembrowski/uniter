@@ -5,7 +5,7 @@ import Dashboard from "../components/Dashboard";
 const LengthDash = () => {
   return (
     <div className="flex">
-      <SideBar />
+      <SideBar unitTable="length" />
       <div>
         <Dashboard dashType="length" />
       </div>
