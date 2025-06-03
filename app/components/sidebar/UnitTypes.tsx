@@ -11,8 +11,6 @@ type Units = {
   unit8?: number;
   unit9?: number;
   unit10?: number;
-  unit11?: number;
-  unit12?: number;
 };
 
 type UnitNames = {
@@ -26,8 +24,6 @@ type UnitNames = {
   unit8?: string;
   unit9?: string;
   unit10?: string;
-  unit11?: string;
-  unit12?: string;
 };
 
 type SystemNames = {
@@ -52,10 +48,34 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unit8: 0,
     unit9: 0,
     unit10: 0,
-    unit11: 0,
-    unit12: 0,
   };
   const unitNames: UnitNames = {
+    unit1: "",
+    unit2: "",
+    unit3: "",
+    unit4: "",
+    unit5: "",
+    unit6: "",
+    unit7: "",
+    unit8: "",
+    unit9: "",
+    unit10: "",
+  };
+
+  const units2: Units = {
+    unit1: 0,
+    unit2: 0,
+    unit3: 0,
+    unit4: 0,
+    unit5: 0,
+    unit6: 0,
+    unit7: 0,
+    unit8: 0,
+    unit9: 0,
+    unit10: 0,
+  };
+
+  const unitNames2: UnitNames = {
     unit1: "",
     unit2: "",
     unit3: "",
@@ -86,11 +106,11 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     units.unit4 = jsonFile.length.metric[3].conversionFactor;
     units.unit5 = jsonFile.length.metric[4].conversionFactor;
 
-    units.unit6 = jsonFile.length.imperial[0].conversionFactor;
-    units.unit7 = jsonFile.length.imperial[1].conversionFactor;
-    units.unit8 = jsonFile.length.imperial[2].conversionFactor;
-    units.unit9 = jsonFile.length.imperial[3].conversionFactor;
-    units.unit10 = jsonFile.length.imperial[4].conversionFactor;
+    units2.unit1 = jsonFile.length.imperial[0].conversionFactor;
+    units2.unit2 = jsonFile.length.imperial[1].conversionFactor;
+    units2.unit3 = jsonFile.length.imperial[2].conversionFactor;
+    units2.unit4 = jsonFile.length.imperial[3].conversionFactor;
+    units2.unit5 = jsonFile.length.imperial[4].conversionFactor;
 
     unitNames.unit1 = jsonFile.length.metric[0].name;
     unitNames.unit2 = jsonFile.length.metric[1].name;
@@ -98,11 +118,11 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit4 = jsonFile.length.metric[3].name;
     unitNames.unit5 = jsonFile.length.metric[4].name;
 
-    unitNames.unit6 = jsonFile.length.imperial[0].name;
-    unitNames.unit7 = jsonFile.length.imperial[1].name;
-    unitNames.unit8 = jsonFile.length.imperial[2].name;
-    unitNames.unit9 = jsonFile.length.imperial[3].name;
-    unitNames.unit10 = jsonFile.length.imperial[4].name;
+    unitNames2.unit1 = jsonFile.length.imperial[0].name;
+    unitNames2.unit2 = jsonFile.length.imperial[1].name;
+    unitNames2.unit3 = jsonFile.length.imperial[2].name;
+    unitNames2.unit4 = jsonFile.length.imperial[3].name;
+    unitNames2.unit5 = jsonFile.length.imperial[4].name;
 
     systemNames.system1 = "Metric System";
     systemNames.system2 = "Imperial System";
@@ -288,91 +308,91 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
         <tbody>
           <tr>
             <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames.unit1}
+              {unitNames2.unit1}
             </td>
             <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units.unit1}
+              {units2.unit1}
             </td>
           </tr>
           <tr>
             <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames.unit2}
+              {unitNames2.unit2}
             </td>
             <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units.unit2}
+              {units2.unit2}
             </td>
           </tr>
           <tr>
             <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames.unit3}
+              {unitNames2.unit3}
             </td>
             <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units.unit3}
+              {units2.unit3}
             </td>
           </tr>
           <tr>
             <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames.unit4}
+              {unitNames2.unit4}
             </td>
             <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units.unit4}
+              {units2.unit4}
             </td>
           </tr>
           <tr>
             <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames.unit5}
+              {unitNames2.unit5}
             </td>
             <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units.unit5}
+              {units2.unit5}
             </td>
           </tr>
-          {unitNames.unit6 && (
+          {unitNames2.unit6 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames.unit6}
+                {unitNames2.unit6}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units.unit6}
+                {units2.unit6}
               </td>
             </tr>
           )}
-          {unitNames.unit7 && (
+          {unitNames2.unit7 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames.unit7}
+                {unitNames2.unit7}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units.unit7}
+                {units2.unit7}
               </td>
             </tr>
           )}
-          {unitNames.unit8 && (
+          {unitNames2.unit8 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames.unit8}
+                {unitNames2.unit8}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units.unit8}
+                {units2.unit8}
               </td>
             </tr>
           )}
-          {unitNames.unit9 && (
+          {unitNames2.unit9 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames.unit9}
+                {unitNames2.unit9}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units.unit9}
+                {units2.unit9}
               </td>
             </tr>
           )}
-          {unitNames.unit10 && (
+          {unitNames2.unit10 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames.unit10}
+                {unitNames2.unit10}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units.unit10}
+                {units2.unit10}
               </td>
             </tr>
           )}
