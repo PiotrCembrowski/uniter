@@ -24,6 +24,15 @@ type UnitNames = {
   unit8?: string;
   unit9?: string;
   unit10?: string;
+  unit11?: string;
+  unit12?: string;
+};
+
+type SystemNames = {
+  system1: string;
+  system2?: string;
+  system3?: string;
+  system4?: string;
 };
 
 const jsonFile = lib;
