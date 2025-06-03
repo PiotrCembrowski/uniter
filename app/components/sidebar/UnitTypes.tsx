@@ -11,6 +11,8 @@ type Units = {
   unit8?: number;
   unit9?: number;
   unit10?: number;
+  unit11?: number;
+  unit12?: number;
 };
 
 type UnitNames = {
@@ -50,6 +52,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unit8: 0,
     unit9: 0,
     unit10: 0,
+    unit11: 0,
+    unit12: 0,
   };
   const unitNames: UnitNames = {
     unit1: "",
@@ -64,9 +68,45 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unit10: "",
   };
 
+  const systemNames: SystemNames = {
+    system1: "",
+    system2: "",
+    system3: "",
+    system4: "",
+  };
+
   // Opening json file
   const unitTableKey: UnitKey = unitTable;
   console.log(jsonFile);
+
+  if (unitTable === "length") {
+    units.unit1 = jsonFile.length.metric[0].conversionFactor;
+    units.unit2 = jsonFile.length.metric[1].conversionFactor;
+    units.unit3 = jsonFile.length.metric[2].conversionFactor;
+    units.unit4 = jsonFile.length.metric[3].conversionFactor;
+    units.unit5 = jsonFile.length.metric[4].conversionFactor;
+
+    units.unit6 = jsonFile.length.imperial[0].conversionFactor;
+    units.unit7 = jsonFile.length.imperial[1].conversionFactor;
+    units.unit8 = jsonFile.length.imperial[2].conversionFactor;
+    units.unit9 = jsonFile.length.imperial[3].conversionFactor;
+    units.unit10 = jsonFile.length.imperial[4].conversionFactor;
+
+    unitNames.unit1 = jsonFile.length.metric[0].name;
+    unitNames.unit2 = jsonFile.length.metric[1].name;
+    unitNames.unit3 = jsonFile.length.metric[2].name;
+    unitNames.unit4 = jsonFile.length.metric[3].name;
+    unitNames.unit5 = jsonFile.length.metric[4].name;
+
+    unitNames.unit6 = jsonFile.length.imperial[0].name;
+    unitNames.unit7 = jsonFile.length.imperial[1].name;
+    unitNames.unit8 = jsonFile.length.imperial[2].name;
+    unitNames.unit9 = jsonFile.length.imperial[3].name;
+    unitNames.unit10 = jsonFile.length.imperial[4].name;
+
+    systemNames.system1 = "Metric System";
+    systemNames.system2 = "Imperial System";
+  }
 
   if (unitTable === "time") {
     units.unit1 = jsonFile.time.day[0].conversionFactor;
@@ -185,7 +225,9 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           </tr>
           {unitNames.unit6 && (
             <tr>
-              <td className="border px-4 py-2">{unitNames.unit6}</td>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit6}
+              </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
                 {units.unit6}
               </td>
@@ -193,7 +235,9 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           )}
           {unitNames.unit7 && (
             <tr>
-              <td className="border px-4 py-2">{unitNames.unit7}</td>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit7}
+              </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
                 {units.unit7}
               </td>
@@ -201,7 +245,9 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           )}
           {unitNames.unit8 && (
             <tr>
-              <td className="border px-4 py-2">{unitNames.unit8}</td>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit8}
+              </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
                 {units.unit8}
               </td>
@@ -209,7 +255,9 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           )}
           {unitNames.unit9 && (
             <tr>
-              <td className="border px-4 py-2">{unitNames.unit9}</td>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit9}
+              </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
                 {units.unit9}
               </td>
@@ -217,7 +265,9 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           )}
           {unitNames.unit10 && (
             <tr>
-              <td className="border px-4 py-2">{unitNames.unit10}</td>
+              <td className="border border-[#4F3E8C] px-4 py-2">
+                {unitNames.unit10}
+              </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
                 {units.unit10}
               </td>
