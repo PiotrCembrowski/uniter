@@ -95,8 +95,6 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     system4: "",
   };
 
-  // Opening json file
-  const unitTableKey: UnitKey = unitTable;
   console.log(jsonFile);
 
   if (unitTable === "length") {
@@ -149,27 +147,27 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
   }
 
   if (unitTable === "pressure") {
-    units.unit1 = jsonFile[unitTableKey][0].conversionFactor;
-    units.unit2 = jsonFile[unitTableKey][1].conversionFactor;
-    units.unit3 = jsonFile[unitTableKey][2].conversionFactor;
-    units.unit4 = jsonFile[unitTableKey][3].conversionFactor;
-    units.unit5 = jsonFile[unitTableKey][4].conversionFactor;
-    units.unit6 = jsonFile[unitTableKey][5].conversionFactor;
-    units.unit7 = jsonFile[unitTableKey][6].conversionFactor;
-    units.unit8 = jsonFile[unitTableKey][7].conversionFactor;
-    units.unit9 = jsonFile[unitTableKey][8].conversionFactor;
-    units.unit10 = jsonFile[unitTableKey][9].conversionFactor;
+    units.unit1 = jsonFile.pressure[0].conversionFactor;
+    units.unit2 = jsonFile.pressure[1].conversionFactor;
+    units.unit3 = jsonFile.pressure[2].conversionFactor;
+    units.unit4 = jsonFile.pressure[3].conversionFactor;
+    units.unit5 = jsonFile.pressure[4].conversionFactor;
+    units.unit6 = jsonFile.pressure[5].conversionFactor;
+    units.unit7 = jsonFile.pressure[6].conversionFactor;
+    units.unit8 = jsonFile.pressure[7].conversionFactor;
+    units.unit9 = jsonFile.pressure[8].conversionFactor;
+    units.unit10 = jsonFile.pressure[9].conversionFactor;
 
-    unitNames.unit1 = jsonFile[unitTableKey][0].name;
-    unitNames.unit2 = jsonFile[unitTableKey][1].name;
-    unitNames.unit3 = jsonFile[unitTableKey][2].name;
-    unitNames.unit4 = jsonFile[unitTableKey][3].name;
-    unitNames.unit5 = jsonFile[unitTableKey][4].name;
-    unitNames.unit6 = jsonFile[unitTableKey][5].name;
-    unitNames.unit7 = jsonFile[unitTableKey][6].name;
-    unitNames.unit8 = jsonFile[unitTableKey][7].name;
-    unitNames.unit9 = jsonFile[unitTableKey][8].name;
-    unitNames.unit10 = jsonFile[unitTableKey][9].name;
+    unitNames.unit1 = jsonFile.pressure[0].name;
+    unitNames.unit2 = jsonFile.pressure[1].name;
+    unitNames.unit3 = jsonFile.pressure[2].name;
+    unitNames.unit4 = jsonFile.pressure[3].name;
+    unitNames.unit5 = jsonFile.pressure[4].name;
+    unitNames.unit6 = jsonFile.pressure[5].name;
+    unitNames.unit7 = jsonFile.pressure[6].name;
+    unitNames.unit8 = jsonFile.pressure[7].name;
+    unitNames.unit9 = jsonFile.pressure[8].name;
+    unitNames.unit10 = jsonFile.pressure[9].name;
   }
 
   if (unitTable === "energy") {
