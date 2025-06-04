@@ -20,7 +20,7 @@ interface UnitCardProps {
   values?: Values;
 }
 
-export default function SurfaceUnitCard({ values }: UnitCardProps) {
+export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
