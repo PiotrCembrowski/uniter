@@ -114,10 +114,10 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-white">
+    <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
       <div className="aspect-[4/3] p-3">
         <div className="mb-8">
-          <h3 className="font-medium text-gray-900"></h3>
+          <h3 className="font-medium"></h3>
         </div>
         <div>
           <label>{unit1Name}</label>

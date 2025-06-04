@@ -30,14 +30,25 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
   const [unit7Name, setUnit7Name] = useState<string>();
 
   useEffect(() => {
-    setUnit1Name("milimeter2 [mm2]");
-    setUnit2Name("centimeter2 [cm2]");
-    setUnit3Name("decimiter2 [dm2]");
-    setUnit4Name("meter2 [m2]");
-    setUnit5Name("kilometr2 [km2]");
-    setUnit6Name("ar [ar]");
-    setUnit7Name("hektar [ha]");
-  }, []);
+    if (title === "Metric System") {
+      setUnit1Name("milimeter2 [mm2]");
+      setUnit2Name("centimeter2 [cm2]");
+      setUnit3Name("decimiter2 [dm2]");
+      setUnit4Name("meter2 [m2]");
+      setUnit5Name("kilometr2 [km2]");
+      setUnit6Name("ar [ar]");
+      setUnit7Name("hektar [ha]");
+    }
+
+    if (title === "Imperial System") {
+      setUnit1Name("inch2 [in2]");
+      setUnit2Name("foot2 [ft2]");
+      setUnit3Name("yard2 [yd2]");
+      setUnit4Name("mile2 [mi2]");
+      setUnit5Name("imperial acre [UK]");
+      setUnit6Name("american acre [US]");
+    }
+  }, [title]);
 
   let baseValue: number;
   let metricValue: number;
@@ -126,7 +137,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
 
   return (
     <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
-      <div className="aspect-[4/3] p-3">
+      <div className="aspect-[4/3] md:aspect-auto p-3">
         <div className="mb-8">
           <h3 className="font-medium">{title}</h3>
         </div>
@@ -135,7 +146,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
           <br />
           <input
             name="unit1"
-            className="box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={values?.unit1}
@@ -147,7 +158,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
           <br />
           <input
             name="unit2"
-            className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={values?.unit2}
@@ -160,7 +171,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit3"
-              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={values?.unit3}
@@ -174,7 +185,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit4"
-              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={values?.unit4}
@@ -188,7 +199,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit5"
-              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={values?.unit5}
@@ -202,7 +213,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit6"
-              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={values?.unit6}
@@ -216,7 +227,7 @@ export default function SurfaceUnitCard({ title, values }: UnitCardProps) {
             <br />
             <input
               name="unit7"
-              className="border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={values?.unit7}
