@@ -26,15 +26,6 @@ export default function PowerUnitCard({ value }: UnitCardProps) {
   const [unit5Name, setUnit5Name] = useState<string>();
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
-  const [values, setValues] = useState<Values>({
-    unit1: 0,
-    unit2: 0,
-    unit3: 0,
-    unit4: 0,
-    unit5: 0,
-    unit6: 0,
-    unit7: 0,
-  });
 
   useEffect(() => {
     setUnit1Name("watt [W]");
