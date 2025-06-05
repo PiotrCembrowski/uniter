@@ -115,7 +115,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
 
   return (
     <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
-      <div className="aspect-[4/3] p-3">
+      <div className="aspect-[4/3] md:aspect-auto p-3">
         <div className="mb-8">
           <h3 className="font-medium"></h3>
         </div>
@@ -124,7 +124,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit1"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit1}
@@ -136,7 +136,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit2"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit2}
@@ -148,7 +148,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit3"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit3}
@@ -160,7 +160,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit4"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit4}
@@ -172,7 +172,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit5"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
