@@ -100,8 +100,8 @@ export default function MassUnitCard({ title }: { title: string }) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-white">
-      <div className="aspect-[4/3] p-3">
+    <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
+      <div className="aspect-[4/3] md:aspect-auto p-3">
         <div className="mb-8">
           <h3 className="font-medium text-gray-900"></h3>
         </div>
@@ -110,7 +110,7 @@ export default function MassUnitCard({ title }: { title: string }) {
           <br />
           <input
             name="unit1"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={unitValue?.unit1}
@@ -122,7 +122,7 @@ export default function MassUnitCard({ title }: { title: string }) {
           <br />
           <input
             name="unit2"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={unitValue?.unit2}
@@ -134,7 +134,7 @@ export default function MassUnitCard({ title }: { title: string }) {
           <br />
           <input
             name="unit3"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={unitValue?.unit3}
@@ -146,7 +146,7 @@ export default function MassUnitCard({ title }: { title: string }) {
           <br />
           <input
             name="unit4"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={unitValue?.unit4}
@@ -158,7 +158,7 @@ export default function MassUnitCard({ title }: { title: string }) {
           <br />
           <input
             name="unit5"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={unitValue?.unit5}
@@ -171,7 +171,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             <br />
             <input
               name="unit6"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={unitValue?.unit6}
@@ -185,7 +185,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             <br />
             <input
               name="unit7"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={unitValue?.unit7}
@@ -199,7 +199,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             <br />
             <input
               name="unit8"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={unitValue?.unit8}
