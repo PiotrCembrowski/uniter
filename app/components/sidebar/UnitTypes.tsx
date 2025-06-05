@@ -295,108 +295,112 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
           {/* Add more rows as needed */}
         </tbody>
       </table>
-      <h2 className="font-bold text-2xl">{systemNames.system2}</h2>
-      <table className="mt-3">
-        <thead className="">
-          <tr>
-            <th className="px-4 py-2">Jednostka</th>
-            <th className="px-4 py-2">Przelicznik</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames2.unit1}
-            </td>
-            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units2.unit1}
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames2.unit2}
-            </td>
-            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units2.unit2}
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames2.unit3}
-            </td>
-            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units2.unit3}
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames2.unit4}
-            </td>
-            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units2.unit4}
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-[#4F3E8C] px-4 py-2">
-              {unitNames2.unit5}
-            </td>
-            <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-              {units2.unit5}
-            </td>
-          </tr>
-          {unitNames2.unit6 && (
+      {systemNames.system2 && (
+        <h2 className="font-bold text-2xl">{systemNames.system2}</h2>
+      )}
+      {unitNames2.unit1 && (
+        <table className="mt-3">
+          <thead className="">
+            <tr>
+              <th className="px-4 py-2">Jednostka</th>
+              <th className="px-4 py-2">Przelicznik</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames2.unit6}
+                {unitNames2.unit1}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units2.unit6}
+                {units2.unit1}
               </td>
             </tr>
-          )}
-          {unitNames2.unit7 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames2.unit7}
+                {unitNames2.unit2}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units2.unit7}
+                {units2.unit2}
               </td>
             </tr>
-          )}
-          {unitNames2.unit8 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames2.unit8}
+                {unitNames2.unit3}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units2.unit8}
+                {units2.unit3}
               </td>
             </tr>
-          )}
-          {unitNames2.unit9 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames2.unit9}
+                {unitNames2.unit4}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units2.unit9}
+                {units2.unit4}
               </td>
             </tr>
-          )}
-          {unitNames2.unit10 && (
             <tr>
               <td className="border border-[#4F3E8C] px-4 py-2">
-                {unitNames2.unit10}
+                {unitNames2.unit5}
               </td>
               <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
-                {units2.unit10}
+                {units2.unit5}
               </td>
             </tr>
-          )}
-          {/* Add more rows as needed */}
-        </tbody>
-      </table>
+            {unitNames2.unit6 && (
+              <tr>
+                <td className="border border-[#4F3E8C] px-4 py-2">
+                  {unitNames2.unit6}
+                </td>
+                <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                  {units2.unit6}
+                </td>
+              </tr>
+            )}
+            {unitNames2.unit7 && (
+              <tr>
+                <td className="border border-[#4F3E8C] px-4 py-2">
+                  {unitNames2.unit7}
+                </td>
+                <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                  {units2.unit7}
+                </td>
+              </tr>
+            )}
+            {unitNames2.unit8 && (
+              <tr>
+                <td className="border border-[#4F3E8C] px-4 py-2">
+                  {unitNames2.unit8}
+                </td>
+                <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                  {units2.unit8}
+                </td>
+              </tr>
+            )}
+            {unitNames2.unit9 && (
+              <tr>
+                <td className="border border-[#4F3E8C] px-4 py-2">
+                  {unitNames2.unit9}
+                </td>
+                <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                  {units2.unit9}
+                </td>
+              </tr>
+            )}
+            {unitNames2.unit10 && (
+              <tr>
+                <td className="border border-[#4F3E8C] px-4 py-2">
+                  {unitNames2.unit10}
+                </td>
+                <td className="border border-[#4F3E8C] px-4 py-2 text-[#46A66F] font-bold">
+                  {units2.unit10}
+                </td>
+              </tr>
+            )}
+            {/* Add more rows as needed */}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
