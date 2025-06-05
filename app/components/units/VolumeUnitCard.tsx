@@ -288,17 +288,17 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-white">
-      <div className="aspect-[4/3] p-3">
+    <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2] h-auto">
+      <div className="aspect-[4/3] md:aspect-auto p-3 flex flex-col justify-between space-y-2">
         <div className="mb-8">
-          <h3 className="font-medium text-gray-900">{title}</h3>
+          <h3 className="font-medium">{title}</h3>
         </div>
         <div>
           <label>{unit1Name}</label>
           <br />
           <input
             name="unit1"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit1}
@@ -310,7 +310,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit2"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit2}
@@ -322,7 +322,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit3"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit3}
@@ -334,7 +334,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit4"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit4}
@@ -346,7 +346,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
           <br />
           <input
             name="unit5"
-            className="border-2"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -359,7 +359,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
             <br />
             <input
               name="unit6"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={value?.unit6}
@@ -373,7 +373,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
             <br />
             <input
               name="unit7"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={value?.unit7}
@@ -387,7 +387,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
             <br />
             <input
               name="unit8"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={value?.unit8}
@@ -401,7 +401,7 @@ export default function VolumeUnitCard({ title, value }: UnitCardProps) {
             <br />
             <input
               name="unit9"
-              className="border-2"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
               value={value?.unit9}
