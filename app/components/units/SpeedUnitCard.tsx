@@ -32,18 +32,6 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
   const [unit8Name, setUnit8Name] = useState<string>();
   const [unit9Name, setUnit9Name] = useState<string>();
   const [unit10Name, setUnit10Name] = useState<string>();
-  const [values, setValues] = useState<Values>({
-    unit1: 0,
-    unit2: 0,
-    unit3: 0,
-    unit4: 0,
-    unit5: 0,
-    unit6: 0,
-    unit7: 0,
-    unit8: 0,
-    unit9: 0,
-    unit10: 0,
-  });
 
   useEffect(() => {
     setUnit1Name("Pascal [1 Pa=N/m2]");
@@ -90,17 +78,17 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-white">
-      <div className="aspect-[4/3] p-3 flex flex-col justify-between space-y-2">
+    <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
+      <div className="aspect-[4/3] md:aspect-auto p-3 flex flex-col justify-between space-y-2">
         <div className="mb-8">
-          <h3 className="font-medium text-gray-900"></h3>
+          <h3 className="font-medium"></h3>
         </div>
         <div className="w-full">
           <label>{unit1Name}</label>
           <br />
           <input
             name="unit1"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit1}
@@ -111,7 +99,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit2"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit2}
@@ -122,7 +110,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit3"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit3}
@@ -133,7 +121,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit4"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit4}
@@ -144,7 +132,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit5"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit5}
@@ -155,7 +143,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit6"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit6}
@@ -166,7 +154,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit7"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit7}
@@ -177,7 +165,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit8"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit8}
@@ -188,7 +176,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit9"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit9}
@@ -199,7 +187,7 @@ export default function SpeedUnitCard({ value }: UnitCardProps) {
           <br />
           <input
             name="unit10"
-            className="border-2 w-full"
+            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
             value={value?.unit10}
