@@ -286,122 +286,120 @@
       "conversionFactor": 1055.06
     }
   ],
-  "volume": [
-    {
-      "metric": [
-        {
-          "name": "mililiter",
-          "conversionFactor": 0.001
-        },
-        {
-          "name": "centiliter",
-          "conversionFactor": 0.01
-        },
-        {
-          "name": "deciliter",
-          "conversionFactor": 0.1
-        },
-        {
-          "name": "liter",
-          "conversionFactor": 1
-        },
-        {
-          "name": "meter [m³]",
-          "conversionFactor": 1000
-        }
-      ],
-      "imperial": [
-        {
-          "name": "fluid ounce [fl oz]",
-          "conversionFactor": 0.0284130625
-        },
-        {
-          "name": "pint [pt]",
-          "conversionFactor": 0.56826125
-        },
-        {
-          "name": "quart [qt]",
-          "conversionFactor": 1.1365225
-        },
-        {
-          "name": "gallon [gal]",
-          "conversionFactor": 4.54609
-        },
-        {
-          "name": "bushel [bu]",
-          "conversionFactor": 36.36872
-        }
-      ],
-      "american": [
-        {
-          "name": "fluid ounce [fl oz]",
-          "conversionFactor": 0.0295735
-        },
-        {
-          "name": "liquid pint [dr pt]",
-          "conversionFactor": 0.473176
-        },
-        {
-          "name": "dry pint [fl pt]",
-          "conversionFactor": 0.55061
-        },
-        {
-          "name": "liquid quart [fl qt]",
-          "conversionFactor": 0.946353
-        },
-        {
-          "name": "dry quart [fl qt]",
-          "conversionFactor": 1.10122
-        },
-        {
-          "name": "liquid gallon [fl gal]",
-          "conversionFactor": 3.78541
-        },
-        {
-          "name": "dry gallon [fl gal]",
-          "conversionFactor": 4.40488
-        },
-        {
-          "name": "bushel [bsh][bu]",
-          "conversionFactor": 35.2391
-        },
-        {
-          "name": "barrel [bbl]",
-          "conversionFactor": 158.987294928
-        }
-      ],
-      "kitchen": [
-        {
-          "name": "teaspoon [tsp]",
-          "conversionFactor": 0.005
-        },
-        {
-          "name": "tablespoon [tbsp]",
-          "conversionFactor": 0.015
-        },
-        {
-          "name": "cup [cup]",
-          "conversionFactor": 0.25
-        },
-        {
-          "name": "cup (UK, Europe)",
-          "conversionFactor": 0.25
-        },
-        {
-          "name": "cup (US)",
-          "conversionFactor": 0.24
-        },
-        {
-          "name": "cup (JP)",
-          "conversionFactor": 0.2
-        },
-        {
-          "name": "tablespoon (Australia)",
-          "conversionFactor": 0.02
-        }
-      ]
-    }
-  ],
+  "volume": {
+    "metric": [
+      {
+        "name": "mililiter",
+        "conversionFactor": 0.001
+      },
+      {
+        "name": "centiliter",
+        "conversionFactor": 0.01
+      },
+      {
+        "name": "deciliter",
+        "conversionFactor": 0.1
+      },
+      {
+        "name": "liter",
+        "conversionFactor": 1
+      },
+      {
+        "name": "meter [m³]",
+        "conversionFactor": 1000
+      }
+    ],
+    "imperial": [
+      {
+        "name": "fluid ounce [fl oz]",
+        "conversionFactor": 0.0284130625
+      },
+      {
+        "name": "pint [pt]",
+        "conversionFactor": 0.56826125
+      },
+      {
+        "name": "quart [qt]",
+        "conversionFactor": 1.1365225
+      },
+      {
+        "name": "gallon [gal]",
+        "conversionFactor": 4.54609
+      },
+      {
+        "name": "bushel [bu]",
+        "conversionFactor": 36.36872
+      }
+    ],
+    "american": [
+      {
+        "name": "fluid ounce [fl oz]",
+        "conversionFactor": 0.0295735
+      },
+      {
+        "name": "liquid pint [dr pt]",
+        "conversionFactor": 0.473176
+      },
+      {
+        "name": "dry pint [fl pt]",
+        "conversionFactor": 0.55061
+      },
+      {
+        "name": "liquid quart [fl qt]",
+        "conversionFactor": 0.946353
+      },
+      {
+        "name": "dry quart [fl qt]",
+        "conversionFactor": 1.10122
+      },
+      {
+        "name": "liquid gallon [fl gal]",
+        "conversionFactor": 3.78541
+      },
+      {
+        "name": "dry gallon [fl gal]",
+        "conversionFactor": 4.40488
+      },
+      {
+        "name": "bushel [bsh][bu]",
+        "conversionFactor": 35.2391
+      },
+      {
+        "name": "barrel [bbl]",
+        "conversionFactor": 158.987294928
+      }
+    ],
+    "kitchen": [
+      {
+        "name": "teaspoon [tsp]",
+        "conversionFactor": 0.005
+      },
+      {
+        "name": "tablespoon [tbsp]",
+        "conversionFactor": 0.015
+      },
+      {
+        "name": "cup [cup]",
+        "conversionFactor": 0.25
+      },
+      {
+        "name": "cup (UK, Europe)",
+        "conversionFactor": 0.25
+      },
+      {
+        "name": "cup (US)",
+        "conversionFactor": 0.24
+      },
+      {
+        "name": "cup (JP)",
+        "conversionFactor": 0.2
+      },
+      {
+        "name": "tablespoon (Australia)",
+        "conversionFactor": 0.02
+      }
+    ]
+  },
   "surface": [
     {
       "metric": [
