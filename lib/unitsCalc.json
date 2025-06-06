@@ -461,5 +461,43 @@
         "conversionFactor": 4046.87261
       }
     ]
-  }
+  },
+  "speed": [
+    {
+      "name": "kilometer per hour [km/h]",
+      "conversionFactor": 0.277778
+    },
+    {
+      "name": "mile per hour [mph]",
+      "conversionFactor": 0.44704
+    },
+    {
+      "name": "kilometer per second [km/s]",
+      "conversionFactor": 1000
+    },
+    {
+      "name": "mile per second [mi/s]",
+      "conversionFactor": 1609.344
+    },
+    {
+      "name": "meter per second [m/s]",
+      "conversionFactor": 1
+    },
+    {
+      "name": "foot per second [ft/s]",
+      "conversionFactor": 0.3048
+    },
+    {
+      "name": "knot per hour [kn]",
+      "conversionFactor": 0.514444
+    },
+    {
+      "name": "Mach",
+      "conversionFactor": 340.29
+    },
+    {
+      "name": "speed of light [c]",
+      "conversionFactor": 299792458
+    }
+  ]
 }
