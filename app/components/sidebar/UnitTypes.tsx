@@ -383,6 +383,41 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system4 = "Kitchen System";
   }
 
+  if (unitTable === "surface") {
+    units.unit1 = jsonFile.surface.metric[0].conversionFactor;
+    units.unit2 = jsonFile.surface.metric[1].conversionFactor;
+    units.unit3 = jsonFile.surface.metric[2].conversionFactor;
+    units.unit4 = jsonFile.surface.metric[3].conversionFactor;
+    units.unit5 = jsonFile.surface.metric[4].conversionFactor;
+    units.unit6 = jsonFile.surface.metric[5].conversionFactor;
+    units.unit7 = jsonFile.surface.metric[6].conversionFactor;
+
+    units2.unit1 = jsonFile.surface.imperial[0].conversionFactor;
+    units2.unit2 = jsonFile.surface.imperial[1].conversionFactor;
+    units2.unit3 = jsonFile.surface.imperial[2].conversionFactor;
+    units2.unit4 = jsonFile.surface.imperial[3].conversionFactor;
+    units2.unit5 = jsonFile.surface.imperial[4].conversionFactor;
+    units2.unit6 = jsonFile.surface.imperial[5].conversionFactor;
+
+    unitNames.unit1 = jsonFile.surface.metric[0].name;
+    unitNames.unit2 = jsonFile.surface.metric[1].name;
+    unitNames.unit3 = jsonFile.surface.metric[2].name;
+    unitNames.unit4 = jsonFile.surface.metric[3].name;
+    unitNames.unit5 = jsonFile.surface.metric[4].name;
+    unitNames.unit6 = jsonFile.surface.metric[5].name;
+    unitNames.unit7 = jsonFile.surface.metric[6].name;
+
+    unitNames2.unit1 = jsonFile.surface.imperial[0].name;
+    unitNames2.unit2 = jsonFile.surface.imperial[1].name;
+    unitNames2.unit3 = jsonFile.surface.imperial[2].name;
+    unitNames2.unit4 = jsonFile.surface.imperial[3].name;
+    unitNames2.unit5 = jsonFile.surface.imperial[4].name;
+    unitNames2.unit6 = jsonFile.surface.imperial[5].name;
+
+    systemNames.system1 = "Metric System";
+    systemNames.system2 = "Imperial System";
+  }
+
   return (
     <div className="mt-2 pl-2 height-auto">
       <h5 className="my-1">
