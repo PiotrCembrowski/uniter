@@ -320,6 +320,69 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit7 = jsonFile.power[6].name;
   }
 
+  if (unitTable === "volume") {
+    units.unit1 = jsonFile.volume.metric[0].conversionFactor;
+    units.unit2 = jsonFile.volume.metric[1].conversionFactor;
+    units.unit3 = jsonFile.volume.metric[2].conversionFactor;
+    units.unit4 = jsonFile.volume.metric[3].conversionFactor;
+    units.unit5 = jsonFile.volume.metric[4].conversionFactor;
+
+    units2.unit1 = jsonFile.volume.imperial[0].conversionFactor;
+    units2.unit2 = jsonFile.volume.imperial[1].conversionFactor;
+    units2.unit3 = jsonFile.volume.imperial[2].conversionFactor;
+    units2.unit4 = jsonFile.volume.imperial[3].conversionFactor;
+    units2.unit5 = jsonFile.volume.imperial[4].conversionFactor;
+
+    units3.unit1 = jsonFile.volume.american[0].conversionFactor;
+    units3.unit2 = jsonFile.volume.american[1].conversionFactor;
+    units3.unit3 = jsonFile.volume.american[2].conversionFactor;
+    units3.unit4 = jsonFile.volume.american[3].conversionFactor;
+    units3.unit5 = jsonFile.volume.american[4].conversionFactor;
+    units3.unit6 = jsonFile.volume.american[5].conversionFactor;
+    units3.unit7 = jsonFile.volume.american[6].conversionFactor;
+
+    units4.unit1 = jsonFile.volume.kitchen[0].conversionFactor;
+    units4.unit2 = jsonFile.volume.kitchen[1].conversionFactor;
+    units4.unit3 = jsonFile.volume.kitchen[2].conversionFactor;
+    units4.unit4 = jsonFile.volume.kitchen[3].conversionFactor;
+    units4.unit5 = jsonFile.volume.kitchen[4].conversionFactor;
+    units4.unit6 = jsonFile.volume.kitchen[5].conversionFactor;
+    units4.unit7 = jsonFile.volume.kitchen[6].conversionFactor;
+
+    unitNames.unit1 = jsonFile.volume.metric[0].name;
+    unitNames.unit2 = jsonFile.volume.metric[1].name;
+    unitNames.unit3 = jsonFile.volume.metric[2].name;
+    unitNames.unit4 = jsonFile.volume.metric[3].name;
+    unitNames.unit5 = jsonFile.volume.metric[4].name;
+
+    unitNames2.unit1 = jsonFile.volume.imperial[0].name;
+    unitNames2.unit2 = jsonFile.volume.imperial[1].name;
+    unitNames2.unit3 = jsonFile.volume.imperial[2].name;
+    unitNames2.unit4 = jsonFile.volume.imperial[3].name;
+    unitNames2.unit5 = jsonFile.volume.imperial[4].name;
+
+    unitNames3.unit1 = jsonFile.volume.american[0].name;
+    unitNames3.unit2 = jsonFile.volume.american[1].name;
+    unitNames3.unit3 = jsonFile.volume.american[2].name;
+    unitNames3.unit4 = jsonFile.volume.american[3].name;
+    unitNames3.unit5 = jsonFile.volume.american[4].name;
+    unitNames3.unit6 = jsonFile.volume.american[5].name;
+    unitNames3.unit7 = jsonFile.volume.american[6].name;
+
+    unitNames4.unit1 = jsonFile.volume.kitchen[0].name;
+    unitNames4.unit2 = jsonFile.volume.kitchen[1].name;
+    unitNames4.unit3 = jsonFile.volume.kitchen[2].name;
+    unitNames4.unit4 = jsonFile.volume.kitchen[3].name;
+    unitNames4.unit5 = jsonFile.volume.kitchen[4].name;
+    unitNames4.unit6 = jsonFile.volume.kitchen[5].name;
+    unitNames4.unit7 = jsonFile.volume.kitchen[6].name;
+
+    systemNames.system1 = "Metric System";
+    systemNames.system2 = "Imperial System";
+    systemNames.system3 = "American System";
+    systemNames.system4 = "Kitchen System";
+  }
+
   return (
     <div className="mt-2 pl-2 height-auto">
       <h5 className="my-1">
