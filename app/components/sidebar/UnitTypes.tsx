@@ -418,6 +418,28 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system2 = "Imperial System";
   }
 
+  if (unitTable === "speed") {
+    units.unit1 = jsonFile.speed[0].conversionFactor;
+    units.unit2 = jsonFile.speed[1].conversionFactor;
+    units.unit3 = jsonFile.speed[2].conversionFactor;
+    units.unit4 = jsonFile.speed[3].conversionFactor;
+    units.unit5 = jsonFile.speed[4].conversionFactor;
+    units.unit6 = jsonFile.speed[5].conversionFactor;
+    units.unit7 = jsonFile.speed[6].conversionFactor;
+    units.unit8 = jsonFile.speed[7].conversionFactor;
+    units.unit9 = jsonFile.speed[8].conversionFactor;
+
+    unitNames.unit1 = jsonFile.speed[0].name;
+    unitNames.unit2 = jsonFile.speed[1].name;
+    unitNames.unit3 = jsonFile.speed[2].name;
+    unitNames.unit4 = jsonFile.speed[3].name;
+    unitNames.unit5 = jsonFile.speed[4].name;
+    unitNames.unit6 = jsonFile.speed[5].name;
+    unitNames.unit7 = jsonFile.speed[6].name;
+    unitNames.unit8 = jsonFile.speed[7].name;
+    unitNames.unit9 = jsonFile.speed[8].name;
+  }
+
   return (
     <div className="mt-2 pl-2 height-auto">
       <h5 className="my-1">
