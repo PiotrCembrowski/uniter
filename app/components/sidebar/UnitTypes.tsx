@@ -302,6 +302,24 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system4 = "Atomic Units";
   }
 
+  if (unitTable === "power") {
+    units.unit1 = jsonFile.power[0].conversionFactor;
+    units.unit2 = jsonFile.power[1].conversionFactor;
+    units.unit3 = jsonFile.power[2].conversionFactor;
+    units.unit4 = jsonFile.power[3].conversionFactor;
+    units.unit5 = jsonFile.power[4].conversionFactor;
+    units.unit6 = jsonFile.power[5].conversionFactor;
+    units.unit7 = jsonFile.power[6].conversionFactor;
+
+    unitNames.unit1 = jsonFile.power[0].name;
+    unitNames.unit2 = jsonFile.power[1].name;
+    unitNames.unit3 = jsonFile.power[2].name;
+    unitNames.unit4 = jsonFile.power[3].name;
+    unitNames.unit5 = jsonFile.power[4].name;
+    unitNames.unit6 = jsonFile.power[5].name;
+    unitNames.unit7 = jsonFile.power[6].name;
+  }
+
   return (
     <div className="mt-2 pl-2 height-auto">
       <h5 className="my-1">
