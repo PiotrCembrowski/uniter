@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import UnitCard, { ValuesMetric } from "./LengthUnitCard";
+import UnitCard, { Values } from "./MassUnitCard";
 import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 
@@ -13,10 +13,10 @@ const MassUnitDash = () => {
     (state) => state.massSlice.astronomicMetric
   );
 
-  const [metricValue, setMetricValue] = useState<ValuesMetric>();
-  const [imperialValue, setImperialValue] = useState<ValuesMetric>();
-  const [atomicValue, setAtomicValue] = useState<ValuesMetric>();
-  const [otherValue, setOtherValue] = useState<ValuesMetric>();
+  const [metricValue, setMetricValue] = useState<Values>();
+  const [imperialValue, setImperialValue] = useState<Values>();
+  const [atomicValue, setAtomicValue] = useState<Values>();
+  const [otherValue, setOtherValue] = useState<Values>();
 
   useEffect(() => {
     setMetricValue({
@@ -27,11 +27,23 @@ const MassUnitDash = () => {
       unit5: showMetricValue * 1000,
     });
     setImperialValue({
-      unit1: showImperialValue,
-      unit2: showImperialValue * 0.083,
-      unit3: showImperialValue * 0.0277778,
-      unit4: showImperialValue * 0.000568182,
-      unit5: showImperialValue * 0.000015783,
+      unit1: showImperialValue * 0.0283495,
+      unit2: showImperialValue * 0.453592,
+      unit3: showImperialValue * 6.35029318,
+      unit4: showImperialValue * 45.359237,
+      unit5: showImperialValue * 50.80234544,
+      unit6: showImperialValue * 907.18474,
+      unit7: showImperialValue * 1016.0469088,
+      unit8: showImperialValue * 0.00006479891,
+    });
+    setAtomicValue({
+      unit1: showAtomicValue * 1.6605390666e-27,
+      unit2: showAtomicValue * 1.78266192e-30,
+      unit3: showAtomicValue * 2.176434e-8,
+    });
+    setOtherValue({
+      unit1: showOtherValue * 0.0002,
+      unit2: showOtherValue * 100,
     });
   }, [showMetricValue, showImperialValue, showAtomicValue, showOtherValue]);
 
