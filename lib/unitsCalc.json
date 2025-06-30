@@ -511,12 +511,16 @@
         "conversionFactor": 0.001
       },
       {
-        "name": "kilogram [kg]",
-        "conversionFactor": 1
+        "name": "decagram [dag]",
+        "conversionFactor": 0.01
       },
       {
-        "name": "metric ton [t]",
-        "conversionFactor": 1000
+        "name": "hectogram [hg]",
+        "conversionFactor": 0.1
+      },
+      {
+        "name": "kilogram [kg]",
+        "conversionFactor": 1
       },
       {
         "name": "tonne [t]",
