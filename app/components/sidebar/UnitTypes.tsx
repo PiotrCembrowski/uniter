@@ -440,6 +440,57 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit9 = jsonFile.speed[8].name;
   }
 
+  if (unitTable === "mass") {
+    units.unit1 = jsonFile.mass.metric[0].conversionFactor;
+    units.unit2 = jsonFile.mass.metric[1].conversionFactor;
+    units.unit3 = jsonFile.mass.metric[2].conversionFactor;
+    units.unit4 = jsonFile.mass.metric[3].conversionFactor;
+    units.unit5 = jsonFile.mass.metric[4].conversionFactor;
+
+    units2.unit1 = jsonFile.mass.imperial[0].conversionFactor;
+    units2.unit2 = jsonFile.mass.imperial[1].conversionFactor;
+    units2.unit3 = jsonFile.mass.imperial[2].conversionFactor;
+    units2.unit4 = jsonFile.mass.imperial[3].conversionFactor;
+    units2.unit5 = jsonFile.mass.imperial[4].conversionFactor;
+    units2.unit6 = jsonFile.mass.imperial[5].conversionFactor;
+    units2.unit7 = jsonFile.mass.imperial[6].conversionFactor;
+    units2.unit8 = jsonFile.mass.imperial[7].conversionFactor;
+
+    units3.unit1 = jsonFile.mass.atomic[0].conversionFactor;
+    units3.unit2 = jsonFile.mass.atomic[1].conversionFactor;
+    units3.unit3 = jsonFile.mass.atomic[2].conversionFactor;
+
+    units4.unit1 = jsonFile.mass.other[0].conversionFactor;
+    units4.unit2 = jsonFile.mass.other[1].conversionFactor;
+
+    unitNames.unit1 = jsonFile.mass.metric[0].name;
+    unitNames.unit2 = jsonFile.mass.metric[1].name;
+    unitNames.unit3 = jsonFile.mass.metric[2].name;
+    unitNames.unit4 = jsonFile.mass.metric[3].name;
+    unitNames.unit5 = jsonFile.mass.metric[4].name;
+
+    unitNames2.unit1 = jsonFile.mass.imperial[0].name;
+    unitNames2.unit2 = jsonFile.mass.imperial[1].name;
+    unitNames2.unit3 = jsonFile.mass.imperial[2].name;
+    unitNames2.unit4 = jsonFile.mass.imperial[3].name;
+    unitNames2.unit5 = jsonFile.mass.imperial[4].name;
+    unitNames2.unit6 = jsonFile.mass.imperial[5].name;
+    unitNames2.unit7 = jsonFile.mass.imperial[6].name;
+    unitNames2.unit8 = jsonFile.mass.imperial[7].name;
+
+    unitNames3.unit1 = jsonFile.mass.atomic[0].name;
+    unitNames3.unit2 = jsonFile.mass.atomic[1].name;
+    unitNames3.unit3 = jsonFile.mass.atomic[2].name;
+
+    unitNames4.unit1 = jsonFile.mass.other[0].name;
+    unitNames4.unit2 = jsonFile.mass.other[1].name;
+
+    systemNames.system1 = "Metric System";
+    systemNames.system2 = "Imperial System";
+    systemNames.system3 = "Atomic System";
+    systemNames.system4 = "Other";
+  }
+
   return (
     <div className="mt-2 pl-2 height-auto">
       <h5 className="my-1">
