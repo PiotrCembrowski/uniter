@@ -4,7 +4,7 @@ import Dashboard from "../components/Dashboard";
 const MassDash = () => {
   return (
     <div className="flex">
-      <SideBar />
+      <SideBar unitTable="mass" />
       <div>
         <Dashboard dashType="mass" />
       </div>
