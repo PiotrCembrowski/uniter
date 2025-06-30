@@ -517,6 +517,10 @@
       {
         "name": "metric ton [t]",
         "conversionFactor": 1000
+      },
+      {
+        "name": "tonne [t]",
+        "conversionFactor": 1000
       }
     ],
     "imperial": [
