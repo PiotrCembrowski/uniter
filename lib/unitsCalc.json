@@ -499,5 +499,83 @@
       "name": "speed of light [c]",
       "conversionFactor": 299792458
     }
-  ]
+  ],
+  "mass": {
+    "metric": [
+      {
+        "name": "milligram [mg]",
+        "conversionFactor": 0.000001
+      },
+      {
+        "name": "gram [g]",
+        "conversionFactor": 0.001
+      },
+      {
+        "name": "kilogram [kg]",
+        "conversionFactor": 1
+      },
+      {
+        "name": "metric ton [t]",
+        "conversionFactor": 1000
+      }
+    ],
+    "imperial": [
+      {
+        "name": "ounce [oz]",
+        "conversionFactor": 0.0283495
+      },
+      {
+        "name": "pound [lb]",
+        "conversionFactor": 0.45359237
+      },
+      {
+        "name": "stone [st]",
+        "conversionFactor": 6.35029318
+      },
+      {
+        "name": "hundredweight [cwt]",
+        "conversionFactor": 45.359237
+      },
+      {
+        "name": "long hundredweight [LHW]",
+        "conversionFactor": 50.80234544
+      },
+      {
+        "name": "short ton [ST]",
+        "conversionFactor": 907.18474
+      },
+      {
+        "name": "long ton [LT]",
+        "conversionFactor": 1016.0469088
+      },
+      {
+        "name": "grain [gr]",
+        "conversionFactor": 0.00006479891
+      }
+    ],
+    "atomic": [
+      {
+        "name": "atomic mass unit [amu]",
+        "conversionFactor": 1.6605390666e-27
+      },
+      {
+        "name": "MeV/c²",
+        "conversionFactor": 1.78266192e-30
+      },
+      {
+        "name": "Planck mass [mP]",
+        "conversionFactor": 2.176434e-8
+      }
+    ],
+    "other": [
+      {
+        "name": "karat [ct]",
+        "conversionFactor": 0.0002
+      },
+      {
+        "name": "Kwintal [Q]",
+        "conversionFactor": 100
+      }
+    ]
+  }
 }
