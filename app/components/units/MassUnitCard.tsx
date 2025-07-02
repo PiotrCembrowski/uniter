@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { newImperialState, newMetricState } from "@/store";
+import {
+  newAtomicMassState,
+  newImperialMassState,
+  newImperialState,
+  newMetricMassState,
+  newMetricState,
+  newOtherMassState,
+} from "@/store";
 import { useDispatch } from "react-redux";
 
 export type Values = {
@@ -78,29 +85,59 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
         case "unit1":
           baseValue = inputValue;
           metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit2":
           baseValue = inputValue * 12;
           metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue * 36;
           metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue * 63360;
           metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit5":
           baseValue = inputValue * 190000;
           metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 190000;
+          metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 190000;
+          metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit8":
+          baseValue = inputValue * 190000;
+          metricValue = baseValue * 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newImperialState(baseValue));
-      dispatch(newMetricState(metricValue));
+      dispatch(newImperialMassState(baseValue));
+      dispatch(newMetricMassState(metricValue));
+      dispatch(newAtomicMassState(atomicValue));
+      dispatch(newOtherMassState(otherValue));
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
@@ -108,28 +145,176 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
         case "unit1":
           baseValue = inputValue;
           imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit2":
           baseValue = inputValue * 10;
           imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit3":
           baseValue = inputValue * 100;
           imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue * 1000;
           imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         case "unit5":
           baseValue = inputValue * 1000000;
           imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit8":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
-      dispatch(newMetricState(baseValue));
-      dispatch(newImperialState(imperialValue));
+      dispatch(newImperialMassState(imperialValue));
+      dispatch(newMetricMassState(baseValue));
+      dispatch(newAtomicMassState(atomicValue));
+      dispatch(newOtherMassState(otherValue));
+    }
+
+    if (title === "Atomic System" && inputTitle === "Atomic System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 10;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue * 100;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue * 1000;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit5":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          otherValue = baseValue;
+          metricValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        case "unit8":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          atomicValue = baseValue;
+          otherValue = baseValue;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+      dispatch(newImperialMassState(imperialValue));
+      dispatch(newMetricMassState(metricValue));
+      dispatch(newAtomicMassState(baseValue));
+      dispatch(newOtherMassState(otherValue));
+    }
+
+    if (title === "Other" && inputTitle === "Other") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit2":
+          baseValue = inputValue * 10;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit3":
+          baseValue = inputValue * 100;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit4":
+          baseValue = inputValue * 1000;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit5":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit6":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit7":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        case "unit8":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          metricValue = baseValue;
+          atomicValue = baseValue;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+      dispatch(newImperialMassState(imperialValue));
+      dispatch(newMetricMassState(metricValue));
+      dispatch(newAtomicMassState(atomicValue));
+      dispatch(newOtherMassState(baseValue));
     }
   };
 

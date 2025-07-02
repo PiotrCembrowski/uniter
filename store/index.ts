@@ -36,7 +36,7 @@ const massSlice = createSlice({
   initialState: {
     metric: 0,
     imperial: 0,
-    seaMetric: 0,
+    atomic: 0,
     astronomicMetric: 0,
   },
   reducers: {
@@ -46,11 +46,11 @@ const massSlice = createSlice({
     newImperialMassState: (state, action: PayloadAction<number>) => {
       return { ...state, imperial: action.payload };
     },
-    newSeaMetricMassState: (state, action: PayloadAction<number>) => {
-      return { ...state, seaMetric: action.payload };
+    newAtomicMassState: (state, action: PayloadAction<number>) => {
+      return { ...state, atomic: action.payload };
     },
-    newAstronomicMetricMassState: (state, action: PayloadAction<number>) => {
-      return { ...state, astronomicMetric: action.payload };
+    newOtherMassState: (state, action: PayloadAction<number>) => {
+      return { ...state, other: action.payload };
     },
   },
 });
@@ -214,8 +214,8 @@ export const { newMetricSurfaceState, newImperialSurfaceState } =
 export const {
   newMetricMassState,
   newImperialMassState,
-  newSeaMetricMassState,
-  newAstronomicMetricMassState,
+  newAtomicMassState,
+  newOtherMassState,
 } = massSlice.actions;
 
 export default store;
