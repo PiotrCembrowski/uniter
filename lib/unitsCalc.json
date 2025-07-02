@@ -515,10 +515,6 @@
         "conversionFactor": 0.01
       },
       {
-        "name": "hectogram [hg]",
-        "conversionFactor": 0.1
-      },
-      {
         "name": "kilogram [kg]",
         "conversionFactor": 1
       },
