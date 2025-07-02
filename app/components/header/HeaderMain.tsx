@@ -53,7 +53,7 @@ const HeaderMain = () => {
           </DropdownMenu>
         </div>
       </div>
-      <div className="flex items-start gap-4">
+      {/* <div className="flex items-start gap-4">
         <Button variant="ghost" size="icon">
           <Grid className="h-4 w-4" />
         </Button>
@@ -68,8 +68,8 @@ const HeaderMain = () => {
             height={32}
             className="h-full w-full object-cover"
           />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </header>
   );
 };
