@@ -103,7 +103,7 @@ export default function MassUnitCard({ title }: { title: string }) {
     <div className="group relative overflow-hidden rounded-lg border border-[#46A66F] bg-[#4F3E8C]  text-[#afa0e2]">
       <div className="aspect-[4/3] md:aspect-auto p-3">
         <div className="mb-8">
-          <h3 className="font-medium text-gray-900"></h3>
+          <h3 className="font-medium"></h3>
         </div>
         <div>
           <label>{unit1Name}</label>
@@ -113,7 +113,7 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
-            value={unitValue?.unit1}
+            value={value?.unit1}
             data-title={title}
           />
         </div>
@@ -125,84 +125,48 @@ export default function MassUnitCard({ title }: { title: string }) {
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="text"
             onChange={handleChange}
-            value={unitValue?.unit2}
+            value={value?.unit2}
             data-title={title}
           />
         </div>
-        <div>
-          <label htmlFor="">{unit3Name}</label>
-          <br />
-          <input
-            name="unit3"
-            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
-            onChange={handleChange}
-            value={unitValue?.unit3}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit4Name}</label>
-          <br />
-          <input
-            name="unit4"
-            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
-            onChange={handleChange}
-            value={unitValue?.unit4}
-            data-title={title}
-          />
-        </div>
-        <div>
-          <label htmlFor="">{unit5Name}</label>
-          <br />
-          <input
-            name="unit5"
-            className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
-            onChange={handleChange}
-            value={unitValue?.unit5}
-            data-title={title}
-          />
-        </div>
-        {unit6Name && (
+        {unit3Name && (
           <div>
-            <label htmlFor="">{unit6Name}</label>
+            <label htmlFor="">{unit3Name}</label>
             <br />
             <input
-              name="unit6"
+              name="unit3"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
-              value={unitValue?.unit6}
+              value={value?.unit3}
               data-title={title}
             />
           </div>
         )}
-        {unit7Name && (
+        {unit4Name && (
           <div>
-            <label htmlFor="">{unit7Name}</label>
+            <label htmlFor="">{unit4Name}</label>
             <br />
             <input
-              name="unit7"
+              name="unit4"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
-              value={unitValue?.unit7}
+              value={value?.unit4}
               data-title={title}
             />
           </div>
         )}
-        {unit8Name && (
+        {unit5Name && (
           <div>
-            <label htmlFor="">{unit8Name}</label>
+            <label htmlFor="">{unit5Name}</label>
             <br />
             <input
-              name="unit8"
+              name="unit5"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="text"
               onChange={handleChange}
-              value={unitValue?.unit8}
+              value={value?.unit5}
               data-title={title}
             />
           </div>
