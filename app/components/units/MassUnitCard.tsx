@@ -3,29 +3,26 @@
 import { useEffect, useState } from "react";
 import { newImperialState, newMetricState } from "@/store";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "@/store/hooks";
 
-export interface ValuesMass {
+export type Values = {
   unit1: number;
   unit2: number;
-  unit3: number;
-  unit4: number;
-  unit5: number;
+  unit3?: number;
+  unit4?: number;
+  unit5?: number;
   unit6?: number;
   unit7?: number;
   unit8?: number;
-}
-export interface UnitCardProps {
+  unit9?: number;
+  unit10?: number;
+};
+
+interface UnitCardProps {
   title: string;
-  value?: ValuesMass;
+  value?: Values;
 }
 
-export default function MassUnitCard({ title }: { title: string }) {
-  const dispatch = useDispatch();
-  const imperialState = useAppSelector((state) => state.massSlice.imperial);
-  const metricState = useAppSelector((state) => state.massSlice.metric);
-
-  // useState vars
+export default function MetricUnitCard({ title, value }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -34,68 +31,106 @@ export default function MassUnitCard({ title }: { title: string }) {
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
-  const [unitValue, setUnitValue] = useState<ValuesMass>({
-    unit1: 0,
-    unit2: 0,
-    unit3: 0,
-    unit4: 0,
-    unit5: 0,
-    unit6: 0,
-    unit7: 0,
-    unit8: 0,
-  });
 
   useEffect(() => {
-    console.log("MassUnitCard", imperialState, metricState);
-
-    if (title === "Mass imperial") {
-      setUnit1Name("uncja [oz]]");
+    if (title === "Metric System") {
+      setUnit1Name("milligram [mg]");
+      setUnit2Name("gram [g]");
+      setUnit3Name("decagram [dag]");
+      setUnit4Name("hectogram [hg]");
+      setUnit5Name("kilogram [kg]");
+      setUnit6Name("tonne [t]");
+    }
+    if (title === "Imperial System") {
+      setUnit1Name("ounce [oz]");
       setUnit2Name("pound [lb]");
       setUnit3Name("stone [st]");
-      setUnit4Name("cetnar us.]");
-      setUnit5Name("cetnar ang. [cwt]");
-      setUnit6Name("tona krótka [tonUS]");
-      setUnit7Name("tona długa [tonUK]");
-      setUnit8Name("grain [gr]");
-
-      setUnitValue({
-        unit1: imperialState.unit1,
-        unit2: imperialState.unit2,
-        unit3: imperialState.unit3,
-        unit4: imperialState.unit4,
-        unit5: imperialState.unit5,
-        unit6: imperialState.unit6,
-        unit7: imperialState.unit7,
-        unit8: imperialState.unit8,
-      });
+      setUnit4Name("hundredweight [cwt]");
+      setUnit5Name("hundredweight uk [cwt]");
+      setUnit6Name("short ton [ST]");
+      setUnit7Name("long ton [LT]");
+      setUnit8Name("mgrain [gr]");
     }
-    if (title === "Mass metric") {
-      setUnit1Name("miligram [mg]]");
-      setUnit2Name("gram [g]");
-      setUnit3Name("dekagram [dkg]");
-      setUnit4Name("kilogram [kg]");
-      setUnit5Name("tone [T]]");
-
-      setUnitValue({
-        unit1: imperialState.unit1,
-        unit2: imperialState.unit2,
-        unit3: imperialState.unit3,
-        unit4: imperialState.unit4,
-        unit5: imperialState.unit5,
-      });
+    if (title === "Atomic System") {
+      setUnit1Name("atomic mass unit [amu]");
+      setUnit2Name("MeV/c²");
+      setUnit3Name("planck mass [mP]");
     }
-  }, [title, imperialState, metricState]);
+    if (title === "Other") {
+      setUnit1Name("karat [ct]");
+      setUnit2Name("kwintal [Q]");
+    }
+  }, [title]);
+
+  let baseValue: number;
+  let imperialValue: number;
+  let metricValue: number;
+  let atomicValue: number;
+  let otherValue: number;
+  const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputName = event.target.name;
     const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
 
-    if (title === "Mass imperial" && inputTitle === "Mass imperial") {
-      dispatch(newImperialState(inputValue));
+    if (title === "Imperial System" && inputTitle === "Imperial System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit2":
+          baseValue = inputValue * 12;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit3":
+          baseValue = inputValue * 36;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit4":
+          baseValue = inputValue * 63360;
+          metricValue = baseValue * 25.4;
+          break;
+        case "unit5":
+          baseValue = inputValue * 190000;
+          metricValue = baseValue * 25.4;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+
+      dispatch(newImperialState(baseValue));
+      dispatch(newMetricState(metricValue));
     }
 
-    if (title === "Mass metric" && inputTitle === "Mass metric") {
-      dispatch(newMetricState(inputValue));
+    if (title === "Metric System" && inputTitle === "Metric System") {
+      switch (inputName) {
+        case "unit1":
+          baseValue = inputValue;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit2":
+          baseValue = inputValue * 10;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit3":
+          baseValue = inputValue * 100;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit4":
+          baseValue = inputValue * 1000;
+          imperialValue = baseValue / 25.4;
+          break;
+        case "unit5":
+          baseValue = inputValue * 1000000;
+          imperialValue = baseValue / 25.4;
+          break;
+        default:
+          baseValue = inputValue;
+      }
+      dispatch(newMetricState(baseValue));
+      dispatch(newImperialState(imperialValue));
     }
   };
 
@@ -167,6 +202,48 @@ export default function MassUnitCard({ title }: { title: string }) {
               type="text"
               onChange={handleChange}
               value={value?.unit5}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit6Name && (
+          <div>
+            <label htmlFor="">{unit6Name}</label>
+            <br />
+            <input
+              name="unit6"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit6}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit7Name && (
+          <div>
+            <label htmlFor="">{unit7Name}</label>
+            <br />
+            <input
+              name="unit7"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit7}
+              data-title={title}
+            />
+          </div>
+        )}
+        {unit8Name && (
+          <div>
+            <label htmlFor="">{unit8Name}</label>
+            <br />
+            <input
+              name="unit8"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              type="text"
+              onChange={handleChange}
+              value={value?.unit8}
               data-title={title}
             />
           </div>
