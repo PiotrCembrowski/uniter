@@ -541,11 +541,11 @@
         "conversionFactor": 6.35029318
       },
       {
-        "name": "hundredweight [cwt]",
+        "name": "hundredweight us [cwt]",
         "conversionFactor": 45.359237
       },
       {
-        "name": "long hundredweight [LHW]",
+        "name": "hundredweight uk [cwt]",
         "conversionFactor": 50.80234544
       },
       {
