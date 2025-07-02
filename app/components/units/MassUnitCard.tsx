@@ -37,9 +37,8 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
       setUnit1Name("milligram [mg]");
       setUnit2Name("gram [g]");
       setUnit3Name("decagram [dag]");
-      setUnit4Name("hectogram [hg]");
-      setUnit5Name("kilogram [kg]");
-      setUnit6Name("tonne [t]");
+      setUnit4Name("kilogram [kg]");
+      setUnit5Name("tonne [t]");
     }
     if (title === "Imperial System") {
       setUnit1Name("ounce [oz]");
