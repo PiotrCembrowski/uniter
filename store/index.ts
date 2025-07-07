@@ -37,7 +37,7 @@ const massSlice = createSlice({
     metric: 0,
     imperial: 0,
     atomic: 0,
-    astronomicMetric: 0,
+    other: 0,
   },
   reducers: {
     newMetricMassState: (state, action: PayloadAction<number>) => {

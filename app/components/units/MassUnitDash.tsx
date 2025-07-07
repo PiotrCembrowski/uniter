@@ -8,10 +8,8 @@ import { useAppSelector } from "@/store/hooks";
 const MassUnitDash = () => {
   const showImperialValue = useAppSelector((state) => state.massSlice.metric);
   const showMetricValue = useAppSelector((state) => state.massSlice.imperial);
-  const showAtomicValue = useAppSelector((state) => state.massSlice.seaMetric);
-  const showOtherValue = useAppSelector(
-    (state) => state.massSlice.astronomicMetric
-  );
+  const showAtomicValue = useAppSelector((state) => state.massSlice.other);
+  const showOtherValue = useAppSelector((state) => state.massSlice.other);
 
   const [metricValue, setMetricValue] = useState<Values>();
   const [imperialValue, setImperialValue] = useState<Values>();
