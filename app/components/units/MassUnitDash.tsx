@@ -25,14 +25,14 @@ const MassUnitDash = () => {
       unit5: showMetricValue / 1000,
     });
     setImperialValue({
-      unit1: showImperialValue * 0.0283495,
-      unit2: showImperialValue * 0.453592,
-      unit3: showImperialValue * 6.35029318,
-      unit4: showImperialValue * 45.359237,
-      unit5: showImperialValue * 50.80234544,
-      unit6: showImperialValue * 907.18474,
-      unit7: showImperialValue * 1016.0469088,
-      unit8: showImperialValue * 0.00006479891,
+      unit1: showImperialValue / 0.0283495,
+      unit2: showImperialValue / 0.453592,
+      unit3: showImperialValue / 6.35029318,
+      unit4: showImperialValue / 45.359237,
+      unit5: showImperialValue / 50.80234544,
+      unit6: showImperialValue / 907.18474,
+      unit7: showImperialValue / 1016.0469088,
+      unit8: showImperialValue / 0.00006479891,
     });
     setAtomicValue({
       unit1: showAtomicValue * 1.6605390666e-27,
