@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import {
   newAtomicMassState,
   newImperialMassState,
-  newImperialState,
   newMetricMassState,
-  newMetricState,
   newOtherMassState,
 } from "@/store";
 import { useDispatch } from "react-redux";
