@@ -20,11 +20,11 @@ const MassUnitDash = () => {
 
   useEffect(() => {
     setMetricValue({
-      unit1: showMetricValue * 0.000001,
-      unit2: showMetricValue * 0.001,
-      unit3: showMetricValue * 0.1,
-      unit4: showMetricValue * 1,
-      unit5: showMetricValue * 1000,
+      unit1: showMetricValue / 0.000001,
+      unit2: showMetricValue / 0.001,
+      unit3: showMetricValue / 0.1,
+      unit4: showMetricValue / 1,
+      unit5: showMetricValue / 1000,
     });
     setImperialValue({
       unit1: showImperialValue * 0.0283495,
