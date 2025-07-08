@@ -81,50 +81,50 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 0.0283495;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 12;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 0.453592;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 36;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 6.35029318;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 63360;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 45.359237;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 50.80234544;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 907.18474;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 1016.0469088;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue * 0.00006479891;
+          metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
