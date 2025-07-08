@@ -25,8 +25,8 @@ const MassUnitDash = () => {
       unit5: showMetricValue / 1000,
     });
     setImperialValue({
-      unit1: showImperialValue / 0.0283495,
-      unit2: showImperialValue / 0.453592,
+      unit1: showImperialValue / 0.028349523,
+      unit2: showImperialValue / 0.45359237,
       unit3: showImperialValue / 6.35029318,
       unit4: showImperialValue / 45.359237,
       unit5: showImperialValue / 50.80234544,

@@ -81,13 +81,13 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.0283495;
+          baseValue = inputValue * 0.028349523;
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.453592;
+          baseValue = inputValue * 0.45359237;
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
