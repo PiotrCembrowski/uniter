@@ -141,21 +141,21 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.000001;
+          baseValue = inputValue;
           imperialValue = baseValue;
-          atomicValue = baseValue;
+          atomicValue = baseValue * 1.6605390666e-27;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.001;
+          baseValue = inputValue;
           imperialValue = baseValue;
-          atomicValue = baseValue;
+          atomicValue = baseValue * 1.78266192e-30;
           otherValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.1;
+          baseValue = inputValue;
           imperialValue = baseValue;
-          atomicValue = baseValue;
+          atomicValue = baseValue * 2.176434e-8;
           otherValue = baseValue;
           break;
         case "unit4":
@@ -165,7 +165,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           otherValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1000;
+          baseValue = inputValue;
           imperialValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
