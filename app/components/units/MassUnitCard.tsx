@@ -191,6 +191,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
+
       dispatch(newImperialMassState(imperialValue));
       dispatch(newMetricMassState(baseValue));
       dispatch(newAtomicMassState(atomicValue));
@@ -250,6 +251,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
+
       dispatch(newImperialMassState(imperialValue));
       dispatch(newMetricMassState(metricValue));
       dispatch(newAtomicMassState(baseValue));
@@ -328,7 +330,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <input
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
+            type="number"
             onChange={handleChange}
             value={value?.unit1}
             data-title={title}
@@ -340,7 +342,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <input
             name="unit2"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
+            type="number"
             onChange={handleChange}
             value={value?.unit2}
             data-title={title}
@@ -353,7 +355,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             <input
               name="unit3"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={value?.unit3}
               data-title={title}
@@ -367,7 +369,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             <input
               name="unit4"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={value?.unit4}
               data-title={title}
@@ -381,7 +383,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             <input
               name="unit5"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={value?.unit5}
               data-title={title}
@@ -395,7 +397,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             <input
               name="unit6"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={value?.unit6}
               data-title={title}
@@ -409,7 +411,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             <input
               name="unit7"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={value?.unit7}
               data-title={title}
@@ -423,7 +425,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             <input
               name="unit8"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
+              type="number"
               onChange={handleChange}
               value={value?.unit8}
               data-title={title}
