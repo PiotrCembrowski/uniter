@@ -67,64 +67,64 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     }
   }, [title]);
 
-  let baseValue: number;
-  let imperialValue: number;
-  let metricValue: number;
-  let atomicValue: number;
-  let otherValue: number;
+  let baseValue: Big;
+  let imperialValue: Big;
+  let metricValue: Big;
+  let atomicValue: Big;
+  let otherValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
+    const inputValue = new Big(event.target.value);
     const inputTitle = event.target.dataset.title;
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.028349523;
+          baseValue = inputValue.times(0.028349523);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.45359237;
+          baseValue = inputValue.times(0.45359237);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 6.35029318;
+          baseValue = inputValue.times(6.35029318);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 45.359237;
+          baseValue = inputValue.times(45.359237);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 50.80234544;
+          baseValue = inputValue.times(50.80234544);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 907.18474;
+          baseValue = inputValue.times(907.18474);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 1016.0469088;
+          baseValue = inputValue.times(1016.0469088);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue * 0.00006479891;
+          baseValue = inputValue.times(0.00006479891);
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
@@ -142,19 +142,19 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.000001;
+          baseValue = inputValue.times(0.000001);
           imperialValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.001;
+          baseValue = inputValue.times(0.001);
           imperialValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.1;
+          baseValue = inputValue.times(0.1);
           imperialValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
@@ -166,7 +166,8 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           otherValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1000;
+          // baseValue = inputValue * 1000;
+          baseValue = inputValue.times(1000);
           imperialValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
@@ -202,19 +203,19 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Atomic System" && inputTitle === "Atomic System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 1.6605390666e-27;
+          baseValue = inputValue.times(1.6605390666e-27);
           imperialValue = baseValue;
           metricValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 1.78266192e-30;
+          baseValue = inputValue.times(1.78266192e-30);
           imperialValue = baseValue;
           metricValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 2.176434e-8;
+          baseValue = inputValue.times(2.176434e-8);
           imperialValue = baseValue;
           metricValue = baseValue;
           otherValue = baseValue;
@@ -262,13 +263,13 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Other" && inputTitle === "Other") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.0002;
+          baseValue = inputValue.times(0.0002);
           imperialValue = baseValue;
           metricValue = baseValue;
           atomicValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 100;
+          baseValue = inputValue.times(100);
           imperialValue = baseValue;
           metricValue = baseValue;
           atomicValue = baseValue;
