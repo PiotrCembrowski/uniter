@@ -11,16 +11,16 @@ import { useDispatch } from "react-redux";
 import Big from "big.js";
 
 export type Values = {
-  unit1: number;
-  unit2: number;
-  unit3?: number;
-  unit4?: number;
-  unit5?: number;
-  unit6?: number;
-  unit7?: number;
-  unit8?: number;
-  unit9?: number;
-  unit10?: number;
+  unit1: Big;
+  unit2: Big;
+  unit3?: Big;
+  unit4?: Big;
+  unit5?: Big;
+  unit6?: Big;
+  unit7?: Big;
+  unit8?: Big;
+  unit9?: Big;
+  unit10?: Big;
 };
 
 interface UnitCardProps {
