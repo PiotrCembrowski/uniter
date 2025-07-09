@@ -1,6 +1,7 @@
 import { configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
+import Big from "big.js";
 
 const initialState = {
   units: 0,
@@ -34,22 +35,22 @@ const imperialSlice = createSlice({
 const massSlice = createSlice({
   name: "mass",
   initialState: {
-    metric: 0,
-    imperial: 0,
-    atomic: 0,
-    other: 0,
+    metric: Big(0),
+    imperial: Big(0),
+    atomic: Big(0),
+    other: Big(0),
   },
   reducers: {
-    newMetricMassState: (state, action: PayloadAction<number>) => {
+    newMetricMassState: (state, action: PayloadAction<Big>) => {
       return { ...state, metric: action.payload };
     },
-    newImperialMassState: (state, action: PayloadAction<number>) => {
+    newImperialMassState: (state, action: PayloadAction<Big>) => {
       return { ...state, imperial: action.payload };
     },
-    newAtomicMassState: (state, action: PayloadAction<number>) => {
+    newAtomicMassState: (state, action: PayloadAction<Big>) => {
       return { ...state, atomic: action.payload };
     },
-    newOtherMassState: (state, action: PayloadAction<number>) => {
+    newOtherMassState: (state, action: PayloadAction<Big>) => {
       return { ...state, other: action.payload };
     },
   },
@@ -87,22 +88,22 @@ const timeSlice = createSlice({
 const energySlice = createSlice({
   name: "energy",
   initialState: {
-    metric: 0,
-    imperial: 0,
-    calories: 0,
-    atomic: 0,
+    metric: Big(0),
+    imperial: Big(0),
+    calories: Big(0),
+    atomic: Big(0),
   },
   reducers: {
-    newMetricEnergyState: (state, action: PayloadAction<number>) => {
+    newMetricEnergyState: (state, action: PayloadAction<Big>) => {
       return { ...state, metric: action.payload };
     },
-    newImperialEnergyState: (state, action: PayloadAction<number>) => {
+    newImperialEnergyState: (state, action: PayloadAction<Big>) => {
       return { ...state, imperial: action.payload };
     },
-    newCaloriesEnergyState: (state, action: PayloadAction<number>) => {
+    newCaloriesEnergyState: (state, action: PayloadAction<Big>) => {
       return { ...state, calories: action.payload };
     },
-    newAtomicEnergyState: (state, action: PayloadAction<number>) => {
+    newAtomicEnergyState: (state, action: PayloadAction<Big>) => {
       return { ...state, atomic: action.payload };
     },
   },
