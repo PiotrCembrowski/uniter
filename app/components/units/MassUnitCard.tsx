@@ -332,9 +332,8 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           <input
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="number"
             onChange={handleChange}
-            value={value?.unit1}
+            value={value?.unit1.toString()}
             data-title={title}
           />
         </div>
@@ -346,7 +345,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="number"
             onChange={handleChange}
-            value={value?.unit2}
+            value={value?.unit2.toString()}
             data-title={title}
           />
         </div>
@@ -359,7 +358,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit3}
+              value={value?.unit3?.toString()}
               data-title={title}
             />
           </div>
@@ -373,7 +372,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit4}
+              value={value?.unit4?.toString()}
               data-title={title}
             />
           </div>
@@ -387,7 +386,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit5}
+              value={value?.unit5?.toString()}
               data-title={title}
             />
           </div>
@@ -401,7 +400,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit6}
+              value={value?.unit6?.toString()}
               data-title={title}
             />
           </div>
@@ -415,7 +414,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit7}
+              value={value?.unit7?.toString()}
               data-title={title}
             />
           </div>
@@ -429,7 +428,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit8}
+              value={value?.unit8?.toString()}
               data-title={title}
             />
           </div>
