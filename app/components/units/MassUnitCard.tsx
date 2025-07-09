@@ -76,7 +76,10 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = new Big(event.target.value);
+    const rawValue = event.target.value;
+    const inputValue = new Big(
+      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+    );
     const inputTitle = event.target.dataset.title;
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
@@ -166,7 +169,6 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           otherValue = baseValue;
           break;
         case "unit5":
-          // baseValue = inputValue * 1000;
           baseValue = inputValue.times(1000);
           imperialValue = baseValue;
           atomicValue = baseValue;
