@@ -3,7 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 import Big from "big.js";
 
-const initialState = {};
+interface MassUnit {
+  unit: string;
+}
+
+interface MassState {
+  metric: MassUnit;
+  imperial: MassUnit;
+  atomic: MassUnit;
+  other: MassUnit;
+}
+
+const initialState: MassState = {
+  metric: { unit: "" },
+  imperial: { unit: "" },
+  atomic: { unit: "" },
+  other: { unit: "" },
+};
 
 // Length Units
 
