@@ -4,12 +4,22 @@ import React, { useEffect } from "react";
 import UnitCard, { Values } from "./MassUnitCard";
 import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
+import Big from "big.js";
 
 const MassUnitDash = () => {
   const showImperialValue = useAppSelector((state) => state.massSlice.metric);
   const showMetricValue = useAppSelector((state) => state.massSlice.imperial);
   const showAtomicValue = useAppSelector((state) => state.massSlice.other);
   const showOtherValue = useAppSelector((state) => state.massSlice.other);
+
+  const unit = Big(showMetricValue.unit).toNumber();
+
+  console.log(
+    showImperialValue,
+    showMetricValue,
+    showAtomicValue,
+    showOtherValue
+  );
 
   const [metricValue, setMetricValue] = useState<Values>();
   const [imperialValue, setImperialValue] = useState<Values>();
@@ -18,11 +28,11 @@ const MassUnitDash = () => {
 
   useEffect(() => {
     setMetricValue({
-      unit1: showMetricValue / 0.000001,
-      unit2: showMetricValue / 0.001,
-      unit3: showMetricValue / 0.1,
-      unit4: showMetricValue / 1,
-      unit5: showMetricValue / 1000,
+      unit1: unit / 0.000001,
+      unit2: showMetricValue.unit / 0.001,
+      unit3: showMetricValue.unit / 0.1,
+      unit4: showMetricValue.unit / 1,
+      unit5: showMetricValue.unit / 1000,
     });
     setImperialValue({
       unit1: showImperialValue / 0.028349523,
