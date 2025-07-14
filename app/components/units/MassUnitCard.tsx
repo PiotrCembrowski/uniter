@@ -66,6 +66,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
       setUnit2Name("kwintal [Q]");
     }
   }, [title]);
+  console.log(value?.unit1);
 
   let baseValue: Big;
   let imperialValue: Big;

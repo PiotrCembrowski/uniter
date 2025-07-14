@@ -147,8 +147,6 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     system4: "",
   };
 
-  console.log(jsonFile);
-
   if (unitTable === "length") {
     units.unit1 = jsonFile.length.metric[0].conversionFactor;
     units.unit2 = jsonFile.length.metric[1].conversionFactor;
