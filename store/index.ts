@@ -4,7 +4,7 @@ import { createWrapper } from "next-redux-wrapper";
 import Big from "big.js";
 
 const initialState = {
-  units: 0,
+  units: Big(0),
 };
 
 // Length Units
@@ -13,7 +13,7 @@ const metricUnitsSlice = createSlice({
   name: "metricUnits",
   initialState,
   reducers: {
-    newMetricState: (state, action: PayloadAction<number>) => {
+    newMetricState: (state, action: PayloadAction<Big>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -23,7 +23,7 @@ const imperialSlice = createSlice({
   name: "imperialUnits",
   initialState,
   reducers: {
-    newImperialState: (state, action: PayloadAction<number>) => {
+    newImperialState: (state, action: PayloadAction<Big>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -61,7 +61,7 @@ const pressureSlice = createSlice({
   name: "pressure",
   initialState: initialState,
   reducers: {
-    newPressureState: (state, action: PayloadAction<number>) => {
+    newPressureState: (state, action: PayloadAction<Big>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -114,7 +114,7 @@ const powerSlice = createSlice({
   name: "power",
   initialState: initialState,
   reducers: {
-    newPowerState: (state, action: PayloadAction<number>) => {
+    newPowerState: (state, action: PayloadAction<Big>) => {
       return { ...state, units: action.payload };
     },
   },
