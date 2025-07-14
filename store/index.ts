@@ -15,10 +15,10 @@ interface MassState {
 }
 
 const initialState: MassState = {
-  metric: { unit: "" },
-  imperial: { unit: "" },
-  atomic: { unit: "" },
-  other: { unit: "" },
+  metric: { unit: "0" },
+  imperial: { unit: "0" },
+  atomic: { unit: "0" },
+  other: { unit: "0" },
 };
 
 // Length Units
