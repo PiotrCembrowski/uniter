@@ -3,9 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 import Big from "big.js";
 
-const initialState = {
-  units: Big(0),
-};
+const initialState = {};
 
 // Length Units
 
@@ -35,10 +33,10 @@ const imperialSlice = createSlice({
 const massSlice = createSlice({
   name: "mass",
   initialState: {
-    metric: Big(0),
-    imperial: Big(0),
-    atomic: Big(0),
-    other: Big(0),
+    metric: {},
+    imperial: {},
+    atomic: {},
+    other: {},
   },
   reducers: {
     newMetricMassState: (state, action: PayloadAction<Big>) => {
@@ -88,10 +86,10 @@ const timeSlice = createSlice({
 const energySlice = createSlice({
   name: "energy",
   initialState: {
-    metric: Big(0),
-    imperial: Big(0),
-    calories: Big(0),
-    atomic: Big(0),
+    metric: {},
+    imperial: {},
+    calories: {},
+    atomic: {},
   },
   reducers: {
     newMetricEnergyState: (state, action: PayloadAction<Big>) => {
