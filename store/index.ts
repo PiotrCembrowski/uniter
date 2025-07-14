@@ -48,23 +48,18 @@ const imperialSlice = createSlice({
 
 const massSlice = createSlice({
   name: "mass",
-  initialState: {
-    metric: {},
-    imperial: {},
-    atomic: {},
-    other: {},
-  },
+  initialState,
   reducers: {
-    newMetricMassState: (state, action: PayloadAction<Big>) => {
+    newMetricMassState: (state, action: PayloadAction<MassUnit>) => {
       return { ...state, metric: action.payload };
     },
-    newImperialMassState: (state, action: PayloadAction<Big>) => {
+    newImperialMassState: (state, action: PayloadAction<MassUnit>) => {
       return { ...state, imperial: action.payload };
     },
-    newAtomicMassState: (state, action: PayloadAction<Big>) => {
+    newAtomicMassState: (state, action: PayloadAction<MassUnit>) => {
       return { ...state, atomic: action.payload };
     },
-    newOtherMassState: (state, action: PayloadAction<Big>) => {
+    newOtherMassState: (state, action: PayloadAction<MassUnit>) => {
       return { ...state, other: action.payload };
     },
   },
