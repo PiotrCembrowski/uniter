@@ -137,10 +137,20 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newImperialMassState(baseValue));
-      dispatch(newMetricMassState(metricValue));
-      dispatch(newAtomicMassState(atomicValue));
-      dispatch(newOtherMassState(otherValue));
+      dispatch(
+        newImperialMassState({
+          unit: Big(baseValue).toString(),
+        }),
+        newMetricMassState({
+          unit: Big(metricValue).toString(),
+        }),
+        newAtomicMassState({
+          unit: Big(atomicValue).toString(),
+        }),
+        newOtherMassState({
+          unit: Big(otherValue).toString(),
+        })
+      );
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
@@ -197,10 +207,20 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newImperialMassState(imperialValue));
-      dispatch(newMetricMassState(baseValue));
-      dispatch(newAtomicMassState(atomicValue));
-      dispatch(newOtherMassState(otherValue));
+      dispatch(
+        newImperialMassState({
+          unit: Big(imperialValue).toString(),
+        }),
+        newMetricMassState({
+          unit: Big(baseValue).toString(),
+        }),
+        newAtomicMassState({
+          unit: Big(atomicValue).toString(),
+        }),
+        newOtherMassState({
+          unit: Big(otherValue).toString(),
+        })
+      );
     }
 
     if (title === "Atomic System" && inputTitle === "Atomic System") {
@@ -257,10 +277,20 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newImperialMassState(imperialValue));
-      dispatch(newMetricMassState(metricValue));
-      dispatch(newAtomicMassState(baseValue));
-      dispatch(newOtherMassState(otherValue));
+      dispatch(
+        newImperialMassState({
+          unit: Big(imperialValue).toString(),
+        }),
+        newMetricMassState({
+          unit: Big(metricValue).toString(),
+        }),
+        newAtomicMassState({
+          unit: Big(baseValue).toString(),
+        }),
+        newOtherMassState({
+          unit: Big(otherValue).toString(),
+        })
+      );
     }
 
     if (title === "Other" && inputTitle === "Other") {
@@ -316,10 +346,21 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      dispatch(newImperialMassState(imperialValue));
-      dispatch(newMetricMassState(metricValue));
-      dispatch(newAtomicMassState(atomicValue));
-      dispatch(newOtherMassState(baseValue));
+
+      dispatch(
+        newImperialMassState({
+          unit: Big(imperialValue).toString(),
+        }),
+        newMetricMassState({
+          unit: Big(metricValue).toString(),
+        }),
+        newAtomicMassState({
+          unit: Big(atomicValue).toString(),
+        }),
+        newOtherMassState({
+          unit: Big(baseValue).toString(),
+        })
+      );
     }
   };
 
