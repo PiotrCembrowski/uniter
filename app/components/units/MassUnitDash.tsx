@@ -7,9 +7,9 @@ import { useAppSelector } from "@/store/hooks";
 import Big from "big.js";
 
 const MassUnitDash = () => {
-  const showImperialValue = useAppSelector((state) => state.massSlice.metric);
-  const showMetricValue = useAppSelector((state) => state.massSlice.imperial);
-  const showAtomicValue = useAppSelector((state) => state.massSlice.other);
+  const showMetricValue = useAppSelector((state) => state.massSlice.metric);
+  const showImperialValue = useAppSelector((state) => state.massSlice.imperial);
+  const showAtomicValue = useAppSelector((state) => state.massSlice.atomic);
   const showOtherValue = useAppSelector((state) => state.massSlice.other);
 
   const unitMetric = Big(showMetricValue.unit).toNumber();

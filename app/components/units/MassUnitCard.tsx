@@ -86,49 +86,49 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue.times(0.028349523);
+          baseValue = inputValue.times(new Big("0.028349523"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue.times(0.45359237);
+          baseValue = inputValue.times(new Big("0.45359237"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue.times(6.35029318);
+          baseValue = inputValue.times(new Big("6.35029318"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue.times(45.359237);
+          baseValue = inputValue.times(new Big("45.359237"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue.times(50.80234544);
+          baseValue = inputValue.times(new Big("50.80234544"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue.times(907.18474);
+          baseValue = inputValue.times(new Big("907.18474"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue.times(1016.0469088);
+          baseValue = inputValue.times(new Big("1016.0469088"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue.times(0.00006479891);
+          baseValue = inputValue.times(new Big("0.00006479891"));
           metricValue = baseValue;
           atomicValue = baseValue;
           otherValue = baseValue;
@@ -140,13 +140,21 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
       dispatch(
         newImperialMassState({
           unit: Big(baseValue).toString(),
-        }),
+        })
+      );
+
+      dispatch(
         newMetricMassState({
           unit: Big(metricValue).toString(),
-        }),
+        })
+      );
+
+      dispatch(
         newAtomicMassState({
           unit: Big(atomicValue).toString(),
-        }),
+        })
+      );
+      dispatch(
         newOtherMassState({
           unit: Big(otherValue).toString(),
         })
@@ -210,13 +218,22 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
       dispatch(
         newImperialMassState({
           unit: Big(imperialValue).toString(),
-        }),
+        })
+      );
+
+      dispatch(
         newMetricMassState({
           unit: Big(baseValue).toString(),
-        }),
+        })
+      );
+
+      dispatch(
         newAtomicMassState({
           unit: Big(atomicValue).toString(),
-        }),
+        })
+      );
+
+      dispatch(
         newOtherMassState({
           unit: Big(otherValue).toString(),
         })
@@ -280,17 +297,22 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
       dispatch(
         newImperialMassState({
           unit: Big(imperialValue).toString(),
-        }),
-        newMetricMassState({
-          unit: Big(metricValue).toString(),
-        }),
-        newAtomicMassState({
-          unit: Big(baseValue).toString(),
-        }),
-        newOtherMassState({
-          unit: Big(otherValue).toString(),
         })
       );
+
+      dispatch(
+        newMetricMassState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAtomicMassState({
+          unit: Big(atomicValue).toString(),
+        })
+      );
+
+      dispatch(newOtherMassState({ unit: Big(otherValue).toString() }));
     }
 
     if (title === "Other" && inputTitle === "Other") {
