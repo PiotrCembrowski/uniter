@@ -12,7 +12,10 @@ const MassUnitDash = () => {
   const showAtomicValue = useAppSelector((state) => state.massSlice.other);
   const showOtherValue = useAppSelector((state) => state.massSlice.other);
 
-  const unit = Big(showMetricValue.unit).toNumber();
+  const unitMetric = Big(showMetricValue.unit).toNumber();
+  const unitImperial = Big(showImperialValue.unit).toNumber();
+  const unitAtomic = Big(showAtomicValue.unit).toNumber();
+  const unitOther = Big(showOtherValue.unit).toNumber();
 
   console.log(
     showImperialValue,
@@ -28,32 +31,32 @@ const MassUnitDash = () => {
 
   useEffect(() => {
     setMetricValue({
-      unit1: unit / 0.000001,
-      unit2: showMetricValue.unit / 0.001,
-      unit3: showMetricValue.unit / 0.1,
-      unit4: showMetricValue.unit / 1,
-      unit5: showMetricValue.unit / 1000,
+      unit1: unitMetric / 0.000001,
+      unit2: unitMetric / 0.001,
+      unit3: unitMetric / 0.1,
+      unit4: unitMetric / 1,
+      unit5: unitMetric / 1000,
     });
     setImperialValue({
-      unit1: showImperialValue / 0.028349523,
-      unit2: showImperialValue / 0.45359237,
-      unit3: showImperialValue / 6.35029318,
-      unit4: showImperialValue / 45.359237,
-      unit5: showImperialValue / 50.80234544,
-      unit6: showImperialValue / 907.18474,
-      unit7: showImperialValue / 1016.0469088,
-      unit8: showImperialValue / 0.00006479891,
+      unit1: unitImperial / 0.028349523,
+      unit2: unitImperial / 0.45359237,
+      unit3: unitImperial / 6.35029318,
+      unit4: unitImperial / 45.359237,
+      unit5: unitImperial / 50.80234544,
+      unit6: unitImperial / 907.18474,
+      unit7: unitImperial / 1016.0469088,
+      unit8: unitImperial / 0.00006479891,
     });
     setAtomicValue({
-      unit1: showAtomicValue / 1.6605390666e-27,
-      unit2: showAtomicValue / 1.78266192e-30,
-      unit3: showAtomicValue / 2.176434e-8,
+      unit1: unitAtomic / 1.6605390666e-27,
+      unit2: unitAtomic / 1.78266192e-30,
+      unit3: unitAtomic / 2.176434e-8,
     });
     setOtherValue({
-      unit1: showOtherValue / 0.0002,
-      unit2: showOtherValue / 100,
+      unit1: unitOther / 0.0002,
+      unit2: unitOther / 100,
     });
-  }, [showMetricValue, showImperialValue, showAtomicValue, showOtherValue]);
+  }, [unitMetric, unitImperial, unitAtomic, unitOther]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
