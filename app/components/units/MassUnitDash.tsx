@@ -59,12 +59,17 @@ const MassUnitDash = () => {
   }, [unitMetric, unitImperial, unitAtomic, unitOther]);
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <UnitCard title="Metric System" value={metricValue} />
-      <UnitCard title="Imperial System" value={imperialValue} />
-      <UnitCard title="Atomic System" value={atomicValue} />
-      <UnitCard title="Other" value={otherValue} />
-    </div>
+    <>
+      <h3 className="text-white">
+        Round up to the space digits after the decimal.
+      </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <UnitCard title="Metric System" value={metricValue} />
+        <UnitCard title="Imperial System" value={imperialValue} />
+        <UnitCard title="Atomic System" value={atomicValue} />
+        <UnitCard title="Other" value={otherValue} />
+      </div>
+    </>
   );
 };
 
