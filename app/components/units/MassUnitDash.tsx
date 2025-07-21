@@ -72,7 +72,7 @@ const MassUnitDash = () => {
       <h3 className="text-white flex">
         Round up to the
         <Select>
-          <SelectTrigger className="w-[80px]">
+          <SelectTrigger className="w-[90px]">
             <SelectValue placeholder="4" />
           </SelectTrigger>
           <SelectContent>
