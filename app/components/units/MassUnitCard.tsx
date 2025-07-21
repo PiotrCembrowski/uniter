@@ -26,9 +26,10 @@ export type Values = {
 interface UnitCardProps {
   title: string;
   value?: Values;
+  digit?: number;
 }
 
-export default function MetricUnitCard({ title, value }: UnitCardProps) {
+export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -399,7 +400,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             onChange={handleChange}
-            value={value?.unit1 ? Big(value.unit1).round(12).toString() : ""}
+            value={value?.unit1 ? Big(value.unit1).round(digit).toString() : ""}
             data-title={title}
           />
         </div>
@@ -411,7 +412,7 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             type="number"
             onChange={handleChange}
-            value={value?.unit2 ? Big(value.unit2).round(12).toString() : ""}
+            value={value?.unit2 ? Big(value.unit2).round(digit).toString() : ""}
             data-title={title}
           />
         </div>
@@ -424,7 +425,9 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit3 ? Big(value.unit3).round(12).toString() : ""}
+              value={
+                value?.unit3 ? Big(value.unit3).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -438,7 +441,9 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit4 ? Big(value.unit4).round(12).toString() : ""}
+              value={
+                value?.unit4 ? Big(value.unit4).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -452,7 +457,9 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit5 ? Big(value.unit5).round(12).toString() : ""}
+              value={
+                value?.unit5 ? Big(value.unit5).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -466,7 +473,9 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit6 ? Big(value.unit6).round(12).toString() : ""}
+              value={
+                value?.unit6 ? Big(value.unit6).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -480,7 +489,9 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit7 ? Big(value.unit7).round(12).toString() : ""}
+              value={
+                value?.unit7 ? Big(value.unit7).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -494,7 +505,9 @@ export default function MetricUnitCard({ title, value }: UnitCardProps) {
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
               type="number"
               onChange={handleChange}
-              value={value?.unit8 ? Big(value.unit8).round(12).toString() : ""}
+              value={
+                value?.unit8 ? Big(value.unit8).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
