@@ -19,6 +19,7 @@ const MassUnitDash = () => {
   const showImperialValue = useAppSelector((state) => state.massSlice.imperial);
   const showAtomicValue = useAppSelector((state) => state.massSlice.atomic);
   const showOtherValue = useAppSelector((state) => state.massSlice.other);
+  const showDigit = useAppSelector((state) => state.digitSlice.digits);
 
   const unitMetric = Big(showMetricValue.unit).toNumber();
   const unitImperial = Big(showImperialValue.unit).toNumber();
@@ -39,6 +40,7 @@ const MassUnitDash = () => {
   const [digit, setDigit] = useState<number>(4);
 
   useEffect(() => {
+    setDigit(showDigit);
     setMetricValue({
       unit1: unitMetric / 0.000001,
       unit2: unitMetric / 0.001,
@@ -65,7 +67,7 @@ const MassUnitDash = () => {
       unit1: unitOther / 0.0002,
       unit2: unitOther / 100,
     });
-  }, [unitMetric, unitImperial, unitAtomic, unitOther]);
+  }, [unitMetric, unitImperial, unitAtomic, unitOther, showDigit]);
 
   return (
     <>
