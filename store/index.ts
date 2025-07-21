@@ -21,6 +21,19 @@ const initialState: MassState = {
   other: { unit: "0" },
 };
 
+// chossing digits after the decimal
+const digitSlice = createSlice({
+  name: "digits",
+  initialState: {
+    digits: 4,
+  },
+  reducers: {
+    newDigitsState: (state, action: PayloadAction<number>) => {
+      return { ...state, digits: action.payload };
+    },
+  },
+});
+
 // Length Units
 
 const metricUnitsSlice = createSlice({
@@ -193,6 +206,7 @@ const rootReducer = {
   powerSlice: powerSlice.reducer,
   volumeSlice: volumeSlice.reducer,
   surfaceSlice: surfaceSlice.reducer,
+  digitSlice: digitSlice.reducer,
 };
 
 export const store = () => {
@@ -201,6 +215,7 @@ export const store = () => {
   });
 };
 
+export const { newDigitsState } = digitSlice.actions;
 export const { newMetricState } = metricUnitsSlice.actions;
 export const { newImperialState } = imperialSlice.actions;
 export const { newPressureState } = pressureSlice.actions;
