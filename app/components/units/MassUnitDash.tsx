@@ -36,6 +36,7 @@ const MassUnitDash = () => {
   const [imperialValue, setImperialValue] = useState<Values>();
   const [atomicValue, setAtomicValue] = useState<Values>();
   const [otherValue, setOtherValue] = useState<Values>();
+  const [digit, setDigit] = useState<number>(4);
 
   useEffect(() => {
     setMetricValue({
@@ -98,10 +99,10 @@ const MassUnitDash = () => {
         digits after the decimal.
       </h3>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <UnitCard title="Metric System" value={metricValue} />
-        <UnitCard title="Imperial System" value={imperialValue} />
-        <UnitCard title="Atomic System" value={atomicValue} />
-        <UnitCard title="Other" value={otherValue} />
+        <UnitCard title="Metric System" value={metricValue} digit={digit} />
+        <UnitCard title="Imperial System" value={imperialValue} digit={digit} />
+        <UnitCard title="Atomic System" value={atomicValue} digit={digit} />
+        <UnitCard title="Other" value={otherValue} digit={digit} />
       </div>
     </>
   );
