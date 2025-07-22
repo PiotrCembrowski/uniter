@@ -92,29 +92,29 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          imperialValue = baseValue / 25.4;
+          imperialValue = baseValue.div(new Big(25.4));
           break;
         case "unit2":
-          baseValue = inputValue * 10;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue.times(new Big(10));
+          imperialValue = baseValue.div(new Big(25.4));
           break;
         case "unit3":
-          baseValue = inputValue * 100;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue.times(new Big(100));
+          imperialValue = baseValue.div(new Big(25.4));
           break;
         case "unit4":
-          baseValue = inputValue * 1000;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue.times(new Big(1000));
+          imperialValue = baseValue.div(new Big(25.4));
           break;
         case "unit5":
-          baseValue = inputValue * 1000000;
-          imperialValue = baseValue / 25.4;
+          baseValue = inputValue.times(new Big(1000000));
+          imperialValue = baseValue.div(new Big(25.4));
           break;
         default:
           baseValue = inputValue;
       }
-      dispatch(newMetricState(baseValue));
-      dispatch(newImperialState(imperialValue));
+      dispatch(newLengthMetricState(baseValue));
+      dispatch(newLengthImperialState(imperialValue));
     }
   };
 
