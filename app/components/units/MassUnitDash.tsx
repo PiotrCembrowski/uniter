@@ -13,6 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useDispatch } from "react-redux";
+import { newDigitsState } from "@/store";
 
 const MassUnitDash = () => {
   const showMetricValue = useAppSelector((state) => state.massSlice.metric);
@@ -26,11 +28,14 @@ const MassUnitDash = () => {
   const unitAtomic = Big(showAtomicValue.unit).toNumber();
   const unitOther = Big(showOtherValue.unit).toNumber();
 
+  const dispatch = useDispatch();
+
   console.log(
     showImperialValue,
     showMetricValue,
     showAtomicValue,
-    showOtherValue
+    showOtherValue,
+    showDigit
   );
 
   const [metricValue, setMetricValue] = useState<Values>();
@@ -41,6 +46,7 @@ const MassUnitDash = () => {
 
   useEffect(() => {
     setDigit(showDigit);
+
     setMetricValue({
       unit1: unitMetric / 0.000001,
       unit2: unitMetric / 0.001,
@@ -48,6 +54,7 @@ const MassUnitDash = () => {
       unit4: unitMetric / 1,
       unit5: unitMetric / 1000,
     });
+
     setImperialValue({
       unit1: unitImperial / 0.028349523,
       unit2: unitImperial / 0.45359237,
@@ -58,42 +65,40 @@ const MassUnitDash = () => {
       unit7: unitImperial / 1016.0469088,
       unit8: unitImperial / 0.00006479891,
     });
+
     setAtomicValue({
       unit1: unitAtomic / 1.6605390666e-27,
       unit2: unitAtomic / 1.78266192e-30,
       unit3: unitAtomic / 2.176434e-8,
     });
+
     setOtherValue({
       unit1: unitOther / 0.0002,
       unit2: unitOther / 100,
     });
   }, [unitMetric, unitImperial, unitAtomic, unitOther, showDigit]);
 
+  const digitHandler = (value: string) => {
+    console.log("Selected digit:", value, digit);
+    setDigit(Number(value));
+    dispatch(newDigitsState(Number(value)));
+  };
+
   return (
     <>
       <h3 className="text-white flex">
         Round up to the
-        <Select>
+        <Select onValueChange={digitHandler}>
           <SelectTrigger className="w-[90px]">
             <SelectValue placeholder="4" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectItem value="1">1</SelectItem>
-              <SelectItem value="2">2</SelectItem>
-              <SelectItem value="3">3</SelectItem>
-              <SelectItem value="4">4</SelectItem>
-              <SelectItem value="5">5</SelectItem>
-              <SelectItem value="6">6</SelectItem>
-              <SelectItem value="7">7</SelectItem>
-              <SelectItem value="8">8</SelectItem>
-              <SelectItem value="9">9</SelectItem>
-              <SelectItem value="10">10</SelectItem>
-              <SelectItem value="11">11</SelectItem>
-              <SelectItem value="12">12</SelectItem>
-              <SelectItem value="13">13</SelectItem>
-              <SelectItem value="14">14</SelectItem>
-              <SelectItem value="15">15</SelectItem>
+              {Array.from({ length: 15 }, (_, i) => (
+                <SelectItem key={i + 1} value={(i + 1).toString()}>
+                  {i + 1}
+                </SelectItem>
+              ))}
               <SelectItem value="infinite">infinite</SelectItem>
             </SelectGroup>
           </SelectContent>
