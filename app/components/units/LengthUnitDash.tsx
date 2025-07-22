@@ -54,13 +54,38 @@ const LengthUnitDash = () => {
     });
   }, [unitImperial, unitMetric, showDigit]);
 
+  const digitHandler = (value: string) => {
+    console.log("Selected digit:", value, digit);
+    setDigit(Number(value));
+    dispatch(newDigitsState(Number(value)));
+  };
+
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <UnitCard title="Metric System" value={metricValue} />
-      <UnitCard title="Imperial System" value={imperialValue} />
-      {/* <UnitCard title="Sea Metric" />
-      <UnitCard title="Astronomic Metric" /> */}
-    </div>
+    <>
+      <h3 className="text-white flex">
+        Round up to the
+        <Select onValueChange={digitHandler}>
+          <SelectTrigger className="w-[90px]">
+            <SelectValue placeholder="4" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {Array.from({ length: 15 }, (_, i) => (
+                <SelectItem key={i + 1} value={(i + 1).toString()}>
+                  {i + 1}
+                </SelectItem>
+              ))}
+              <SelectItem value="infinite">infinite</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>{" "}
+        digits after the decimal.
+      </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <UnitCard title="Metric System" value={metricValue} digit={digit} />
+        <UnitCard title="Imperial System" value={imperialValue} digit={digit} />
+      </div>
+    </>
   );
 };
 
