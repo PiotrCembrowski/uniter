@@ -23,6 +23,7 @@ const LengthUnitDash = () => {
   const showImperialValue = useAppSelector(
     (state) => state.lengthUnitsSlice.imperial
   );
+  const showDigit = useAppSelector((state) => state.digitSlice.digits);
 
   const unitMetric = Big(showMetricValue.unit).toNumber();
   const unitImperial = Big(showImperialValue.unit).toNumber();
@@ -31,23 +32,27 @@ const LengthUnitDash = () => {
 
   const [metricValue, setMetricValue] = useState<ValuesMetric>();
   const [imperialValue, setImperialValue] = useState<ValuesMetric>();
+  const [digit, setDigit] = useState<number>(4);
 
   useEffect(() => {
+    setDigit(showDigit);
+
     setImperialValue({
-      unit1: showImperialValue,
-      unit2: showImperialValue * 0.083,
-      unit3: showImperialValue * 0.0277778,
-      unit4: showImperialValue * 0.000568182,
-      unit5: showImperialValue * 0.000015783,
+      unit1: unitImperial,
+      unit2: unitImperial * 0.083,
+      unit3: unitImperial * 0.0277778,
+      unit4: unitImperial * 0.000568182,
+      unit5: unitImperial * 0.000015783,
     });
+
     setMetricValue({
-      unit1: showMetricValue,
-      unit2: showMetricValue * 0.1,
-      unit3: showMetricValue * 0.01,
-      unit4: showMetricValue * 0.001,
-      unit5: showMetricValue * 0.000001,
+      unit1: unitMetric,
+      unit2: unitMetric * 0.1,
+      unit3: unitMetric * 0.01,
+      unit4: unitMetric * 0.001,
+      unit5: unitMetric * 0.000001,
     });
-  }, [showMetricValue, showImperialValue]);
+  }, [unitImperial, unitMetric, showDigit]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
