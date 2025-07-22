@@ -62,30 +62,30 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
       switch (inputName) {
         case "unit1":
           baseValue = inputValue;
-          metricValue = baseValue * 25.4;
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit2":
-          baseValue = inputValue * 12;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue.times(new Big(12));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit3":
-          baseValue = inputValue * 36;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue.times(new Big(36));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit4":
-          baseValue = inputValue * 63360;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue.times(new Big(63360));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit5":
-          baseValue = inputValue * 190000;
-          metricValue = baseValue * 25.4;
+          baseValue = inputValue.times(new Big(190000));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newImperialState(baseValue));
-      dispatch(newMetricState(metricValue));
+      dispatch(newLengthImperialState(baseValue));
+      dispatch(newLengthMetricState(metricValue));
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
