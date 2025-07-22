@@ -52,8 +52,11 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
     const inputTitle = event.target.dataset.title;
+    const rawValue = event.target.value;
+    const inputValue = new Big(
+      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+    );
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
