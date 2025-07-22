@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { newImperialState, newMetricState } from "@/store";
+import { newLengthImperialState, newLengthMetricState } from "@/store";
 import { useDispatch } from "react-redux";
+import Big from "big.js";
 
 export type ValuesMetric = {
   unit1: number;
