@@ -7,6 +7,10 @@ interface MassUnit {
   unit: string;
 }
 
+interface LengthUnit {
+  unit: string;
+}
+
 interface MassState {
   metric: MassUnit;
   imperial: MassUnit;
@@ -14,11 +18,21 @@ interface MassState {
   other: MassUnit;
 }
 
+interface LengthState {
+  metric: LengthUnit;
+  imperial: LengthUnit;
+}
+
 const initialState: MassState = {
   metric: { unit: "0" },
   imperial: { unit: "0" },
   atomic: { unit: "0" },
   other: { unit: "0" },
+};
+
+const initialLengthState: LengthState = {
+  metric: { unit: "0" },
+  imperial: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -38,15 +52,12 @@ const digitSlice = createSlice({
 
 const lengthUnitsSlice = createSlice({
   name: "lengthUnits",
-  initialState: {
-    metric: { unit: "0" },
-    imperial: { unit: "0" },
-  },
+  initialState: initialLengthState,
   reducers: {
-    newLengthMetricState: (state, action: PayloadAction<Big>) => {
+    newLengthMetricState: (state, action: PayloadAction<LengthUnit>) => {
       return { ...state, units: action.payload };
     },
-    newLengthImperialState: (state, action: PayloadAction<Big>) => {
+    newLengthImperialState: (state, action: PayloadAction<LengthUnit>) => {
       return { ...state, units: action.payload };
     },
   },
