@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import UnitCard, { ValuesMetric } from "./LengthUnitCard";
 import { useState } from "react";
 import { useAppSelector } from "@/store/hooks";
+import Big from "big.js";
 import {
   Select,
   SelectContent,
@@ -16,13 +17,19 @@ import { useDispatch } from "react-redux";
 import { newDigitsState } from "@/store";
 
 const LengthUnitDash = () => {
-  const showMetricValue = useAppSelector((state) => state.metricUnits.units);
+  const showMetricValue = useAppSelector(
+    (state) => state.lengthUnitsSlice.metric
+  );
   const showImperialValue = useAppSelector(
-    (state) => state.imperialUnits.units
+    (state) => state.lengthUnitsSlice.imperial
   );
 
-  const [metricValue, setMetricValue] = useState<ValuesMetric>();
+  const unitMetric = Big(showMetricValue.unit).toNumber();
+  const unitImperial = Big(showImperialValue.unit).toNumber();
 
+  const dispatch = useDispatch();
+
+  const [metricValue, setMetricValue] = useState<ValuesMetric>();
   const [imperialValue, setImperialValue] = useState<ValuesMetric>();
 
   useEffect(() => {
