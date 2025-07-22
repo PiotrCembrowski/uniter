@@ -36,21 +36,17 @@ const digitSlice = createSlice({
 
 // Length Units
 
-const metricUnitsSlice = createSlice({
-  name: "metricUnits",
-  initialState,
+const lengthUnitsSlice = createSlice({
+  name: "lengthUnits",
+  initialState: {
+    metric: { unit: "0" },
+    imperial: { unit: "0" },
+  },
   reducers: {
-    newMetricState: (state, action: PayloadAction<Big>) => {
+    newLengthMetricState: (state, action: PayloadAction<Big>) => {
       return { ...state, units: action.payload };
     },
-  },
-});
-
-const imperialSlice = createSlice({
-  name: "imperialUnits",
-  initialState,
-  reducers: {
-    newImperialState: (state, action: PayloadAction<Big>) => {
+    newLengthImperialState: (state, action: PayloadAction<Big>) => {
       return { ...state, units: action.payload };
     },
   },
@@ -197,8 +193,7 @@ const surfaceSlice = createSlice({
 });
 
 const rootReducer = {
-  metricUnits: metricUnitsSlice.reducer,
-  imperialUnits: imperialSlice.reducer,
+  lengthUnitsSlice: lengthUnitsSlice.reducer,
   massSlice: massSlice.reducer,
   pressureSlice: pressureSlice.reducer,
   timeSlice: timeSlice.reducer,
@@ -216,8 +211,8 @@ export const store = () => {
 };
 
 export const { newDigitsState } = digitSlice.actions;
-export const { newMetricState } = metricUnitsSlice.actions;
-export const { newImperialState } = imperialSlice.actions;
+export const { newLengthMetricState, newLengthImperialState } =
+  lengthUnitsSlice.actions;
 export const { newPressureState } = pressureSlice.actions;
 export const { newDayState, newOverDayState } = timeSlice.actions;
 export const {
