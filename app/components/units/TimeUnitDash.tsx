@@ -53,6 +53,12 @@ const TimeUnitDash = () => {
     });
   }, [dayValue, overDayValue, showDigit]);
 
+  const digitHandler = (value: string) => {
+    console.log("Selected digit:", value, digit);
+    setDigit(Number(value));
+    dispatch(newDigitsState(Number(value)));
+  };
+
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
       <TimeUnitCard title="day" values={dayValues} />
