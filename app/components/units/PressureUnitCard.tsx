@@ -63,16 +63,31 @@ export default function PressureUnitCard({ value, digit }: UnitCardProps) {
         baseValue = inputValue;
         break;
       case "unit2":
-        baseValue = inputValue.times(new Big("10"));
-        break;
-      case "unit3":
         baseValue = inputValue.times(new Big("100"));
         break;
+      case "unit3":
+        baseValue = inputValue.times(new Big("100000"));
+        break;
       case "unit4":
-        baseValue = inputValue.times(new Big("1000"));
+        baseValue = inputValue.times(new Big("1000000"));
         break;
       case "unit5":
-        baseValue = inputValue.times(new Big("1000000"));
+        baseValue = inputValue.times(new Big("9.80665"));
+        break;
+      case "unit6":
+        baseValue = inputValue.times(new Big("98066.5"));
+        break;
+      case "unit7":
+        baseValue = inputValue.times(new Big("101325"));
+        break;
+      case "unit8":
+        baseValue = inputValue.times(new Big("133.322"));
+        break;
+      case "unit9":
+        baseValue = inputValue.times(new Big("133.322"));
+        break;
+      case "unit10":
+        baseValue = inputValue.times(new Big("6894.76"));
         break;
       default:
         baseValue = inputValue;
