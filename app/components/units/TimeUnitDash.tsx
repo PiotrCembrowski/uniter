@@ -82,10 +82,10 @@ const TimeUnitDash = () => {
       </h3>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <TimeUnitCard title="day" values={dayValues} digit={digit} />
+        <TimeUnitCard title="day" value={dayValues} digit={digit} />
         <TimeUnitCard
           title="More than a day"
-          values={overDayValues}
+          value={overDayValues}
           digit={digit}
         />
       </div>
