@@ -84,8 +84,17 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newLengthImperialState(baseValue));
-      dispatch(newLengthMetricState(metricValue));
+      dispatch(
+        newLengthMetricState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newLengthImperialState({
+          unit: Big(baseValue).toString(),
+        })
+      );
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
@@ -113,8 +122,18 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
         default:
           baseValue = inputValue;
       }
-      dispatch(newLengthMetricState(baseValue));
-      dispatch(newLengthImperialState(imperialValue));
+
+      dispatch(
+        newLengthMetricState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newLengthImperialState({
+          unit: Big(imperialValue).toString(),
+        })
+      );
     }
   };
 
