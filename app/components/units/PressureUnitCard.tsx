@@ -48,35 +48,41 @@ export default function PressureUnitCard({ value, digit }: UnitCardProps) {
     setUnit10Name("Psi [lbf/in2]");
   }, []);
 
-  let baseValue: number;
+  let baseValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
-    console.log(inputValue);
+    const rawValue = event.target.value;
+    const inputValue = new Big(
+      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+    );
 
     switch (inputName) {
       case "unit1":
         baseValue = inputValue;
         break;
       case "unit2":
-        baseValue = inputValue * 10;
+        baseValue = inputValue.times(new Big("10"));
         break;
       case "unit3":
-        baseValue = inputValue * 100;
+        baseValue = inputValue.times(new Big("100"));
         break;
       case "unit4":
-        baseValue = inputValue * 1000;
+        baseValue = inputValue.times(new Big("1000"));
         break;
       case "unit5":
-        baseValue = inputValue * 1000000;
+        baseValue = inputValue.times(new Big("1000000"));
         break;
       default:
         baseValue = inputValue;
     }
 
-    dispatch(newPressureState(baseValue));
+    dispatch(
+      newPressureState({
+        unit: Big(baseValue).toString(),
+      })
+    );
   };
 
   return (
