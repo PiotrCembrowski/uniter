@@ -31,27 +31,27 @@ const TimeUnitDash = () => {
 
   useEffect(() => {
     setDayValues({
-      unit1: timeState / 1e-12,
-      unit2: timeState / 1e-9,
-      unit3: timeState / 1e-6,
-      unit4: timeState / 0.001,
-      unit5: timeState,
-      unit6: timeState / 60,
-      unit7: timeState / 3600,
-      unit8: timeState / 86400,
+      unit1: dayValue / 1e-12,
+      unit2: dayValue / 1e-9,
+      unit3: dayValue / 1e-6,
+      unit4: dayValue / 0.001,
+      unit5: dayValue,
+      unit6: dayValue / 60,
+      unit7: dayValue / 3600,
+      unit8: dayValue / 86400,
     });
 
     setOverDayValues({
-      unit1: overTimeState / 604800,
-      unit2: overTimeState / 2592000,
-      unit3: overTimeState / 31536000,
-      unit4: overTimeState / 31622400,
-      unit5: overTimeState / 31557600,
-      unit6: overTimeState / 315576000,
-      unit7: overTimeState / 3155760000,
-      unit8: overTimeState / 31557600000,
+      unit1: overDayValue / 604800,
+      unit2: overDayValue / 2592000,
+      unit3: overDayValue / 31536000,
+      unit4: overDayValue / 31622400,
+      unit5: overDayValue / 31557600,
+      unit6: overDayValue / 315576000,
+      unit7: overDayValue / 3155760000,
+      unit8: overDayValue / 31557600000,
     });
-  }, [timeState, overTimeState]);
+  }, [dayValue, overDayValue, showDigit]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
