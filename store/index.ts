@@ -11,6 +11,10 @@ interface LengthUnit {
   unit: string;
 }
 
+interface PressureUnit {
+  unit: string;
+}
+
 interface MassState {
   metric: MassUnit;
   imperial: MassUnit;
@@ -23,6 +27,10 @@ interface LengthState {
   imperial: LengthUnit;
 }
 
+interface PressureState {
+  unit: PressureUnit;
+}
+
 const initialState: MassState = {
   metric: { unit: "0" },
   imperial: { unit: "0" },
@@ -33,6 +41,10 @@ const initialState: MassState = {
 const initialLengthState: LengthState = {
   metric: { unit: "0" },
   imperial: { unit: "0" },
+};
+
+const initialPressureState: PressureState = {
+  unit: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -88,10 +100,10 @@ const massSlice = createSlice({
 // pressure units
 const pressureSlice = createSlice({
   name: "pressure",
-  initialState: initialState,
+  initialState: initialPressureState,
   reducers: {
-    newPressureState: (state, action: PayloadAction<Big>) => {
-      return { ...state, units: action.payload };
+    newPressureState: (state, action: PayloadAction<PressureUnit>) => {
+      return { ...state, unit: action.payload };
     },
   },
 });
