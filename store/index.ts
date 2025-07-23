@@ -15,6 +15,10 @@ interface PressureUnit {
   unit: string;
 }
 
+interface TimeUnit {
+  unit: string;
+}
+
 interface MassState {
   metric: MassUnit;
   imperial: MassUnit;
@@ -31,6 +35,11 @@ interface PressureState {
   unit: PressureUnit;
 }
 
+interface TimeState {
+  day: TimeUnit;
+  overDay: TimeUnit;
+}
+
 const initialState: MassState = {
   metric: { unit: "0" },
   imperial: { unit: "0" },
@@ -45,6 +54,11 @@ const initialLengthState: LengthState = {
 
 const initialPressureState: PressureState = {
   unit: { unit: "0" },
+};
+
+const initialTimeState: TimeState = {
+  day: { unit: "0" },
+  overDay: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -111,15 +125,12 @@ const pressureSlice = createSlice({
 // time units
 const timeSlice = createSlice({
   name: "time",
-  initialState: {
-    day: 0,
-    overDay: 0,
-  },
+  initialState: initialTimeState,
   reducers: {
-    newDayState: (state, action: PayloadAction<number>) => {
+    newDayState: (state, action: PayloadAction<TimeUnit>) => {
       return { ...state, day: action.payload };
     },
-    newOverDayState: (state, action: PayloadAction<number>) => {
+    newOverDayState: (state, action: PayloadAction<TimeUnit>) => {
       return { ...state, overDay: action.payload };
     },
   },
