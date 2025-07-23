@@ -3,6 +3,17 @@
 import { useEffect, useState } from "react";
 import PressureUnitCard, { Values } from "./PressureUnitCard";
 import { useAppSelector } from "@/store/hooks";
+import Big from "big.js";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useDispatch } from "react-redux";
+import { newDigitsState } from "@/store";
 
 const PressureUnitDash = () => {
   const showState = useAppSelector((state) => state.pressureSlice.units);
