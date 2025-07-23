@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { newDayState, newOverDayState } from "@/store";
 import { useDispatch } from "react-redux";
+import Big from "big.js";
 
 export type Values = {
   unit1: number;
@@ -18,9 +19,10 @@ export type Values = {
 interface UnitCardProps {
   title: string;
   values?: Values;
+  digit?: number;
 }
 
-export default function TimeUnitCard({ title, values }: UnitCardProps) {
+export default function TimeUnitCard({ title, values, digit }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -53,9 +55,9 @@ export default function TimeUnitCard({ title, values }: UnitCardProps) {
     }
   }, [title]);
 
-  let baseValue: number;
-  let dayValue: number;
-  let overDayValue: number;
+  let baseValue: Big;
+  let dayValue: Big;
+  let overDayValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
