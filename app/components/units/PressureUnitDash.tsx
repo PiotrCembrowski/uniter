@@ -16,20 +16,14 @@ import { useDispatch } from "react-redux";
 import { newDigitsState } from "@/store";
 
 const PressureUnitDash = () => {
-  const showState = useAppSelector((state) => state.pressureSlice.units);
+  const showState = useAppSelector((state) => state.pressureSlice.unit);
 
-  const [values, setValues] = useState<Values>({
-    unit1: showState,
-    unit2: showState / 100,
-    unit3: showState / 100000,
-    unit4: showState / 1000000,
-    unit5: showState / 9.80665,
-    unit6: showState / 98066.5,
-    unit7: showState / 101325,
-    unit8: showState / 133.322,
-    unit9: showState / 133.322,
-    unit10: showState / 6894.76,
-  });
+  const unit = Big(showState.unit).toNumber();
+
+  const dispatch = useDispatch();
+
+  const [values, setValues] = useState<Values>();
+  const [digit, setDigit] = useState<number>(4);
 
   useEffect(() => {
     setValues({
