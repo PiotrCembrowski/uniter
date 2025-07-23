@@ -80,6 +80,11 @@ const MassUnitDash = () => {
 
   const digitHandler = (value: string) => {
     console.log("Selected digit:", value, digit);
+    if (value === "infinite") {
+      setDigit(100);
+      dispatch(newDigitsState(100));
+      return;
+    }
     setDigit(Number(value));
     dispatch(newDigitsState(Number(value)));
   };
