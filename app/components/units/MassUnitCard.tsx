@@ -308,7 +308,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
 
       dispatch(
         newAtomicMassState({
-          unit: Big(atomicValue).toString(),
+          unit: Big(baseValue).toString(),
         })
       );
 
@@ -372,17 +372,22 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
       dispatch(
         newImperialMassState({
           unit: Big(imperialValue).toString(),
-        }),
-        newMetricMassState({
-          unit: Big(metricValue).toString(),
-        }),
-        newAtomicMassState({
-          unit: Big(atomicValue).toString(),
-        }),
-        newOtherMassState({
-          unit: Big(baseValue).toString(),
         })
       );
+
+      dispatch(
+        newMetricMassState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAtomicMassState({
+          unit: Big(atomicValue).toString(),
+        })
+      );
+
+      dispatch(newOtherMassState({ unit: Big(baseValue).toString() }));
     }
   };
 
