@@ -55,10 +55,10 @@ const lengthUnitsSlice = createSlice({
   initialState: initialLengthState,
   reducers: {
     newLengthMetricState: (state, action: PayloadAction<LengthUnit>) => {
-      return { ...state, units: action.payload };
+      return { ...state, metric: action.payload };
     },
     newLengthImperialState: (state, action: PayloadAction<LengthUnit>) => {
-      return { ...state, units: action.payload };
+      return { ...state, imperial: action.payload };
     },
   },
 });
