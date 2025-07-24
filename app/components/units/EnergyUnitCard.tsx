@@ -8,6 +8,7 @@ import {
   newMetricEnergyState,
 } from "@/store";
 import { useDispatch } from "react-redux";
+import Big from "big.js";
 
 export type Values = {
   unit1?: number;
@@ -23,6 +24,7 @@ export type Values = {
 interface UnitCardProps {
   title: string;
   values?: Values;
+  digits?: number;
 }
 
 export default function EnergyUnitCard({ title, values }: UnitCardProps) {
