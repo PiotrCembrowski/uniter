@@ -97,31 +97,31 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.0284130625;
+          baseValue = inputValue.times(new Big("0.0284130625"));
           metricValue = baseValue;
           kitchenValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.56826125;
+          baseValue = inputValue.times(new Big("0.56826125"));
           metricValue = baseValue;
           kitchenValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 1.1365225;
+          baseValue = inputValue.times(new Big("1.1365225"));
           metricValue = baseValue;
           kitchenValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 4.54609;
+          baseValue = inputValue.times(new Big("4.54609"));
           metricValue = baseValue;
           kitchenValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 36.36872;
+          baseValue = inputValue.times(new Big("36.36872"));
           metricValue = baseValue;
           kitchenValue = baseValue;
           americanValue = baseValue;
@@ -130,10 +130,28 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newImperialVolumeState(baseValue));
-      dispatch(newMetricVolumeState(metricValue));
-      dispatch(newKitchenVolumeState(kitchenValue));
-      dispatch(newAmericanVolumeState(americanValue));
+      dispatch(
+        newImperialVolumeState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newMetricVolumeState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAmericanVolumeState({
+          unit: Big(americanValue).toString(),
+        })
+      );
+      dispatch(
+        newKitchenVolumeState({
+          unit: Big(kitchenValue).toString(),
+        })
+      );
     }
 
     if (title === "Metric System" && inputTitle === "Metric System") {
