@@ -217,43 +217,43 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
     if (title === "Kitchen System" && inputTitle === "Kitchen System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.005;
+          baseValue = inputValue.times(new Big("0.005"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.015;
+          baseValue = inputValue.times(new Big("0.015"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.25;
+          baseValue = inputValue.times(new Big("0.25"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 0.284;
+          baseValue = inputValue.times(new Big("0.284"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 0.24;
+          baseValue = inputValue.times(new Big("0.24"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 0.2;
+          baseValue = inputValue.times(new Big("0.2"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 0.02;
+          baseValue = inputValue.times(new Big("0.02"));
           imperialValue = baseValue;
           metricValue = baseValue;
           americanValue = baseValue;
@@ -263,10 +263,28 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
           baseValue = inputValue;
       }
 
-      dispatch(newKitchenVolumeState(baseValue));
-      dispatch(newImperialVolumeState(imperialValue));
-      dispatch(newMetricVolumeState(metricValue));
-      dispatch(newAmericanVolumeState(americanValue));
+      dispatch(
+        newImperialVolumeState({
+          unit: Big(imperialValue).toString(),
+        })
+      );
+
+      dispatch(
+        newMetricVolumeState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAmericanVolumeState({
+          unit: Big(americanValue).toString(),
+        })
+      );
+      dispatch(
+        newKitchenVolumeState({
+          unit: Big(baseValue).toString(),
+        })
+      );
     }
 
     if (title === "American System" && inputTitle === "American System") {
