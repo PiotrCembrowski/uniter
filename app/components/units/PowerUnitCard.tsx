@@ -3,6 +3,7 @@
 import { newPowerState } from "@/store";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import Big from "big.js";
 
 export type Values = {
   unit1: number;
@@ -16,9 +17,10 @@ export type Values = {
 
 interface UnitCardProps {
   value?: Values;
+  digit?: number;
 }
 
-export default function PowerUnitCard({ value }: UnitCardProps) {
+export default function PowerUnitCard({ value, digit }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
