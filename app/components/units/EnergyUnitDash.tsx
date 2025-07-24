@@ -35,48 +35,46 @@ const EnegyUnitDash = () => {
   const [imeprialValues, setImperialValues] = useState<Values>();
   const [caloriesValues, setCaloriesValues] = useState<Values>();
   const [atomicValues, setAtomicValues] = useState<Values>();
+  const [digit, setDigit] = useState<number>(4);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setDigit(showDigit);
+
     setMetricStateValues({
-      unit1: energyMetricState,
-      unit2: energyMetricState / 1000,
-      unit3: energyMetricState / 9.80665,
-      unit4: energyMetricState / 1000000,
-      unit5: energyMetricState / 3600,
-      unit6: energyMetricState / 3600000,
-      unit7: energyMetricState / 1e-7,
+      unit1: metricValue,
+      unit2: metricValue / 1000,
+      unit3: metricValue / 9.80665,
+      unit4: metricValue / 1000000,
+      unit5: metricValue / 3600,
+      unit6: metricValue / 3600000,
+      unit7: metricValue / 1e-7,
     });
 
     setImperialValues({
-      unit1: energyImperialState / 0.0421401,
-      unit2: energyImperialState / 0.112985,
-      unit3: energyImperialState / 1.35582,
-      unit4: energyImperialState / 2684519.54,
-      unit5: energyImperialState / 1055.06,
+      unit1: imperialValue / 0.0421401,
+      unit2: imperialValue / 0.112985,
+      unit3: imperialValue / 1.35582,
+      unit4: imperialValue / 2684519.54,
+      unit5: imperialValue / 1055.06,
     });
 
     setCaloriesValues({
-      unit1: energyCaloriesState / 4.184,
-      unit2: energyCaloriesState / 4184,
+      unit1: caloriesValue / 4.184,
+      unit2: caloriesValue / 4184,
     });
     setAtomicValues({
-      unit1: energyAtomicState / 1.60218e-19,
-      unit2: energyAtomicState / 1.60218e-16,
-      unit3: energyAtomicState / 1.60218e-13,
-      unit4: energyAtomicState / 1.49242e-10,
-      unit5: energyAtomicState / 4.35974e-18,
-      unit6: energyAtomicState / 2.17987e-18,
-      unit7: energyAtomicState / 9.27401e-24,
-      unit8: energyAtomicState / 5.05078e-27,
+      unit1: atomicValue / 1.60218e-19,
+      unit2: atomicValue / 1.60218e-16,
+      unit3: atomicValue / 1.60218e-13,
+      unit4: atomicValue / 1.49242e-10,
+      unit5: atomicValue / 4.35974e-18,
+      unit6: atomicValue / 2.17987e-18,
+      unit7: atomicValue / 9.27401e-24,
+      unit8: atomicValue / 5.05078e-27,
     });
-  }, [
-    energyMetricState,
-    energyImperialState,
-    energyCaloriesState,
-    energyAtomicState,
-  ]);
+  }, [metricValue, imperialValue, caloriesValue, atomicValue, showDigit]);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
