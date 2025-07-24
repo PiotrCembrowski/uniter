@@ -168,33 +168,62 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.0421401;
+          baseValue = inputValue.times(new Big("0.0421401"));
           metricValue = baseValue;
+          caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.112985;
+          baseValue = inputValue.times(new Big("0.112985"));
           metricValue = baseValue;
+          caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 1.35582;
+          baseValue = inputValue.times(new Big("1.35582"));
           metricValue = baseValue;
+          caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 2684519.54;
+          baseValue = inputValue.times(new Big("2684519.54"));
           metricValue = baseValue;
+          caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1055.06;
+          baseValue = inputValue.times(new Big("1055.06"));
           metricValue = baseValue;
+          caloriesValue = baseValue;
+          atomicValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newImperialEnergyState(baseValue));
-      dispatch(newMetricEnergyState(metricValue));
-      dispatch(newCaloriesEnergyState(caloriesValue));
-      dispatch(newAtomicEnergyState(atomicValue));
+      dispatch(
+        newImperialEnergyState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newMetricEnergyState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newCaloriesEnergyState({
+          unit: Big(caloriesValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAtomicEnergyState({
+          unit: Big(atomicValue).toString(),
+        })
+      );
     }
 
     if (title === "Calories" && inputTitle === "Calories") {
