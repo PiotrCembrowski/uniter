@@ -88,12 +88,45 @@ const EnegyUnitDash = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <EnergyUnitCard title="Metric System" values={metricStateValues} />
-      <EnergyUnitCard title="Imperial System" values={imeprialValues} />
-      <EnergyUnitCard title="Calories" values={caloriesValues} />
-      <EnergyUnitCard title="Atomic" values={atomicValues} />
-    </div>
+    <>
+      <h3 className="text-white flex">
+        Round up to the
+        <Select onValueChange={digitHandler}>
+          <SelectTrigger className="w-[90px]">
+            <SelectValue placeholder="4" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {Array.from({ length: 15 }, (_, i) => (
+                <SelectItem key={i + 1} value={(i + 1).toString()}>
+                  {i + 1}
+                </SelectItem>
+              ))}
+              <SelectItem value="infinite">infinite</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>{" "}
+        digits after the decimal.
+      </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <EnergyUnitCard
+          title="Metric System"
+          values={metricStateValues}
+          digit={digit}
+        />
+        <EnergyUnitCard
+          title="Imperial System"
+          values={imeprialValues}
+          digit={digit}
+        />
+        <EnergyUnitCard
+          title="Calories"
+          values={caloriesValues}
+          digit={digit}
+        />
+        <EnergyUnitCard title="Atomic" values={atomicValues} digit={digit} />
+      </div>
+    </>
   );
 };
 
