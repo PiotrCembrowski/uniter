@@ -79,18 +79,20 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
     }
   }, [title]);
 
-  let baseValue: number;
-  let metricValue: number;
-  let imperialValue: number;
-  let kitchenValue: number;
-  let americanValue: number;
+  let baseValue: Big;
+  let metricValue: Big;
+  let imperialValue: Big;
+  let kitchenValue: Big;
+  let americanValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
+    const rawValue = event.target.value;
+    const inputValue = new Big(
+      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+    );
     const inputTitle = event.target.dataset.title;
-    console.log(inputTitle, inputName, inputValue);
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
