@@ -66,7 +66,10 @@ interface PowerState {
 }
 
 interface VolumeState {
-  units: VolumeUnit;
+  metric: VolumeUnit;
+  imperial: VolumeUnit;
+  american: VolumeUnit;
+  kitchen: VolumeUnit;
 }
 
 // Define the initial state for energy units
@@ -104,7 +107,10 @@ const initialPowerState: PowerState = {
 };
 
 const initialVolumeState: VolumeState = {
-  units: { unit: "0" },
+  metric: { unit: "0" },
+  imperial: { unit: "0" },
+  american: { unit: "0" },
+  kitchen: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -218,17 +224,17 @@ const volumeSlice = createSlice({
   name: "volume",
   initialState: initialVolumeState,
   reducers: {
-    newMetricVolumeState: (state, action: PayloadAction<VolumeUnit>) => {
-      return { ...state, metric: { units: action.payload } };
+    newMetricVolumeState: (state, action: PayloadAction<EnergyUnit>) => {
+      return { ...state, metric: action.payload };
     },
-    newImperialVolumeState: (state, action: PayloadAction<VolumeUnit>) => {
-      return { ...state, imperial: { units: action.payload } };
+    newImperialVolumeState: (state, action: PayloadAction<EnergyUnit>) => {
+      return { ...state, imperial: action.payload };
     },
-    newAmericanVolumeState: (state, action: PayloadAction<VolumeUnit>) => {
-      return { ...state, american: { units: action.payload } };
+    newAmericanVolumeState: (state, action: PayloadAction<EnergyUnit>) => {
+      return { ...state, american: action.payload };
     },
-    newKitchenVolumeState: (state, action: PayloadAction<VolumeUnit>) => {
-      return { ...state, kitchen: { units: action.payload } };
+    newKitchenVolumeState: (state, action: PayloadAction<EnergyUnit>) => {
+      return { ...state, kitchen: action.payload };
     },
   },
 });
