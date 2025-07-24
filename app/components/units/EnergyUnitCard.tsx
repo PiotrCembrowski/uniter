@@ -284,46 +284,81 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     if (title === "Atomic" && inputTitle === "Atomic") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 1.60218e-19;
+          baseValue = inputValue.times(new Big("1.60218e-19"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 1.60218e-16;
+          baseValue = inputValue.times(new Big("1.60218e-16"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 1.60218e-13;
+          baseValue = inputValue.times(new Big("1.60218e-13"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 1.66054e-27;
+          baseValue = inputValue.times(new Big("1.66054e-27"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 4.35974e-18;
+          baseValue = inputValue.times(new Big("4.35974e-18"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 2.17987e-18;
+          baseValue = inputValue.times(new Big("2.17987e-18"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 9.27401e-24;
+          baseValue = inputValue.times(new Big("9.27401e-24"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue * 5.05078e-27;
+          baseValue = inputValue.times(new Big("5.05078e-27"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          caloriesValue = baseValue;
           break;
 
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newAtomicEnergyState(baseValue));
-      dispatch(newMetricEnergyState(metricValue));
-      dispatch(newImperialEnergyState(metricValue));
-      dispatch(newCaloriesEnergyState(metricValue));
+      dispatch(
+        newAtomicEnergyState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newMetricEnergyState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newImperialEnergyState({
+          unit: Big(imperialValue).toString(),
+        })
+      );
+
+      dispatch(
+        newCaloriesEnergyState({
+          unit: Big(caloriesValue).toString(),
+        })
+      );
     }
   };
 
