@@ -76,6 +76,17 @@ const EnegyUnitDash = () => {
     });
   }, [metricValue, imperialValue, caloriesValue, atomicValue, showDigit]);
 
+  const digitHandler = (value: string) => {
+    console.log("Selected digit:", value, digit);
+    if (value === "infinite") {
+      setDigit(100);
+      dispatch(newDigitsState(100));
+      return;
+    }
+    setDigit(Number(value));
+    dispatch(newDigitsState(Number(value)));
+  };
+
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
       <EnergyUnitCard title="Metric System" values={metricStateValues} />
