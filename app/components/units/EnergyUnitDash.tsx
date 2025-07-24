@@ -111,20 +111,16 @@ const EnegyUnitDash = () => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <EnergyUnitCard
           title="Metric System"
-          values={metricStateValues}
+          value={metricStateValues}
           digit={digit}
         />
         <EnergyUnitCard
           title="Imperial System"
-          values={imeprialValues}
+          value={imeprialValues}
           digit={digit}
         />
-        <EnergyUnitCard
-          title="Calories"
-          values={caloriesValues}
-          digit={digit}
-        />
-        <EnergyUnitCard title="Atomic" values={atomicValues} digit={digit} />
+        <EnergyUnitCard title="Calories" value={caloriesValues} digit={digit} />
+        <EnergyUnitCard title="Atomic" value={atomicValues} digit={digit} />
       </div>
     </>
   );

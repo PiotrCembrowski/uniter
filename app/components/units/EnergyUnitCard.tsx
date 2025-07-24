@@ -23,11 +23,11 @@ export type Values = {
 
 interface UnitCardProps {
   title: string;
-  values?: Values;
-  digits?: number;
+  value?: Values;
+  digit?: number;
 }
 
-export default function EnergyUnitCard({ title, values }: UnitCardProps) {
+export default function EnergyUnitCard({ title, value, digit }: UnitCardProps) {
   const [unit1Name, setUnit1Name] = useState<string>();
   const [unit2Name, setUnit2Name] = useState<string>();
   const [unit3Name, setUnit3Name] = useState<string>();
@@ -36,8 +36,6 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
   const [unit8Name, setUnit8Name] = useState<string>();
-
-  console.log("EnergyUnitCard", values);
 
   useEffect(() => {
     if (title === "Metric System") {
@@ -374,9 +372,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           <input
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
             onChange={handleChange}
-            value={values?.unit1}
+            value={value?.unit1 ? Big(value.unit1).round(digit).toString() : ""}
             data-title={title}
           />
         </div>
@@ -386,9 +383,8 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           <input
             name="unit2"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
             onChange={handleChange}
-            value={values?.unit2}
+            value={value?.unit2 ? Big(value.unit2).round(digit).toString() : ""}
             data-title={title}
           />
         </div>
@@ -399,9 +395,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             <input
               name="unit3"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit3}
+              value={
+                value?.unit3 ? Big(value.unit3).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -413,9 +410,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             <input
               name="unit4"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit4}
+              value={
+                value?.unit4 ? Big(value.unit4).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -427,9 +425,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             <input
               name="unit5"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit5}
+              value={
+                value?.unit5 ? Big(value.unit5).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -441,9 +440,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             <input
               name="unit6"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit6}
+              value={
+                value?.unit6 ? Big(value.unit6).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -455,9 +455,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             <input
               name="unit7"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit7}
+              value={
+                value?.unit7 ? Big(value.unit7).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -469,9 +470,10 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
             <input
               name="unit8"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit8}
+              value={
+                value?.unit8 ? Big(value.unit8).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
