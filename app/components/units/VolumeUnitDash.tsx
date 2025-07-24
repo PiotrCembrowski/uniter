@@ -1,9 +1,19 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 import VolumeUnitCard, { Values } from "./VolumeUnitCard";
+import Big from "big.js";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useDispatch } from "react-redux";
+import { newDigitsState } from "@/store";
 
 const VolumeUnitDash = () => {
   const showMetricValue = useAppSelector(
