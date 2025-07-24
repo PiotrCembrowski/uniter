@@ -1,7 +1,6 @@
 import { configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
-import Big from "big.js";
 
 // Define interfaces for the state of each unit type
 interface MassUnit {
@@ -22,6 +21,10 @@ interface TimeUnit {
 
 interface EnergyUnit {
   unit: string;
+}
+
+interface PowerUnit {
+  units: string;
 }
 
 // Define interfaces for the energy units
@@ -54,6 +57,10 @@ interface EnergyState {
   atomic: EnergyUnit;
 }
 
+interface PowerState {
+  units: PowerUnit;
+}
+
 // Define the initial state for energy units
 
 const initialState: MassState = {
@@ -82,6 +89,10 @@ const initialEnergyState: EnergyState = {
   imperial: { unit: "0" },
   calories: { unit: "0" },
   atomic: { unit: "0" },
+};
+
+const initialPowerState: PowerState = {
+  units: { units: "0" },
 };
 
 // chossing digits after the decimal
@@ -182,9 +193,9 @@ const energySlice = createSlice({
 // power units
 const powerSlice = createSlice({
   name: "power",
-  initialState: initialState,
+  initialState: initialPowerState,
   reducers: {
-    newPowerState: (state, action: PayloadAction<Big>) => {
+    newPowerState: (state, action: PayloadAction<PowerUnit>) => {
       return { ...state, units: action.payload };
     },
   },
