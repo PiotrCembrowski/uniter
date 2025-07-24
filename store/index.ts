@@ -162,23 +162,18 @@ const timeSlice = createSlice({
 // energy units
 const energySlice = createSlice({
   name: "energy",
-  initialState: {
-    metric: {},
-    imperial: {},
-    calories: {},
-    atomic: {},
-  },
+  initialState: initialEnergyState,
   reducers: {
-    newMetricEnergyState: (state, action: PayloadAction<Big>) => {
+    newMetricEnergyState: (state, action: PayloadAction<EnergyUnit>) => {
       return { ...state, metric: action.payload };
     },
-    newImperialEnergyState: (state, action: PayloadAction<Big>) => {
+    newImperialEnergyState: (state, action: PayloadAction<EnergyUnit>) => {
       return { ...state, imperial: action.payload };
     },
-    newCaloriesEnergyState: (state, action: PayloadAction<Big>) => {
+    newCaloriesEnergyState: (state, action: PayloadAction<EnergyUnit>) => {
       return { ...state, calories: action.payload };
     },
-    newAtomicEnergyState: (state, action: PayloadAction<Big>) => {
+    newAtomicEnergyState: (state, action: PayloadAction<EnergyUnit>) => {
       return { ...state, atomic: action.payload };
     },
   },
