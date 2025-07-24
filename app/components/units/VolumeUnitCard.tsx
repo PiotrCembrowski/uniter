@@ -290,55 +290,55 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
     if (title === "American System" && inputTitle === "American System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.0295735;
+          baseValue = inputValue.times(new Big("0.0295735"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.473176473;
+          baseValue = inputValue.times(new Big("0.473176473"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.55061;
+          baseValue = inputValue.times(new Big("0.55061"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 0.946353;
+          baseValue = inputValue.times(new Big("0.946353"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1.10122;
+          baseValue = inputValue.times(new Big("1.10122"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 3.78541;
+          baseValue = inputValue.times(new Big("3.78541"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue * 4.40488;
+          baseValue = inputValue.times(new Big("4.40488"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
           break;
 
         case "unit8":
-          baseValue = inputValue * 35.2391;
+          baseValue = inputValue.times(new Big("35.23907016688"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
         case "unit9":
-          baseValue = inputValue * 158.987294928;
+          baseValue = inputValue.times(new Big("158.987294928"));
           imperialValue = baseValue;
           metricValue = baseValue;
           kitchenValue = baseValue;
