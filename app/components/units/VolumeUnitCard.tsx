@@ -157,33 +157,61 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.001;
+          baseValue = inputValue.times(new Big("0.001"));
           imperialValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.01;
+          baseValue = inputValue.times(new Big("0.01"));
           imperialValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.1;
+          baseValue = inputValue.times(new Big("0.1"));
           imperialValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit4":
           baseValue = inputValue;
           imperialValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1000;
+          baseValue = inputValue.times(new Big("1000"));
           imperialValue = baseValue;
+          kitchenValue = baseValue;
+          americanValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newMetricVolumeState(baseValue));
-      dispatch(newImperialVolumeState(imperialValue));
-      dispatch(newKitchenVolumeState(baseValue));
-      dispatch(newAmericanVolumeState(baseValue));
+      dispatch(
+        newMetricVolumeState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newImperialVolumeState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAmericanVolumeState({
+          unit: Big(americanValue).toString(),
+        })
+      );
+      dispatch(
+        newKitchenVolumeState({
+          unit: Big(kitchenValue).toString(),
+        })
+      );
     }
 
     if (title === "Kitchen System" && inputTitle === "Kitchen System") {
