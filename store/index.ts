@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 import Big from "big.js";
 
+// Define interfaces for the state of each unit type
 interface MassUnit {
   unit: string;
 }
@@ -18,6 +19,12 @@ interface PressureUnit {
 interface TimeUnit {
   unit: string;
 }
+
+interface EnergyUnit {
+  unit: string;
+}
+
+// Define interfaces for the energy units
 
 interface MassState {
   metric: MassUnit;
@@ -40,6 +47,15 @@ interface TimeState {
   overDay: TimeUnit;
 }
 
+interface EnergyState {
+  metric: EnergyUnit;
+  imperial: EnergyUnit;
+  calories: EnergyUnit;
+  atomic: EnergyUnit;
+}
+
+// Define the initial state for energy units
+
 const initialState: MassState = {
   metric: { unit: "0" },
   imperial: { unit: "0" },
@@ -59,6 +75,13 @@ const initialPressureState: PressureState = {
 const initialTimeState: TimeState = {
   day: { unit: "0" },
   overDay: { unit: "0" },
+};
+
+const initialEnergyState: EnergyState = {
+  metric: { unit: "0" },
+  imperial: { unit: "0" },
+  calories: { unit: "0" },
+  atomic: { unit: "0" },
 };
 
 // chossing digits after the decimal
