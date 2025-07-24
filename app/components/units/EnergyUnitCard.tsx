@@ -96,48 +96,73 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
           atomicValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue / 1000;
+          baseValue = inputValue.div(new Big("1000"));
           imperialValue = baseValue;
           caloriesValue = baseValue;
           atomicValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue / 9.80665;
+          baseValue = inputValue.div(new Big("9.80665"));
           imperialValue = baseValue;
           atomicValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue / 1000000;
+          baseValue = inputValue.div(new Big("1000000"));
           imperialValue = baseValue;
           atomicValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue / 3600;
+          baseValue = inputValue.div(new Big("3600"));
           imperialValue = baseValue;
           atomicValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue / 3600000;
+          baseValue = inputValue.div(new Big("3600000"));
           imperialValue = baseValue;
           atomicValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue / 1e-7;
+          baseValue = inputValue.div(new Big("1e-7"));
           imperialValue = baseValue;
           atomicValue = baseValue;
+          caloriesValue = baseValue;
           break;
         case "unit8":
-          baseValue = inputValue / 5.05078e-27;
+          baseValue = inputValue.div(new Big("5.05078e-27"));
           imperialValue = baseValue;
           atomicValue = baseValue;
+          caloriesValue = baseValue;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newMetricEnergyState(baseValue));
-      dispatch(newImperialEnergyState(imperialValue));
-      dispatch(newCaloriesEnergyState(caloriesValue));
-      dispatch(newAtomicEnergyState(atomicValue));
+      dispatch(
+        newMetricEnergyState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newImperialEnergyState({
+          unit: Big(imperialValue).toString(),
+        })
+      );
+
+      dispatch(
+        newCaloriesEnergyState({
+          unit: Big(caloriesValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAtomicEnergyState({
+          unit: Big(atomicValue).toString(),
+        })
+      );
     }
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
