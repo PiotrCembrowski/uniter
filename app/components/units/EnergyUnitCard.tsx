@@ -231,28 +231,56 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
         case "unit1":
           baseValue = inputValue;
           metricValue = baseValue;
+          imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 1000;
+          baseValue = inputValue.times(new Big("1000"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 4184;
+          baseValue = inputValue.times(new Big("4184"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 4184000;
+          baseValue = inputValue.times(new Big("4184000"));
           metricValue = baseValue;
+          imperialValue = baseValue;
+          atomicValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newCaloriesEnergyState(baseValue));
-      dispatch(newMetricEnergyState(metricValue));
-      dispatch(newImperialEnergyState(metricValue));
-      dispatch(newAtomicEnergyState(atomicValue));
+      dispatch(
+        newCaloriesEnergyState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newMetricEnergyState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newImperialEnergyState({
+          unit: Big(imperialValue).toString(),
+        })
+      );
+
+      dispatch(
+        newAtomicEnergyState({
+          unit: Big(atomicValue).toString(),
+        })
+      );
     }
+
     if (title === "Atomic" && inputTitle === "Atomic") {
       switch (inputName) {
         case "unit1":
