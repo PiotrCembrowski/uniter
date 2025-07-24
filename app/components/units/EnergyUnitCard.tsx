@@ -72,16 +72,19 @@ export default function EnergyUnitCard({ title, values }: UnitCardProps) {
     }
   }, [title]);
 
-  let baseValue: number;
-  let metricValue: number;
-  let imperialValue: number;
-  let caloriesValue: number;
-  let atomicValue: number;
+  let baseValue: Big;
+  let metricValue: Big;
+  let imperialValue: Big;
+  let caloriesValue: Big;
+  let atomicValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
+    const rawValue = event.target.value;
+    const inputValue = new Big(
+      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+    );
     const inputTitle = event.target.dataset.title;
 
     if (title === "Metric System" && inputTitle === "Metric System") {
