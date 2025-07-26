@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
 import UnitCard, { Values } from "./MassUnitCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAppSelector } from "@/store/hooks";
 import Big from "big.js";
 import {
@@ -29,14 +28,6 @@ const MassUnitDash = () => {
   const unitOther = Big(showOtherValue.unit).toNumber();
 
   const dispatch = useDispatch();
-
-  console.log(
-    showImperialValue,
-    showMetricValue,
-    showAtomicValue,
-    showOtherValue,
-    showDigit
-  );
 
   const [metricValue, setMetricValue] = useState<Values>();
   const [imperialValue, setImperialValue] = useState<Values>();
