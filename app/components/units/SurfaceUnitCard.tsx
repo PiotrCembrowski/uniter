@@ -56,28 +56,31 @@ export default function SurfaceUnitCard({
     }
   }, [title]);
 
-  let baseValue: number;
-  let metricValue: number;
-  let imperialValue: number;
+  let baseValue: Big;
+  let metricValue: Big;
+  let imperialValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const inputValue = Number(event.target.value);
+    const rawValue = event.target.value;
+    const inputValue = new Big(
+      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+    );
     const inputTitle = event.target.dataset.title;
 
     if (title === "Metric System" && inputTitle === "Metric System") {
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.000001;
+          baseValue = inputValue.times(new Big("0.000001"));
           imperialValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.0001;
+          baseValue = inputValue.times(new Big("0.0001"));
           imperialValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.01;
+          baseValue = inputValue.times(new Big("0.01"));
           imperialValue = baseValue;
           break;
         case "unit4":
@@ -85,59 +88,75 @@ export default function SurfaceUnitCard({
           imperialValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 1000000;
+          baseValue = inputValue.times(new Big("1000000"));
           imperialValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue / 100;
+          baseValue = inputValue.div(new Big("100"));
           imperialValue = baseValue;
           break;
         case "unit7":
-          baseValue = inputValue / 10000;
+          baseValue = inputValue.div(new Big("10000"));
           imperialValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newMetricSurfaceState(baseValue));
-      dispatch(newImperialSurfaceState(imperialValue));
+      dispatch(
+        newMetricSurfaceState({
+          unit: Big(baseValue).toString(),
+        })
+      );
+
+      dispatch(
+        newImperialSurfaceState({
+          unit: Big(imperialValue).toString(),
+        })
+      );
     }
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
-      console.log("Imperial System Input:", inputValue);
-
       switch (inputName) {
         case "unit1":
-          baseValue = inputValue * 0.00064516;
+          baseValue = inputValue.times(new Big("0.00064516"));
           metricValue = baseValue;
           break;
         case "unit2":
-          baseValue = inputValue * 0.09290304;
+          baseValue = inputValue.times(new Big("0.09290304"));
           metricValue = baseValue;
           break;
         case "unit3":
-          baseValue = inputValue * 0.83612736;
+          baseValue = inputValue.times(new Big("0.83612736"));
           metricValue = baseValue;
           break;
         case "unit4":
-          baseValue = inputValue * 2589988.110336;
+          baseValue = inputValue.times(new Big("2589988.110336"));
           metricValue = baseValue;
           break;
         case "unit5":
-          baseValue = inputValue * 4046.8564224;
+          baseValue = inputValue.times(new Big("4046.8564224"));
           metricValue = baseValue;
           break;
         case "unit6":
-          baseValue = inputValue * 4046.87261;
+          baseValue = inputValue.times(new Big("4046.87261"));
           metricValue = baseValue;
           break;
         default:
           baseValue = inputValue;
       }
 
-      dispatch(newImperialSurfaceState(baseValue));
-      dispatch(newMetricSurfaceState(metricValue));
+      dispatch(
+        newMetricSurfaceState({
+          unit: Big(metricValue).toString(),
+        })
+      );
+
+      dispatch(
+        newImperialSurfaceState({
+          unit: Big(baseValue).toString(),
+        })
+      );
     }
   };
 
@@ -153,9 +172,8 @@ export default function SurfaceUnitCard({
           <input
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
             onChange={handleChange}
-            value={values?.unit1}
+            value={value?.unit1 ? Big(value.unit1).round(digit).toString() : ""}
             data-title={title}
           />
         </div>
@@ -165,9 +183,8 @@ export default function SurfaceUnitCard({
           <input
             name="unit2"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-            type="text"
             onChange={handleChange}
-            value={values?.unit2}
+            value={value?.unit2 ? Big(value.unit2).round(digit).toString() : ""}
             data-title={title}
           />
         </div>
@@ -178,9 +195,10 @@ export default function SurfaceUnitCard({
             <input
               name="unit3"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit3}
+              value={
+                value?.unit3 ? Big(value.unit3).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -192,9 +210,10 @@ export default function SurfaceUnitCard({
             <input
               name="unit4"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit4}
+              value={
+                value?.unit4 ? Big(value.unit4).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -206,9 +225,10 @@ export default function SurfaceUnitCard({
             <input
               name="unit5"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit5}
+              value={
+                value?.unit5 ? Big(value.unit5).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -220,9 +240,10 @@ export default function SurfaceUnitCard({
             <input
               name="unit6"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit6}
+              value={
+                value?.unit6 ? Big(value.unit6).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
@@ -234,9 +255,10 @@ export default function SurfaceUnitCard({
             <input
               name="unit7"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
-              type="text"
               onChange={handleChange}
-              value={values?.unit7}
+              value={
+                value?.unit7 ? Big(value.unit7).round(digit).toString() : ""
+              }
               data-title={title}
             />
           </div>
