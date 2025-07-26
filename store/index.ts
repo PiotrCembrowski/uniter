@@ -31,6 +31,10 @@ interface VolumeUnit {
   unit: string;
 }
 
+interface SurfaceUnit {
+  unit: string;
+}
+
 // Define interfaces for the energy units
 
 interface MassState {
@@ -72,6 +76,11 @@ interface VolumeState {
   kitchen: VolumeUnit;
 }
 
+interface SurfaceState {
+  metric: SurfaceUnit;
+  imperial: SurfaceUnit;
+}
+
 // Define the initial state for energy units
 
 const initialState: MassState = {
@@ -111,6 +120,11 @@ const initialVolumeState: VolumeState = {
   imperial: { unit: "0" },
   american: { unit: "0" },
   kitchen: { unit: "0" },
+};
+
+const initialSurfaceState: SurfaceState = {
+  metric: { unit: "0" },
+  imperial: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -242,20 +256,13 @@ const volumeSlice = createSlice({
 // Surface Units
 const surfaceSlice = createSlice({
   name: "surface",
-  initialState: {
-    metric: {
-      units: 0,
-    },
-    imperial: {
-      units: 0,
-    },
-  },
+  initialState: initialSurfaceState,
   reducers: {
-    newMetricSurfaceState: (state, action: PayloadAction<number>) => {
-      return { ...state, metric: { units: action.payload } };
+    newMetricSurfaceState: (state, action: PayloadAction<EnergyUnit>) => {
+      return { ...state, metric: action.payload };
     },
-    newImperialSurfaceState: (state, action: PayloadAction<number>) => {
-      return { ...state, imperial: { units: action.payload } };
+    newImperialSurfaceState: (state, action: PayloadAction<EnergyUnit>) => {
+      return { ...state, imperial: action.payload };
     },
   },
 });
