@@ -89,12 +89,12 @@ const SurfaceUnitDash = () => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <SurfaceUnitCard
           title="Metric System"
-          values={metricStateValues}
+          value={metricStateValues}
           digit={digit}
         />
         <SurfaceUnitCard
           title="Imperial System"
-          values={imperialValues}
+          value={imperialValues}
           digit={digit}
         />
       </div>
