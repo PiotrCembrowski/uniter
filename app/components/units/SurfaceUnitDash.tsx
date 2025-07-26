@@ -3,60 +3,102 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "@/store/hooks";
 import SurfaceUnitCard, { Values } from "./SurfaceUnitCard";
+import Big from "big.js";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useDispatch } from "react-redux";
+import { newDigitsState } from "@/store";
 
 const SurfaceUnitDash = () => {
-  const metricState = useAppSelector(
-    (state) => state.surfaceSlice.metric.units
-  );
+  const metricState = useAppSelector((state) => state.surfaceSlice.metric.unit);
   const imperialState = useAppSelector(
-    (state) => state.surfaceSlice.imperial.units
+    (state) => state.surfaceSlice.imperial.unit
   );
+  const showDigit = useAppSelector((state) => state.digitSlice.digits);
 
-  const [metricStateValues, setMetricStateValues] = useState<Values>({
-    unit1: metricState * 0.000001,
-    unit2: metricState * 0.0001,
-    unit3: metricState * 0.01,
-    unit4: metricState,
-    unit5: metricState * 1000000,
-    unit6: metricState / 100,
-    unit7: metricState / 10000,
-  });
+  const metricValue = Big(metricState).toNumber();
+  const imperialValue = Big(imperialState).toNumber();
 
-  const [imperialValues, setImperialValues] = useState<Values>({
-    unit1: imperialState / 0.00064516,
-    unit2: imperialState / 0.09290304,
-    unit3: imperialState / 0.83612736,
-    unit4: imperialState / 2589988.110336,
-    unit5: imperialState / 4046.8564224,
-    unit6: imperialState / 24046.87261,
-  });
+  const dispatch = useDispatch();
+
+  const [metricStateValues, setMetricStateValues] = useState<Values>();
+  const [imperialValues, setImperialValues] = useState<Values>();
+  const [digit, setDigit] = useState<number>(4);
 
   useEffect(() => {
+    setDigit(showDigit);
+
     setMetricStateValues({
-      unit1: metricState / 0.000001,
-      unit2: metricState / 0.0001,
-      unit3: metricState / 0.01,
-      unit4: metricState,
-      unit5: metricState / 1000000,
-      unit6: metricState / 100,
-      unit7: metricState / 10000,
+      unit1: metricValue / 0.000001,
+      unit2: metricValue / 0.0001,
+      unit3: metricValue / 0.01,
+      unit4: metricValue,
+      unit5: metricValue / 1000000,
+      unit6: metricValue / 100,
+      unit7: metricValue / 10000,
     });
 
     setImperialValues({
-      unit1: imperialState / 0.00064516,
-      unit2: imperialState / 0.09290304,
-      unit3: imperialState / 0.83612736,
-      unit4: imperialState / 2589988.110336,
-      unit5: imperialState / 4046.8564224,
-      unit6: imperialState / 4046.87261,
+      unit1: imperialValue / 0.00064516,
+      unit2: imperialValue / 0.09290304,
+      unit3: imperialValue / 0.83612736,
+      unit4: imperialValue / 2589988.110336,
+      unit5: imperialValue / 4046.8564224,
+      unit6: imperialValue / 4046.87261,
     });
-  }, [metricState, imperialState]);
+  }, [metricValue, imperialValue, showDigit]);
+
+  const digitHandler = (value: string) => {
+    console.log("Selected digit:", value, digit);
+    if (value === "infinite") {
+      setDigit(100);
+      dispatch(newDigitsState(100));
+      return;
+    }
+    setDigit(Number(value));
+    dispatch(newDigitsState(Number(value)));
+  };
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <SurfaceUnitCard title="Metric System" values={metricStateValues} />
-      <SurfaceUnitCard title="Imperial System" values={imperialValues} />
-    </div>
+    <>
+      <h3 className="text-white flex">
+        Round up to the
+        <Select onValueChange={digitHandler}>
+          <SelectTrigger className="w-[90px]">
+            <SelectValue placeholder="4" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {Array.from({ length: 15 }, (_, i) => (
+                <SelectItem key={i + 1} value={(i + 1).toString()}>
+                  {i + 1}
+                </SelectItem>
+              ))}
+              <SelectItem value="infinite">infinite</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>{" "}
+        digits after the decimal.
+      </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <SurfaceUnitCard
+          title="Metric System"
+          values={metricStateValues}
+          digit={digit}
+        />
+        <SurfaceUnitCard
+          title="Imperial System"
+          values={imperialValues}
+          digit={digit}
+        />
+      </div>
+    </>
   );
 };
 
