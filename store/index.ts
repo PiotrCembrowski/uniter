@@ -258,10 +258,10 @@ const surfaceSlice = createSlice({
   name: "surface",
   initialState: initialSurfaceState,
   reducers: {
-    newMetricSurfaceState: (state, action: PayloadAction<EnergyUnit>) => {
+    newMetricSurfaceState: (state, action: PayloadAction<SurfaceUnit>) => {
       return { ...state, metric: action.payload };
     },
-    newImperialSurfaceState: (state, action: PayloadAction<EnergyUnit>) => {
+    newImperialSurfaceState: (state, action: PayloadAction<SurfaceUnit>) => {
       return { ...state, imperial: action.payload };
     },
   },
