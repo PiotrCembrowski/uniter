@@ -3,6 +3,17 @@
 import { useEffect, useState } from "react";
 import SpeedUnitCard, { Values } from "./SpeedUnitCard";
 import { useAppSelector } from "@/store/hooks";
+import Big from "big.js";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useDispatch } from "react-redux";
+import { newDigitsState } from "@/store";
 
 const SpeedUnitDash = () => {
   const showState = useAppSelector((state) => state.pressureSlice.units);
