@@ -32,11 +32,13 @@ const SpeedUnitDash = () => {
     setValues({
       unit1: unitValue / 0.2777777778,
       unit2: unitValue / 0.4470311111,
-      unit3: unitValue,
-      unit4: unitValue / 0.3048,
-      unit5: unitValue / 0.5144444444,
-      unit6: unitValue / 340.3,
-      unit7: unitValue / 299792458,
+      unit3: unitValue / 1000,
+      unit4: unitValue / 1609.344,
+      unit5: unitValue,
+      unit6: unitValue / 0.3048,
+      unit7: unitValue / 0.5144444444,
+      unit8: unitValue / 340.3,
+      unit9: unitValue / 299792458,
     });
   }, [unitValue, showDigit]);
 

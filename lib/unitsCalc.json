@@ -465,11 +465,11 @@
   "speed": [
     {
       "name": "kilometer per hour [km/h]",
-      "conversionFactor": 0.277778
+      "conversionFactor": 0.2777777778
     },
     {
       "name": "mile per hour [mph]",
-      "conversionFactor": 0.44704
+      "conversionFactor": 0.4470311111
     },
     {
       "name": "kilometer per second [km/s]",
@@ -489,7 +489,7 @@
     },
     {
       "name": "knot per hour [kn]",
-      "conversionFactor": 0.514444
+      "conversionFactor": 0.5144444444
     },
     {
       "name": "Mach",
