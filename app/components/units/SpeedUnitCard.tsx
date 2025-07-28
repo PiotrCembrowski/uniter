@@ -12,9 +12,6 @@ export type Values = {
   unit5: number;
   unit6: number;
   unit7: number;
-  unit8: number;
-  unit9: number;
-  unit10: number;
 };
 
 interface UnitCardProps {
