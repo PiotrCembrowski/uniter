@@ -198,7 +198,7 @@ export default function VolumeUnitCard({ title, value, digit }: UnitCardProps) {
 
       dispatch(
         newImperialVolumeState({
-          unit: Big(metricValue).toString(),
+          unit: Big(imperialValue).toString(),
         })
       );
 
