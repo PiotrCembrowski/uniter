@@ -35,6 +35,10 @@ interface SurfaceUnit {
   unit: string;
 }
 
+interface SpeedUnit {
+  unit: string;
+}
+
 // Define interfaces for the energy units
 
 interface MassState {
@@ -81,6 +85,10 @@ interface SurfaceState {
   imperial: SurfaceUnit;
 }
 
+interface SpeedState {
+  unit: SpeedUnit;
+}
+
 // Define the initial state for energy units
 
 const initialState: MassState = {
@@ -125,6 +133,10 @@ const initialVolumeState: VolumeState = {
 const initialSurfaceState: SurfaceState = {
   metric: { unit: "0" },
   imperial: { unit: "0" },
+};
+
+const initialSpeedState: SpeedState = {
+  unit: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -267,6 +279,17 @@ const surfaceSlice = createSlice({
   },
 });
 
+// Speed Slice
+const speedSlice = createSlice({
+  name: "speed",
+  initialState: initialSpeedState,
+  reducers: {
+    newSpeedState: (state, action: PayloadAction<SpeedUnit>) => {
+      return { ...state, unit: action.payload };
+    },
+  },
+});
+
 const rootReducer = {
   lengthUnitsSlice: lengthUnitsSlice.reducer,
   massSlice: massSlice.reducer,
@@ -276,6 +299,7 @@ const rootReducer = {
   powerSlice: powerSlice.reducer,
   volumeSlice: volumeSlice.reducer,
   surfaceSlice: surfaceSlice.reducer,
+  speedSlice: speedSlice.reducer,
   digitSlice: digitSlice.reducer,
 };
 
@@ -312,6 +336,8 @@ export const {
   newAtomicMassState,
   newOtherMassState,
 } = massSlice.actions;
+
+export const { newSpeedState } = speedSlice.actions;
 
 export default store;
 
