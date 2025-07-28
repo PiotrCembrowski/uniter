@@ -16,40 +16,66 @@ import { useDispatch } from "react-redux";
 import { newDigitsState } from "@/store";
 
 const SpeedUnitDash = () => {
-  const showState = useAppSelector((state) => state.pressureSlice.units);
+  const showState = useAppSelector((state) => state.speedSlice.unit);
+  const showDigit = useAppSelector((state) => state.digitSlice.digits);
 
-  const [values, setValues] = useState<Values>({
-    unit1: showState,
-    unit2: showState / 100,
-    unit3: showState / 100000,
-    unit4: showState / 1000000,
-    unit5: showState / 9.80665,
-    unit6: showState / 98066.5,
-    unit7: showState / 101325,
-    unit8: showState / 133.322,
-    unit9: showState / 133.322,
-    unit10: showState / 6894.76,
-  });
+  const unitValue = Big(showState.unit).toNumber();
+
+  const [values, setValues] = useState<Values>();
+  const [digit, setDigit] = useState<number>(4);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    setDigit(showDigit);
+
     setValues({
-      unit1: showState,
-      unit2: showState / 100,
-      unit3: showState / 100000,
-      unit4: showState / 1000000,
-      unit5: showState / 9.80665,
-      unit6: showState / 98066.5,
-      unit7: showState / 101325,
-      unit8: showState / 133.322,
-      unit9: showState / 133.322,
-      unit10: showState / 6894.76,
+      unit1: unitValue / 0.2777777778,
+      unit2: unitValue / 0.4470311111,
+      unit3: unitValue,
+      unit4: unitValue / 0.3048,
+      unit5: unitValue / 0.5144444444,
+      unit6: unitValue / 340.3,
+      unit7: unitValue / 299792458,
     });
-  }, [showState]);
+  }, [unitValue, showDigit]);
+
+  const digitHandler = (value: string) => {
+    console.log("Selected digit:", value, digit);
+    if (value === "infinite") {
+      setDigit(100);
+      dispatch(newDigitsState(100));
+      return;
+    }
+    setDigit(Number(value));
+    dispatch(newDigitsState(Number(value)));
+  };
 
   return (
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <SpeedUnitCard value={values} />
-    </div>
+    <>
+      <h3 className="text-white flex">
+        Round up to the
+        <Select onValueChange={digitHandler}>
+          <SelectTrigger className="w-[90px]">
+            <SelectValue placeholder="4" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {Array.from({ length: 15 }, (_, i) => (
+                <SelectItem key={i + 1} value={(i + 1).toString()}>
+                  {i + 1}
+                </SelectItem>
+              ))}
+              <SelectItem value="infinite">infinite</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>{" "}
+        digits after the decimal.
+      </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <SpeedUnitCard value={values} digit={digit} />
+      </div>
+    </>
   );
 };
 
