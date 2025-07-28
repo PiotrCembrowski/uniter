@@ -1,6 +1,6 @@
 "use client";
 
-import { newPressureState, newSpeedState } from "@/store";
+import { newSpeedState } from "@/store";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Big from "big.js";
@@ -30,6 +30,8 @@ export default function SpeedUnitCard({ value, digit }: UnitCardProps) {
   const [unit5Name, setUnit5Name] = useState<string>();
   const [unit6Name, setUnit6Name] = useState<string>();
   const [unit7Name, setUnit7Name] = useState<string>();
+  const [unit8Name, setUnit8Name] = useState<string>();
+  const [unit9Name, setUnit9Name] = useState<string>();
 
   useEffect(() => {
     setUnit1Name("Kilometer per hour [km/h]");
@@ -55,25 +57,31 @@ export default function SpeedUnitCard({ value, digit }: UnitCardProps) {
 
     switch (inputName) {
       case "unit1":
-        baseValue = inputValue.times(new Big(0.2777777778));
+        baseValue = inputValue.times(new Big("0.2777777778"));
         break;
       case "unit2":
-        baseValue = inputValue.times(new Big(0.4470311111));
+        baseValue = inputValue.times(new Big("0.4470311111"));
         break;
       case "unit3":
-        baseValue = inputValue;
+        baseValue = inputValue.times(new Big("1000"));
         break;
       case "unit4":
-        baseValue = inputValue.times(new Big(0.3048));
+        baseValue = inputValue.times(new Big("1609.344"));
         break;
       case "unit5":
-        baseValue = inputValue.times(new Big(0.5144444444));
+        baseValue = inputValue;
         break;
       case "unit6":
-        baseValue = inputValue.times(new Big(340.3));
+        baseValue = inputValue.times(new Big("0.3048"));
         break;
       case "unit7":
-        baseValue = inputValue.times(new Big(299792458));
+        baseValue = inputValue.times(new Big("0.5144444444"));
+        break;
+      case "unit8":
+        baseValue = inputValue.times(new Big("340.3"));
+        break;
+      case "unit9":
+        baseValue = inputValue.times(new Big("299792458"));
         break;
       default:
         baseValue = inputValue;
@@ -176,6 +184,34 @@ export default function SpeedUnitCard({ value, digit }: UnitCardProps) {
               onChange={handleChange}
               value={
                 value?.unit7 ? Big(value.unit7).round(digit).toString() : ""
+              }
+            />
+          </div>
+        )}
+        {unit8Name && (
+          <div>
+            <label htmlFor="">{unit8Name}</label>
+            <br />
+            <input
+              name="unit8"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onChange={handleChange}
+              value={
+                value?.unit8 ? Big(value.unit8).round(digit).toString() : ""
+              }
+            />
+          </div>
+        )}
+        {unit9Name && (
+          <div>
+            <label htmlFor="">{unit9Name}</label>
+            <br />
+            <input
+              name="unit9"
+              className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onChange={handleChange}
+              value={
+                value?.unit9 ? Big(value.unit9).round(digit).toString() : ""
               }
             />
           </div>
