@@ -46,8 +46,8 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
   let baseValue: Big;
   let imperialValue: Big;
   let metricValue: Big;
-  let seaValue: Big;
-  let astronomicValue: Big;
+  // let seaValue: Big;
+  // let astronomicValue: Big;
   const dispatch = useDispatch();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
