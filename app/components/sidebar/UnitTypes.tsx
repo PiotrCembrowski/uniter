@@ -34,7 +34,7 @@ type SystemNames = {
 };
 
 const jsonFile = lib;
-type UnitKey = keyof typeof jsonFile;
+export type UnitKey = keyof typeof jsonFile;
 
 const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
   const units: Units = {
