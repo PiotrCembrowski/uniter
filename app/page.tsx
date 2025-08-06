@@ -16,11 +16,11 @@ export default function Home() {
       <HeaderMain />
       <div className="w-9/12 mt-4 mx-auto">
         <Table>
-          <TableCaption>Pick your konwerter.</TableCaption>
+          <TableCaption>Pick your converter.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px] text-[#9177F2]">
-                Konwerter
+                Converter
               </TableHead>
               <TableHead className="text-[#9177F2]">Units</TableHead>
             </TableRow>

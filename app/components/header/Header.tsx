@@ -12,10 +12,10 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between border-b border-[#4F3E8C] px-6 py-4 text-[#9177F2]">
       <div className="w-96">
-        <div className="relative flex items-center gap-4">
+        <div className="relative flex ite ms-center gap-4">
           <Link href="/">HOME</Link>
           <DropdownMenu>
-            <DropdownMenuTrigger>KONWERTERS</DropdownMenuTrigger>
+            <DropdownMenuTrigger>CONVERTERS</DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>Unit Types</DropdownMenuLabel>
               <DropdownMenuSeparator />

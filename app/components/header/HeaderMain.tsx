@@ -15,7 +15,7 @@ const HeaderMain = () => {
         <div className="relative flex items-center gap-4 text-[#9177F2]">
           <Link href="/">HOME</Link>
           <DropdownMenu>
-            <DropdownMenuTrigger>KONWERTERS</DropdownMenuTrigger>
+            <DropdownMenuTrigger>CONVERTERS</DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuLabel>Unit Types</DropdownMenuLabel>
               <DropdownMenuSeparator />
