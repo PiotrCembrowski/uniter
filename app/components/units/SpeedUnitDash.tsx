@@ -55,7 +55,7 @@ const SpeedUnitDash = () => {
 
   return (
     <>
-      <h3 className="text-white flex">
+      <h3 className="text-white flex mb-5">
         Round up to the
         <Select onValueChange={digitHandler}>
           <SelectTrigger className="w-[90px]">
