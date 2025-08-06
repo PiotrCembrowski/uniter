@@ -147,6 +147,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     system4: "",
   };
 
+  let unitSI: string = "";
+
   if (unitTable === "length") {
     units.unit1 = jsonFile.length.metric[0].conversionFactor;
     units.unit2 = jsonFile.length.metric[1].conversionFactor;
@@ -174,6 +176,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
 
     systemNames.system1 = "Metric System";
     systemNames.system2 = "Imperial System";
+
+    unitSI = "Meter [m]";
   }
 
   if (unitTable === "time") {
@@ -215,6 +219,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
 
     systemNames.system1 = "Day System";
     systemNames.system2 = "More Than Day System";
+
+    unitSI = "Second [s]";
   }
 
   if (unitTable === "pressure") {
@@ -239,6 +245,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit8 = jsonFile.pressure[7].name;
     unitNames.unit9 = jsonFile.pressure[8].name;
     unitNames.unit10 = jsonFile.pressure[9].name;
+
+    unitSI = "Pascal [Pa]";
   }
 
   if (unitTable === "energy") {
@@ -298,6 +306,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system2 = "Imperial System";
     systemNames.system3 = "Calories";
     systemNames.system4 = "Atomic Units";
+
+    unitSI = "Joule [J]";
   }
 
   if (unitTable === "power") {
@@ -316,6 +326,9 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit5 = jsonFile.power[4].name;
     unitNames.unit6 = jsonFile.power[5].name;
     unitNames.unit7 = jsonFile.power[6].name;
+
+    systemNames.system1 = "Power Units";
+    unitSI = "Watt [W]";
   }
 
   if (unitTable === "volume") {
@@ -379,6 +392,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system2 = "Imperial System";
     systemNames.system3 = "American System";
     systemNames.system4 = "Kitchen System";
+
+    unitSI = "Liter [L]";
   }
 
   if (unitTable === "surface") {
@@ -414,6 +429,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
 
     systemNames.system1 = "Metric System";
     systemNames.system2 = "Imperial System";
+
+    unitSI = "Square Meter [m²]";
   }
 
   if (unitTable === "speed") {
@@ -436,6 +453,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     unitNames.unit7 = jsonFile.speed[6].name;
     unitNames.unit8 = jsonFile.speed[7].name;
     unitNames.unit9 = jsonFile.speed[8].name;
+
+    unitSI = "Meter per Second [m/s]";
   }
 
   if (unitTable === "mass") {
@@ -487,19 +506,21 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system2 = "Imperial System";
     systemNames.system3 = "Atomic System";
     systemNames.system4 = "Other";
+
+    unitSI = "Kilogram [kg]";
   }
 
   return (
     <div className="mt-2 pl-2 height-auto">
       <h5 className="my-1">
-        Jednostką ciśnienia w układzie SI jest Paskal [Pa] (Pascal).
+        The SI unit of {unitTable} is {unitSI}.{" "}
       </h5>
       <h2 className="font-bold text-2xl">{systemNames.system1}</h2>
       <table className="mt-3 mb-8">
         <thead className="">
           <tr>
-            <th className="px-4 py-2">Jednostka</th>
-            <th className="px-4 py-2">Przelicznik</th>
+            <th className="px-4 py-2">Unit</th>
+            <th className="px-4 py-2">Converter</th>
           </tr>
         </thead>
         <tbody>
@@ -603,8 +624,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
         <table className="mt-3">
           <thead className="">
             <tr>
-              <th className="px-4 py-2">Jednostka</th>
-              <th className="px-4 py-2">Przelicznik</th>
+              <th className="px-4 py-2">Unit</th>
+              <th className="px-4 py-2">Converter</th>
             </tr>
           </thead>
           <tbody>
@@ -709,8 +730,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
         <table className="mt-3">
           <thead className="">
             <tr>
-              <th className="px-4 py-2">Jednostka</th>
-              <th className="px-4 py-2">Przelicznik</th>
+              <th className="px-4 py-2">Unit</th>
+              <th className="px-4 py-2">Converter</th>
             </tr>
           </thead>
           <tbody>
@@ -822,8 +843,8 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
         <table className="mt-3">
           <thead className="">
             <tr>
-              <th className="px-4 py-2">Jednostka</th>
-              <th className="px-4 py-2">Przelicznik</th>
+              <th className="px-4 py-2">Unit</th>
+              <th className="px-4 py-2">Converter</th>
             </tr>
           </thead>
           <tbody>
