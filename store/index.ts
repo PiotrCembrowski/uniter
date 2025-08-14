@@ -153,15 +153,16 @@ const digitSlice = createSlice({
 });
 
 // Length Units
-
 const lengthUnitsSlice = createSlice({
   name: "lengthUnits",
   initialState: initialLengthState,
   reducers: {
     newLengthMetricState: (state, action: PayloadAction<LengthUnit>) => {
+      console.log("newLengthMetricState", action.payload);
       return { ...state, metric: action.payload };
     },
     newLengthImperialState: (state, action: PayloadAction<LengthUnit>) => {
+      console.log("newLengthImperialState", action.payload);
       return { ...state, imperial: action.payload };
     },
   },
@@ -169,7 +170,6 @@ const lengthUnitsSlice = createSlice({
 
 // Mass Units
 // The initial state for mass units is the same as length units
-
 const massSlice = createSlice({
   name: "mass",
   initialState,

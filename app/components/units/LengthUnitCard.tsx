@@ -52,11 +52,22 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
-    const rawValue = event.target.value;
     const inputValue = new Big(
-      rawValue === "" || isNaN(Number(rawValue)) ? "0" : rawValue
+      event.target.value === "" || isNaN(Number(event.target.value))
+        ? "0"
+        : event.target.value
     );
     const inputTitle = event.target.dataset.title;
+    console.log(event);
+
+    // Big adding '.' as element of array
+
+    // if (
+    //   (rawValue.includes(".") || rawValue.includes(",")) &&
+    //   !rawValue.includes("123456789")
+    // ) {
+    //   rawValue = rawValue + ".";
+    // }
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
@@ -66,19 +77,19 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
           break;
         case "unit2":
           baseValue = inputValue.times(new Big(12));
-          metricValue = baseValue.times(new Big(25.4));
+          metricValue = baseValue.div(new Big(25.4));
           break;
         case "unit3":
           baseValue = inputValue.times(new Big(36));
-          metricValue = baseValue.times(new Big(25.4));
+          metricValue = baseValue.div(new Big(25.4));
           break;
         case "unit4":
           baseValue = inputValue.times(new Big(63360));
-          metricValue = baseValue.times(new Big(25.4));
+          metricValue = baseValue.div(new Big(25.4));
           break;
         case "unit5":
           baseValue = inputValue.times(new Big(190000));
-          metricValue = baseValue.times(new Big(25.4));
+          metricValue = baseValue.div(new Big(25.4));
           break;
         default:
           baseValue = inputValue;
@@ -150,8 +161,9 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
             onChange={handleChange}
-            value={value?.unit1 ? Big(value.unit1).round(digit).toString() : ""}
+            value={value?.unit1 ? Big(value.unit1).round(digit).toNumber() : ""}
             data-title={title}
+            type="number"
           />
         </div>
         <div>
