@@ -58,16 +58,8 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
         : event.target.value
     );
     const inputTitle = event.target.dataset.title;
-    console.log(event);
 
-    // Big adding '.' as element of array
-
-    // if (
-    //   (rawValue.includes(".") || rawValue.includes(",")) &&
-    //   !rawValue.includes("123456789")
-    // ) {
-    //   rawValue = rawValue + ".";
-    // }
+    // if dot key on keyboard then pass
 
     if (title === "Imperial System" && inputTitle === "Imperial System") {
       switch (inputName) {
@@ -77,19 +69,19 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
           break;
         case "unit2":
           baseValue = inputValue.times(new Big(12));
-          metricValue = baseValue.div(new Big(25.4));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit3":
           baseValue = inputValue.times(new Big(36));
-          metricValue = baseValue.div(new Big(25.4));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit4":
           baseValue = inputValue.times(new Big(63360));
-          metricValue = baseValue.div(new Big(25.4));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         case "unit5":
           baseValue = inputValue.times(new Big(190000));
-          metricValue = baseValue.div(new Big(25.4));
+          metricValue = baseValue.times(new Big(25.4));
           break;
         default:
           baseValue = inputValue;
