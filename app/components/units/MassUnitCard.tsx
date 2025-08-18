@@ -75,6 +75,12 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
   let otherValue: Big;
   const dispatch = useDispatch();
 
+  const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === ".") {
+      event.preventDefault();
+    }
+  };
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.name;
     const rawValue = event.target.value;
@@ -403,6 +409,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
           <input
             name="unit1"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+            onKeyDown={handleOnKeyDown}
             onChange={handleChange}
             value={value?.unit1 ? Big(value.unit1).round(digit).toString() : ""}
             data-title={title}
@@ -414,6 +421,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
           <input
             name="unit2"
             className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+            onKeyDown={handleOnKeyDown}
             onChange={handleChange}
             value={value?.unit2 ? Big(value.unit2).round(digit).toString() : ""}
             data-title={title}
@@ -426,6 +434,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             <input
               name="unit3"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onKeyDown={handleOnKeyDown}
               onChange={handleChange}
               value={
                 value?.unit3 ? Big(value.unit3).round(digit).toString() : ""
@@ -441,6 +450,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             <input
               name="unit4"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onKeyDown={handleOnKeyDown}
               onChange={handleChange}
               value={
                 value?.unit4 ? Big(value.unit4).round(digit).toString() : ""
@@ -456,6 +466,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             <input
               name="unit5"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onKeyDown={handleOnKeyDown}
               onChange={handleChange}
               value={
                 value?.unit5 ? Big(value.unit5).round(digit).toString() : ""
@@ -471,6 +482,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             <input
               name="unit6"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onKeyDown={handleOnKeyDown}
               onChange={handleChange}
               value={
                 value?.unit6 ? Big(value.unit6).round(digit).toString() : ""
@@ -486,6 +498,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             <input
               name="unit7"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onKeyDown={handleOnKeyDown}
               onChange={handleChange}
               value={
                 value?.unit7 ? Big(value.unit7).round(digit).toString() : ""
@@ -501,6 +514,7 @@ export default function MetricUnitCard({ title, value, digit }: UnitCardProps) {
             <input
               name="unit8"
               className="w-max-[100%] w-[100%] box-border border-2 border-[#9177F2] bg-[#4F3E8C] text-[#46A66F] font-bold pl-1"
+              onKeyDown={handleOnKeyDown}
               onChange={handleChange}
               value={
                 value?.unit8 ? Big(value.unit8).round(digit).toString() : ""
