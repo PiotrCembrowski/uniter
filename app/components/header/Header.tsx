@@ -7,6 +7,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
@@ -48,6 +54,16 @@ const Header = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button className="bg-transparent hover:bg-transparent text-[#9177F2]">
+                <a href="mailto:losttape@gmail.com">CONTACT</a>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <a href="mailto:losttape@gmail.com">losttape@gmail.com</a>
+            </TooltipContent>
+          </Tooltip>
         </div>
       </div>
       {/* <div className="flex items-center gap-4">

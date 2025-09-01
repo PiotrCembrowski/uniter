@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="flex min-h-screen h-auto">
-          <StoreProvider>{children}</StoreProvider>
-        </main>
+        <TooltipProvider>
+          <main className="flex min-h-screen h-auto">
+            <StoreProvider>{children}</StoreProvider>
+          </main>
+        </TooltipProvider>
       </body>
       <GoogleAnalytics gaId="G-ZLDWN9CHBL" />
     </html>
