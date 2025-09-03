@@ -2,7 +2,7 @@ import React from "react";
 import UnitTypes from "./UnitTypes";
 import { UnitKey } from "./UnitTypes";
 
-const SideBar = ({ unitTable }: { unitTable: UnitKey }) => {
+const SideBar = ({ unitTable }: { unitTable: UnitKey | string }) => {
   return (
     <div className="h-auto w-1/3 border-r-2 border-[#221E40] bg-[#161426] ">
       <div className="p-4">

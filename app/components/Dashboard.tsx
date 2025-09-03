@@ -8,7 +8,7 @@ import PowerUnitDash from "./units/PowerUnitDash";
 import VolumeUnitDash from "./units/VolumeUnitDash";
 import SurfaceDash from "./units/SurfaceUnitDash";
 import SpeedUnitDash from "./units/SpeedUnitDash";
-import CurrencyDash from "../currency/page";
+import CurrencyUnitDash from "./units/CurrencyUnitDash";
 
 type DashboardProps = {
   dashType: string;
@@ -54,7 +54,7 @@ const Dashboard: React.FC<DashboardProps> = ({ dashType }) => {
   }
 
   if (dashType === "currency") {
-    content = <CurrencyDash />;
+    content = <CurrencyUnitDash />;
   }
 
   return (

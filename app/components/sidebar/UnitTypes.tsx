@@ -36,7 +36,7 @@ type SystemNames = {
 const jsonFile = lib;
 export type UnitKey = keyof typeof jsonFile;
 
-const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
+const UnitTypes = ({ unitTable }: { unitTable: UnitKey | string }) => {
   const units: Units = {
     unit1: 0,
     unit2: 0,
@@ -508,6 +508,10 @@ const UnitTypes = ({ unitTable }: { unitTable: UnitKey }) => {
     systemNames.system4 = "Other";
 
     unitSI = "Kilogram [kg]";
+  }
+
+  if (unitTable === "currency") {
+    return;
   }
 
   return (
