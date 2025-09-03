@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto py-8 px-6 ">
+      <main className="max-w-4xl mx-auto py-8 px-6 bg-white">
         <CurrencyConverter />
       </main>
 
