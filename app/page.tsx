@@ -107,6 +107,14 @@ export default function Home() {
                 - mph to km/h, 1 mph to ...,
               </TableCell>
             </TableRow>
+            {/* <TableRow>
+              <TableCell className="font-medium text-[#46A66F]">
+                <Link href="/speed">Currency Converter</Link>
+              </TableCell>
+              <TableCell className="text-[#9177F2]">
+                - USD, EURO, YUAN...
+              </TableCell>
+            </TableRow> */}
           </TableBody>
         </Table>
       </div>

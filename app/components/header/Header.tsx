@@ -19,7 +19,9 @@ const Header = () => {
     <header className="flex items-center justify-between border-b border-[#4F3E8C] px-6 py-4 text-[#9177F2]">
       <div className="w-96">
         <div className="relative flex ite ms-center gap-4">
-          <Link href="/">HOME</Link>
+          <Button className="bg-transparent text-[#9177F2]">
+            <Link href="/">HOME</Link>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger>CONVERTERS</DropdownMenuTrigger>
             <DropdownMenuContent>

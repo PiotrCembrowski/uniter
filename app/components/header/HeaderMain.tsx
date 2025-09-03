@@ -19,7 +19,9 @@ const HeaderMain = () => {
     <header className="flex justify-around w-full h-14 border-b-2 border-[#221E40] px-6 py-4">
       <div className="w-96">
         <div className="relative flex items-center gap-4 text-[#9177F2]">
-          <Link href="/">HOME</Link>
+          <Button className="bg-transparent text-[#9177F2]">
+            <Link href="/">HOME</Link>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger>CONVERTERS</DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -54,6 +56,7 @@ const HeaderMain = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
           <Tooltip>
             <TooltipTrigger asChild>
               <Button className="bg-transparent hover:bg-transparent text-[#9177F2]">
@@ -61,7 +64,7 @@ const HeaderMain = () => {
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <a href="mailto:losttape@gmail.com">losttape@gmail.com</a>
+              <Link href="mailto:losttape@gmail.com">losttape@gmail.com</Link>
             </TooltipContent>
           </Tooltip>
         </div>
