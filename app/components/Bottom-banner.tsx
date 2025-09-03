@@ -16,7 +16,7 @@ export function BottomBanner() {
               </Badge>
               <span className="text-sm font-medium">50% OFF</span>
             </div>
-            <h3 className="text-xl font-bold mb-1">Don't Miss Out!</h3>
+            <h3 className="text-xl font-bold mb-1">Don &apos; t Miss Out!</h3>
             <p className="text-blue-100 text-sm">
               Get instant access to our premium product
             </p>
@@ -39,3 +39,5 @@ export function BottomBanner() {
     </div>
   );
 }
+
+export default BottomBanner;

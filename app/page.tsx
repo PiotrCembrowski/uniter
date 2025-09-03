@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-import Banner from "./components/Banner";
+import Banner from "./components/Bottom-banner";
 
 // affiliate link
 //https://fa0d97xm6mbdlx3doazh4dkbw6.hop.clickbank.net
