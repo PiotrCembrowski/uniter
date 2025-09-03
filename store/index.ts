@@ -39,6 +39,10 @@ interface SpeedUnit {
   unit: string;
 }
 
+interface CurrencyUnit {
+  unit: string;
+}
+
 // Define interfaces for the energy units
 
 interface MassState {
@@ -89,6 +93,11 @@ interface SpeedState {
   unit: SpeedUnit;
 }
 
+interface CurrencyState {
+  USD: CurrencyUnit;
+  EUROP: CurrencyUnit;
+}
+
 // Define the initial state for energy units
 
 const initialState: MassState = {
@@ -137,6 +146,11 @@ const initialSurfaceState: SurfaceState = {
 
 const initialSpeedState: SpeedState = {
   unit: { unit: "0" },
+};
+
+const initialCurrencyState: CurrencyState = {
+  USD: { unit: "0" },
+  EUROP: { unit: "0" },
 };
 
 // chossing digits after the decimal
@@ -290,6 +304,20 @@ const speedSlice = createSlice({
   },
 });
 
+// Currency Slice
+const currencySlice = createSlice({
+  name: "currency",
+  initialState: initialCurrencyState,
+  reducers: {
+    newUSDCurrencyState: (state, action: PayloadAction<CurrencyUnit>) => {
+      return { ...state, unit: action.payload };
+    },
+    newEUROCurrencyState: (state, action: PayloadAction<CurrencyUnit>) => {
+      return { ...state, unit: action.payload };
+    },
+  },
+});
+
 const rootReducer = {
   lengthUnitsSlice: lengthUnitsSlice.reducer,
   massSlice: massSlice.reducer,
@@ -301,6 +329,7 @@ const rootReducer = {
   surfaceSlice: surfaceSlice.reducer,
   speedSlice: speedSlice.reducer,
   digitSlice: digitSlice.reducer,
+  currencySlice: currencySlice.reducer,
 };
 
 export const store = () => {
@@ -336,6 +365,9 @@ export const {
   newAtomicMassState,
   newOtherMassState,
 } = massSlice.actions;
+
+export const { newUSDCurrencyState, newEUROCurrencyState } =
+  currencySlice.actions;
 
 export const { newSpeedState } = speedSlice.actions;
 
