@@ -76,28 +76,25 @@ export function CurrencyConverter() {
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
-        <h2
-          className="text-3xl font-bold text-foreground mb-2"
-          style={{ fontFamily: "var(--font-playfair)" }}
-        >
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 font-serif">
           Convert Currencies
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-gray-600 dark:text-gray-400">
           Get real-time exchange rates for over 100 currencies
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* From Currency Card */}
-        <Card className="bg-card border-border">
+        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold text-card-foreground">
+            <CardTitle className="text-lg font-semibold text-gray-900 dark:text-white">
               From
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <Select value={fromCurrency} onValueChange={setFromCurrency}>
-              <SelectTrigger className="bg-input border-border">
+              <SelectTrigger className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -105,7 +102,7 @@ export function CurrencyConverter() {
                   <SelectItem key={currency.code} value={currency.code}>
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{currency.code}</span>
-                      <span className="text-muted-foreground">
+                      <span className="text-gray-600 dark:text-gray-400">
                         {currency.name}
                       </span>
                     </div>
@@ -119,25 +116,25 @@ export function CurrencyConverter() {
               value={fromAmount}
               onChange={(e) => handleFromAmountChange(e.target.value)}
               placeholder="Enter amount"
-              className="bg-input border-border text-lg font-medium"
+              className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-lg font-medium"
             />
 
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               1 {fromCurrency} = {exchangeRate.toFixed(4)} {toCurrency}
             </div>
           </CardContent>
         </Card>
 
         {/* To Currency Card */}
-        <Card className="bg-card border-border">
+        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
           <CardHeader>
-            <CardTitle className="text-lg font-semibold text-card-foreground">
+            <CardTitle className="text-lg font-semibold text-gray-900 dark:text-white">
               To
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <Select value={toCurrency} onValueChange={setToCurrency}>
-              <SelectTrigger className="bg-input border-border">
+              <SelectTrigger className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -145,7 +142,7 @@ export function CurrencyConverter() {
                   <SelectItem key={currency.code} value={currency.code}>
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{currency.code}</span>
-                      <span className="text-muted-foreground">
+                      <span className="text-gray-600 dark:text-gray-400">
                         {currency.name}
                       </span>
                     </div>
@@ -159,16 +156,16 @@ export function CurrencyConverter() {
                 type="text"
                 value={isLoading ? "Converting..." : toAmount}
                 readOnly
-                className="bg-muted border-border text-lg font-medium text-foreground"
+                className="bg-gray-100 dark:bg-gray-600 border-gray-200 dark:border-gray-600 text-lg font-medium text-gray-900 dark:text-white"
               />
               {isLoading && (
                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                  <div className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent rounded-full"></div>
+                  <div className="animate-spin h-4 w-4 border-2 border-cyan-600 border-t-transparent rounded-full"></div>
                 </div>
               )}
             </div>
 
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               1 {toCurrency} = {(1 / exchangeRate).toFixed(4)} {fromCurrency}
             </div>
           </CardContent>
@@ -181,7 +178,7 @@ export function CurrencyConverter() {
           onClick={handleSwapCurrencies}
           variant="outline"
           size="lg"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 border-primary"
+          className="bg-cyan-600 text-white hover:bg-cyan-700 border-cyan-600 hover:border-cyan-700"
         >
           <ArrowUpDown className="w-4 h-4 mr-2" />
           Swap Currencies
@@ -189,21 +186,21 @@ export function CurrencyConverter() {
       </div>
 
       {/* Exchange Rate Display */}
-      <Card className="bg-muted border-border">
+      <Card className="bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-muted-foreground">
+          <CardTitle className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
             <TrendingUp className="w-5 h-5" />
             Current Exchange Rate
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold text-foreground mb-2">
+          <div className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             {fromAmount} {fromCurrency} = {toAmount} {toCurrency}
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             Rate: 1 {fromCurrency} = {exchangeRate.toFixed(4)} {toCurrency}
           </div>
-          <div className="text-xs text-muted-foreground mt-2">
+          <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
             Last updated: {new Date().toLocaleTimeString()}
           </div>
         </CardContent>

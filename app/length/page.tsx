@@ -1,6 +1,6 @@
 import React from "react";
-import SideBar from "../components/sidebar/SideBar";
-import Dashboard from "../components/Dashboard";
+import SideBar from "../../components/sidebar/SideBar";
+import Dashboard from "../../components/Dashboard";
 
 const LengthDash = () => {
   return (

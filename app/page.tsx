@@ -1,4 +1,4 @@
-import HeaderMain from "./components/header/HeaderMain";
+import HeaderMain from "../components/header/HeaderMain";
 import {
   Table,
   TableBody,
@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-import Banner from "./components/Bottom-banner";
+import Banner from "../components/Bottom-banner";
 
 // affiliate link
 //https://fa0d97xm6mbdlx3doazh4dkbw6.hop.clickbank.net

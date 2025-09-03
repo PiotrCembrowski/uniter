@@ -1,4 +1,4 @@
-import * as lib from "../../../lib/unitsCalc.json";
+import * as lib from "../../lib/unitsCalc.json";
 
 type Units = {
   unit1: number;
