@@ -31,6 +31,7 @@ export function CurrencyConverter() {
   const [toAmount, setToAmount] = useState("85.42");
   const [exchangeRate, setExchangeRate] = useState(0.8542);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
 
   // Simulate API call for exchange rates
   useEffect(() => {
@@ -57,6 +58,8 @@ export function CurrencyConverter() {
       setToAmount((numAmount * rate).toFixed(2));
       setIsLoading(false);
     };
+
+    setCurrentTime(new Date().toLocaleTimeString());
 
     fetchExchangeRate();
   }, [fromCurrency, toCurrency, fromAmount]);
@@ -201,7 +204,7 @@ export function CurrencyConverter() {
             Rate: 1 {fromCurrency} = {exchangeRate.toFixed(4)} {toCurrency}
           </div>
           <div className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-            Last updated: {new Date().toLocaleTimeString()}
+            Last updated: {currentTime}
           </div>
         </CardContent>
       </Card>
