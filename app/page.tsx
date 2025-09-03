@@ -9,6 +9,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
+import Banner from "./components/Banner";
+
+// affiliate link
+//https://fa0d97xm6mbdlx3doazh4dkbw6.hop.clickbank.net
 
 export default function Home() {
   return (
@@ -106,6 +110,7 @@ export default function Home() {
           </TableBody>
         </Table>
       </div>
+      <Banner />
     </div>
   );
 }
